@@ -1,0 +1,73 @@
+\doxysection{Account\+Controller.\+cs}
+\hypertarget{AccountController_8cs_source}{}\label{AccountController_8cs_source}\index{BistroQ.API/Controllers/Account/AccountController.cs@{BistroQ.API/Controllers/Account/AccountController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Auth}{BistroQ.Core.Dtos.Auth}};}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00009}\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{00009}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Account}{BistroQ.API.Controllers.Account}};}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00011}00011\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00012}00012\ [Route(\textcolor{stringliteral}{"{}api/admin/[controller]"{}})]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00013}00013\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Admin)]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00014}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController}{AccountController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccountService}}\ \_accountService;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController}{AccountController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccountService}}\ accountService,\ IMapper\ mapper)}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_accountService\ =\ accountService;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00025}00025\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetAccounts([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{AccountCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ var\ (accounts,\ count)\ =\ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<IEnumerable<AccountResponseDto>>(accounts);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<AccountResponseDto>>(res,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00033}00033\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00034}00034\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{id\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetAccount([FromRoute]\ \textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00042}00042\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00043}00043\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ CreateAccount([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{CreateAccountDto}}\ createAccountDto)}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.CreateAccountAsync(createAccountDto);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00051}00051\ \ \ \ \ [HttpPatch]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00052}00052\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{id\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdateAccount([FromRoute]\ \textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id}\ ,[FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{UpdateAccountDto}}\ updateAccountDto)}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.UpdateAccountAsync(\textcolor{keywordtype}{id},\ updateAccountDto);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00059}00059\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00060}00060\ \ \ \ \ [HttpDelete]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00061}00061\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{id\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ DeleteAccount([FromRoute]\ \textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ await\ \_accountService.DeleteAccountAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Account\ deleted\ successfully"{}}));}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountController_8cs_source_l00067}00067\ \}}
+
+\end{DoxyCode}

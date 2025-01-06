@@ -1,0 +1,52 @@
+\doxysection{Cashier\+Order\+Controller.\+cs}
+\hypertarget{CashierOrderController_8cs_source}{}\label{CashierOrderController_8cs_source}\index{BistroQ.API/Controllers/Order/CashierOrderController.cs@{BistroQ.API/Controllers/Order/CashierOrderController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00010}\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Order}{00010}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Order}{BistroQ.API.Controllers.Order}};}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00012}00012\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/Cashier/Order"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00014}00014\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier)]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00015}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController}{CashierOrderController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ \_orderService;}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController}{CashierOrderController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ orderService)}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00024}00024\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetOrders()}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ var\ orders\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{GetAllCurrentOrders}}();}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderWithTableDto>>(orders));}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00031}00031\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00032}00032\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetOrder([FromRoute]\ \textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.GetOrderByTableId(tableId);}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<DetailOrderDto>(order));}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00039}00039\ \ \ \ \ [HttpPatch]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00040}00040\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}Status"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdateStatus([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderStatusRequestDto}{UpdateOrderStatusRequestDto}}\ updateOrderStatusDto)}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.UpdateStatus(updateOrderStatusDto.TableId,\ updateOrderStatusDto.Status);}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<OrderDto>(order));}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierOrderController_8cs_source_l00046}00046\ \}}
+
+\end{DoxyCode}

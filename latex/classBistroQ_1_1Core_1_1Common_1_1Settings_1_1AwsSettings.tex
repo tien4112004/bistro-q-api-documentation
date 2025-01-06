@@ -1,0 +1,171 @@
+\doxysection{Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings Class Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{}\label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{Aws\+Settings}} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8e7ed083dba6b056192efb03c7aa7d53}{Read\+From\+Environment}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8eb0fb273e56f4899e67b6b14b304cd1}{Access\+Key}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a031992ed45d48e7e1ee6c65f1e94086d}{Secret\+Key}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ad12dd0f4b069bac3c2e28ad6d02747d2}{Bucket\+Name}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ae0aaeca553d893f8e71323bf474f6e10}{Region}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a98aeea030db27de1776a4a491b0cce05}{Cloud\+Front\+Domain}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a74fa0a7bd7376956c079ddb5f4063e3a}{Private\+Key}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a76f5c9cd9cb9dffbaa08cf2e018e5043}{Key\+Pair\+Id}} = null!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00005}{5}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8e7ed083dba6b056192efb03c7aa7d53}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!ReadFromEnvironment@{ReadFromEnvironment}}
+\index{ReadFromEnvironment@{ReadFromEnvironment}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{ReadFromEnvironment()}{ReadFromEnvironment()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8e7ed083dba6b056192efb03c7aa7d53} 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{Aws\+Settings}} Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Read\+From\+Environment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00021}{21}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ AccessKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_ACCESS\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_ACCESS\_KEY"{}});}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ SecretKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_SECRET\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_SECRET\_KEY"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ BucketName\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_BUCKET\_NAME"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_BUCKET\_NAME"{}});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Region\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_REGION"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_REGION"{}});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ CloudFrontDomain\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_DOMAIN"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_DOMAIN"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ KeyPairId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_KEY\_PAIR\_ID"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_KEY\_PAIR\_ID"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ PrivateKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_PRIVATE\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_PRIVATE\_KEY"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8eb0fb273e56f4899e67b6b14b304cd1}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!AccessKey@{AccessKey}}
+\index{AccessKey@{AccessKey}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{AccessKey}{AccessKey}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a8eb0fb273e56f4899e67b6b14b304cd1} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Access\+Key = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00007}{7}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ad12dd0f4b069bac3c2e28ad6d02747d2}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!BucketName@{BucketName}}
+\index{BucketName@{BucketName}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{BucketName}{BucketName}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ad12dd0f4b069bac3c2e28ad6d02747d2} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Bucket\+Name = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00011}{11}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a98aeea030db27de1776a4a491b0cce05}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!CloudFrontDomain@{CloudFrontDomain}}
+\index{CloudFrontDomain@{CloudFrontDomain}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{CloudFrontDomain}{CloudFrontDomain}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a98aeea030db27de1776a4a491b0cce05} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Cloud\+Front\+Domain = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00015}{15}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a76f5c9cd9cb9dffbaa08cf2e018e5043}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!KeyPairId@{KeyPairId}}
+\index{KeyPairId@{KeyPairId}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{KeyPairId}{KeyPairId}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a76f5c9cd9cb9dffbaa08cf2e018e5043} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Key\+Pair\+Id = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00019}{19}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a74fa0a7bd7376956c079ddb5f4063e3a}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!PrivateKey@{PrivateKey}}
+\index{PrivateKey@{PrivateKey}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{PrivateKey}{PrivateKey}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a74fa0a7bd7376956c079ddb5f4063e3a} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Private\+Key = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00017}{17}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ae0aaeca553d893f8e71323bf474f6e10}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!Region@{Region}}
+\index{Region@{Region}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{Region}{Region}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_ae0aaeca553d893f8e71323bf474f6e10} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Region = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00013}{13}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a031992ed45d48e7e1ee6c65f1e94086d}\index{BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}!SecretKey@{SecretKey}}
+\index{SecretKey@{SecretKey}!BistroQ.Core.Common.Settings.AwsSettings@{BistroQ.Core.Common.Settings.AwsSettings}}
+\doxysubsubsection{\texorpdfstring{SecretKey}{SecretKey}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings_a031992ed45d48e7e1ee6c65f1e94086d} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Aws\+Settings.\+Secret\+Key = null!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsSettings_8cs_source_l00009}{9}} of file \mbox{\hyperlink{AwsSettings_8cs_source}{Aws\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Common/\+Settings/Aws\+Settings.\+cs\end{DoxyCompactItemize}

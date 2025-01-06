@@ -1,0 +1,152 @@
+\doxysection{Product\+Repository.\+cs}
+\hypertarget{ProductRepository_8cs_source}{}\label{ProductRepository_8cs_source}\index{BistroQ.Infrastructure/Repositories/ProductRepository.cs@{BistroQ.Infrastructure/Repositories/ProductRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Linq.Expressions;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Products}{BistroQ.Core.Dtos.Products}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Specifications}{BistroQ.Core.Specifications}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Repositories}{BistroQ.Infrastructure.Repositories}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00012}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository}{ProductRepository}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{GenericRepository}}<Product>,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProductRepository}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository}{ProductRepository}}(\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ context)\ :\ base(context)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00018}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<Product>>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0}{GetProductsAsync}}(IQueryable<Product>\ queryable)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ queryable.ToListAsync();}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ products;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00025}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<int>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e}{GetProductsCountAsync}}(IQueryable<Product>\ queryable)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ queryable.CountAsync();}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00032}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Product?>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e}{GetProductByIdAsync}}(\textcolor{keywordtype}{int}\ productId)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ var\ product\ =\ await\ DbSet}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(p\ =>\ p.Image)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(p\ =>\ p.NutritionFact)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefaultAsync(p\ =>\ p.ProductId\ ==\ productId);}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ product;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{class\ }NutritionalConstants}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Daily\ recommended\ values}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ DAILY\_CALORIES\ =\ 2000m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ DAILY\_PROTEIN\ =\ 75m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ DAILY\_CARBOHYDRATES\ =\ 300m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ DAILY\_FAT\ =\ 70m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ DAILY\_FIBER\ =\ 25m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rating\ weights\ (must\ sum\ to\ 1.0)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ PROTEIN\_WEIGHT\ =\ 0.3m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ FAT\_WEIGHT\ =\ 0.2m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ CALORIES\_WEIGHT\ =\ 0.1m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ FIBER\_WEIGHT\ =\ 0.2m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ CARB\_WEIGHT\ =\ 0.2m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Individual\ deficiency\ multipliers}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ PROTEIN\_DEFICIENCY\_MULTIPLIER\ =\ 1.0m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ FAT\_DEFICIENCY\_MULTIPLIER\ =\ 3.0m;\ \textcolor{comment}{//\ Fat\ is\ harmful\ in\ excess}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ CALORIES\_DEFICIENCY\_MULTIPLIER\ =\ 2.0m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ FIBER\_DEFICIENCY\_MULTIPLIER\ =\ 0.5m;\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{const}\ decimal\ CARB\_DEFICIENCY\_MULTIPLIER\ =\ 2.0m;}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00066}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab}{00066}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<Product>>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab}{GetRecommendedProductsAsync}}(\textcolor{keywordtype}{string}\ orderId,\ \textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ query\ =\ \textcolor{stringliteral}{"{}"{}}\textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00069}00069\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WITH\ NormalizedNutritionFact\ AS\ (}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00070}00070\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00071}00071\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.ProductId,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00072}00072\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Calories\ /\ \{1\}\ AS\ NormalizedCalories,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00073}00073\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Protein\ /\ \{2\}\ AS\ NormalizedProtein,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00074}00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Carbohydrates\ /\ \{3\}\ AS\ NormalizedCarb,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00075}00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Fat\ /\ \{4\}\ AS\ NormalizedFat,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00076}00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Fiber\ /\ \{5\}\ AS\ NormalizedFiber}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00077}00077\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}nutritionfact`\ n),}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00078}00078\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CurrentNormalized\ AS\ (}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00079}00079\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00080}00080\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedCalories)\ /\ o.PeopleCount\ AS\ CurrentCalories,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00081}00081\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedCarb)\ /\ o.PeopleCount\ AS\ CurrentCarb,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00082}00082\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedProtein)\ /\ o.PeopleCount\ AS\ CurrentProtein,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00083}00083\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedFat)\ /\ o.PeopleCount\ AS\ CurrentFat,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00084}00084\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedFiber)\ /\ o.PeopleCount\ AS\ CurrentFiber}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00085}00085\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}orderitem`\ i}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00086}00086\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ NormalizedNutritionFact\ AS\ x\ ON\ x.ProductId\ =\ i.ProductId}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00087}00087\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ \`{}order`\ AS\ o\ ON\ o.OrderId\ =\ \{0\}\ AND\ i.OrderId\ =\ \{0\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00088}00088\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GROUP\ BY\ o.OrderId)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00089}00089\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00090}00090\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ p.Name,\ p.ProductId,\ p.Price,\ p.ImageId,\ p.CategoryId,\ p.DiscountPrice,\ p.Unit,}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00091}00091\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (CASE\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00092}00092\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)\ <\ 0\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00093}00093\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{6\}\ *\ ABS(n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)\ *\ \{11\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00094}00094\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{6\}\ *\ ABS(n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00095}00095\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00096}00096\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00097}00097\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)\ <\ 0\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00098}00098\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{7\}\ *\ ABS(n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)\ *\ \{12\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00099}00099\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{7\}\ *\ ABS(n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00100}00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00101}00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00102}00102\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)\ <\ 0\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00103}00103\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{8\}\ *\ ABS(n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)\ *\ \{13\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00104}00104\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{8\}\ *\ ABS(n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00105}00105\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00106}00106\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00107}00107\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ <\ 0\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00108}00108\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{9\}\ *\ ABS(n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ *\ \{14\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00109}00109\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{9\}\ *\ ABS(n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00110}00110\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00111}00111\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00112}00112\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)\ <\ 0\ }}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00113}00113\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{10\}\ *\ ABS(n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)\ *\ \{15\}}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00114}00114\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{10\}\ *\ ABS(n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00115}00115\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END)\ AS\ Rating}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00116}00116\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}product`\ p}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00117}00117\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ NormalizedNutritionFact\ AS\ n\ ON\ p.ProductId\ =\ n.ProductId}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00118}00118\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ CurrentNormalized}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00119}00119\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ORDER\ BY\ Rating\ DESC}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00120}00120\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LIMIT\ \{16\};}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00121}00121\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}}\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ formattedQuery\ =\ \textcolor{keywordtype}{string}.Format(}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ query.Replace(\textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ "{}}),}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ orderId,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_CALORIES,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_PROTEIN,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_CARBOHYDRATES,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_FAT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_FIBER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.PROTEIN\_WEIGHT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FAT\_WEIGHT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CALORIES\_WEIGHT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FIBER\_WEIGHT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CARB\_WEIGHT,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.PROTEIN\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FAT\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CALORIES\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FIBER\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CARB\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ size}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ DbSet.FromSqlRaw(formattedQuery).ToListAsync();}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductRepository_8cs_source_l00146}00146\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,341 @@
+\doxysection{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{}\label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+
+
+Inheritance diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a71c2ca7751cc76b64a2e55b5b96c9946}{Generic\+Repository}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context)
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a541d835ef0d5ec5376139b5ad912be93}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a20824a98095d1c767d192d6a9f30e9f0}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a91793d9177850823b1da1bbe3221b69e}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a77551df534140f8777cc239917fda41c}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a3b3196a04bd8b3d4a1af80b15b096875}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_af29a2d0f6802fbb81a98d1c488c2c2c6}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae2dd7c57e1d7879e97365198cef38d00}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+readonly \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_adc8b1b2ba6472f0717e82b7e5a8e515c}{Context}}
+\item 
+readonly Db\+Set$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae3fb5bc7bee4adadbb460445e6484492}{Db\+Set}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00008}{8}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a71c2ca7751cc76b64a2e55b5b96c9946}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!GenericRepository@{GenericRepository}}
+\index{GenericRepository@{GenericRepository}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GenericRepository()}{GenericRepository()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a71c2ca7751cc76b64a2e55b5b96c9946} 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Generic\+Repository}} (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00013}{13}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Context\ =\ context;}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ DbSet\ =\ context.Set<T>();}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a77551df534140f8777cc239917fda41c}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!AddAsync@{AddAsync}}
+\index{AddAsync@{AddAsync}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AddAsync()}{AddAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a77551df534140f8777cc239917fda41c} 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Add\+Async (\begin{DoxyParamCaption}\item[{T}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new entity to the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The added entity (potentially with generated values like ID)
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00035}{35}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ res\ =\ await\ DbSet.AddAsync(entity);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res.Entity;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a3b3196a04bd8b3d4a1af80b15b096875}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!AddRangeAsync@{AddRangeAsync}}
+\index{AddRangeAsync@{AddRangeAsync}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{AddRangeAsync()}{AddRangeAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a3b3196a04bd8b3d4a1af80b15b096875} 
+async Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Add\+Range\+Async (\begin{DoxyParamCaption}\item[{IEnumerable$<$ T $>$}]{entities}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a collection of entities to the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entities} & The collection of entities to add\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task representing the asynchronous operation, containing the added entities
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00041}{41}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ await\ DbSet.AddRangeAsync(entities);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ entities.ToList();}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae2dd7c57e1d7879e97365198cef38d00}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae2dd7c57e1d7879e97365198cef38d00} 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Delete\+Async (\begin{DoxyParamCaption}\item[{T}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes an entity from the repository. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity to remove\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00054}{54}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ DbSet.Remove(entity);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ await\ Task.CompletedTask;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a20824a98095d1c767d192d6a9f30e9f0}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a20824a98095d1c767d192d6a9f30e9f0} 
+async Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Get\+All\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves all entities in the repository. 
+
+\begin{DoxyReturn}{Returns}
+An enumerable of all entities in the repository
+\end{DoxyReturn}
+
+
+Should be used with caution on large datasets 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00024}{24}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ DbSet.ToListAsync();}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a91793d9177850823b1da1bbe3221b69e}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!GetByIdAsync$<$ TId $>$@{GetByIdAsync$<$ TId $>$}}
+\index{GetByIdAsync$<$ TId $>$@{GetByIdAsync$<$ TId $>$}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync$<$ TId $>$()}{GetByIdAsync< TId >()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a91793d9177850823b1da1bbe3221b69e} 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Get\+By\+Id\+Async$<$ TId $>$ (\begin{DoxyParamCaption}\item[{TId}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves an entity by its identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of the entity to retrieve\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The entity if found; null otherwise
+\end{DoxyReturn}
+
+
+Consider whether int is always the appropriate type for your ID You might want to make this generic as well\+: TId 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00029}{29}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ var\ res\ =\ await\ DbSet.FindAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a541d835ef0d5ec5376139b5ad912be93}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!GetQueryable@{GetQueryable}}
+\index{GetQueryable@{GetQueryable}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetQueryable()}{GetQueryable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a541d835ef0d5ec5376139b5ad912be93} 
+IQueryable$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Get\+Queryable (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a queryable instance of the entity set. 
+
+\begin{DoxyReturn}{Returns}
+An IQueryable of type T that can be further filtered, ordered, or projected
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00019}{19}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ DbSet.AsQueryable();}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_af29a2d0f6802fbb81a98d1c488c2c2c6}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_af29a2d0f6802fbb81a98d1c488c2c2c6} 
+Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Update\+Async (\begin{DoxyParamCaption}\item[{T}]{old\+Entity}{, }\item[{T}]{new\+Entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Replaces an existing entity with a new version. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Entity} & The existing entity to be replaced\\
+\hline
+{\em new\+Entity} & The new entity data to replace with\\
+\hline
+\end{DoxyParams}
+
+
+This is a full replacement operation. Consider whether partial updates might be more appropriate for your use case 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ T $>$}}.
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00047}{47}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00048\ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Context.Entry(oldEntity).State\ =\ EntityState.Modified;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ Context.Entry(oldEntity).CurrentValues.SetValues(newEntity);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Task.CompletedTask;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_adc8b1b2ba6472f0717e82b7e5a8e515c}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!Context@{Context}}
+\index{Context@{Context}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Context}{Context}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_adc8b1b2ba6472f0717e82b7e5a8e515c} 
+readonly \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Context\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00010}{10}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae3fb5bc7bee4adadbb460445e6484492}\index{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}!DbSet@{DbSet}}
+\index{DbSet@{DbSet}!BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$@{BistroQ.Infrastructure.Repositories.GenericRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{DbSet}{DbSet}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae3fb5bc7bee4adadbb460445e6484492} 
+readonly Db\+Set$<$T$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository}}$<$ T $>$.Db\+Set\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{GenericRepository_8cs_source_l00011}{11}} of file \mbox{\hyperlink{GenericRepository_8cs_source}{Generic\+Repository.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Infrastructure/\+Repositories/Generic\+Repository.\+cs\end{DoxyCompactItemize}

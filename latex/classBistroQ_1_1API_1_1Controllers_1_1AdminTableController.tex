@@ -1,0 +1,172 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_acfc21ce14e19230e914b95e25b6cdab1}{Admin\+Table\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}} table\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a879994ed50ad9337f5891a7edf1ac1e1}{Get\+Tables}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ab5be083ffd491daba8767d3b81d76c97}{Get\+Table}} (\mbox{[}From\+Route\mbox{]} int table\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ade5b468e163286810e803820faf121f5}{Add\+Table}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} request)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a317269a77a399a45a64c4fd00c58bf0a}{Update\+Table}} (\mbox{[}From\+Route\mbox{]} int table\+Id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{Update\+Table\+Request\+Dto}} table\+Dto)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_abbe006a26d5403ca1e6ad49861d1cdb9}{Delete\+Table}} (\mbox{[}From\+Route\mbox{]} int table\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_acfc21ce14e19230e914b95e25b6cdab1}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!AdminTableController@{AdminTableController}}
+\index{AdminTableController@{AdminTableController}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{AdminTableController()}{AdminTableController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_acfc21ce14e19230e914b95e25b6cdab1} 
+Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Admin\+Table\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}}}]{table\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ade5b468e163286810e803820faf121f5}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!AddTable@{AddTable}}
+\index{AddTable@{AddTable}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{AddTable()}{AddTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ade5b468e163286810e803820faf121f5} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Add\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00039}{39}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.SeatsCount\ <=\ 0)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Seats\ count\ must\ be\ greater\ than\ 0"{}});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_a28b38748a5eb5b26fa9b898154ab5169}{AddAsync}}(request);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDto>(table));}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_abbe006a26d5403ca1e6ad49861d1cdb9}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!DeleteTable@{DeleteTable}}
+\index{DeleteTable@{DeleteTable}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{DeleteTable()}{DeleteTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_abbe006a26d5403ca1e6ad49861d1cdb9} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Delete\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00065}{65}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ab113939d8e17de15a90bd2eddf228bb1}{DeleteAsync}}(tableId);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Table\ deleted\ successfully"{}}));}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ab5be083ffd491daba8767d3b81d76c97}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!GetTable@{GetTable}}
+\index{GetTable@{GetTable}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{GetTable()}{GetTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_ab5be083ffd491daba8767d3b81d76c97} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Get\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00032}{32}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{GetByIdAsync}}(tableId);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a879994ed50ad9337f5891a7edf1ac1e1}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!GetTables@{GetTables}}
+\index{GetTables@{GetTables}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{GetTables()}{GetTables()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a879994ed50ad9337f5891a7edf1ac1e1} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Get\+Tables (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00024}{24}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<TableDetailDto>>(tables,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a317269a77a399a45a64c4fd00c58bf0a}\index{BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}!UpdateTable@{UpdateTable}}
+\index{UpdateTable@{UpdateTable}!BistroQ.API.Controllers.AdminTableController@{BistroQ.API.Controllers.AdminTableController}}
+\doxysubsubsection{\texorpdfstring{UpdateTable()}{UpdateTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController_a317269a77a399a45a64c4fd00c58bf0a} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Table\+Controller.\+Update\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{Update\+Table\+Request\+Dto}}}]{table\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableController_8cs_source_l00052}{52}} of file \mbox{\hyperlink{AdminTableController_8cs_source}{Admin\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tableDto.SeatsCount\ <\ 0)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Number\ of\ seats\ must\ be\ greater\ than\ 0"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ var\ updatedTable\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_addc686c156959005f8d9142f1220e029}{UpdateAsync}}(tableId,\ tableDto);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDto>(updatedTable));}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Table/Admin\+Table\+Controller.\+cs\end{DoxyCompactItemize}

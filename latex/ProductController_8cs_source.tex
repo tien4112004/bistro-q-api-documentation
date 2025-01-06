@@ -1,0 +1,60 @@
+\doxysection{Product\+Controller.\+cs}
+\hypertarget{ProductController_8cs_source}{}\label{ProductController_8cs_source}\index{BistroQ.API/Controllers/Product/ProductController.cs@{BistroQ.API/Controllers/Product/ProductController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Products}{BistroQ.Core.Dtos.Products}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Product}{BistroQ.API.Controllers.Product}};}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00012}00012\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/[controller]"{}})]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00014}00014\ [Authorize]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00015}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{ProductController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{IProductService}}\ \_productService;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{ProductController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{IProductService}}\ productService,\ UserManager<AppUser>\ userManager)}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \_productService\ =\ productService;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00026}00026\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetProducts([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{ProductCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00028}00028\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ (products,\ count)\ =\ await\ \_productService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_abd4a8c8b3e0889c93418d6dc7184684c}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ProductResponseDto>>(products,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00032}00032\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00033}00033\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00034}00034\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{productId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetProduct([FromRoute]\ \textcolor{keywordtype}{int}\ productId)}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ product\ =\ await\ \_productService.GetByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ProductResponseDto>(product));}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00041}00041\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00042}00042\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}Recommendations"{}})]}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetRecommendations()}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.GetUserAsync(User);}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user?.TableId\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ var\ tableId\ =\ user.TableId.Value;}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ \_productService.GetRecommendedProductsAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<ProductResponseDto>>(products));}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductController_8cs_source_l00054}00054\ \}}
+
+\end{DoxyCode}

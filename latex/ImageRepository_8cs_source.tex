@@ -1,0 +1,29 @@
+\doxysection{Image\+Repository.\+cs}
+\hypertarget{ImageRepository_8cs_source}{}\label{ImageRepository_8cs_source}\index{BistroQ.Infrastructure/Repositories/ImageRepository.cs@{BistroQ.Infrastructure/Repositories/ImageRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Repositories}{BistroQ.Infrastructure.Repositories}};}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00008}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ImageRepository}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ImageRepository}{ImageRepository}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{GenericRepository}}<Image>,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImageRepository}}}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ImageRepository}{ImageRepository}}(\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ context)\ :\ base(context)}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Image?>\ GetByProductIdAsync(\textcolor{keywordtype}{int}\ productId)}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ var\ image\ =\ await\ Context.Products}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(p\ =>\ p.Image)}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefaultAsync(i\ =>\ i.ProductId\ ==\ productId)}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ .ContinueWith(t\ =>\ t.Result?.Image);}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ image;}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ImageRepository_8cs_source_l00023}00023\ \}}
+
+\end{DoxyCode}

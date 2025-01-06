@@ -1,0 +1,386 @@
+\doxysection{Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test Class Reference}
+\hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest}{}\label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0175d25d200fe62e37b42c055963f7ce}{Setup}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a6f470e4e929a2fb6e221b850f70cca9b}{Get\+Zones\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a7e1f112495c0f877a5779f653532d58e}{Get\+Zones\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0c59d5276b15fc1975d60886606cb3c8}{Get\+Zone\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aab85445baa515b27b7f7c3f7c6742b55}{Get\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aaa314d25b5bf257bfc54b24137449236}{Add\+Zone\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a692dd41f2b4fa8990651762038775ef0}{Add\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Creation\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa114237cae330f7b3f7408d15860c1f9}{Add\+Tables\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a81e06e72cf9457c7ac132bab7b22d365}{Add\+Tables\+\_\+\+Throws\+Exception\+\_\+\+When\+Add\+Tables\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa6837bea1ef18858ef45911c66d2270e}{Update\+Zone\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a921ef409e61c12f02fa06a9656005393}{Update\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Update\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_acffe3b6a3531a4938590d689d0a67296}{Delete\+Zone\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a5d19209611caabe0a99d2a0797631b08}{Delete\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Deletion\+Fails}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00012}{12}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa114237cae330f7b3f7408d15860c1f9}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!AddTables\_Success@{AddTables\_Success}}
+\index{AddTables\_Success@{AddTables\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{AddTables\_Success()}{AddTables\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa114237cae330f7b3f7408d15860c1f9} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Add\+Tables\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00122}{122}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ var\ requests\ =\ \textcolor{keyword}{new}\ List<CreateTableRequestDto>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \}\ \};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ var\ zone\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDetailDto}{ZoneDetailDto}}\ \{\ ZoneId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}Zone1"{}}\ \};}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.AddTablesToZoneAsync(1,\ requests)).ReturnsAsync(zone);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.AddTables(1,\ requests)\ as\ OkObjectResult;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<ZoneDetailDto>;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.ZoneId);}
+\DoxyCodeLine{00137\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a81e06e72cf9457c7ac132bab7b22d365}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!AddTables\_ThrowsException\_WhenAddTablesFails@{AddTables\_ThrowsException\_WhenAddTablesFails}}
+\index{AddTables\_ThrowsException\_WhenAddTablesFails@{AddTables\_ThrowsException\_WhenAddTablesFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{AddTables\_ThrowsException\_WhenAddTablesFails()}{AddTables\_ThrowsException\_WhenAddTablesFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a81e06e72cf9457c7ac132bab7b22d365} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Add\+Tables\+\_\+\+Throws\+Exception\+\_\+\+When\+Add\+Tables\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00140}{140}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ var\ requests\ =\ \textcolor{keyword}{new}\ List<CreateTableRequestDto>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \}\ \};}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.AddTablesToZoneAsync(1,\ requests)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ add\ tables"{}}));}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.AddTables(1,\ requests);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aaa314d25b5bf257bfc54b24137449236}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!AddZone\_Success@{AddZone\_Success}}
+\index{AddZone\_Success@{AddZone\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{AddZone\_Success()}{AddZone\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aaa314d25b5bf257bfc54b24137449236} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Add\+Zone\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00090}{90}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{CreateZoneRequestDto}}\ \{\ Name\ =\ \textcolor{stringliteral}{"{}NewZone"{}}\ \};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ var\ zone\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}\ \{\ ZoneId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}NewZone"{}}\ \};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.AddAsync(request)).ReturnsAsync(zone);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.AddZone(request)\ as\ OkObjectResult;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<ZoneDto>;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.ZoneId);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a692dd41f2b4fa8990651762038775ef0}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!AddZone\_ThrowsException\_WhenCreationFails@{AddZone\_ThrowsException\_WhenCreationFails}}
+\index{AddZone\_ThrowsException\_WhenCreationFails@{AddZone\_ThrowsException\_WhenCreationFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{AddZone\_ThrowsException\_WhenCreationFails()}{AddZone\_ThrowsException\_WhenCreationFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a692dd41f2b4fa8990651762038775ef0} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Add\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Creation\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00108}{108}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{CreateZoneRequestDto}}\ \{\ Name\ =\ \textcolor{stringliteral}{"{}NewZone"{}}\ \};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.AddAsync(request)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ zone"{}}));}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.AddZone(request);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_acffe3b6a3531a4938590d689d0a67296}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!DeleteZone\_Success@{DeleteZone\_Success}}
+\index{DeleteZone\_Success@{DeleteZone\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{DeleteZone\_Success()}{DeleteZone\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_acffe3b6a3531a4938590d689d0a67296} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Delete\+Zone\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00186}{186}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187\ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.DeleteAsync(1)).Returns(Task.CompletedTask);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.DeleteZone(1)\ as\ OkObjectResult;}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<string>;}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}Zone\ deleted\ successfully"{}},\ response.Data);}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a5d19209611caabe0a99d2a0797631b08}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!DeleteZone\_ThrowsException\_WhenDeletionFails@{DeleteZone\_ThrowsException\_WhenDeletionFails}}
+\index{DeleteZone\_ThrowsException\_WhenDeletionFails@{DeleteZone\_ThrowsException\_WhenDeletionFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{DeleteZone\_ThrowsException\_WhenDeletionFails()}{DeleteZone\_ThrowsException\_WhenDeletionFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a5d19209611caabe0a99d2a0797631b08} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Delete\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Deletion\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00202}{202}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.DeleteAsync(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ delete\ zone"{}}));}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.DeleteZone(1);}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00212\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0c59d5276b15fc1975d60886606cb3c8}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!GetZone\_Success@{GetZone\_Success}}
+\index{GetZone\_Success@{GetZone\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{GetZone\_Success()}{GetZone\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0c59d5276b15fc1975d60886606cb3c8} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Get\+Zone\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00060}{60}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ var\ zone\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}\ \{\ ZoneId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}Zone1"{}}\ \};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.GetByIdAsync(1)).ReturnsAsync(zone);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.GetZone(1)\ as\ OkObjectResult;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<ZoneDto>;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.ZoneId);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aab85445baa515b27b7f7c3f7c6742b55}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!GetZone\_ThrowsException\_WhenRetrievalFails@{GetZone\_ThrowsException\_WhenRetrievalFails}}
+\index{GetZone\_ThrowsException\_WhenRetrievalFails@{GetZone\_ThrowsException\_WhenRetrievalFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{GetZone\_ThrowsException\_WhenRetrievalFails()}{GetZone\_ThrowsException\_WhenRetrievalFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aab85445baa515b27b7f7c3f7c6742b55} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Get\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00077}{77}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00078\ \ \ \ \ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.GetByIdAsync(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ get\ zone"{}}));}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.GetZone(1);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a6f470e4e929a2fb6e221b850f70cca9b}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!GetZones\_Success@{GetZones\_Success}}
+\index{GetZones\_Success@{GetZones\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{GetZones\_Success()}{GetZones\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a6f470e4e929a2fb6e221b850f70cca9b} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Get\+Zones\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00025}{25}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ zones\ =\ \textcolor{keyword}{new}\ List<ZoneDto>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}\ \{\ ZoneId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}Zone1"{}}\ \}\ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ queryParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ \{\ Page\ =\ 1,\ Size\ =\ 10\ \};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.GetAllAsync(queryParams)).ReturnsAsync((zones,\ zones.Count));}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.GetZones(queryParams)\ as\ OkObjectResult;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto<IEnumerable<ZoneDto>}}>;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{keyword}{true},\ response.Success);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ var\ data\ =\ response.Data\ as\ IEnumerable<ZoneDto>;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ data.Count());}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().ZoneId);}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a7e1f112495c0f877a5779f653532d58e}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!GetZones\_ThrowsException\_WhenRetrievalFails@{GetZones\_ThrowsException\_WhenRetrievalFails}}
+\index{GetZones\_ThrowsException\_WhenRetrievalFails@{GetZones\_ThrowsException\_WhenRetrievalFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{GetZones\_ThrowsException\_WhenRetrievalFails()}{GetZones\_ThrowsException\_WhenRetrievalFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a7e1f112495c0f877a5779f653532d58e} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Get\+Zones\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00046}{46}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ queryParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ \{\ Page\ =\ 1,\ Size\ =\ 10\ \};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.GetAllAsync(queryParams)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ get\ zones"{}}));}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.GetZones(queryParams);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0175d25d200fe62e37b42c055963f7ce}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!Setup@{Setup}}
+\index{Setup@{Setup}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a0175d25d200fe62e37b42c055963f7ce} 
+void Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00018}{18}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_mockZoneService\ =\ \textcolor{keyword}{new}\ Mock<IZoneService>();}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_adminZoneController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}{AdminZoneController}}(\_mockZoneService.Object);}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa6837bea1ef18858ef45911c66d2270e}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!UpdateZone\_Success@{UpdateZone\_Success}}
+\index{UpdateZone\_Success@{UpdateZone\_Success}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{UpdateZone\_Success()}{UpdateZone\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_aa6837bea1ef18858ef45911c66d2270e} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Update\+Zone\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00154}{154}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00155\ \ \ \ \ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{UpdateZoneRequestDto}}\ \{\ Name\ =\ \textcolor{stringliteral}{"{}UpdatedZone"{}}\ \};}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ var\ zone\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}\ \{\ ZoneId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}UpdatedZone"{}}\ \};}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.UpdateAsync(1,\ request)).ReturnsAsync(zone);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminZoneController.UpdateZone(1,\ request)\ as\ OkObjectResult;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<ZoneDto>;}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.ZoneId);}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a921ef409e61c12f02fa06a9656005393}\index{BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}!UpdateZone\_ThrowsException\_WhenUpdateFails@{UpdateZone\_ThrowsException\_WhenUpdateFails}}
+\index{UpdateZone\_ThrowsException\_WhenUpdateFails@{UpdateZone\_ThrowsException\_WhenUpdateFails}!BistroQ.Tests.Controllers.AdminZoneControllerTest@{BistroQ.Tests.Controllers.AdminZoneControllerTest}}
+\doxysubsubsection{\texorpdfstring{UpdateZone\_ThrowsException\_WhenUpdateFails()}{UpdateZone\_ThrowsException\_WhenUpdateFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminZoneControllerTest_a921ef409e61c12f02fa06a9656005393} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Zone\+Controller\+Test.\+Update\+Zone\+\_\+\+Throws\+Exception\+\_\+\+When\+Update\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneControllerTest_8cs_source_l00172}{172}} of file \mbox{\hyperlink{AdminZoneControllerTest_8cs_source}{Admin\+Zone\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{UpdateZoneRequestDto}}\ \{\ Name\ =\ \textcolor{stringliteral}{"{}UpdatedZone"{}}\ \};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \_mockZoneService.Setup(x\ =>\ x.UpdateAsync(1,\ request)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ update\ zone"{}}));}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminZoneController.UpdateZone(1,\ request);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Tests/Admin\+Zone\+Controller\+Test.\+cs\end{DoxyCompactItemize}

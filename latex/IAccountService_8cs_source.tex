@@ -1,0 +1,23 @@
+\doxysection{IAccount\+Service.\+cs}
+\hypertarget{IAccountService_8cs_source}{}\label{IAccountService_8cs_source}\index{BistroQ.Core/Interfaces/Services/IAccountService.cs@{BistroQ.Core/Interfaces/Services/IAccountService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Auth}{BistroQ.Core.Dtos.Auth}};}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00004}\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00008}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccountService}}}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00017}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{00017}}\ \ \ \ \ Task<(IEnumerable<AccountDto>\ Accounts,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{GetAllAsync}}(}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{AccountCollectionQueryParams}}\ query);}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00027}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}{00027}}\ \ \ \ \ Task<AccountDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}{GetByIdAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00039}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}{00039}}\ \ \ \ \ Task<AccountDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}{CreateAccountAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{CreateAccountDto}}\ request);}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00040}00040\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00052}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}{00052}}\ \ \ \ \ Task<AccountDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}{UpdateAccountAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{UpdateAccountDto}}\ request);}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00053}00053\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00061}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}{00061}}\ \ \ \ \ Task<bool>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}{DeleteAccountAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IAccountService_8cs_source_l00062}00062\ \}}
+
+\end{DoxyCode}

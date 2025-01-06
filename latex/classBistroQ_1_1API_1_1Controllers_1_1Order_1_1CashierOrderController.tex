@@ -1,0 +1,122 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController}\index{BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a11a87695f3549fa47f1926ca1db60812}{Cashier\+Order\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}} order\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a0136db670bfa286e3f08915178c31bcb}{Get\+Orders}} ()
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a79e4d5ff9e9ab48c5873420354de3c97}{Get\+Order}} (\mbox{[}From\+Route\mbox{]} int table\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a817fadb4fbfb794da8977c99d8eb3351}{Update\+Status}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderStatusRequestDto}{Update\+Order\+Status\+Request\+Dto}} update\+Order\+Status\+Dto)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CashierOrderController_8cs_source_l00015}{15}} of file \mbox{\hyperlink{CashierOrderController_8cs_source}{Cashier\+Order\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a11a87695f3549fa47f1926ca1db60812}\index{BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}!CashierOrderController@{CashierOrderController}}
+\index{CashierOrderController@{CashierOrderController}!BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}}
+\doxysubsubsection{\texorpdfstring{CashierOrderController()}{CashierOrderController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a11a87695f3549fa47f1926ca1db60812} 
+Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller.\+Cashier\+Order\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}}}]{order\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierOrderController_8cs_source_l00019}{19}} of file \mbox{\hyperlink{CashierOrderController_8cs_source}{Cashier\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a79e4d5ff9e9ab48c5873420354de3c97}\index{BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}!GetOrder@{GetOrder}}
+\index{GetOrder@{GetOrder}!BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}}
+\doxysubsubsection{\texorpdfstring{GetOrder()}{GetOrder()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a79e4d5ff9e9ab48c5873420354de3c97} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller.\+Get\+Order (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierOrderController_8cs_source_l00033}{33}} of file \mbox{\hyperlink{CashierOrderController_8cs_source}{Cashier\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{GetOrderByTableId}}(tableId);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<DetailOrderDto>(order));}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a0136db670bfa286e3f08915178c31bcb}\index{BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}!GetOrders@{GetOrders}}
+\index{GetOrders@{GetOrders}!BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}}
+\doxysubsubsection{\texorpdfstring{GetOrders()}{GetOrders()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a0136db670bfa286e3f08915178c31bcb} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller.\+Get\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierOrderController_8cs_source_l00025}{25}} of file \mbox{\hyperlink{CashierOrderController_8cs_source}{Cashier\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ var\ orders\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{GetAllCurrentOrders}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderWithTableDto>>(orders));}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a817fadb4fbfb794da8977c99d8eb3351}\index{BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}!UpdateStatus@{UpdateStatus}}
+\index{UpdateStatus@{UpdateStatus}!BistroQ.API.Controllers.Order.CashierOrderController@{BistroQ.API.Controllers.Order.CashierOrderController}}
+\doxysubsubsection{\texorpdfstring{UpdateStatus()}{UpdateStatus()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController_a817fadb4fbfb794da8977c99d8eb3351} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Order.\+Cashier\+Order\+Controller.\+Update\+Status (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderStatusRequestDto}{Update\+Order\+Status\+Request\+Dto}}}]{update\+Order\+Status\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierOrderController_8cs_source_l00041}{41}} of file \mbox{\hyperlink{CashierOrderController_8cs_source}{Cashier\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{UpdateStatus}}(updateOrderStatusDto.TableId,\ updateOrderStatusDto.Status);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<OrderDto>(order));}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Order/Cashier\+Order\+Controller.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,31 @@
+\doxysection{IOrder\+Service.\+cs}
+\hypertarget{IOrderService_8cs_source}{}\label{IOrderService_8cs_source}\index{BistroQ.Core/Interfaces/Services/IOrderService.cs@{BistroQ.Core/Interfaces/Services/IOrderService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00012}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00022}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23}{00022}}\ \ \ \ \ Task<OrderDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23}{CreateOrder}}(\textcolor{keywordtype}{int}\ tableId,\ \textcolor{keywordtype}{int}\ peopleCount);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00033}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{00033}}\ \ \ \ \ Task<DetailOrderDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{GetOrderByTableId}}(\textcolor{keywordtype}{int}\ tableId);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00043}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4}{00043}}\ \ \ \ \ Task\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4}{DeleteOrder}}(\textcolor{keywordtype}{int}\ tableId);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00044}00044\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00053}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{00053}}\ \ \ \ \ Task<IEnumerable<OrderWithTableDto>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{GetAllCurrentOrders}}();}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00065}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1}{00065}}\ \ \ \ \ Task<IEnumerable<OrderItemDto>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1}{AddProductsToOrder}}(\textcolor{keywordtype}{int}\ tableId,\ [FromBody]\ IEnumerable<CreateOrderItemRequestDto>\ orderItems);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00066}00066\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00074}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59}{00074}}\ \ \ \ \ Task<IEnumerable<OrderItemDto>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59}{CancelOrderItems}}(\textcolor{keywordtype}{int}\ tableId,\ [FromBody]\ IEnumerable<RemoveOrderItemRequestDto>\ orderItems);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00075}00075\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00082}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0}{00082}}\ \ \ \ \ Task<OrderDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0}{UpdatePeopleCount}}(\textcolor{keywordtype}{int}\ tableId,\ \textcolor{keywordtype}{int}\ peopleCount);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00090}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{00090}}\ \ \ \ \ Task<OrderDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{UpdateStatus}}(\textcolor{keywordtype}{int}\ tableId,\ OrderStatus\ status);}
+\DoxyCodeLine{\Hypertarget{IOrderService_8cs_source_l00091}00091\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,203 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+
+
+Service for managing product operations with DTO transformations and business logic handling.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a4a8d2cc4ba8bcf689ab2720ebb26bddf}{Get\+By\+Id\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a product by its identifier. \end{DoxyCompactList}\item 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ Products, int Count)$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_abd4a8c8b3e0889c93418d6dc7184684c}{Get\+All\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{Product\+Collection\+Query\+Params}} query\+Params)
+\begin{DoxyCompactList}\small\item\em Retrieves a filtered, sorted, and paginated collection of products. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a1e4736cec6ee3187e50788ed56916edf}{Add\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1CreateProductRequestDto}{Create\+Product\+Request\+Dto}} product\+Dto, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Image_1_1ImageRequestDto}{Image\+Request\+Dto}}? image)
+\begin{DoxyCompactList}\small\item\em Creates a new product. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductDto}{Product\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a9b2df1d6a6dfdd78dc8c9213f3035ad8}{Update\+Async}} (int id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1UpdateProductRequestDto}{Update\+Product\+Request\+Dto}} product\+Dto)
+\begin{DoxyCompactList}\small\item\em Updates an existing product. \end{DoxyCompactList}\item 
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_adfc85529df799e64ae3857f8e887d441}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_adfc85529df799e64ae3857f8e887d441} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ {\bfseries Update\+Image\+Async} (int id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Image_1_1ImageRequestDto}{Image\+Request\+Dto}} image)
+\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_af8b1ce1d5827db0b960fffcf1dad5d03}{Delete\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Removes a product. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a67a12f683b74cc05da7ac7b6485a1d7c}{Get\+Recommended\+Products\+Async}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a list of recommended products based on the specified order ID and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service for managing product operations with DTO transformations and business logic handling. 
+
+Definition at line \mbox{\hyperlink{IProductService_8cs_source_l00012}{12}} of file \mbox{\hyperlink{IProductService_8cs_source}{IProduct\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a1e4736cec6ee3187e50788ed56916edf}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!AddAsync@{AddAsync}}
+\index{AddAsync@{AddAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{AddAsync()}{AddAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a1e4736cec6ee3187e50788ed56916edf} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Add\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1CreateProductRequestDto}{Create\+Product\+Request\+Dto}}}]{product\+Dto}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Image_1_1ImageRequestDto}{Image\+Request\+Dto}}?}]{image}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Dto} & The product creation data\\
+\hline
+{\em image} & The image file of the product\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created product DTO
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a9accf3b094090ae6120d069a6a0fc094}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_af8b1ce1d5827db0b960fffcf1dad5d03}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_af8b1ce1d5827db0b960fffcf1dad5d03} 
+Task Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Removes a product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of the product to delete\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When product with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a2113a3ae0bf8add0bc35402ae4d3a15c}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_abd4a8c8b3e0889c93418d6dc7184684c}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_abd4a8c8b3e0889c93418d6dc7184684c} 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ Products, int Count)$>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{Product\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a filtered, sorted, and paginated collection of products. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Params} & Parameters for filtering, sorting, and pagination\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the collection of products and total count
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aabef45841d96e13aaaf36c619f16650e}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a4a8d2cc4ba8bcf689ab2720ebb26bddf}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a4a8d2cc4ba8bcf689ab2720ebb26bddf} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a product by its identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The product identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The product DTO if found
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When product with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aa2019e1af63a66e5583d4b014ecff313}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a67a12f683b74cc05da7ac7b6485a1d7c}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!GetRecommendedProductsAsync@{GetRecommendedProductsAsync}}
+\index{GetRecommendedProductsAsync@{GetRecommendedProductsAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{GetRecommendedProductsAsync()}{GetRecommendedProductsAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a67a12f683b74cc05da7ac7b6485a1d7c} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Get\+Recommended\+Products\+Async (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of recommended products based on the specified order ID and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table to base recommendations on.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains an enumerable collection of recommended product DTOs. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the order specified by the order ID is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a717642f9d41795d69ac3c1e5ce037582}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a9b2df1d6a6dfdd78dc8c9213f3035ad8}\index{BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!BistroQ.Core.Interfaces.Services.IProductService@{BistroQ.Core.Interfaces.Services.IProductService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a9b2df1d6a6dfdd78dc8c9213f3035ad8} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductDto}{Product\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IProduct\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1UpdateProductRequestDto}{Update\+Product\+Request\+Dto}}}]{product\+Dto}{}\end{DoxyParamCaption})}
+
+
+
+Updates an existing product. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of the product to update\\
+\hline
+{\em product\+Dto} & The updated product data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated product DTO
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When product with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a587338068d42f38e9ceee3b906e1c7ce}{Bistro\+Q.\+Services.\+Services.\+Product\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Services/IProduct\+Service.\+cs\end{DoxyCompactItemize}

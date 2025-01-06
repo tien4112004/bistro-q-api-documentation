@@ -1,0 +1,33 @@
+\doxysection{IZone\+Service.\+cs}
+\hypertarget{IZoneService_8cs_source}{}\label{IZoneService_8cs_source}\index{BistroQ.Core/Interfaces/Services/IZoneService.cs@{BistroQ.Core/Interfaces/Services/IZoneService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Zones}{BistroQ.Core.Dtos.Zones}};}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00011}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{00011}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00019}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a831136073674ffb47ad17ec409532866}{00019}}\ \ \ \ \ Task<ZoneDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a831136073674ffb47ad17ec409532866}{GetByIdAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00026}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ab0ec907f8bbdc5edd58b65c76add26f4}{00026}}\ \ \ \ \ Task<(IEnumerable<ZoneDto>\ Zones,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ab0ec907f8bbdc5edd58b65c76add26f4}{GetAllAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams);}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00027}00027\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00028}00028\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00034}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a7a00f39c4402c5430adb7c1499ca9a09}{00034}}\ \ \ \ \ Task<ZoneDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a7a00f39c4402c5430adb7c1499ca9a09}{AddAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{CreateZoneRequestDto}}\ zoneDto);}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00044}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a572f40117f374b1139b1e33181a081d1}{00044}}\ \ \ \ \ Task<ZoneDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a572f40117f374b1139b1e33181a081d1}{UpdateAsync}}(\textcolor{keywordtype}{int}\ zoneId,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{UpdateZoneRequestDto}}\ zoneDto);}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00051}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a43111c8cc460639414ea7122ef56a995}{00051}}\ \ \ \ \ Task\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a43111c8cc460639414ea7122ef56a995}{DeleteAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00059}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a0186d08b243cfabfcd02df56344081ec}{00059}}\ \ \ \ \ Task<ZoneDetailDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a0186d08b243cfabfcd02df56344081ec}{AddTablesToZoneAsync}}(\textcolor{keywordtype}{int}\ zoneId,\ List<CreateTableRequestDto>\ tableDtos);}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00071}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_aca2e011371fe1f133248c47f8d82bb74}{00071}}\ \ \ \ \ Task<ZoneCashierDto>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_aca2e011371fe1f133248c47f8d82bb74}{GetByCashierAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00080}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ac0caaffe6b3d2671b0b33f0e31c45abb}{00080}}\ \ \ \ \ Task<(IEnumerable<ZoneCashierDto>\ Zones,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ac0caaffe6b3d2671b0b33f0e31c45abb}{GetAllByCashierAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams);}
+\DoxyCodeLine{\Hypertarget{IZoneService_8cs_source_l00081}00081\ \}}
+
+\end{DoxyCode}

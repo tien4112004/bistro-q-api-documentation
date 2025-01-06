@@ -1,0 +1,34 @@
+\doxysection{Payment\+Settings.\+cs}
+\hypertarget{PaymentSettings_8cs_source}{}\label{PaymentSettings_8cs_source}\index{BistroQ.Core/Common/Settings/PaymentSettings.cs@{BistroQ.Core/Common/Settings/PaymentSettings.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00001}00001\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00003}\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{00003}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{PaymentSettings}}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00004}00004\ \{}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00005}00005\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ApiKey\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00006}00006\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ ClientId\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00008}00008\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ BaseUrl\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00010}00010\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ AcqId\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ AccountNumber\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00014}00014\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ AccountName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{PaymentSettings}}\ ReadFromEnvironment()}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ ApiKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_API\_KEY"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ ClientId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_CLIENT\_ID"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ BaseUrl\ =\ \textcolor{stringliteral}{"{}https://api.vietqr.io/v2"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ AcqId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACQ\_ID"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ AccountNumber\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACCOUNT\_NUMBER"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ AccountName\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACCOUNT\_NAME"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{PaymentSettings_8cs_source_l00028}00028\ \}}
+
+\end{DoxyCode}

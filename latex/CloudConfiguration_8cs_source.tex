@@ -1,0 +1,41 @@
+\doxysection{Cloud\+Configuration.\+cs}
+\hypertarget{CloudConfiguration_8cs_source}{}\label{CloudConfiguration_8cs_source}\index{BistroQ.API/Configurations/CloudConfiguration.cs@{BistroQ.API/Configurations/CloudConfiguration.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Amazon;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Amazon.CloudFront;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Amazon.Extensions.NETCore.Setup;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Amazon.Runtime;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Amazon.S3;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Configurations}{BistroQ.API.Configurations}};}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00013}00013\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }CloudConfiguration}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ IServiceCollection\ AddAwsS3Config(\textcolor{keyword}{this}\ IServiceCollection\ services)}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ var\ awsSettings\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{AwsSettings}}().ReadFromEnvironment();}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ var\ awsOptions\ =\ \textcolor{keyword}{new}\ AWSOptions}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ Credentials\ =\ \textcolor{keyword}{new}\ BasicAWSCredentials(}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ awsSettings.AccessKey,}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ awsSettings.SecretKey),}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ Region\ =\ RegionEndpoint.GetBySystemName(awsSettings.Region)}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ services.AddDefaultAWSOptions(awsOptions);}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ services.AddAWSService<IAmazonCloudFront>();}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ services.AddAWSService<IAmazonS3>();}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ services.AddSingleton(awsSettings);}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ services.AddScoped<\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloudStorageService}},\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}{AwsStorageService}}>();}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ services;}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00034}00034\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CloudConfiguration_8cs_source_l00035}00035\ \}}
+
+\end{DoxyCode}

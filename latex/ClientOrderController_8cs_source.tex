@@ -1,0 +1,105 @@
+\doxysection{Client\+Order\+Controller.\+cs}
+\hypertarget{ClientOrderController_8cs_source}{}\label{ClientOrderController_8cs_source}\index{BistroQ.API/Controllers/Order/ClientOrderController.cs@{BistroQ.API/Controllers/Order/ClientOrderController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Order}{BistroQ.API.Controllers.Order}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00013}00013\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00014}00014\ [Route(\textcolor{stringliteral}{"{}api/Client/Order"{}})]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00015}00015\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Client)]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00016}00016\ [Tags(\textcolor{stringliteral}{"{}Client\ Order"{}})]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00017}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController}{00017}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController}{ClientOrderController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ \_orderService;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController}{ClientOrderController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ orderService,\ UserManager<AppUser>\ userManager)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00028}00028\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ CreateOrder(\textcolor{keywordtype}{int}\ peopleCount)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00030}00030\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.CreateOrder(tableId,\ peopleCount);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<OrderDto>(order));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00037}00037\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetOrder()}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.GetOrderByTableId(tableId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<DetailOrderDto>(order));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00046}00046\ \ \ \ \ [HttpDelete]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00047}00047\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ DeleteOrder()}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00048}00048\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ await\ \_orderService.DeleteOrder(tableId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Order\ deleted"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00055}00055\ \ \ \ \ [HttpPatch(\textcolor{stringliteral}{"{}PeopleCount"{}})]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00056}00056\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdatePeopleCount([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderPeopleCountDto}{UpdateOrderPeopleCountDto}}\ request)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00057}00057\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.PeopleCount\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentOutOfRangeException(nameof(request.PeopleCount));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.UpdatePeopleCount(tableId,\ request.PeopleCount);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<OrderDto>(order));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00069}00069\ \ \ \ \ [HttpPost(\textcolor{stringliteral}{"{}Items"{}})]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00070}00070\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ AddProductsToOrder([FromBody]\ IEnumerable<CreateOrderItemRequestDto>\ orderItems)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ var\ addedItems\ =\ await\ \_orderService.AddProductsToOrder(tableId,\ orderItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderItemDto>>(addedItems));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00079}00079\ \ \ \ \ [HttpDelete]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00080}00080\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}Items"{}})]}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00081}00081\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ RemoveProductsFromOrder([FromBody]\ IEnumerable<RemoveOrderItemRequestDto>\ orderItems)}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00082}00082\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ var\ tableId\ =\ await\ GetTableId();}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ var\ cancelledItems\ =\ await\ \_orderService.CancelOrderItems(tableId,\ orderItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderItemDto>>(cancelledItems));}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00089}00089\ \ \ \ \ \textcolor{keyword}{private}\ async\ Task<int>\ GetTableId()}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.GetUserAsync(User);}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user?.TableId\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ user.TableId.Value;}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00098}00098\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderController_8cs_source_l00099}00099\ \}}
+
+\end{DoxyCode}

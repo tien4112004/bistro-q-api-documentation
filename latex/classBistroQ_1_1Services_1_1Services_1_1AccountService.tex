@@ -1,0 +1,469 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Account\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService}{}\label{classBistroQ_1_1Services_1_1Services_1_1AccountService}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Account\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1AccountService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Account\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1AccountService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_aa3af1de810bb206afd2c41967fe285b6}{Account\+Service}} (User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work, \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context, IMapper mapper)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201}{Get\+By\+Id\+Async}} (string id)
+\begin{DoxyCompactList}\small\item\em Retrieves the details of a user account by its unique identifier. \end{DoxyCompactList}\item 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Accounts, int Count)$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c}{Get\+All\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}} query)
+\begin{DoxyCompactList}\small\item\em Retrieves a collection of user accounts based on the specified query parameters. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f}{Create\+Account\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}} request)
+\begin{DoxyCompactList}\small\item\em Creates a new user account with specified credentials and role. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0}{Update\+Account\+Async}} (string id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}} request)
+\begin{DoxyCompactList}\small\item\em Updates an existing user account\textquotesingle{}s information. \end{DoxyCompactList}\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f}{Delete\+Account\+Async}} (string id)
+\begin{DoxyCompactList}\small\item\em Deletes a user account from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00015}{15}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_aa3af1de810bb206afd2c41967fe285b6}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!AccountService@{AccountService}}
+\index{AccountService@{AccountService}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{AccountService()}{AccountService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_aa3af1de810bb206afd2c41967fe285b6} 
+Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Account\+Service (\begin{DoxyParamCaption}\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}}}]{context}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00022}{22}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \_context\ =\ context;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!CreateAccountAsync@{CreateAccountAsync}}
+\index{CreateAccountAsync@{CreateAccountAsync}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{CreateAccountAsync()}{CreateAccountAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Create\+Account\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new user account with specified credentials and role. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The account creation data containing username, password, and role.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+The default role is set to Client if not specified in the request. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00116}{116}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ request.Username,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.CreateAsync(user,\ request.Password);}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ user"{}});}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ var\ roleResult\ =\ await\ \_userManager.AddToRoleAsync(user,\ request.Role);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!roleResult.Succeeded)}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ assign\ role\ to\ user"{}});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ var\ createdUser\ =\ await\ \_userManager.FindByNameAsync(user.UserName);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (createdUser\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.TableId.HasValue)}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_context.Tables.FindAsync(request.TableId);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdUser.TableId\ =\ table.TableId;}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_userManager.UpdateAsync(createdUser);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ createdUser.Id,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ createdUser.UserName,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ request.Role}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!DeleteAccountAsync@{DeleteAccountAsync}}
+\index{DeleteAccountAsync@{DeleteAccountAsync}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{DeleteAccountAsync()}{DeleteAccountAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f} 
+async Task$<$ bool $>$ Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Delete\+Account\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes a user account from the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the account was successfully deleted; false if the account doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00252}{252}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00253\ \ \ \ \ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.DeleteAsync(user);}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ delete\ user"{}});}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c} 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Accounts, int Count)$>$ Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}}}]{query}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a collection of user accounts based on the specified query parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The query parameters for filtering and sorting the accounts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing an enumerable collection of account response DTOs and the total count of accounts. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00049}{49}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ var\ usersWithRoles\ =\ \_context.Users}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ .Include(u\ =>\ u.Table)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ .ThenInclude(t\ =>\ t.Zone)}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ .Select(u\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ User\ =\ u,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ \_context.UserRoles}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Where(ur\ =>\ ur.UserId\ ==\ u.Id)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Join(\_context.Roles,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ur\ =>\ ur.RoleId,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =>\ r.Id,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ur,\ r)\ =>\ r.Name)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefault()}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Username))}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(x\ =>\ EF.Functions.Like(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ x.User.UserName,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}\%\{query.Username\}\%"{}}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ));}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Role))}
+\DoxyCodeLine{00076\ \ \ \ \ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(u\ =>\ u.Role\ ==\ query.Role);}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Zone))}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(u\ =>\ u.User.Table\ !=\ \textcolor{keyword}{null}\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ u.User.Table.Zone\ !=\ \textcolor{keyword}{null}\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ u.User.Table.Zone.Name\ ==\ query.Zone);}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ var\ totalCount\ =\ await\ usersWithRoles.CountAsync();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ var\ sortedUsers\ =\ query.OrderBy?.ToLower()\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{00090\ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}username"{}}\ =>\ query.OrderDirection\ ==\ \textcolor{stringliteral}{"{}asc"{}}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ usersWithRoles.OrderBy(u\ =>\ u.User.UserName)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ :\ usersWithRoles.OrderByDescending(u\ =>\ u.User.UserName),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}role"{}}\ =>\ query.OrderDirection\ ==\ \textcolor{stringliteral}{"{}asc"{}}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ usersWithRoles.OrderBy(u\ =>\ u.Role)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ :\ usersWithRoles.OrderByDescending(u\ =>\ u.Role),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \_\ =>\ usersWithRoles.OrderBy(u\ =>\ u.User.UserName)}
+\DoxyCodeLine{00098\ \ \ \ \ \};}
+\DoxyCodeLine{00099\ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ var\ pagedUsers\ =\ await\ sortedUsers}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ .Skip(query.Size\ *\ (query.Page\ -\/\ 1))}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ .Take(query.Size)}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ .Select(u\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ u.User.Id,}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ u.User.UserName,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ u.Role,}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ u.User.TableId,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}\ =\ u.User.Table\ !=\ \textcolor{keyword}{null}\ ?\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}>(u.User.Table)\ :\ null}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{00112\ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ (pagedUsers,\ totalCount);}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the details of a user account by its unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00030}{30}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031\ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ var\ role\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ user.Id,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ user.UserName,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ role.FirstOrDefault(),}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ user.TableId}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0}\index{BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}!UpdateAccountAsync@{UpdateAccountAsync}}
+\index{UpdateAccountAsync@{UpdateAccountAsync}!BistroQ.Services.Services.AccountService@{BistroQ.Services.Services.AccountService}}
+\doxysubsubsection{\texorpdfstring{UpdateAccountAsync()}{UpdateAccountAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Account\+Service.\+Update\+Account\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates an existing user account\textquotesingle{}s information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to update.\\
+\hline
+{\em request} & The account update data containing the fields to be modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+Only provided fields in the request will be updated. Null or empty fields will be ignored. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AccountService_8cs_source_l00172}{172}} of file \mbox{\hyperlink{AccountService_8cs_source}{Account\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Username))}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ user.UserName\ =\ request.Username;}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Password))}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ token\ =\ await\ \_userManager.GeneratePasswordResetTokenAsync(user);}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ passwordResult\ =\ await\ \_userManager.ResetPasswordAsync(user,\ token,\ request.Password);}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!passwordResult.Succeeded)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ reset\ password"{}});}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Role))}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentRoles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ removeResult\ =\ await\ \_userManager.RemoveFromRolesAsync(user,\ currentRoles);}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!removeResult.Succeeded)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ remove\ roles\ from\ user"{}});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ addRoleResult\ =\ await\ \_userManager.AddToRoleAsync(user,\ request.Role);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!addRoleResult.Succeeded)}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ assign\ role\ to\ user"{}});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.TableId.HasValue)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_context.Tables.FindAsync(request.TableId);}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ user.TableId\ =\ table.TableId;}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ var\ updateResult\ =\ await\ \_userManager.UpdateAsync(user);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!updateResult.Succeeded)}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(JsonSerializer.Serialize(updateResult.Errors));}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ update\ user"{}});}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ var\ updatedUser\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updatedUser\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ updatedUser.Id,}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ updatedUser.UserName,}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ request.Role}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Account\+Service.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\doxysection{Bistro\+Q.\+API.\+Middlewares.\+Exception\+Handling\+Middleware Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware}{}\label{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware}\index{BistroQ.API.Middlewares.ExceptionHandlingMiddleware@{BistroQ.API.Middlewares.ExceptionHandlingMiddleware}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_aa70aff61bcd179564e59d8840f87e701}{Exception\+Handling\+Middleware}} (Request\+Delegate next)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_a18c57c04f61f082c8f959418fb61a517}{Invoke\+Async}} (Http\+Context context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source_l00005}{5}} of file \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source}{Exception\+Handling\+Middleware.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_aa70aff61bcd179564e59d8840f87e701}\index{BistroQ.API.Middlewares.ExceptionHandlingMiddleware@{BistroQ.API.Middlewares.ExceptionHandlingMiddleware}!ExceptionHandlingMiddleware@{ExceptionHandlingMiddleware}}
+\index{ExceptionHandlingMiddleware@{ExceptionHandlingMiddleware}!BistroQ.API.Middlewares.ExceptionHandlingMiddleware@{BistroQ.API.Middlewares.ExceptionHandlingMiddleware}}
+\doxysubsubsection{\texorpdfstring{ExceptionHandlingMiddleware()}{ExceptionHandlingMiddleware()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_aa70aff61bcd179564e59d8840f87e701} 
+Bistro\+Q.\+API.\+Middlewares.\+Exception\+Handling\+Middleware.\+Exception\+Handling\+Middleware (\begin{DoxyParamCaption}\item[{Request\+Delegate}]{next}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source_l00008}{8}} of file \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source}{Exception\+Handling\+Middleware.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \_next\ =\ next;}
+\DoxyCodeLine{00011\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_a18c57c04f61f082c8f959418fb61a517}\index{BistroQ.API.Middlewares.ExceptionHandlingMiddleware@{BistroQ.API.Middlewares.ExceptionHandlingMiddleware}!InvokeAsync@{InvokeAsync}}
+\index{InvokeAsync@{InvokeAsync}!BistroQ.API.Middlewares.ExceptionHandlingMiddleware@{BistroQ.API.Middlewares.ExceptionHandlingMiddleware}}
+\doxysubsubsection{\texorpdfstring{InvokeAsync()}{InvokeAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Middlewares_1_1ExceptionHandlingMiddleware_a18c57c04f61f082c8f959418fb61a517} 
+async Task Bistro\+Q.\+API.\+Middlewares.\+Exception\+Handling\+Middleware.\+Invoke\+Async (\begin{DoxyParamCaption}\item[{Http\+Context}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source_l00013}{13}} of file \mbox{\hyperlink{ExceptionHandlingMiddleware_8cs_source}{Exception\+Handling\+Middleware.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_next(context);}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (context.Response.StatusCode\ ==\ StatusCodes.Status401Unauthorized)}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (context.Response.Headers.ContainsKey(\textcolor{stringliteral}{"{}WWW-\/Authenticate"{}})\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ context.Response.Headers[\textcolor{stringliteral}{"{}WWW-\/Authenticate"{}}].ToString().Contains(\textcolor{stringliteral}{"{}expired"{}}))}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1TokenExpiredException}{TokenExpiredException}}(\textcolor{stringliteral}{"{}Token\ expired"{}});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}Authorization\ failed\ -\/\ invalid\ token"{}});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (context.Response.StatusCode\ ==\ StatusCodes.Status403Forbidden)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ForbiddenException}{ForbiddenException}}(\textcolor{stringliteral}{"{}Authorization\ failed\ -\/\ insufficient\ permissions"{}});}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ await\ HandleExceptionAsync(context,\ e);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Middlewares/Exception\+Handling\+Middleware.\+cs\end{DoxyCompactItemize}

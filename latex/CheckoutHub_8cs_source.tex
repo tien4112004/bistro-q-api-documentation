@@ -1,0 +1,100 @@
+\doxysection{Checkout\+Hub.\+cs}
+\hypertarget{CheckoutHub_8cs_source}{}\label{CheckoutHub_8cs_source}\index{BistroQ.API/Hubs/CheckoutHub.cs@{BistroQ.API/Hubs/CheckoutHub.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Security.Claims;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.SignalR;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00012}\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Hubs}{00012}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Hubs}{BistroQ.API.Hubs}};}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00014}\mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub}{CheckoutHub}}\ :\ Hub}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ \_orderService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{IPaymentService}}\ \_paymentService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ \_tableService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub}{CheckoutHub}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ orderService,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{IPaymentService}}\ paymentService,\ UserManager<AppUser>\ userManager,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ tableService,\ IMapper\ mapper)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \_paymentService\ =\ paymentService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ InitiateCheckout(\textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.GetOrderByTableId(tableId);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderService.UpdateStatus(tableId,\ OrderStatus.Pending);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.GetByIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ paymentData\ =\ await\ \_paymentService.InitiatePayment(\_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}>(order));\ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Payment\ initiated\ for\ table\ \{tableId\}\ in\ zone\ \{table.ZoneId\}"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutInitiated"{}},\ paymentData);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Group(\textcolor{stringliteral}{"{}Cashiers"{}}).SendAsync(\textcolor{stringliteral}{"{}NewCheckout"{}},\ tableId,\ table.Number,\ table.ZoneName);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutError"{}},\ e.Message);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00056}00056\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ CompleteCheckout(\textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.GetOrderByTableId(tableId);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Payment\ completed\ for\ table\ \{tableId\}"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderService.UpdateStatus(tableId,\ OrderStatus.Completed);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Group(\$\textcolor{stringliteral}{"{}Client\_\{tableId\}"{}}).SendAsync(\textcolor{stringliteral}{"{}CheckoutCompleted"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutError"{}},\ e.Message);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00080}00080\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{override}\ async\ Task\ OnConnectedAsync()}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ var\ userRole\ =\ Context.User.Claims.FirstOrDefault(c\ =>\ c.Type\ ==\ ClaimTypes.Role)?.Value;}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userRole\ ==\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Groups.AddToGroupAsync(Context.ConnectionId,\ \textcolor{stringliteral}{"{}Cashiers"{}});}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (userRole\ ==\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Client)}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.GetUserAsync(Context.User);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Groups.AddToGroupAsync(Context.ConnectionId,\ \textcolor{stringliteral}{"{}Client\_"{}}\ +\ user.TableId.Value);}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CheckoutHub_8cs_source_l00094}00094\ \}}
+
+\end{DoxyCode}

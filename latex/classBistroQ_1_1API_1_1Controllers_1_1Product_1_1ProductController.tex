@@ -1,0 +1,129 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}\index{BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_ab9217724b42093399f6e9e9a5a62f07e}{Product\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{IProduct\+Service}} product\+Service, User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a6e63ed8ba809e749081df230338a4fbe}{Get\+Products}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{Product\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a3c712dfda76bb50c3556219dd2913345}{Get\+Product}} (\mbox{[}From\+Route\mbox{]} int product\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a263c29d25cde4cb43643511fee9ba412}{Get\+Recommendations}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ProductController_8cs_source_l00015}{15}} of file \mbox{\hyperlink{ProductController_8cs_source}{Product\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_ab9217724b42093399f6e9e9a5a62f07e}\index{BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}!ProductController@{ProductController}}
+\index{ProductController@{ProductController}!BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}}
+\doxysubsubsection{\texorpdfstring{ProductController()}{ProductController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_ab9217724b42093399f6e9e9a5a62f07e} 
+Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller.\+Product\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{IProduct\+Service}}}]{product\+Service}{, }\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductController_8cs_source_l00020}{20}} of file \mbox{\hyperlink{ProductController_8cs_source}{Product\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_productService\ =\ productService;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a3c712dfda76bb50c3556219dd2913345}\index{BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}!GetProduct@{GetProduct}}
+\index{GetProduct@{GetProduct}!BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetProduct()}{GetProduct()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a3c712dfda76bb50c3556219dd2913345} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller.\+Get\+Product (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{product\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductController_8cs_source_l00035}{35}} of file \mbox{\hyperlink{ProductController_8cs_source}{Product\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ product\ =\ await\ \_productService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a4a8d2cc4ba8bcf689ab2720ebb26bddf}{GetByIdAsync}}(productId);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ProductResponseDto>(product));}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a6e63ed8ba809e749081df230338a4fbe}\index{BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}!GetProducts@{GetProducts}}
+\index{GetProducts@{GetProducts}!BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetProducts()}{GetProducts()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a6e63ed8ba809e749081df230338a4fbe} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller.\+Get\+Products (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{Product\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductController_8cs_source_l00027}{27}} of file \mbox{\hyperlink{ProductController_8cs_source}{Product\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ (products,\ count)\ =\ await\ \_productService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_abd4a8c8b3e0889c93418d6dc7184684c}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ProductResponseDto>>(products,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a263c29d25cde4cb43643511fee9ba412}\index{BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}!GetRecommendations@{GetRecommendations}}
+\index{GetRecommendations@{GetRecommendations}!BistroQ.API.Controllers.Product.ProductController@{BistroQ.API.Controllers.Product.ProductController}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations()}{GetRecommendations()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController_a263c29d25cde4cb43643511fee9ba412} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Product.\+Product\+Controller.\+Get\+Recommendations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductController_8cs_source_l00043}{43}} of file \mbox{\hyperlink{ProductController_8cs_source}{Product\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.GetUserAsync(User);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user?.TableId\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ var\ tableId\ =\ user.TableId.Value;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ \_productService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService_a67a12f683b74cc05da7ac7b6485a1d7c}{GetRecommendedProductsAsync}}(tableId);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<ProductResponseDto>>(products));}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Product/Product\+Controller.\+cs\end{DoxyCompactItemize}

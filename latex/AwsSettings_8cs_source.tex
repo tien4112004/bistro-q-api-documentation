@@ -1,0 +1,38 @@
+\doxysection{Aws\+Settings.\+cs}
+\hypertarget{AwsSettings_8cs_source}{}\label{AwsSettings_8cs_source}\index{BistroQ.Core/Common/Settings/AwsSettings.cs@{BistroQ.Core/Common/Settings/AwsSettings.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00003}\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{00003}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00005}\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{00005}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{AwsSettings}}\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00006}00006\ \{}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ AccessKey\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ SecretKey\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ BucketName\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ Region\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00014}00014\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ CloudFrontDomain\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ PrivateKey\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ KeyPairId\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{null}!;}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{AwsSettings}}\ ReadFromEnvironment()}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ AccessKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_ACCESS\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_ACCESS\_KEY"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ SecretKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_SECRET\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_SECRET\_KEY"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ BucketName\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_BUCKET\_NAME"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_BUCKET\_NAME"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Region\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_REGION"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_REGION"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ CloudFrontDomain\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_DOMAIN"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_DOMAIN"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ KeyPairId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_KEY\_PAIR\_ID"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_KEY\_PAIR\_ID"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ PrivateKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_PRIVATE\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentNullException(\textcolor{stringliteral}{"{}AWS\_CLOUDFRONT\_PRIVATE\_KEY"{}});}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00031}00031\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsSettings_8cs_source_l00032}00032\ \}}
+
+\end{DoxyCode}

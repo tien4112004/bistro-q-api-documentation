@@ -1,0 +1,504 @@
+\doxysection{Bistro\+QContext.\+cs}
+\hypertarget{BistroQContext_8cs_source}{}\label{BistroQContext_8cs_source}\index{BistroQ.Infrastructure/Data/BistroQContext.cs@{BistroQ.Infrastructure/Data/BistroQContext.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore.Metadata;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }CsvHelper;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }CsvHelper.Configuration;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00014}\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure}{00014}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00016}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ :\ IdentityDbContext<AppUser>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}()}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}(DbContextOptions<BistroQContext>\ options)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ :\ base(options)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<Category>\ Categories\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00029}00029\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<NutritionFact>\ NutritionFacts\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<Order?>\ Orders\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<OrderItem>\ OrderItems\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00035}00035\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<Product>\ Products\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<Table>\ Tables\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ DbSet<Zone>\ Zones\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ OnModelCreating(ModelBuilder\ modelBuilder)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ base.OnModelCreating(modelBuilder);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ entityType\ \textcolor{keywordflow}{in}\ modelBuilder.Model.GetEntityTypes())}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ var\ tableName\ =\ entityType.GetTableName();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tableName.StartsWith(\textcolor{stringliteral}{"{}AspNet"{}}))}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entityType.SetTableName(tableName.Substring(6));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ modelBuilder}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ .UseCollation(\textcolor{stringliteral}{"{}utf8mb4\_0900\_ai\_ci"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ .HasCharSet(\textcolor{stringliteral}{"{}utf8mb4"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.CategoryId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Category"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.CategoryId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.Name).HasMaxLength(100);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.ProductId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}NutritionFact"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.ProductId).ValueGeneratedNever();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Product).WithOne(p\ =>\ p.NutritionFact)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}>(d\ =>\ d.ProductId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.ClientSetNull)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}NutritionFact\_ibfk\_1"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.OrderId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Order"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasIndex(e\ =>\ e.TableId,\ \textcolor{stringliteral}{"{}TableId"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderId).}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasMaxLength(100).}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ValueGeneratedOnAdd().\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasDefaultValueSql(\textcolor{stringliteral}{"{}(UUID())"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.EndTime).HasColumnType(\textcolor{stringliteral}{"{}datetime"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.StartTime).HasColumnType(\textcolor{stringliteral}{"{}datetime"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.TotalAmount).HasPrecision(10);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Table)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithOne(t\ =>\ t.Order)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}>(d\ =>\ d.TableId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}Order\_ibfk\_1"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.SetNull);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{OrderItem}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.OrderItemId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderItemId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderItemId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}OrderItem"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasIndex(e\ =>\ e.OrderId,\ \textcolor{stringliteral}{"{}OrderId"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasIndex(e\ =>\ e.ProductId,\ \textcolor{stringliteral}{"{}ProductId"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderItemId).}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasMaxLength(100).}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ValueGeneratedOnAdd().}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HasDefaultValueSql(\textcolor{stringliteral}{"{}(UUID())"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.OrderId).HasMaxLength(100);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.PriceAtPurchase).HasPrecision(10);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Order).WithMany(p\ =>\ p.OrderItems)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey(d\ =>\ d.OrderId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}OrderItem\_ibfk\_1"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.Cascade);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00132}00132\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Product).WithMany(p\ =>\ p.OrderItems)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey(d\ =>\ d.ProductId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}OrderItem\_ibfk\_2"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.Cascade);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.ProductId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Product"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00144}00144\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasIndex(e\ =>\ e.CategoryId,\ \textcolor{stringliteral}{"{}CategoryId"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00146}00146\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.ProductId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.DiscountPrice).HasPrecision(10);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.Name).HasMaxLength(100);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.Price).HasPrecision(10);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.Unit).HasMaxLength(100);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Category).WithMany(p\ =>\ p.Products)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey(d\ =>\ d.CategoryId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}Product\_ibfk\_1"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.SetNull);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Image)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithOne(p\ =>\ p.Product)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}>(d\ =>\ d.ImageId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}Product\_ibfk\_2"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.SetNull);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.TableId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Table"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasIndex(e\ =>\ e.ZoneId,\ \textcolor{stringliteral}{"{}ZoneId"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.TableId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.Zone).WithMany(p\ =>\ p.Tables)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey(d\ =>\ d.ZoneId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}Table\_ibfk\_1"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.SetNull);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00179}00179\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasOne(d\ =>\ d.User)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithOne(p\ =>\ p.Table)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasForeignKey<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}>(d\ =>\ d.TableId)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .HasConstraintName(\textcolor{stringliteral}{"{}Table\_ibfk\_2"{}})}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OnDelete(DeleteBehavior.SetNull);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.ZoneId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Zone"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00192}00192\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.ZoneId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.Name).HasMaxLength(100);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}>(entity\ =>}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ entity.HasKey(e\ =>\ e.ImageId).HasName(\textcolor{stringliteral}{"{}PRIMARY"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ entity.ToTable(\textcolor{stringliteral}{"{}Image"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ entity.Property(e\ =>\ e.ImageId).ValueGeneratedOnAdd();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ var\ listRoles\ =\ \textcolor{keyword}{new}\ List<IdentityRole>()}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityRole\ \{\ Id\ =\ \textcolor{stringliteral}{"{}1"{}},\ Name\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Admin,\ NormalizedName\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Admin.ToUpper()\ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityRole\ \{\ Id\ =\ \textcolor{stringliteral}{"{}2"{}},\ Name\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Kitchen,\ NormalizedName\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Kitchen.ToUpper()\ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityRole\ \{\ Id\ =\ \textcolor{stringliteral}{"{}3"{}},\ Name\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier,\ NormalizedName\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier.ToUpper()\ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityRole\ \{\ Id\ =\ \textcolor{stringliteral}{"{}4"{}},\ Name\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Client,\ NormalizedName\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Client.ToUpper()\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ modelBuilder.Entity<IdentityRole>().HasData(listRoles);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ var\ hasher\ =\ \textcolor{keyword}{new}\ PasswordHasher<AppUser>();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}>().HasData(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}admin"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}ADMIN"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}admin@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}ADMIN@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}admin"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}2"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}kitchen"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}KITCHEN"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}kitchen@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}KITCHEN@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}kitchen"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}3"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}cashier"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CASHIER"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}cashier@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CASHIER@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}cashier"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}4"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client1"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT1"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client1@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT1@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 1}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}5"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client2"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT2"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client2@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT2@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 2}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}6"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client3"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT3"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client3@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT3@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 3}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}7"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client4"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT4"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client4@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT4@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 4}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}8"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client5"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT5"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client5@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT5@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 5}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}9"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client6"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT6"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client6@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT6@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00301}00301\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 6}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}10"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client7"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00308}00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT7"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client7@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT7@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 7}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}11"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client8"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT8"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client8@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT8@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 8}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}12"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client9"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT9"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client9@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT9@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 9}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ \textcolor{stringliteral}{"{}13"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ \textcolor{stringliteral}{"{}client10"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedUserName\ =\ \textcolor{stringliteral}{"{}CLIENT10"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Email\ =\ \textcolor{stringliteral}{"{}client10@gmail.com"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NormalizedEmail\ =\ \textcolor{stringliteral}{"{}CLIENT10@GMAIL.COM"{}},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PasswordHash\ =\ hasher.HashPassword(\textcolor{keyword}{null},\ \textcolor{stringliteral}{"{}client"{}}),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 10}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00345}00345\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ var\ listZone\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/zones.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ var\ listTable\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/tables.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ var\ listCategories\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/categories.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ var\ listProducts\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/products.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ var\ listImages\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/images.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ var\ listOrderItems\ =\ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{OrderItem}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/orderitems.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ var\ listOrder\ =\ CsvReaderHelper.ReadCsv<Order>("{}../BistroQ.Infrastructure/Data/orders.csv"{});}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ var\ identityUserRoleList\ =\ CsvReaderHelper.ReadCsv<IdentityUserRole<string>>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/identityroles.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ var\ nutritionFactsList\ =}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ CsvReaderHelper.ReadCsv<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}>(\textcolor{stringliteral}{"{}../BistroQ.Infrastructure/Data/nutritionfacts.csv"{}});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00356}00356\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ var\ listOrder\ =\ \textcolor{keyword}{new}\ List<Order>()}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}1"{}},\ TableId\ =\ 1,\ StartTime\ =\ DateTime.Now,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 5,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.InProgress,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}1"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}2"{}},\ TableId\ =\ 6,\ StartTime\ =\ DateTime.Now,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 2,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.InProgress,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00373}00373\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}2"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}3"{}},\ TableId\ =\ 2,\ StartTime\ =\ DateTime.Now,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 4,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.InProgress,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}3"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}4"{}},\ TableId\ =\ \textcolor{keyword}{null},\ StartTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 12,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 13,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.Completed,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}4"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}5"{}},\ TableId\ =\ \textcolor{keyword}{null},\ StartTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 12,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00393}00393\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 13,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.Completed,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}5"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}6"{}},\ TableId\ =\ \textcolor{keyword}{null},\ StartTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 12,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{new}\ DateTime(2024,\ 10,\ 1,\ 13,\ 0,\ 0),}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ OrderStatus.Completed,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(od\ =>\ od.OrderId\ ==\ \textcolor{stringliteral}{"{}6"{}}).Sum(od\ =>\ od.PriceAtPurchase\ *\ od.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00406}00406\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ modelBuilder.Entity<IdentityUserRole<string>>().HasData(identityUserRoleList.Select(i\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ UserId\ =\ i.UserId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ RoleId\ =\ i.RoleId}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00412}00412\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>().HasData(listZone);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>().HasData(listTable.Select(t\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ t.TableId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ Number\ =\ t.Number,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ SeatsCount\ =\ t.SeatsCount,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ ZoneId\ =\ t.ZoneId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00422}00422\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00423}00423\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}>().HasData(listCategories);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00424}00424\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}>().HasData(listImages.Select(i\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ ImageId\ =\ i.ImageId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ ContentType\ =\ i.ContentType,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ Name\ =\ i.Name}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00431}00431\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}>().HasData(listProducts.Select(p\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00433}00433\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ p.ProductId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ CategoryId\ =\ p.CategoryId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ DiscountPrice\ =\ p.DiscountPrice,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ ImageId\ =\ p.ImageId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ Name\ =\ p.Name,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ Price\ =\ p.Price,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ Unit\ =\ p.Unit,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00442}00442\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{OrderItem}}>().HasData(listOrderItems.Select(oi\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ OrderItemId\ =\ oi.OrderItemId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ oi.OrderId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00448}00448\ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ oi.ProductId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ oi.Status,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ Quantity\ =\ oi.Quantity,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ PriceAtPurchase\ =\ oi.PriceAtPurchase,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ CreatedAt\ =\ oi.CreatedAt,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ UpdatedAt\ =\ oi.UpdatedAt}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00455}00455\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}>().HasData(listOrder.Select(o\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ o.OrderId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ int.TryParse(o.TableId.ToString(),\ out\ var\ tableId)\ ?\ tableId\ :\ (int?)null,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ StartTime\ =\ o.StartTime,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ o.PeopleCount,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ o.EndTime,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ o.Status,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ listOrderItems.Where(oi\ =>\ oi.OrderId\ ==\ o.OrderId).Sum(oi\ =>\ oi.PriceAtPurchase\ *\ oi.Quantity)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ modelBuilder.Entity<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}>().HasData(nutritionFactsList.Select(nf\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00468}00468\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ nf.ProductId,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ Calories\ =\ nf.Calories,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ Fiber\ =\ nf.Fiber,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ Fat\ =\ nf.Fat,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00473}00473\ \ \ \ \ \ \ \ \ \ \ \ \ Protein\ =\ nf.Protein,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ Carbohydrates\ =\ nf.Carbohydrates}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00476}00476\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ OnModelCreatingPartial(modelBuilder);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00478}00478\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00479}00479\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00480}00480\ \ \ \ \ partial\ \textcolor{keywordtype}{void}\ OnModelCreatingPartial(ModelBuilder\ modelBuilder);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00481}00481\ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00483}00483\ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keyword}{class\ }CsvReaderHelper}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00484}00484\ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00485}00485\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ List<T>\ ReadCsv<T>(\textcolor{keywordtype}{string}\ filePath)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00486}00486\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ reader\ =\ \textcolor{keyword}{new}\ StreamReader(filePath);}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00488}00488\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ csv\ =\ \textcolor{keyword}{new}\ CsvReader(reader,\ \textcolor{keyword}{new}\ CsvConfiguration(CultureInfo.InvariantCulture)}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ HasHeaderRecord\ =\ true,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ HeaderValidated\ =\ null,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ MissingFieldFound\ =\ null,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00493}00493\ \ \ \ \ \ \ \ \ \ \ \ \ TrimOptions\ =\ TrimOptions.Trim,}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00495}00495\ }
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ csv.GetRecords<T>().ToList();}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00497}00497\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{BistroQContext_8cs_source_l00498}00498\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,76 @@
+\doxysection{Auth\+Controller.\+cs}
+\hypertarget{AuthController_8cs_source}{}\label{AuthController_8cs_source}\index{BistroQ.API/Controllers/Auth/AuthController.cs@{BistroQ.API/Controllers/Auth/AuthController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Auth}{BistroQ.Core.Dtos.Auth}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Domain_1_1Dtos}{BistroQ.Domain.Dtos}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.ComponentModel.DataAnnotations;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00011}\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Auth}{00011}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Auth}{BistroQ.API.Controllers.Auth}};}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/[controller]"{}})]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00014}00014\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00015}00015\ [Tags(\textcolor{stringliteral}{"{}Authentication"{}})]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00016}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}{AuthController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{ITokenService}}\ \_tokenService;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ SignInManager<AppUser>\ \_signInManager;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}{AuthController}}(}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{ITokenService}}\ tokenService,}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ UserManager<AppUser>\ userManager,}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ SignInManager<AppUser>\ signInManager)}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_tokenService\ =\ tokenService;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \_signInManager\ =\ signInManager;}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00032}00032\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00033}00033\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}login"{}})]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00034}00034\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ Login([FromBody,\ Required]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{LoginDto}}\ loginDto)}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByNameAsync(loginDto.Username);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}User\ not\ found."{}});}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_signInManager.PasswordSignInAsync(user,\ loginDto.Password,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}Invalid\ password."{}});}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ var\ accessToken\ =\ await\ \_tokenService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}{GenerateAccessToken}}(user);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ refreshToken\ =\ await\ \_tokenService.GenerateRefreshToken(user);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ var\ roles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<LoginResponseDto>(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Domain_1_1Dtos_1_1LoginResponseDto}{LoginResponseDto}}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{\ AccessToken\ =\ accessToken,\ RefreshToken\ =\ refreshToken,\ UserId\ =\ user.Id,\ Role\ =\ roles[0]\ \}));}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00055}00055\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00057}00057\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00058}00058\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}refresh"{}})]}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ Refresh([FromBody,\ Required]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1RefreshTokenDto}{RefreshTokenDto}}\ refreshTokenDto)}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(refreshTokenDto.UserId);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null}\ ||\ !await\ \_tokenService.ValidateRefreshToken(user,\ refreshTokenDto.RefreshToken))}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}Invalid\ refresh\ token."{}});}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ var\ newAccessToken\ =\ await\ \_tokenService.GenerateAccessToken(user);}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<Object>(\textcolor{keyword}{new}\ \{\ AccessToken\ =\ newAccessToken\ \}));}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AuthController_8cs_source_l00070}00070\ \}}
+
+\end{DoxyCode}

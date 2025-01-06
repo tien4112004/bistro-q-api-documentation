@@ -1,0 +1,84 @@
+\doxysection{Bistro\+Q.\+Services.\+Common.\+Order\+Status\+Transition Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition}{}\label{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition}\index{BistroQ.Services.Common.OrderStatusTransition@{BistroQ.Services.Common.OrderStatusTransition}}
+
+
+Manages the status transitions for orders in the restaurant POS system. This class enforces valid state transitions and prevents invalid status updates.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d}{Update\+Status}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}} order, Order\+Status new\+Status)
+\begin{DoxyCompactList}\small\item\em Updates the status of an order while enforcing valid state transitions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the status transitions for orders in the restaurant POS system. This class enforces valid state transitions and prevents invalid status updates. 
+
+The class maintains a predefined set of valid status transitions. Current valid transitions are\+:
+\begin{DoxyItemize}
+\item Pending → In\+Progress, Cancelled
+\item In\+Progress → Pending, Completed Any other transitions will result in a Conflict\+Exception. 
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{OrderStatusTransition_8cs_source_l00018}{18}} of file \mbox{\hyperlink{OrderStatusTransition_8cs_source}{Order\+Status\+Transition.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d}\index{BistroQ.Services.Common.OrderStatusTransition@{BistroQ.Services.Common.OrderStatusTransition}!UpdateStatus@{UpdateStatus}}
+\index{UpdateStatus@{UpdateStatus}!BistroQ.Services.Common.OrderStatusTransition@{BistroQ.Services.Common.OrderStatusTransition}}
+\doxysubsubsection{\texorpdfstring{UpdateStatus()}{UpdateStatus()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d} 
+static void Bistro\+Q.\+Services.\+Common.\+Order\+Status\+Transition.\+Update\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}]{order}{, }\item[{Order\+Status}]{new\+Status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Updates the status of an order while enforcing valid state transitions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The order to update. Must not be null.\\
+\hline
+{\em new\+Status} & The new status to apply to the order.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Argument\+Null\+Exception} & Thrown when order is null.\\
+\hline
+{\em Conflict\+Exception} & Thrown when attempting an invalid status transition.\\
+\hline
+\end{DoxyExceptions}
+
+
+The method will\+:
+\begin{DoxyEnumerate}
+\item Skip update if the new status is the same as current status
+\item Validate if the transition is allowed
+\item Update the status and timestamp if valid 
+\end{DoxyEnumerate}
+
+Definition at line \mbox{\hyperlink{OrderStatusTransition_8cs_source_l00046}{46}} of file \mbox{\hyperlink{OrderStatusTransition_8cs_source}{Order\+Status\+Transition.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order.Status\ ==\ newStatus)}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsValidTransition(order.Status,\ newStatus))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ConflictException}{ConflictException}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Invalid\ status\ transition\ (from:\ \{order.Status\},\ to:\ \{newStatus\})."{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ApplyStatusUpdate(order,\ newStatus);}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Common/Order\+Status\+Transition.\+cs\end{DoxyCompactItemize}

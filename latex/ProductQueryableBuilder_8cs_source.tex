@@ -1,0 +1,100 @@
+\doxysection{Product\+Queryable\+Builder.\+cs}
+\hypertarget{ProductQueryableBuilder_8cs_source}{}\label{ProductQueryableBuilder_8cs_source}\index{BistroQ.Core/Common/Builder/ProductQueryableBuilder.cs@{BistroQ.Core/Common/Builder/ProductQueryableBuilder.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Builder}{BistroQ.Core.Common.Builder}};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00006}\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1BaseQueryableBuilder}{BaseQueryableBuilder}}<Product>}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}(IQueryable<Product>\ queryable)\ :\ base(queryable)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00009}00009\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00010}00010\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00011}00011\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ IncludeCategory()}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00013}00013\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00014}00014\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Include(p\ =>\ p.Category);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00016}00016\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ IncludeImage()}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Include(p\ =>\ p.Image);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ IncludeNutritionFact()}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Include(p\ =>\ p.NutritionFact);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00030}00030\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ WithName(\textcolor{keywordtype}{string}?\ name)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (name\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(p\ =>\ p.Name\ !=\ \textcolor{keyword}{null}\ \&\&\ p.Name.Contains(name));}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00037}00037\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ WithCategoryId(\textcolor{keywordtype}{int}?\ categoryId)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (categoryId\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(p\ =>\ p.CategoryId\ ==\ categoryId);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00045}00045\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00046}00046\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ WithPrice(decimal?\ price)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (price\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(p\ =>\ p.Price\ <\ price\ ||\ p.DiscountPrice\ <\ price);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00053}00053\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00054}00054\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ WithUnit(\textcolor{keywordtype}{string}?\ unit)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (unit\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(p\ =>\ p.Unit\ !=\ \textcolor{keyword}{null}\ \&\&\ p.Unit.Contains(unit));}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00062}00062\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ ApplyPaging(\textcolor{keywordtype}{int}\ page,\ \textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00063}00063\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Skip((page\ -\/\ 1)\ *\ size).Take(size);}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00068}00068\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}\ ApplySorting(\textcolor{keywordtype}{string}?\ orderBy,\ \textcolor{keywordtype}{string}?\ orderDirection)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ var\ isDescending\ =\ orderDirection\ !=\ \textcolor{stringliteral}{"{}asc"{}};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ Queryable\ =\ orderBy\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}.Name)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(p\ =>\ p.Name)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(p\ =>\ p.Name),}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}.Price)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(p\ =>\ p.Price)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(p\ =>\ p.Price),}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}.Unit)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(p\ =>\ p.Unit)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(p\ =>\ p.Unit),}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}.DiscountPrice)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(p\ =>\ p.DiscountPrice)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(p\ =>\ p.DiscountPrice),}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \_\ =>\ Queryable.OrderBy(p\ =>\ p.ProductId)}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductQueryableBuilder_8cs_source_l00094}00094\ \}}
+
+\end{DoxyCode}

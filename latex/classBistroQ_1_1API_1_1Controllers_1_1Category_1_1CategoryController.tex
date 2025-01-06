@@ -1,0 +1,102 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController}\index{BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a9e4c58cf67489098eadf9f69a3c91783}{Category\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{ICategory\+Service}} category\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_abf5f48bc8e3fb7d1ea70057cc3e636a5}{Get\+Categories}} ()
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a4ba91c307f68bd5b6a5d38bb5bbd3df4}{Get\+Category}} (int category\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CategoryController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{CategoryController_8cs_source}{Category\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a9e4c58cf67489098eadf9f69a3c91783}\index{BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}!CategoryController@{CategoryController}}
+\index{CategoryController@{CategoryController}!BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}}
+\doxysubsubsection{\texorpdfstring{CategoryController()}{CategoryController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a9e4c58cf67489098eadf9f69a3c91783} 
+Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller.\+Category\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{ICategory\+Service}}}]{category\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CategoryController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{CategoryController_8cs_source}{Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_categoryService\ =\ categoryService;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_abf5f48bc8e3fb7d1ea70057cc3e636a5}\index{BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}!GetCategories@{GetCategories}}
+\index{GetCategories@{GetCategories}!BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}}
+\doxysubsubsection{\texorpdfstring{GetCategories()}{GetCategories()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_abf5f48bc8e3fb7d1ea70057cc3e636a5} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller.\+Get\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CategoryController_8cs_source_l00024}{24}} of file \mbox{\hyperlink{CategoryController_8cs_source}{Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ (categories,\ count)\ =\ await\ \_categoryService.GetCategoriesAsync();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<CategoryDto>>(categories,\ count,\ 1,\ count));}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a4ba91c307f68bd5b6a5d38bb5bbd3df4}\index{BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}!GetCategory@{GetCategory}}
+\index{GetCategory@{GetCategory}!BistroQ.API.Controllers.Category.CategoryController@{BistroQ.API.Controllers.Category.CategoryController}}
+\doxysubsubsection{\texorpdfstring{GetCategory()}{GetCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController_a4ba91c307f68bd5b6a5d38bb5bbd3df4} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Category\+Controller.\+Get\+Category (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CategoryController_8cs_source_l00031}{31}} of file \mbox{\hyperlink{CategoryController_8cs_source}{Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_categoryService.GetCategoryByIdAsync(categoryId);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<CategoryDetailDto>(category));}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Category/Category\+Controller.\+cs\end{DoxyCompactItemize}

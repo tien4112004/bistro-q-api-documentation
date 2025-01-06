@@ -1,0 +1,284 @@
+\doxysection{Account\+Service.\+cs}
+\hypertarget{AccountService_8cs_source}{}\label{AccountService_8cs_source}\index{BistroQ.Services/Services/AccountService.cs@{BistroQ.Services/Services/AccountService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Auth}{BistroQ.Core.Dtos.Auth}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00013}\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{00013}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00015}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService}{AccountService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccountService}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ \_unitOfWork;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ \_context;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService}{AccountService}}(UserManager<AppUser>\ userManager,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ unitOfWork,\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ context,\ IMapper\ mapper)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \_context\ =\ context;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00030}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<AccountDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201}{GetByIdAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ var\ role\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ user.Id,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ user.UserName,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ role.FirstOrDefault(),}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ user.TableId}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Cannot\ split\ this\ method\ into\ QueryableBuilder\ because\ of\ the\ group\ by\ clause}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00049}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c}{00049}}\ \textcolor{keyword}{public}\ async\ Task<(IEnumerable<AccountDto>\ Accounts,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c}{GetAllAsync}}(}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{AccountCollectionQueryParams}}\ query)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00052}00052\ \ \ \ \ var\ usersWithRoles\ =\ \_context.Users}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ .Include(u\ =>\ u.Table)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ .ThenInclude(t\ =>\ t.Zone)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ .Select(u\ =>\ \textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ User\ =\ u,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ \_context.UserRoles}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Where(ur\ =>\ ur.UserId\ ==\ u.Id)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Join(\_context.Roles,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ur\ =>\ ur.RoleId,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ r\ =>\ r.Id,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ur,\ r)\ =>\ r.Name)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefault()}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Username))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00068}00068\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(x\ =>\ EF.Functions.Like(}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ x.User.UserName,\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}\%\{query.Username\}\%"{}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ ));}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00075}00075\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Role))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00076}00076\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(u\ =>\ u.Role\ ==\ query.Role);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00079}00079\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrWhiteSpace(query.Zone))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00081}00081\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ usersWithRoles\ =\ usersWithRoles.Where(u\ =>\ u.User.Table\ !=\ \textcolor{keyword}{null}\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ u.User.Table.Zone\ !=\ \textcolor{keyword}{null}\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ u.User.Table.Zone.Name\ ==\ query.Zone);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00087}00087\ \ \ \ \ var\ totalCount\ =\ await\ usersWithRoles.CountAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00089}00089\ \ \ \ \ var\ sortedUsers\ =\ query.OrderBy?.ToLower()\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00090}00090\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}username"{}}\ =>\ query.OrderDirection\ ==\ \textcolor{stringliteral}{"{}asc"{}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ usersWithRoles.OrderBy(u\ =>\ u.User.UserName)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ :\ usersWithRoles.OrderByDescending(u\ =>\ u.User.UserName),}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}role"{}}\ =>\ query.OrderDirection\ ==\ \textcolor{stringliteral}{"{}asc"{}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ usersWithRoles.OrderBy(u\ =>\ u.Role)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ :\ usersWithRoles.OrderByDescending(u\ =>\ u.Role),}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \_\ =>\ usersWithRoles.OrderBy(u\ =>\ u.User.UserName)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00098}00098\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00099}00099\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00100}00100\ \ \ \ \ var\ pagedUsers\ =\ await\ sortedUsers}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ .Skip(query.Size\ *\ (query.Page\ -\/\ 1))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ .Take(query.Size)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ .Select(u\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ u.User.Id,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ u.User.UserName,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ u.Role,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ u.User.TableId,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}\ =\ u.User.Table\ !=\ \textcolor{keyword}{null}\ ?\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}>(u.User.Table)\ :\ \textcolor{keyword}{null}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00112}00112\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00113}00113\ \ \ \ \ \textcolor{keywordflow}{return}\ (pagedUsers,\ totalCount);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00116}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f}{00116}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<AccountDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f}{CreateAccountAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{CreateAccountDto}}\ request)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00117}00117\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UserName\ =\ request.Username,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.CreateAsync(user,\ request.Password);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ var\ roleResult\ =\ await\ \_userManager.AddToRoleAsync(user,\ request.Role);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!roleResult.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ assign\ role\ to\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ var\ createdUser\ =\ await\ \_userManager.FindByNameAsync(user.UserName);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (createdUser\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.TableId.HasValue)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_context.Tables.FindAsync(request.TableId);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdUser.TableId\ =\ table.TableId;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_userManager.UpdateAsync(createdUser);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ createdUser.Id,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ createdUser.UserName,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ request.Role}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00170}00170\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00172}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0}{00172}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<AccountDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0}{UpdateAccountAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{UpdateAccountDto}}\ request)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Username))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ user.UserName\ =\ request.Username;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00185}00185\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Password))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ token\ =\ await\ \_userManager.GeneratePasswordResetTokenAsync(user);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ passwordResult\ =\ await\ \_userManager.ResetPasswordAsync(user,\ token,\ request.Password);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!passwordResult.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ reset\ password"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(request.Role))}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ currentRoles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ removeResult\ =\ await\ \_userManager.RemoveFromRolesAsync(user,\ currentRoles);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!removeResult.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ remove\ roles\ from\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ addRoleResult\ =\ await\ \_userManager.AddToRoleAsync(user,\ request.Role);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!addRoleResult.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ assign\ role\ to\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.TableId.HasValue)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_context.Tables.FindAsync(request.TableId);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ user.TableId\ =\ table.TableId;}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00222}00222\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ var\ updateResult\ =\ await\ \_userManager.UpdateAsync(user);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!updateResult.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(JsonSerializer.Serialize(updateResult.Errors));}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ update\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ var\ updatedUser\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updatedUser\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{AccountDto}}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Id\ =\ updatedUser.Id,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Username\ =\ updatedUser.UserName,}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Role\ =\ request.Role}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00250}00250\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00252}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f}{00252}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<bool>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f}{DeleteAccountAsync}}(\textcolor{keywordtype}{string}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00253}00253\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}User\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.DeleteAsync(user);}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ delete\ user"{}});}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00268}00268\ }
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00277}00277\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AccountService_8cs_source_l00278}00278\ \}}
+
+\end{DoxyCode}

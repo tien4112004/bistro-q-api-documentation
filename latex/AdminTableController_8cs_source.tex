@@ -1,0 +1,76 @@
+\doxysection{Admin\+Table\+Controller.\+cs}
+\hypertarget{AdminTableController_8cs_source}{}\label{AdminTableController_8cs_source}\index{BistroQ.API/Controllers/Table/AdminTableController.cs@{BistroQ.API/Controllers/Table/AdminTableController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{BistroQ.API.Controllers}};}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00010}00010\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00011}00011\ [Route(\textcolor{stringliteral}{"{}api/Admin/Table"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00012}00012\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Admin)]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00013}00013\ [Tags(\textcolor{stringliteral}{"{}Admin\ Table"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00014}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}{AdminTableController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ \_tableService;}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}{AdminTableController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ tableService)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00023}00023\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTables([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<TableDetailDto>>(tables,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00030}00030\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00031}00031\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTable([FromRoute]\ \textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.GetByIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00038}00038\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00039}00039\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ AddTable([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ request)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (request.SeatsCount\ <=\ 0)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Seats\ count\ must\ be\ greater\ than\ 0"{}});}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.AddAsync(request);}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDto>(table));}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00050}00050\ \ \ \ \ [HttpPut]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00051}00051\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdateTable([FromRoute]\ \textcolor{keywordtype}{int}\ tableId,\ [FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{UpdateTableRequestDto}}\ tableDto)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tableDto.SeatsCount\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Number\ of\ seats\ must\ be\ greater\ than\ 0"{}});}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ var\ updatedTable\ =\ await\ \_tableService.UpdateAsync(tableId,\ tableDto);}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDto>(updatedTable));}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00063}00063\ \ \ \ \ [HttpDelete]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00064}00064\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00065}00065\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ DeleteTable([FromRoute]\ \textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ await\ \_tableService.DeleteAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Table\ deleted\ successfully"{}}));}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminTableController_8cs_source_l00070}00070\ \}}
+
+\end{DoxyCode}

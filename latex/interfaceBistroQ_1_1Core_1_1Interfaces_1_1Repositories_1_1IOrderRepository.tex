@@ -1,0 +1,109 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IOrder\+Repository Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}\index{BistroQ.Core.Interfaces.Repositories.IOrderRepository@{BistroQ.Core.Interfaces.Repositories.IOrderRepository}}
+
+
+Repository interface for managing restaurant orders in the database. Extends the generic repository pattern with order-\/specific operations.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IOrder\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IOrder\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_a7e9a358ae284bfe0078d52b3872a026c}{Get\+By\+Table\+Id\+Async}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the active order associated with a specific table. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_afd2127ad8b126bfec38b5c5d83cd0672}{Get\+All\+Current\+Orders\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all current orders in the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Order $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Repository interface for managing restaurant orders in the database. Extends the generic repository pattern with order-\/specific operations. 
+
+Definition at line \mbox{\hyperlink{IOrderRepository_8cs_source_l00012}{12}} of file \mbox{\hyperlink{IOrderRepository_8cs_source}{IOrder\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_afd2127ad8b126bfec38b5c5d83cd0672}\index{BistroQ.Core.Interfaces.Repositories.IOrderRepository@{BistroQ.Core.Interfaces.Repositories.IOrderRepository}!GetAllCurrentOrdersAsync@{GetAllCurrentOrdersAsync}}
+\index{GetAllCurrentOrdersAsync@{GetAllCurrentOrdersAsync}!BistroQ.Core.Interfaces.Repositories.IOrderRepository@{BistroQ.Core.Interfaces.Repositories.IOrderRepository}}
+\doxysubsubsection{\texorpdfstring{GetAllCurrentOrdersAsync()}{GetAllCurrentOrdersAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_afd2127ad8b126bfec38b5c5d83cd0672} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IOrder\+Repository.\+Get\+All\+Current\+Orders\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves all current orders in the system. 
+
+\begin{DoxyReturn}{Returns}
+A collection of active orders. 
+\end{DoxyReturn}
+
+
+The definition of "{}current"{} orders should be clearly specified in the implementation. Consider adding filters for specific order statuses. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_abb87da6649ccbc20b08a2593e0e91de4}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Order\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_a7e9a358ae284bfe0078d52b3872a026c}\index{BistroQ.Core.Interfaces.Repositories.IOrderRepository@{BistroQ.Core.Interfaces.Repositories.IOrderRepository}!GetByTableIdAsync@{GetByTableIdAsync}}
+\index{GetByTableIdAsync@{GetByTableIdAsync}!BistroQ.Core.Interfaces.Repositories.IOrderRepository@{BistroQ.Core.Interfaces.Repositories.IOrderRepository}}
+\doxysubsubsection{\texorpdfstring{GetByTableIdAsync()}{GetByTableIdAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository_a7e9a358ae284bfe0078d52b3872a026c} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}?$>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IOrder\+Repository.\+Get\+By\+Table\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the active order associated with a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the current Order if found; otherwise, returns null. 
+\end{DoxyReturn}
+
+
+This method assumes only one active order per table. Consider using Get\+Orders\+By\+Table\+Id\+Async if multiple orders per table are needed. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_a8a35a0cf1621ec3c28f287ecde732153}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Order\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Repositories/IOrder\+Repository.\+cs\end{DoxyCompactItemize}

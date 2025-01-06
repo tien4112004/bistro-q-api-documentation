@@ -1,0 +1,127 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}\index{BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a279c6a9d1d3a038f671c109209c4eb2d}{Auth\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{IToken\+Service}} token\+Service, User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager, Sign\+In\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ sign\+In\+Manager)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a4437a3f0438e30e90bfb9343d5e5262d}{Login}} (\mbox{[}From\+Body, Required\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{Login\+Dto}} login\+Dto)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a5e611e6e0b24492fdb4c531c1432f595}{Refresh}} (\mbox{[}From\+Body, Required\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1RefreshTokenDto}{Refresh\+Token\+Dto}} refresh\+Token\+Dto)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AuthController_8cs_source_l00016}{16}} of file \mbox{\hyperlink{AuthController_8cs_source}{Auth\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a279c6a9d1d3a038f671c109209c4eb2d}\index{BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}!AuthController@{AuthController}}
+\index{AuthController@{AuthController}!BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}}
+\doxysubsubsection{\texorpdfstring{AuthController()}{AuthController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a279c6a9d1d3a038f671c109209c4eb2d} 
+Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller.\+Auth\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{IToken\+Service}}}]{token\+Service}{, }\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{, }\item[{Sign\+In\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{sign\+In\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthController_8cs_source_l00022}{22}} of file \mbox{\hyperlink{AuthController_8cs_source}{Auth\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_tokenService\ =\ tokenService;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \_signInManager\ =\ signInManager;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a4437a3f0438e30e90bfb9343d5e5262d}\index{BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}!Login@{Login}}
+\index{Login@{Login}!BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}}
+\doxysubsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a4437a3f0438e30e90bfb9343d5e5262d} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller.\+Login (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body, Required\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{Login\+Dto}}}]{login\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthController_8cs_source_l00034}{34}} of file \mbox{\hyperlink{AuthController_8cs_source}{Auth\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByNameAsync(loginDto.Username);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}User\ not\ found."{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_signInManager.PasswordSignInAsync(user,\ loginDto.Password,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}Invalid\ password."{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ var\ accessToken\ =\ await\ \_tokenService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}{GenerateAccessToken}}(user);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ refreshToken\ =\ await\ \_tokenService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a78aa3ee8dd5d8b04b43bb354c8eb0635}{GenerateRefreshToken}}(user);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ var\ roles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<LoginResponseDto>(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Domain_1_1Dtos_1_1LoginResponseDto}{LoginResponseDto}}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{\ AccessToken\ =\ accessToken,\ RefreshToken\ =\ refreshToken,\ UserId\ =\ user.Id,\ Role\ =\ roles[0]\ \}));}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a5e611e6e0b24492fdb4c531c1432f595}\index{BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}!Refresh@{Refresh}}
+\index{Refresh@{Refresh}!BistroQ.API.Controllers.Auth.AuthController@{BistroQ.API.Controllers.Auth.AuthController}}
+\doxysubsubsection{\texorpdfstring{Refresh()}{Refresh()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController_a5e611e6e0b24492fdb4c531c1432f595} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Auth.\+Auth\+Controller.\+Refresh (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body, Required\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1RefreshTokenDto}{Refresh\+Token\+Dto}}}]{refresh\+Token\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthController_8cs_source_l00059}{59}} of file \mbox{\hyperlink{AuthController_8cs_source}{Auth\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.FindByIdAsync(refreshTokenDto.UserId);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (user\ ==\ \textcolor{keyword}{null}\ ||\ !await\ \_tokenService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_ab4445c397ebc86f588de87b8e0384f79}{ValidateRefreshToken}}(user,\ refreshTokenDto.RefreshToken))}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}(\textcolor{stringliteral}{"{}Invalid\ refresh\ token."{}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ var\ newAccessToken\ =\ await\ \_tokenService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}{GenerateAccessToken}}(user);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<Object>(\textcolor{keyword}{new}\ \{\ AccessToken\ =\ newAccessToken\ \}));}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Auth/Auth\+Controller.\+cs\end{DoxyCompactItemize}

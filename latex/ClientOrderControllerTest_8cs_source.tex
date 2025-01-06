@@ -1,0 +1,418 @@
+\doxysection{Client\+Order\+Controller\+Test.\+cs}
+\hypertarget{ClientOrderControllerTest_8cs_source}{}\label{ClientOrderControllerTest_8cs_source}\index{BistroQ.Tests/ClientOrderControllerTest.cs@{BistroQ.Tests/ClientOrderControllerTest.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Order}{BistroQ.API.Controllers.Order}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Http;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.Extensions.Logging;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Moq;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Security.Claims;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00015}00015\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Tests_1_1Controllers}{BistroQ.Tests.Controllers}};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00017}00017\ [TestClass]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00018}\mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ClientOrderControllerTests}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ClientOrderControllerTests}{ClientOrderControllerTests}}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ Mock<IOrderService>\ \_mockOrderService;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ Mock<UserManager<AppUser>>\ \_mockUserManager;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController}{ClientOrderController}}\ \_clientOrderController;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00024}00024\ \ \ \ \ [TestInitialize]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Setup()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_mockOrderService\ =\ \textcolor{keyword}{new}\ Mock<IOrderService>();}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \_mockUserManager\ =\ \textcolor{keyword}{new}\ Mock<UserManager<AppUser>>(}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<IUserStore<AppUser>>().Object,}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<IPasswordHasher<AppUser>>().Object,}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IUserValidator<AppUser>[0],}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IPasswordValidator<AppUser>[0],}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ UpperInvariantLookupNormalizer(),}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityErrorDescriber(),}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{null},}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<ILogger<UserManager<AppUser>>>().Object);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \_clientOrderController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController}{ClientOrderController}}(\_mockOrderService.Object,\ \_mockUserManager.Object);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00042}00042\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keywordtype}{void}\ SetupUserManager(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ user)}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ var\ userPrincipal\ =\ \textcolor{keyword}{new}\ ClaimsPrincipal(\textcolor{keyword}{new}\ ClaimsIdentity(\textcolor{keyword}{new}\ Claim[]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Claim(ClaimTypes.NameIdentifier,\ user.Id)}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \_clientOrderController.ControllerContext\ =\ \textcolor{keyword}{new}\ ControllerContext}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ HttpContext\ =\ \textcolor{keyword}{new}\ DefaultHttpContext\ \{\ User\ =\ userPrincipal\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00056}00056\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00057}00057\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ CreateOrder\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00058}00058\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ var\ order\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}\ \{\ OrderId\ =\ \textcolor{stringliteral}{"{}1"{}},\ TableId\ =\ 1,\ PeopleCount\ =\ 4\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.CreateOrder(1,\ 4)).ReturnsAsync(order);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.CreateOrder(4)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<OrderDto>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}1"{}},\ response.Data.OrderId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ Assert.AreEqual(4,\ response.Data.PeopleCount);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00074}00074\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00076}00076\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00077}00077\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ CreateOrder\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00078}00078\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.CreateOrder(4);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00089}00089\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00090}00090\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ CreateOrder\_ThrowsException\_WhenOrderCreationFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.CreateOrder(1,\ 4)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Order\ creation\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.CreateOrder(4);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00104}00104\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00105}00105\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetOrder\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00106}00106\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ var\ order\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{DetailOrderDto}}\ \{\ OrderId\ =\ \textcolor{stringliteral}{"{}1"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.GetOrderByTableId(1)).ReturnsAsync(order);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.GetOrder()\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<DetailOrderDto>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}1"{}},\ response.Data.OrderId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00123}00123\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00124}00124\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetOrder\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00125}00125\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.GetOrder();}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00134}00134\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00136}00136\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00137}00137\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetOrder\_ThrowsException\_WhenOrderRetrievalFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.GetOrderByTableId(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Order\ retrieval\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.GetOrder();}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00149}00149\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00151}00151\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00152}00152\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ DeleteOrder\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00153}00153\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.DeleteOrder(1)).Returns(Task.CompletedTask);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.DeleteOrder()\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<string>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}Order\ deleted"{}},\ response.Data);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00167}00167\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00169}00169\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00170}00170\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ DeleteOrder\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.DeleteOrder();}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00180}00180\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00182}00182\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00183}00183\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ DeleteOrder\_ThrowsException\_WhenOrderDeletionFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00184}00184\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.DeleteOrder(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Order\ deletion\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.DeleteOrder();}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00195}00195\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00196}00196\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00197}00197\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00198}00198\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ UpdatePeopleCount\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00199}00199\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ var\ order\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}\ \{\ OrderId\ =\ \textcolor{stringliteral}{"{}1"{}},\ TableId\ =\ 1,\ PeopleCount\ =\ 5\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.UpdatePeopleCount(1,\ 5)).ReturnsAsync(order);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00205}00205\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderPeopleCountDto}{UpdateOrderPeopleCountDto}}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 5}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.UpdatePeopleCount(request)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<OrderDto>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}1"{}},\ response.Data.OrderId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ Assert.AreEqual(5,\ response.Data.PeopleCount);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00219}00219\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00220}00220\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00221}00221\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00222}00222\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ UpdatePeopleCount\_NegativeNumberOfPeople()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00223}00223\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderPeopleCountDto}{UpdateOrderPeopleCountDto}}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ -\/1}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<ArgumentOutOfRangeException>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.UpdatePeopleCount(request);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00237}00237\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00239}00239\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00240}00240\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ UpdatePeopleCount\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00241}00241\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderPeopleCountDto}{UpdateOrderPeopleCountDto}}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 5}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.UpdatePeopleCount(request);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00254}00254\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00256}00256\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00257}00257\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ UpdatePeopleCount\_ThrowsException\_WhenUpdateFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00258}00258\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00262}00262\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.UpdatePeopleCount(1,\ 5)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Update\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00263}00263\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderPeopleCountDto}{UpdateOrderPeopleCountDto}}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 5}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.UpdatePeopleCount(request);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00274}00274\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00275}00275\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00276}00276\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00277}00277\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ AddProductsToOrder\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00278}00278\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ \textcolor{keyword}{new}\ List<CreateOrderItemRequestDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{CreateOrderItemRequestDto}}\ \{\ ProductId\ =\ 1,\ Quantity\ =\ 2\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ var\ addedItems\ =\ \textcolor{keyword}{new}\ List<OrderItemDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{OrderItemDto}}\ \{\ ProductId\ =\ 1,\ Quantity\ =\ 2\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.AddProductsToOrder(1,\ orderItems)).ReturnsAsync(addedItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.AddProductsToOrder(orderItems)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00294}00294\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<OrderItemDto>>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().ProductId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ Assert.AreEqual(2,\ response.Data.First().Quantity);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00301}00301\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00302}00302\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00303}00303\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00304}00304\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ AddProductsToOrder\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00305}00305\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.AddProductsToOrder(\textcolor{keyword}{new}\ List<CreateOrderItemRequestDto>());}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00314}00314\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00315}00315\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00316}00316\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00317}00317\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ AddProductsToOrder\_ThrowsException\_WhenAddProductsFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00318}00318\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ \textcolor{keyword}{new}\ List<CreateOrderItemRequestDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{CreateOrderItemRequestDto}}\ \{\ ProductId\ =\ 1,\ Quantity\ =\ 2\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.AddProductsToOrder(1,\ orderItems)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Add\ products\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.AddProductsToOrder(orderItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00333}00333\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00334}00334\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00335}00335\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00336}00336\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ RemoveProductsFromOrder\_Success()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00337}00337\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ \textcolor{keyword}{new}\ List<RemoveOrderItemRequestDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{RemoveOrderItemRequestDto}}\ \{\ OrderItemId\ =\ \textcolor{stringliteral}{"{}item1"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ var\ cancelledItems\ =\ \textcolor{keyword}{new}\ List<OrderItemDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{OrderItemDto}}\ \{\ ProductId\ =\ 1,\ Quantity\ =\ 0\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.CancelOrderItems(1,\ orderItems)).ReturnsAsync(cancelledItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00350}00350\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_clientOrderController.RemoveProductsFromOrder(orderItems)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<OrderItemDto>>;}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00358}00358\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().ProductId);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ Assert.AreEqual(0,\ response.Data.First().Quantity);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00360}00360\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00361}00361\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00362}00362\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00363}00363\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ RemoveProductsFromOrder\_RemoveNotExistsItem()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00364}00364\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00368}00368\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ \textcolor{keyword}{new}\ List<RemoveOrderItemRequestDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00369}00369\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{RemoveOrderItemRequestDto}}\ \{\ OrderItemId\ =\ \textcolor{stringliteral}{"{}nonexistent\_item"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00371}00371\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.CancelOrderItems(1,\ orderItems)).ThrowsAsync(\textcolor{keyword}{new}\ KeyNotFoundException(\textcolor{stringliteral}{"{}Order\ item\ not\ found"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<KeyNotFoundException>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.RemoveProductsFromOrder(orderItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00379}00379\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00380}00380\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00381}00381\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00382}00382\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ RemoveProductsFromOrder\_Unauthorized()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00383}00383\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetUserAsync(It.IsAny<ClaimsPrincipal>())).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00386}00386\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00388}00388\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1UnauthorizedException}{UnauthorizedException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.RemoveProductsFromOrder(\textcolor{keyword}{new}\ List<RemoveOrderItemRequestDto>());}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00392}00392\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00394}00394\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00395}00395\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ RemoveProductsFromOrder\_ThrowsException\_WhenRemoveProductsFails()}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00396}00396\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ TableId\ =\ 1\ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ SetupUserManager(user);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ \textcolor{keyword}{new}\ List<RemoveOrderItemRequestDto>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{RemoveOrderItemRequestDto}}\ \{\ OrderItemId\ =\ \textcolor{stringliteral}{"{}item1"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \_mockOrderService.Setup(x\ =>\ x.CancelOrderItems(1,\ orderItems)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Remove\ products\ failed"{}}));}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_clientOrderController.RemoveProductsFromOrder(orderItems);}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00411}00411\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ClientOrderControllerTest_8cs_source_l00412}00412\ \}}
+
+\end{DoxyCode}

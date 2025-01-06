@@ -1,0 +1,136 @@
+\doxysection{Bistro\+Q.\+Infrastructure.\+Repositories.\+Nutrition\+Fact\+Repository Class Reference}
+\hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository}{}\label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository}\index{BistroQ.Infrastructure.Repositories.NutritionFactRepository@{BistroQ.Infrastructure.Repositories.NutritionFactRepository}}
+
+
+Inheritance diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Nutrition\+Fact\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Nutrition\+Fact\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_aa988eeb5410c4243ae611895d1b120ab}{Nutrition\+Fact\+Repository}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context)
+\item 
+async Task$<$ Dictionary$<$ int, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{Nutrition\+Fact}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_a25b6a9df9602a6d91090f6666d6dd24b}{Get\+By\+Ids\+Async}} (IEnumerable$<$ int $>$ product\+Ids)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository$<$ Nutrition\+Fact $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a71c2ca7751cc76b64a2e55b5b96c9946}{Generic\+Repository}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context)
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a541d835ef0d5ec5376139b5ad912be93}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a20824a98095d1c767d192d6a9f30e9f0}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a91793d9177850823b1da1bbe3221b69e}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a77551df534140f8777cc239917fda41c}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a3b3196a04bd8b3d4a1af80b15b096875}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_af29a2d0f6802fbb81a98d1c488c2c2c6}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae2dd7c57e1d7879e97365198cef38d00}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+INutrition\+Fact\+Repository}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Nutrition\+Fact $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository$<$ Nutrition\+Fact $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_adc8b1b2ba6472f0717e82b7e5a8e515c}{Context}}
+\item 
+readonly Db\+Set$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae3fb5bc7bee4adadbb460445e6484492}{Db\+Set}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{NutritionFactRepository_8cs_source_l00009}{9}} of file \mbox{\hyperlink{NutritionFactRepository_8cs_source}{Nutrition\+Fact\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_aa988eeb5410c4243ae611895d1b120ab}\index{BistroQ.Infrastructure.Repositories.NutritionFactRepository@{BistroQ.Infrastructure.Repositories.NutritionFactRepository}!NutritionFactRepository@{NutritionFactRepository}}
+\index{NutritionFactRepository@{NutritionFactRepository}!BistroQ.Infrastructure.Repositories.NutritionFactRepository@{BistroQ.Infrastructure.Repositories.NutritionFactRepository}}
+\doxysubsubsection{\texorpdfstring{NutritionFactRepository()}{NutritionFactRepository()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_aa988eeb5410c4243ae611895d1b120ab} 
+Bistro\+Q.\+Infrastructure.\+Repositories.\+Nutrition\+Fact\+Repository.\+Nutrition\+Fact\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{NutritionFactRepository_8cs_source_l00013}{13}} of file \mbox{\hyperlink{NutritionFactRepository_8cs_source}{Nutrition\+Fact\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(context) }
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \_context\ =\ context;}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_a25b6a9df9602a6d91090f6666d6dd24b}\index{BistroQ.Infrastructure.Repositories.NutritionFactRepository@{BistroQ.Infrastructure.Repositories.NutritionFactRepository}!GetByIdsAsync@{GetByIdsAsync}}
+\index{GetByIdsAsync@{GetByIdsAsync}!BistroQ.Infrastructure.Repositories.NutritionFactRepository@{BistroQ.Infrastructure.Repositories.NutritionFactRepository}}
+\doxysubsubsection{\texorpdfstring{GetByIdsAsync()}{GetByIdsAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1NutritionFactRepository_a25b6a9df9602a6d91090f6666d6dd24b} 
+async Task$<$ Dictionary$<$ int, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{Nutrition\+Fact}} $>$ $>$ Bistro\+Q.\+Infrastructure.\+Repositories.\+Nutrition\+Fact\+Repository.\+Get\+By\+Ids\+Async (\begin{DoxyParamCaption}\item[{IEnumerable$<$ int $>$}]{product\+Ids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+INutrition\+Fact\+Repository}}.
+
+
+
+Definition at line \mbox{\hyperlink{NutritionFactRepository_8cs_source_l00018}{18}} of file \mbox{\hyperlink{NutritionFactRepository_8cs_source}{Nutrition\+Fact\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ var\ nutritionFacts\ =\ await\ \_context.NutritionFacts}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(nf\ =>\ nf.Product)}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ .Where(nf\ =>\ productIds.Contains(nf.ProductId))}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nutritionFacts.ToDictionary(nf\ =>\ nf.ProductId);}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Infrastructure/\+Repositories/Nutrition\+Fact\+Repository.\+cs\end{DoxyCompactItemize}

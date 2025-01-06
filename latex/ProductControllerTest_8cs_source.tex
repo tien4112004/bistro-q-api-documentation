@@ -1,0 +1,151 @@
+\doxysection{Product\+Controller\+Test.\+cs}
+\hypertarget{ProductControllerTest_8cs_source}{}\label{ProductControllerTest_8cs_source}\index{BistroQ.Tests/ProductControllerTest.cs@{BistroQ.Tests/ProductControllerTest.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Product}{BistroQ.API.Controllers.Product}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1NutritionFact}{BistroQ.Core.Dtos.NutritionFact}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Products}{BistroQ.Core.Dtos.Products}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Moq;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Tests_1_1Controllers}{BistroQ.Tests.Controllers}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00012}00012\ [TestClass]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00013}\mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests}{ProductControllerTests}}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ Mock<IProductService>\ \_mockProductService;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{ProductController}}\ \_productController;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00018}00018\ \ \ \ \ [TestInitialize]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{void}\ Setup()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_mockProductService\ =\ \textcolor{keyword}{new}\ Mock<IProductService>();}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \_productController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{ProductController}}(\_mockProductService.Object);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00025}00025\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetRecommendations\_Success()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ var\ expectedProducts\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ \{\ ProductId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}Product\ 1"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ \{\ ProductId\ =\ 2,\ Name\ =\ \textcolor{stringliteral}{"{}Product\ 2"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(expectedProducts);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ Assert.AreEqual(2,\ response.Data.Count());}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().ProductId);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00052}00052\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetRecommendations\_OrderNotFound\_ThrowsException()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00054}00054\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}nonexistent\_order"{}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ .ThrowsAsync(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}}));}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_productController.GetRecommendations(size,\ orderId);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00070}00070\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetRecommendations\_EmptyResults\_ReturnsEmptyList()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00072}00072\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ var\ emptyList\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>();}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(emptyList);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ Assert.IsFalse(response.Data.Any());}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00090}00090\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00092}00092\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00093}00093\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetRecommendations\_WithNutritionFacts\_Success()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00094}00094\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange\ }}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ var\ expectedProducts\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ 1,\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Name\ =\ \textcolor{stringliteral}{"{}Product\ 1"{}},}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NutritionFact\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1NutritionFact_1_1NutritionFactDto}{NutritionFactDto}}\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Calories\ =\ 100,}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Protein\ =\ 10}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(expectedProducts);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ var\ product\ =\ response.Data.First();}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ Assert.IsNotNull(product.NutritionFact);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ Assert.AreEqual(100,\ product.NutritionFact.Calories);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00126}00126\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00128}00128\ \ \ \ \ [TestMethod]}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00129}00129\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ GetRecommendations\_InvalidSize\_ThrowsException()}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00130}00130\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ var\ invalidSize\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ invalidSize))}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ .ThrowsAsync(\textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Size\ must\ be\ positive"{}}));}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<ArgumentException>(async\ ()\ =>}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_productController.GetRecommendations(invalidSize,\ orderId);}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00144}00144\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductControllerTest_8cs_source_l00145}00145\ \}}
+
+\end{DoxyCode}

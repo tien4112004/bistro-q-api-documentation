@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classBistroQ_1_1Core_1_1Dtos_1_1BaseCollectionQueryParams.html" title=" " alt="" coords="5,139,227,181"/>
+<area shape="rect" id="Node000001" href="$classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams.html" title=" " alt="" coords="277,5,490,48"/>
+<area shape="poly" id="edge5_Node000000_Node000001" title=" " alt="" coords="157,127,211,92,274,58,302,46,304,51,276,62,214,96,160,132"/>
+<area shape="rect" id="Node000002" href="$classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams.html" title=" " alt="" coords="275,72,492,115"/>
+<area shape="poly" id="edge6_Node000000_Node000002" title=" " alt="" coords="218,132,294,113,296,118,220,137"/>
+<area shape="rect" id="Node000003" href="$classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams.html" title=" " alt="" coords="281,139,486,181"/>
+<area shape="poly" id="edge7_Node000000_Node000003" title=" " alt="" coords="242,157,281,157,281,163,242,163"/>
+<area shape="rect" id="Node000004" href="$classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams.html" title=" " alt="" coords="288,205,478,248"/>
+<area shape="poly" id="edge8_Node000000_Node000004" title=" " alt="" coords="220,183,296,202,294,207,218,188"/>
+<area shape="rect" id="Node000005" href="$classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams.html" title=" " alt="" coords="289,272,478,315"/>
+<area shape="poly" id="edge9_Node000000_Node000005" title=" " alt="" coords="160,188,214,224,276,258,304,269,302,274,274,262,211,228,157,193"/>
+</map>

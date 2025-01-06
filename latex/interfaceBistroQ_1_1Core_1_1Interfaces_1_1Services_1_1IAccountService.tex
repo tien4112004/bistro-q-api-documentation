@@ -1,0 +1,161 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+
+
+Provides functionality for managing user accounts in the restaurant POS system.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Accounts, int Count)$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{Get\+All\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}} query)
+\begin{DoxyCompactList}\small\item\em Retrieves a collection of user accounts based on the specified query parameters. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}{Get\+By\+Id\+Async}} (string id)
+\begin{DoxyCompactList}\small\item\em Retrieves the details of a user account by its unique identifier. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}{Create\+Account\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}} request)
+\begin{DoxyCompactList}\small\item\em Creates a new user account with specified credentials and role. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}{Update\+Account\+Async}} (string id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}} request)
+\begin{DoxyCompactList}\small\item\em Updates an existing user account\textquotesingle{}s information. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}{Delete\+Account\+Async}} (string id)
+\begin{DoxyCompactList}\small\item\em Deletes a user account from the system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for managing user accounts in the restaurant POS system. 
+
+Definition at line \mbox{\hyperlink{IAccountService_8cs_source_l00008}{8}} of file \mbox{\hyperlink{IAccountService_8cs_source}{IAccount\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}!CreateAccountAsync@{CreateAccountAsync}}
+\index{CreateAccountAsync@{CreateAccountAsync}!BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+\doxysubsubsection{\texorpdfstring{CreateAccountAsync()}{CreateAccountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service.\+Create\+Account\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}}}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new user account with specified credentials and role. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em request} & The account creation data containing username, password, and role.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A newly created account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+The default role is set to Client if not specified in the request. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a40a6121ee2343f775a4fdd1caae98c9f}{Bistro\+Q.\+Services.\+Services.\+Account\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}!DeleteAccountAsync@{DeleteAccountAsync}}
+\index{DeleteAccountAsync@{DeleteAccountAsync}!BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+\doxysubsubsection{\texorpdfstring{DeleteAccountAsync()}{DeleteAccountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d} 
+Task$<$ bool $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service.\+Delete\+Account\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Deletes a user account from the system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to delete.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the account was successfully deleted; false if the account doesn\textquotesingle{}t exist. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4bb5fe4844bf4fb3df5ebc42a60c4a0f}{Bistro\+Q.\+Services.\+Services.\+Account\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2} 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Accounts, int Count)$>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}}}]{query}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a collection of user accounts based on the specified query parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & The query parameters for filtering and sorting the accounts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing an enumerable collection of account response DTOs and the total count of accounts. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4f17b1871df24338e268fdbc693d109c}{Bistro\+Q.\+Services.\+Services.\+Account\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the details of a user account by its unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a4535563f488c79e899243235f3937201}{Bistro\+Q.\+Services.\+Services.\+Account\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}\index{BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}!UpdateAccountAsync@{UpdateAccountAsync}}
+\index{UpdateAccountAsync@{UpdateAccountAsync}!BistroQ.Core.Interfaces.Services.IAccountService@{BistroQ.Core.Interfaces.Services.IAccountService}}
+\doxysubsubsection{\texorpdfstring{UpdateAccountAsync()}{UpdateAccountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountDto}{Account\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IAccount\+Service.\+Update\+Account\+Async (\begin{DoxyParamCaption}\item[{string}]{id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}}}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Updates an existing user account\textquotesingle{}s information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The unique identifier of the account to update.\\
+\hline
+{\em request} & The account update data containing the fields to be modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated account DTO containing the account information. 
+\end{DoxyReturn}
+
+
+Only provided fields in the request will be updated. Null or empty fields will be ignored. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AccountService_a1e980a94f38cd498fefce3530b73a4b0}{Bistro\+Q.\+Services.\+Services.\+Account\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Services/IAccount\+Service.\+cs\end{DoxyCompactItemize}

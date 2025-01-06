@@ -1,0 +1,121 @@
+\doxysection{Table\+Service.\+cs}
+\hypertarget{TableService_8cs_source}{}\label{TableService_8cs_source}\index{BistroQ.Services/Services/TableService.cs@{BistroQ.Services/Services/TableService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Builder}{BistroQ.Core.Common.Builder}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00011}00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00013}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService}{00013}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService}{TableService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00014}00014\ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ \_unitOfWork;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService}{TableService}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ unitOfWork,\ IMapper\ mapper)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00024}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a559aa2d28a004727fb6cc9d14002ebdf}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<TableDetailDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a559aa2d28a004727fb6cc9d14002ebdf}{GetByIdAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}>(table);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00035}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aacdee53577d110f2f6017afc1fa54008}{00035}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<(IEnumerable<TableDetailDto>\ Tables,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aacdee53577d110f2f6017afc1fa54008}{GetAllAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00036}00036\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}(\_unitOfWork.TableRepository.GetQueryable())}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .JoinOrders()}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneName(queryParams.ZoneName)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneId(queryParams.ZoneId)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithSeatsCount(queryParams.SeatsCount);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.TableRepository.GetTablesCountAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_unitOfWork.TableRepository.GetTablesAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<TableDetailDto>>(tables),\ count);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00052}00052\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00053}00053\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00054}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aade2383f0c689d87be8a63999662ae1e}{00054}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<TableDetailDto>>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aade2383f0c689d87be8a63999662ae1e}{GetOccupiedTablesAsync}}(\textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00055}00055\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}(\_unitOfWork.TableRepository.GetQueryable())}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .JoinOrders()}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneId(zoneId);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_unitOfWork.TableRepository.GetTablesAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ var\ result\ =\ \_mapper.Map<IEnumerable<TableDetailDto>>(tables)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ .Where(t\ =>\ t.IsOccupied\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00069}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aa6e63a834b4aa1456dbad8efc691218c}{00069}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<TableDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aa6e63a834b4aa1456dbad8efc691218c}{AddAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ tableDto)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ var\ table\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(tableDto);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ var\ tableNumber\ =\ await\ \_unitOfWork.TableRepository.GetNextTableNumberAsync(table.ZoneId.Value);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ table.Number\ =\ tableNumber;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ var\ createdTable\ =\ await\ \_unitOfWork.TableRepository.AddAsync(table);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}>(createdTable);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00080}00080\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00082}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aaaa5eaa0490772b4e7ae8b647f4a8289}{00082}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<TableDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aaaa5eaa0490772b4e7ae8b647f4a8289}{UpdateAsync}}(\textcolor{keywordtype}{int}\ tableId,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{UpdateTableRequestDto}}\ tableDto)}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00083}00083\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ var\ existingTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingTable\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ var\ newTable\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(tableDto);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ newTable.TableId\ =\ tableId;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ newTable.Number\ =\ existingTable.Number;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ newTable.ZoneId\ =\ newTable.ZoneId\ ??\ existingTable.ZoneId;}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ newTable.SeatsCount\ =\ newTable.SeatsCount\ ??\ existingTable.SeatsCount;\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.UpdateAsync(existingTable,\ newTable);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ var\ updatedTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}>(updatedTable);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00102}00102\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00104}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a097c0eea983dca2bfe9bad76d35194a2}{00104}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a097c0eea983dca2bfe9bad76d35194a2}{DeleteAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00105}00105\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ var\ existingTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingTable\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.DeleteAsync(existingTable);}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00114}00114\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableService_8cs_source_l00115}00115\ \}}
+
+\end{DoxyCode}

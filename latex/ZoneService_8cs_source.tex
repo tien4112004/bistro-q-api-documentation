@@ -1,0 +1,154 @@
+\doxysection{Zone\+Service.\+cs}
+\hypertarget{ZoneService_8cs_source}{}\label{ZoneService_8cs_source}\index{BistroQ.Services/Services/ZoneService.cs@{BistroQ.Services/Services/ZoneService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Builder}{BistroQ.Core.Common.Builder}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Zones}{BistroQ.Core.Dtos.Zones}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00012}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService}{ZoneService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ \_unitOfWork;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00016}00016\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService}{ZoneService}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ unitOfWork,\ IMapper\ mapper)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00023}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a6cbc601d9b8540b45996752948ce73c6}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ZoneDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a6cbc601d9b8540b45996752948ce73c6}{GetByIdAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00024}00024\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(zone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00034}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a3c07cc332d084e67c2f753b5b03b3ebf}{00034}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<(IEnumerable<ZoneDto>\ Zones,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a3c07cc332d084e67c2f753b5b03b3ebf}{GetAllAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ZoneQueryableBuilder}{ZoneQueryableBuilder}}(\_unitOfWork.ZoneRepository.GetQueryable())}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithName(queryParams.Name);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesCountAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ zones\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<ZoneDto>>(zones),\ count);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00049}00049\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00050}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_ac85357357bd08c100a5388d482b53a67}{00050}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ZoneCashierDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_ac85357357bd08c100a5388d482b53a67}{GetByCashierAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetZoneWithTableAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{ZoneCashierDto}}>(zone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00061}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a0d0ab8590d0b6632a59d5c928716087c}{00061}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<(IEnumerable<ZoneCashierDto>\ Zones,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a0d0ab8590d0b6632a59d5c928716087c}{GetAllByCashierAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00062}00062\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ZoneQueryableBuilder}{ZoneQueryableBuilder}}(\_unitOfWork.ZoneRepository.GetQueryable())}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .IncludeTablesWithOrder()}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithName(queryParams.Name);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesCountAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ var\ zones\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<ZoneCashierDto>>(zones),\ count);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00076}00076\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00078}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a4fc4dbc6a34a319a332b1d88e3a7d09f}{00078}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ZoneDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a4fc4dbc6a34a319a332b1d88e3a7d09f}{AddAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{CreateZoneRequestDto}}\ zoneDto)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ var\ zone\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(zoneDto);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ var\ createdZone\ =\ await\ \_unitOfWork.ZoneRepository.AddAsync(zone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(createdZone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00088}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a397209377f7cf5ed6183aa6da40a1ab1}{00088}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ZoneDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a397209377f7cf5ed6183aa6da40a1ab1}{UpdateAsync}}(\textcolor{keywordtype}{int}\ zoneId,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{UpdateZoneRequestDto}}\ zoneDto)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00089}00089\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ var\ existingZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingZone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ var\ newZone\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(zoneDto);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ newZone.ZoneId\ =\ zoneId;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ZoneRepository.UpdateAsync(existingZone,\ newZone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ var\ updatedZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(updatedZone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00105}00105\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00107}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa838df05a07ebe548fc6606698f7e6f6}{00107}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa838df05a07ebe548fc6606698f7e6f6}{DeleteAsync}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00108}00108\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ var\ existingZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingZone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ZoneRepository.DeleteAsync(existingZone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Change\ the\ implementation\ of\ this\ method}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00120}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_abb7ff5c0d7419c225a4b764c084c17cd}{00120}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ZoneDetailDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_abb7ff5c0d7419c225a4b764c084c17cd}{AddTablesToZoneAsync}}(\textcolor{keywordtype}{int}\ zoneId,\ List<CreateTableRequestDto>\ tableDtos)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00121}00121\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00127}00127\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ var\ tables\ =\ \_mapper.Map<List<Table>>(tableDtos);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ var\ usedNumbers\ =\ \textcolor{keyword}{new}\ HashSet<int>();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00130}00130\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ table\ \textcolor{keywordflow}{in}\ tables)}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ table.ZoneId\ =\ zoneId;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tableNumber\ =\ await\ \_unitOfWork.TableRepository.GetNextTableNumberAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00135}00135\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ usedNumbers.Add(tableNumber);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ table.Number\ =\ tableNumber;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00139}00139\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.AddRangeAsync(tables);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00142}00142\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ var\ zoneDetailDto\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDetailDto}{ZoneDetailDto}}>(zone);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ zoneDetailDto.Tables\ =\ \_mapper.Map<List<TableDto>>(tables);}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00145}00145\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ zoneDetailDto;}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ZoneService_8cs_source_l00148}00148\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\doxysection{Admin\+Zone\+Controller.\+cs}
+\hypertarget{AdminZoneController_8cs_source}{}\label{AdminZoneController_8cs_source}\index{BistroQ.API/Controllers/Zone/AdminZoneController.cs@{BistroQ.API/Controllers/Zone/AdminZoneController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Zones}{BistroQ.Core.Dtos.Zones}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00012}00012\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{BistroQ.API.Controllers}};}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00014}00014\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00015}00015\ [Route(\textcolor{stringliteral}{"{}api/Admin/Zone"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00016}00016\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Admin)]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00017}00017\ [Tags(\textcolor{stringliteral}{"{}Admin\ Zone"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00018}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}{AdminZoneController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}\ \_zoneService;}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}{AdminZoneController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}\ zoneService)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00023}00023\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \_zoneService\ =\ zoneService;}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00025}00025\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00027}00027\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetZones([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ var\ (zones,\ count)\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ab0ec907f8bbdc5edd58b65c76add26f4}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ZoneDto>>(zones,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00032}00032\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00034}00034\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00035}00035\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{zoneId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00036}00036\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetZone([FromRoute]\ \textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.GetByIdAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(zone));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00042}00042\ \ \ \ \ [HttpPost]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ AddZone([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{CreateZoneRequestDto}}\ request)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.AddAsync(request);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(zone));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00049}00049\ \ \ \ \ [HttpPost(\textcolor{stringliteral}{"{}\{zoneId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00050}00050\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ AddTables([FromRoute]\ \textcolor{keywordtype}{int}\ zoneId\ ,[FromBody]\ List<CreateTableRequestDto>\ requests)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.AddTablesToZoneAsync(zoneId,\ requests);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDetailDto>(zone));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00056}00056\ \ \ \ \ [HttpPut]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00057}00057\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{zoneId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00058}00058\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdateZone([FromRoute]\ \textcolor{keywordtype}{int}\ zoneId,\ [FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{UpdateZoneRequestDto}}\ zoneDto)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00059}00059\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ var\ updatedZone\ =\ await\ \_zoneService.UpdateAsync(zoneId,\ zoneDto);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(updatedZone));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00063}00063\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00064}00064\ \ \ \ \ [HttpDelete]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00065}00065\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{zoneId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ DeleteZone([FromRoute]\ \textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ await\ \_zoneService.DeleteAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Zone\ deleted\ successfully"{}}));}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00070}00070\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AdminZoneController_8cs_source_l00071}00071\ \}}
+
+\end{DoxyCode}

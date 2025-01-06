@@ -1,0 +1,137 @@
+\doxysection{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{}\label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a50b27e8175746a34af6cd8ba2b0827b3}{Pagination\+Response\+Dto}} (T data, int total\+Items, int page, int size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab874500f750e004624f4573b9087b3df}{Success}} = true\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+T \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_af6270e50e424e65d6250367244ab5639}{Data}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab4b5602aa8d68648931deaaa66f5ae89}{Current\+Page}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab261b32278f67088a6e4b59624888998}{Total\+Pages}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a01f13f572052600c549c6cf58ec4c1b5}{Total\+Items}} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00003}{3}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a50b27e8175746a34af6cd8ba2b0827b3}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!PaginationResponseDto@{PaginationResponseDto}}
+\index{PaginationResponseDto@{PaginationResponseDto}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{PaginationResponseDto()}{PaginationResponseDto()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a50b27e8175746a34af6cd8ba2b0827b3} 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Pagination\+Response\+Dto}} (\begin{DoxyParamCaption}\item[{T}]{data}{, }\item[{int}]{total\+Items}{, }\item[{int}]{page}{, }\item[{int}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00006}{6}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \ \ \ \ \{}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ Data\ =\ data;}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ TotalItems\ =\ totalItems;}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ CurrentPage\ =\ page;}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ TotalPages\ =\ size\ !=\ 0\ ?\ (int)Math.Ceiling(totalItems\ /\ (\textcolor{keywordtype}{double})size)\ :\ 0;}
+\DoxyCodeLine{00012\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab4b5602aa8d68648931deaaa66f5ae89}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!CurrentPage@{CurrentPage}}
+\index{CurrentPage@{CurrentPage}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CurrentPage}{CurrentPage}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab4b5602aa8d68648931deaaa66f5ae89} 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.Current\+Page\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00018}{18}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_af6270e50e424e65d6250367244ab5639}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!Data@{Data}}
+\index{Data@{Data}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Data}{Data}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_af6270e50e424e65d6250367244ab5639} 
+T \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.Data\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00016}{16}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab874500f750e004624f4573b9087b3df}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!Success@{Success}}
+\index{Success@{Success}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Success}{Success}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab874500f750e004624f4573b9087b3df} 
+bool \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.Success = true\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00014}{14}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{true};}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a01f13f572052600c549c6cf58ec4c1b5}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!TotalItems@{TotalItems}}
+\index{TotalItems@{TotalItems}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TotalItems}{TotalItems}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_a01f13f572052600c549c6cf58ec4c1b5} 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.Total\+Items = 0\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00022}{22}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ 0;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab261b32278f67088a6e4b59624888998}\index{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}!TotalPages@{TotalPages}}
+\index{TotalPages@{TotalPages}!BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$@{BistroQ.Core.Dtos.PaginationResponseDto$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TotalPages}{TotalPages}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto_ab261b32278f67088a6e4b59624888998} 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{Bistro\+Q.\+Core.\+Dtos.\+Pagination\+Response\+Dto}}$<$ T $>$.Total\+Pages\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaginationResponseDto_8cs_source_l00020}{20}} of file \mbox{\hyperlink{PaginationResponseDto_8cs_source}{Pagination\+Response\+Dto.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Dtos/Pagination\+Response\+Dto.\+cs\end{DoxyCompactItemize}

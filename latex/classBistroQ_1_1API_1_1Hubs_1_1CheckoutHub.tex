@@ -1,0 +1,172 @@
+\doxysection{Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub}{}\label{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub}\index{BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a235e3957615402eccbd7578bdedc5e68}{Checkout\+Hub}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}} order\+Service, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{IPayment\+Service}} payment\+Service, User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}} table\+Service, IMapper mapper)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af0692f6360f1815e48e4094760840fc3}{Initiate\+Checkout}} (int table\+Id)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af132b53f72fc9e7323b22ac2a258a2b7}{Complete\+Checkout}} (int table\+Id)
+\item 
+override async Task \mbox{\hyperlink{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a11894925dd7215accca0540252466e56}{On\+Connected\+Async}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CheckoutHub_8cs_source_l00014}{14}} of file \mbox{\hyperlink{CheckoutHub_8cs_source}{Checkout\+Hub.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a235e3957615402eccbd7578bdedc5e68}\index{BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}!CheckoutHub@{CheckoutHub}}
+\index{CheckoutHub@{CheckoutHub}!BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}}
+\doxysubsubsection{\texorpdfstring{CheckoutHub()}{CheckoutHub()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a235e3957615402eccbd7578bdedc5e68} 
+Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub.\+Checkout\+Hub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}}}]{order\+Service}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{IPayment\+Service}}}]{payment\+Service}{, }\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}}}]{table\+Service}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CheckoutHub_8cs_source_l00022}{22}} of file \mbox{\hyperlink{CheckoutHub_8cs_source}{Checkout\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \_paymentService\ =\ paymentService;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af132b53f72fc9e7323b22ac2a258a2b7}\index{BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}!CompleteCheckout@{CompleteCheckout}}
+\index{CompleteCheckout@{CompleteCheckout}!BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}}
+\doxysubsubsection{\texorpdfstring{CompleteCheckout()}{CompleteCheckout()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af132b53f72fc9e7323b22ac2a258a2b7} 
+async Task Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub.\+Complete\+Checkout (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CheckoutHub_8cs_source_l00058}{58}} of file \mbox{\hyperlink{CheckoutHub_8cs_source}{Checkout\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{GetOrderByTableId}}(tableId);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Payment\ completed\ for\ table\ \{tableId\}"{}});}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{UpdateStatus}}(tableId,\ OrderStatus.Completed);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Group(\$\textcolor{stringliteral}{"{}Client\_\{tableId\}"{}}).SendAsync(\textcolor{stringliteral}{"{}CheckoutCompleted"{}});}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutError"{}},\ e.Message);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af0692f6360f1815e48e4094760840fc3}\index{BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}!InitiateCheckout@{InitiateCheckout}}
+\index{InitiateCheckout@{InitiateCheckout}!BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}}
+\doxysubsubsection{\texorpdfstring{InitiateCheckout()}{InitiateCheckout()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_af0692f6360f1815e48e4094760840fc3} 
+async Task Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub.\+Initiate\+Checkout (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CheckoutHub_8cs_source_l00031}{31}} of file \mbox{\hyperlink{CheckoutHub_8cs_source}{Checkout\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{GetOrderByTableId}}(tableId);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{UpdateStatus}}(tableId,\ OrderStatus.Pending);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{GetByIdAsync}}(tableId);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ paymentData\ =\ await\ \_paymentService.InitiatePayment(\_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}>(order));\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Payment\ initiated\ for\ table\ \{tableId\}\ in\ zone\ \{table.ZoneId\}"{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutInitiated"{}},\ paymentData);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Group(\textcolor{stringliteral}{"{}Cashiers"{}}).SendAsync(\textcolor{stringliteral}{"{}NewCheckout"{}},\ tableId,\ table.Number,\ table.ZoneName);}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Clients.Caller.SendAsync(\textcolor{stringliteral}{"{}CheckoutError"{}},\ e.Message);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a11894925dd7215accca0540252466e56}\index{BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}!OnConnectedAsync@{OnConnectedAsync}}
+\index{OnConnectedAsync@{OnConnectedAsync}!BistroQ.API.Hubs.CheckoutHub@{BistroQ.API.Hubs.CheckoutHub}}
+\doxysubsubsection{\texorpdfstring{OnConnectedAsync()}{OnConnectedAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Hubs_1_1CheckoutHub_a11894925dd7215accca0540252466e56} 
+override async Task Bistro\+Q.\+API.\+Hubs.\+Checkout\+Hub.\+On\+Connected\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CheckoutHub_8cs_source_l00080}{80}} of file \mbox{\hyperlink{CheckoutHub_8cs_source}{Checkout\+Hub.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\ userRole\ =\ Context.User.Claims.FirstOrDefault(c\ =>\ c.Type\ ==\ ClaimTypes.Role)?.Value;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (userRole\ ==\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Groups.AddToGroupAsync(Context.ConnectionId,\ \textcolor{stringliteral}{"{}Cashiers"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (userRole\ ==\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Client)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ var\ user\ =\ await\ \_userManager.GetUserAsync(Context.User);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Groups.AddToGroupAsync(Context.ConnectionId,\ \textcolor{stringliteral}{"{}Client\_"{}}\ +\ user.TableId.Value);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Hubs/Checkout\+Hub.\+cs\end{DoxyCompactItemize}

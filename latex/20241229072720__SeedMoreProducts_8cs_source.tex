@@ -1,0 +1,936 @@
+\doxysection{20241229072720\+\_\+\+Seed\+More\+Products.\+cs}
+\hypertarget{20241229072720__SeedMoreProducts_8cs_source}{}\label{20241229072720__SeedMoreProducts_8cs_source}\index{BistroQ.Infrastructure/Migrations/20241229072720\_SeedMoreProducts.cs@{BistroQ.Infrastructure/Migrations/20241229072720\_SeedMoreProducts.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore.Migrations;}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00004}00004\ \textcolor{preprocessor}{\#nullable\ disable}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00006}00006\ \textcolor{preprocessor}{\#pragma\ warning\ disable\ CA1814\ }\textcolor{comment}{//\ Prefer\ jagged\ arrays\ over\ multidimensional}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Migrations}{BistroQ.Infrastructure.Migrations}}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{partial\ class\ }SeedMoreProducts\ :\ Migration}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00012}00012\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00014}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Migrations_1_1SeedMoreProducts_aacd7b3644c8408912276c864ace4a4b8}{00014}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Migrations_1_1SeedMoreProducts_aacd7b3644c8408912276c864ace4a4b8}{Up}}(MigrationBuilder\ migrationBuilder)}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}Price"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}DiscountPrice"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}PriceAtPurchase"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}OrderItem"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}TotalAmount"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}CategoryId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 3,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}Name"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{stringliteral}{"{}Savory\ Snacks"{}});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.InsertData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}CategoryId"{}},\ \textcolor{stringliteral}{"{}Name"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[,]}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 4,\ \textcolor{stringliteral}{"{}Grilled\ \&\ BBQ"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 5,\ \textcolor{stringliteral}{"{}Appetizers"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 6,\ \textcolor{stringliteral}{"{}Drinks"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.InsertData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ImageId"{}},\ \textcolor{stringliteral}{"{}ContentType"{}},\ \textcolor{stringliteral}{"{}Name"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[,]}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000011"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}dumplings.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000012"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}bibim-\/guksu.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000013"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}minestrone-\/soup.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000014"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}french-\/onion-\/soup.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000015"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}cheeseburger.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000016"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}shawarma.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000017"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}chow-\/mein.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000018"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}samosa.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000019"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}gyoza.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000020"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}veggie-\/burger.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000021"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}spring-\/rolls.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000022"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}takoyaki.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000023"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}tea.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000024"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}seafood-\/pho.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000025"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}steamed-\/rice-\/roll.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000026"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}espresso.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000027"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}yakitori.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000028"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}smoothie.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000029"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}pad-\/thai.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000030"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}udon.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000031"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}spaghetti-\/carbonara.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000032"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}ramen.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000033"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}chicken-\/biryani.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000034"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}coconut-\/water.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000035"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}lemonade.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000036"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}chicken-\/satay.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000037"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}milkshake.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000038"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}bulgogi.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000039"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}soba-\/noodles.jpg"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000040"{}}),\ \textcolor{stringliteral}{"{}image/jpeg"{}},\ \textcolor{stringliteral}{"{}laksa.jpg"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 29,\ 14,\ 27,\ 19,\ 979,\ DateTimeKind.Local).AddTicks(7995));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}2"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 29,\ 14,\ 27,\ 19,\ 979,\ DateTimeKind.Local).AddTicks(8396));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}3"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 29,\ 14,\ 27,\ 19,\ 979,\ DateTimeKind.Local).AddTicks(8458));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}a89f7a03-\/6e99-\/4611-\/b3fe-\/1ac4cdb54e6f"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAELcCc4SP9gXthdrEP2Q5VnJqT+IuLTIkZ/QdsWGiv3TTbXNogHsakbfUyF00zFxxhQ=="{}},\ \textcolor{stringliteral}{"{}4850a35a-\/40c7-\/4135-\/a1a7-\/8e2eb324761c"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}10"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}140f7974-\/9eac-\/4e82-\/a26b-\/db38878dcc5c"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEJ+e1Rfo816/Kf/DluZ4c2b2bQyCfJAxPz+zvOBx4j7FUYhkt3jBXb4RQjF4VI3bIA=="{}},\ \textcolor{stringliteral}{"{}66866033-\/12ba-\/493d-\/9fce-\/e6fb4a0ea6e5"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}11"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}439da447-\/1f47-\/4fbe-\/8705-\/5d9441f9ca55"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEAqKBNddyuyGektwvRkdQTsvdLGX/cPIZCwODigx4SkTAEqs14HtiI5KaoLtUq27og=="{}},\ \textcolor{stringliteral}{"{}5c8c2eca-\/9b49-\/4840-\/956a-\/b09efd2829d8"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}12"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}b731f66e-\/7f0f-\/4448-\/90f7-\/9ae760db6957"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEFz/dGeJdIpqc6uzWTCpuxcefnLLq1mWhEvM2kX5pL9O80cHmjWRrCgXavb7D43SoQ=="{}},\ \textcolor{stringliteral}{"{}2648545b-\/f96a-\/49dd-\/96c7-\/5652f6e44108"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}13"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}106ccc49-\/af61-\/4968-\/b808-\/d5dee333e483"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEMOH9ZXbhcmz8FcV7ZzLnM+bB/jxrs0YI3mfGup+bl3vovRxH/9ahl1o5aQ9CKFCjw=="{}},\ \textcolor{stringliteral}{"{}f42cbc94-\/80a5-\/4703-\/89d3-\/9ee275031dd4"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}2"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}7a1e7012-\/882f-\/4698-\/ad4b-\/935754859add"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEPMhxEotsF6Mh6zxJI/Kd1qrYGACVJlNaYcZCE1+Vo8WIQhdq8rQhgMq82N3v2XorA=="{}},\ \textcolor{stringliteral}{"{}adfc20dc-\/8ba4-\/479d-\/a761-\/db606507c354"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00176}00176\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}3"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}6f39de81-\/8a64-\/469a-\/b818-\/24d43f290aa6"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEJTb7uO3A6lJjOzBmnXOb/RHZtfNZDju9HwlBuA/L0YEyfEtSlSu1MsJcVfrSKHKbA=="{}},\ \textcolor{stringliteral}{"{}b3061abd-\/05de-\/4b2b-\/a463-\/ef17645d516a"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}4"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}68dc6164-\/c60f-\/4b82-\/809f-\/06d7df156de5"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAELu2UoWQMekpMtFpZNJL8WWFQ1mInnLopJSeflwU24bknZXUKaj//yxCH7tGG/JOPw=="{}},\ \textcolor{stringliteral}{"{}94fd3bd5-\/3874-\/420e-\/bad4-\/603527c8a0c3"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}5"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}ded19252-\/f2f0-\/4825-\/b7a6-\/e53029156b42"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEONEtdOyPASFwvQ8P9MnCUbgsonHmrJYjt7e0HfnjUnSFK+xHmW3Jg84GBacu7XkAw=="{}},\ \textcolor{stringliteral}{"{}1db7e947-\/04e2-\/4d19-\/a957-\/83ba5e4790db"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}6"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}c5d8eb6c-\/0a64-\/45d3-\/8cee-\/b15281417647"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAELE46pEyN2Shb7KctLvg7S14c+bM3l3QFv/OaZvKyJmw3lPhjFCVrP5zhuflpM1GCQ=="{}},\ \textcolor{stringliteral}{"{}cb2b6b3e-\/5743-\/43fa-\/be5b-\/0e6d2de6e45f"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}7"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}c4d907e6-\/c090-\/4699-\/9b30-\/7d060cee9395"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEHpansIO7hOtsEtroFYjUpGGkOEc2MNBfyTfR9N/tVcUJIC9mqGvsEKXH/kxesW2Tw=="{}},\ \textcolor{stringliteral}{"{}5f10468f-\/de80-\/4580-\/b22f-\/b049ae7e98eb"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}8"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}943b3eba-\/64f4-\/4a16-\/8975-\/a9fd982dccd8"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEJqbN13ChMA9PMlFsztHoSXtGj5aEfF9DDdNTReUN4i+jpXg4GCN42zzPN8bccLp7A=="{}},\ \textcolor{stringliteral}{"{}9daa7ee1-\/e6f5-\/4d96-\/8be4-\/0ba7dbd8ff1f"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00218}00218\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}9"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}2b89784d-\/da68-\/4430-\/a358-\/ef661582c1e5"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEHgenTKAzKxsLEi7Q9NFeUU+qe0DE3pVYFW/kYVFUVKdBbilbnkf4bG7qOZJQnAZsQ=="{}},\ \textcolor{stringliteral}{"{}c6e87c69-\/ff62-\/41df-\/a054-\/c5a75df0baec"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.InsertData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ProductId"{}},\ \textcolor{stringliteral}{"{}CategoryId"{}},\ \textcolor{stringliteral}{"{}DiscountPrice"{}},\ \textcolor{stringliteral}{"{}ImageId"{}},\ \textcolor{stringliteral}{"{}Name"{}},\ \textcolor{stringliteral}{"{}Price"{}},\ \textcolor{stringliteral}{"{}Unit"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[,]}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 11,\ 5,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000011"{}}),\ \textcolor{stringliteral}{"{}Dumplings"{}},\ 45000m,\ \textcolor{stringliteral}{"{}Piece\ (6pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 12,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000012"{}}),\ \textcolor{stringliteral}{"{}Bibim\ Guksu"{}},\ 45000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 13,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000013"{}}),\ \textcolor{stringliteral}{"{}Minestrone\ Soup"{}},\ 62000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 14,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000014"{}}),\ \textcolor{stringliteral}{"{}French\ Onion\ Soup"{}},\ 70000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 15,\ 3,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000015"{}}),\ \textcolor{stringliteral}{"{}Cheeseburger"{}},\ 80000m,\ \textcolor{stringliteral}{"{}Piece\ (1pc)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 16,\ 4,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000016"{}}),\ \textcolor{stringliteral}{"{}Shawarma"{}},\ 50000m,\ \textcolor{stringliteral}{"{}Wrap"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 17,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000017"{}}),\ \textcolor{stringliteral}{"{}Chow\ Mein"{}},\ 55000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 18,\ 5,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000018"{}}),\ \textcolor{stringliteral}{"{}Samosa"{}},\ 40000m,\ \textcolor{stringliteral}{"{}Piece\ (4pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 19,\ 5,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000019"{}}),\ \textcolor{stringliteral}{"{}Gyoza"{}},\ 42000m,\ \textcolor{stringliteral}{"{}Piece\ (5pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 20,\ 3,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000020"{}}),\ \textcolor{stringliteral}{"{}Veggie\ Burger"{}},\ 70000m,\ \textcolor{stringliteral}{"{}Piece\ (1pc)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 21,\ 5,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000021"{}}),\ \textcolor{stringliteral}{"{}Spring\ Rolls"{}},\ 30000m,\ \textcolor{stringliteral}{"{}Piece\ (3pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 22,\ 5,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000022"{}}),\ \textcolor{stringliteral}{"{}Takoyaki"{}},\ 48000m,\ \textcolor{stringliteral}{"{}Piece\ (6pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 23,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000023"{}}),\ \textcolor{stringliteral}{"{}Tea"{}},\ 15000m,\ \textcolor{stringliteral}{"{}Cup"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 24,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000024"{}}),\ \textcolor{stringliteral}{"{}Seafood\ Pho"{}},\ 60000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 25,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000025"{}}),\ \textcolor{stringliteral}{"{}Steamed\ Rice\ Roll"{}},\ 30000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 26,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000026"{}}),\ \textcolor{stringliteral}{"{}Espresso"{}},\ 30000m,\ \textcolor{stringliteral}{"{}Cup"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 27,\ 4,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000027"{}}),\ \textcolor{stringliteral}{"{}Yakitori"{}},\ 52000m,\ \textcolor{stringliteral}{"{}Piece\ (3pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 28,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000028"{}}),\ \textcolor{stringliteral}{"{}Smoothie"{}},\ 35000m,\ \textcolor{stringliteral}{"{}Glass"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 29,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000029"{}}),\ \textcolor{stringliteral}{"{}Pad\ Thai"{}},\ 55000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 30,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000030"{}}),\ \textcolor{stringliteral}{"{}Udon"{}},\ 70000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 31,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000031"{}}),\ \textcolor{stringliteral}{"{}Spaghetti\ Carbonara"{}},\ 75000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 32,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000032"{}}),\ \textcolor{stringliteral}{"{}Ramen"{}},\ 65000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 33,\ 1,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000033"{}}),\ \textcolor{stringliteral}{"{}Chicken\ Biryani"{}},\ 65000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 34,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000034"{}}),\ \textcolor{stringliteral}{"{}Coconut\ Water"{}},\ 20000m,\ \textcolor{stringliteral}{"{}Glass"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 35,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000035"{}}),\ \textcolor{stringliteral}{"{}Lemonade"{}},\ 25000m,\ \textcolor{stringliteral}{"{}Glass"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 36,\ 4,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000036"{}}),\ \textcolor{stringliteral}{"{}Chicken\ Satay"{}},\ 45000m,\ \textcolor{stringliteral}{"{}Piece\ (4pcs)"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 37,\ 6,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000037"{}}),\ \textcolor{stringliteral}{"{}Milkshake"{}},\ 40000m,\ \textcolor{stringliteral}{"{}Glass"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 38,\ 3,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000038"{}}),\ \textcolor{stringliteral}{"{}Bulgogi"{}},\ 85000m,\ \textcolor{stringliteral}{"{}Plate"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 39,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000039"{}}),\ \textcolor{stringliteral}{"{}Soba\ Noodles"{}},\ 50000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 40,\ 2,\ 0m,\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000040"{}}),\ \textcolor{stringliteral}{"{}Laksa"{}},\ 58000m,\ \textcolor{stringliteral}{"{}Bowl"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00261}00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.InsertData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ProductId"{}},\ \textcolor{stringliteral}{"{}Calories"{}},\ \textcolor{stringliteral}{"{}Carbohydrates"{}},\ \textcolor{stringliteral}{"{}Fat"{}},\ \textcolor{stringliteral}{"{}Fiber"{}},\ \textcolor{stringliteral}{"{}Protein"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[,]}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 11,\ 520.0,\ 60.0,\ 16.0,\ 4.0,\ 22.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 12,\ 490.0,\ 48.0,\ 14.0,\ 2.0,\ 22.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 13,\ 450.0,\ 50.0,\ 12.0,\ 3.0,\ 18.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 14,\ 520.0,\ 62.0,\ 14.0,\ 4.0,\ 20.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 15,\ 480.0,\ 50.0,\ 15.0,\ 2.0,\ 24.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 16,\ 500.0,\ 55.0,\ 12.0,\ 3.0,\ 22.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 17,\ 440.0,\ 45.0,\ 15.0,\ 3.0,\ 20.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 18,\ 470.0,\ 50.0,\ 12.0,\ 3.0,\ 18.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00276}00276\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 19,\ 380.0,\ 42.0,\ 10.0,\ 3.0,\ 15.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 20,\ 380.0,\ 35.0,\ 10.0,\ 4.0,\ 15.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 21,\ 390.0,\ 35.0,\ 10.0,\ 3.0,\ 12.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 22,\ 420.0,\ 48.0,\ 14.0,\ 2.0,\ 16.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 23,\ 120.0,\ 25.0,\ 2.0,\ 0.0,\ 2.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 24,\ 380.0,\ 45.0,\ 8.0,\ 2.0,\ 22.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 25,\ 250.0,\ 30.0,\ 8.0,\ 3.0,\ 12.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 26,\ 120.0,\ 24.0,\ 2.0,\ 0.0,\ 2.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 27,\ 300.0,\ 15.0,\ 12.0,\ 0.0,\ 32.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 28,\ 200.0,\ 45.0,\ 3.0,\ 1.0,\ 3.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 29,\ 420.0,\ 55.0,\ 12.0,\ 2.0,\ 18.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 30,\ 480.0,\ 65.0,\ 12.0,\ 3.0,\ 20.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 31,\ 540.0,\ 60.0,\ 18.0,\ 3.0,\ 22.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 32,\ 470.0,\ 50.0,\ 15.0,\ 3.0,\ 18.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 33,\ 520.0,\ 68.0,\ 16.0,\ 3.0,\ 25.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 34,\ 100.0,\ 25.0,\ 0.5,\ 1.0,\ 2.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 35,\ 120.0,\ 30.0,\ 0.20000000000000001,\ 0.0,\ 1.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 36,\ 350.0,\ 18.0,\ 15.0,\ 1.0,\ 28.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 37,\ 280.0,\ 48.0,\ 8.0,\ 0.0,\ 5.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 38,\ 450.0,\ 45.0,\ 15.0,\ 3.0,\ 25.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 39,\ 430.0,\ 50.0,\ 12.0,\ 3.0,\ 18.0\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 40,\ 510.0,\ 55.0,\ 14.0,\ 3.0,\ 20.0\ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00302}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Migrations_1_1SeedMoreProducts_a879d5ac9f58d2b2266dd604586db0340}{00302}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}\ \textcolor{keyword}{override}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Migrations_1_1SeedMoreProducts_a879d5ac9f58d2b2266dd604586db0340}{Down}}(MigrationBuilder\ migrationBuilder)}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 11);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 12);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 13);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00318}00318\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 14);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00323}00323\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00327}00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 15);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00328}00328\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 16);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00333}00333\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 17);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00338}00338\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 18);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00343}00343\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 19);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00348}00348\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00351}00351\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 20);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00353}00353\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00354}00354\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00355}00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00356}00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00357}00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 21);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00358}00358\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00359}00359\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00360}00360\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00361}00361\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00362}00362\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 22);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00363}00363\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00365}00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00367}00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 23);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00368}00368\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00369}00369\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00370}00370\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00371}00371\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00372}00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 24);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00373}00373\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00374}00374\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00375}00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 25);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00378}00378\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 26);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00383}00383\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00387}00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 27);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00389}00389\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00390}00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00391}00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00392}00392\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 28);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00393}00393\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00394}00394\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00395}00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00396}00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 29);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00398}00398\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 30);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00403}00403\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00405}00405\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 31);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00408}00408\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 32);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00413}00413\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 33);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00421}00421\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 34);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00423}00423\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00425}00425\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 35);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00428}00428\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 36);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00433}00433\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00435}00435\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 37);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00438}00438\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00439}00439\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 38);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00443}00443\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 39);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}NutritionFact"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00452}00452\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 40);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00453}00453\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 11);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00458}00458\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00462}00462\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 12);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00466}00466\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 13);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00468}00468\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00470}00470\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00471}00471\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00472}00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 14);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00475}00475\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 15);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00482}00482\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 16);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00483}00483\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00485}00485\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00486}00486\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00487}00487\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 17);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00488}00488\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00489}00489\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00490}00490\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00491}00491\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00492}00492\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 18);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00493}00493\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00494}00494\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 19);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00498}00498\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00501}00501\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00502}00502\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 20);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00503}00503\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00507}00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 21);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00508}00508\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00510}00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00511}00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00512}00512\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 22);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00513}00513\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00514}00514\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00515}00515\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00516}00516\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00517}00517\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 23);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00518}00518\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00519}00519\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00520}00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00521}00521\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00522}00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 24);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00523}00523\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00526}00526\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00527}00527\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 25);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00528}00528\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00529}00529\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00532}00532\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 26);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00533}00533\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00534}00534\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00535}00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00536}00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 27);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00538}00538\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00539}00539\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00542}00542\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 28);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00543}00543\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00544}00544\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00545}00545\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00546}00546\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 29);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00549}00549\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 30);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00553}00553\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00556}00556\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00557}00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 31);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00558}00558\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00559}00559\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00560}00560\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00561}00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00562}00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 32);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00563}00563\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00566}00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00567}00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 33);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00568}00568\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00571}00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00572}00572\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 34);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00573}00573\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00574}00574\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00575}00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00576}00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00577}00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 35);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00578}00578\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00579}00579\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00580}00580\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00581}00581\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00582}00582\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 36);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00583}00583\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00584}00584\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00585}00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00586}00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00587}00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 37);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00588}00588\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00589}00589\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00590}00590\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00591}00591\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00592}00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 38);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00593}00593\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00594}00594\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00595}00595\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00596}00596\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00597}00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 39);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00598}00598\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00599}00599\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00600}00600\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00601}00601\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ProductId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00602}00602\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 40);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00603}00603\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00604}00604\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00605}00605\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00606}00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}CategoryId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00607}00607\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 4);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00608}00608\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00609}00609\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00610}00610\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00611}00611\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}CategoryId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00612}00612\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 5);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00613}00613\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00614}00614\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00615}00615\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00616}00616\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}CategoryId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00617}00617\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 6);}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00618}00618\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00619}00619\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00620}00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00621}00621\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00622}00622\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000011"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00623}00623\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00624}00624\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00625}00625\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00626}00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00627}00627\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000012"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00628}00628\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00629}00629\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00630}00630\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00631}00631\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00632}00632\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000013"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00633}00633\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00634}00634\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00635}00635\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00636}00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00637}00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000014"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00638}00638\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00639}00639\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00640}00640\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00641}00641\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00642}00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000015"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00643}00643\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00644}00644\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00645}00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00646}00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00647}00647\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000016"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00648}00648\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00649}00649\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00650}00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00651}00651\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00652}00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000017"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00653}00653\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00654}00654\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00655}00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00656}00656\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00657}00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000018"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00658}00658\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00659}00659\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00660}00660\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00661}00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00662}00662\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000019"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00663}00663\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00664}00664\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00665}00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00666}00666\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00667}00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000020"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00668}00668\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00669}00669\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00670}00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00671}00671\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00672}00672\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000021"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00673}00673\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00674}00674\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00675}00675\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00676}00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00677}00677\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000022"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00678}00678\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00679}00679\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00680}00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00681}00681\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00682}00682\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000023"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00683}00683\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00684}00684\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00685}00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00686}00686\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00687}00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000024"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00688}00688\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00689}00689\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00690}00690\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00691}00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00692}00692\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000025"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00693}00693\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00694}00694\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00695}00695\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00696}00696\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00697}00697\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000026"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00698}00698\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00699}00699\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00700}00700\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00701}00701\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00702}00702\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000027"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00703}00703\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00704}00704\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00705}00705\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00706}00706\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00707}00707\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000028"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00708}00708\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00709}00709\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00710}00710\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00711}00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00712}00712\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000029"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00713}00713\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00714}00714\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00715}00715\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00716}00716\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00717}00717\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000030"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00718}00718\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00719}00719\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00720}00720\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00721}00721\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00722}00722\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000031"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00723}00723\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00724}00724\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00725}00725\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00726}00726\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00727}00727\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000032"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00728}00728\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00729}00729\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00730}00730\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00731}00731\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00732}00732\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000033"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00733}00733\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00734}00734\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00735}00735\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00736}00736\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00737}00737\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000034"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00738}00738\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00739}00739\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00740}00740\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00741}00741\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00742}00742\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000035"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00743}00743\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00744}00744\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00745}00745\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00746}00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00747}00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000036"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00748}00748\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00749}00749\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00750}00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00751}00751\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00752}00752\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000037"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00753}00753\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00754}00754\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00755}00755\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00756}00756\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00757}00757\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000038"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00758}00758\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00759}00759\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00760}00760\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00761}00761\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00762}00762\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000039"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00763}00763\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00764}00764\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.DeleteData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00765}00765\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Image"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00766}00766\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}ImageId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00767}00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{keyword}{new}\ Guid(\textcolor{stringliteral}{"{}00000000-\/0000-\/0000-\/0000-\/000000000040"{}}));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00768}00768\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00769}00769\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00770}00770\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}Price"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00771}00771\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00772}00772\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00773}00773\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00774}00774\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00775}00775\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00776}00776\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00777}00777\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00778}00778\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00779}00779\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00780}00780\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00781}00781\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}DiscountPrice"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00782}00782\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Product"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00783}00783\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00784}00784\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00785}00785\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00786}00786\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00787}00787\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00788}00788\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00789}00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00790}00790\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00791}00791\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00792}00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}PriceAtPurchase"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00793}00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}OrderItem"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00794}00794\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00795}00795\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00796}00796\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00797}00797\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00798}00798\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00799}00799\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00800}00800\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00801}00801\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00802}00802\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.AlterColumn<decimal>(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00803}00803\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ name:\ \textcolor{stringliteral}{"{}TotalAmount"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00804}00804\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00805}00805\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ type:\ \textcolor{stringliteral}{"{}decimal(10,30)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00806}00806\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ precision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00807}00807\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nullable:\ \textcolor{keyword}{true},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00808}00808\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldClrType:\ typeof(decimal),}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00809}00809\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldType:\ \textcolor{stringliteral}{"{}decimal(10)"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00810}00810\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldPrecision:\ 10,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00811}00811\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ oldNullable:\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00812}00812\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00813}00813\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00814}00814\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Category"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00815}00815\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}CategoryId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00816}00816\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ 3,}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00817}00817\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}Name"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00818}00818\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{stringliteral}{"{}Spicy"{}});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00819}00819\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00820}00820\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00821}00821\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00822}00822\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00823}00823\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00824}00824\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00825}00825\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 28,\ 11,\ 50,\ 40,\ 725,\ DateTimeKind.Local).AddTicks(5355));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00826}00826\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00827}00827\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00828}00828\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00829}00829\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00830}00830\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}2"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00831}00831\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00832}00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 28,\ 11,\ 50,\ 40,\ 725,\ DateTimeKind.Local).AddTicks(5514));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00833}00833\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00834}00834\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00835}00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Order"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00836}00836\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}OrderId"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00837}00837\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}3"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00838}00838\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ column:\ \textcolor{stringliteral}{"{}StartTime"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00839}00839\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value:\ \textcolor{keyword}{new}\ DateTime(2024,\ 12,\ 28,\ 11,\ 50,\ 40,\ 725,\ DateTimeKind.Local).AddTicks(5550));}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00840}00840\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00841}00841\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00842}00842\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00843}00843\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00844}00844\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00845}00845\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00846}00846\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}638f17c2-\/5405-\/4e6f-\/b43e-\/40afd8788672"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEGZSlN5nxCd8sK83PjOpgvl4b40ZeJCx1xW+aR/fFWV8pLR8dDRoNOaDxJZavTNNvA=="{}},\ \textcolor{stringliteral}{"{}6b578dd3-\/df4c-\/4127-\/8ae0-\/d0d54ec5416b"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00847}00847\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00848}00848\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00849}00849\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00850}00850\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00851}00851\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}10"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00852}00852\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00853}00853\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}a72f432a-\/f664-\/4325-\/8345-\/0431082fd361"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEA8fv8QkVOtD3q7Cp6miivxMbdK120K87FE6wyRNAlT9Jsn4TOi7ecoyVC+D8cIAtA=="{}},\ \textcolor{stringliteral}{"{}cab89db9-\/5c8e-\/46ec-\/950e-\/3a7a5c19b230"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00854}00854\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00855}00855\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00856}00856\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00857}00857\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00858}00858\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}11"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00859}00859\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00860}00860\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}6cb84dc3-\/5896-\/4e1e-\/a7c6-\/2316ad75e105"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAENUrvD6hCU4iZYFVkxUBYsgC5pXGoeSS3FbHInQA/Ssv6aNDR0eK4gUQxjhGKRx17Q=="{}},\ \textcolor{stringliteral}{"{}778d11e5-\/2ef5-\/4e98-\/bd18-\/4b01ef2cfad5"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00861}00861\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00862}00862\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00863}00863\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00864}00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00865}00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}12"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00866}00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00867}00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}e61cf8b8-\/2063-\/4009-\/81de-\/6c7d651e62ab"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEItNfrzhNnX3r+NUNXLkxIbRD6TpT2pttqN3uDH88Pkm3w2wh5g5lijNF9JLWEib1w=="{}},\ \textcolor{stringliteral}{"{}da332dab-\/c7ba-\/49c8-\/b3d9-\/e959f488141c"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00868}00868\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00869}00869\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00870}00870\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00871}00871\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00872}00872\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}13"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00873}00873\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00874}00874\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}451d639a-\/1d86-\/4fc9-\/b049-\/515cb4a63934"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEJUJAPgHj7qUh/mlRIKiotnWz9X7y5ayxaITGUv75W0c5vCMKqMT2mR3RZub9qMeHQ=="{}},\ \textcolor{stringliteral}{"{}17930c4b-\/5873-\/4665-\/bc04-\/325b7dc329cc"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00875}00875\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00876}00876\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00877}00877\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00878}00878\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00879}00879\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}2"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00880}00880\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00881}00881\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}71ce686c-\/a356-\/4ca1-\/863a-\/27b9f11658ac"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEH7E/cVnQRZiDy5tnqC1Qp+AuesCl/kSPnAvRDxcPqmVUelhyW5fHdxT5Iff/li09g=="{}},\ \textcolor{stringliteral}{"{}cba74f2b-\/f465-\/4987-\/8e7b-\/fc9cf4571626"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00882}00882\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00883}00883\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00884}00884\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00885}00885\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00886}00886\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}3"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00887}00887\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00888}00888\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}f155d7e4-\/cb7d-\/4ec6-\/bfc8-\/f336ce952db3"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEHosHTvM+aREydkhTv8ZHnOaem+eNxNCem/sJjvpKfXUCIKaVT93R3pL/Pvy4MPtxQ=="{}},\ \textcolor{stringliteral}{"{}369f9d0a-\/f50f-\/4806-\/abf8-\/abd865ee62ff"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00889}00889\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00890}00890\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00891}00891\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00892}00892\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00893}00893\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}4"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00894}00894\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00895}00895\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}b8e54401-\/4023-\/4823-\/b19a-\/636b511e524a"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEPzVPUtP69AXQSV0Lq8H/+8UsCRgzQRQ/tFQ7Vy+4Jv7cWeDjEIes0zijScHu1VgeQ=="{}},\ \textcolor{stringliteral}{"{}9ab226b0-\/5366-\/4c2d-\/81f1-\/368cdc8009d1"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00896}00896\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00897}00897\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00898}00898\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00899}00899\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00900}00900\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}5"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00901}00901\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00902}00902\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}3117e11d-\/bd97-\/400a-\/8fe4-\/15737bcf517b"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEMnb7r1EsvN1br0ZiA+gG81SBMX1csRU9aW43/022pajQu5oMNHBOSDdJPwZWhT+Aw=="{}},\ \textcolor{stringliteral}{"{}d2d19548-\/5b96-\/4f4c-\/a199-\/df8dc92e837a"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00903}00903\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00904}00904\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00905}00905\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00906}00906\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00907}00907\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}6"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00908}00908\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00909}00909\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}77c908ab-\/3549-\/44ad-\/bef3-\/85ad016bbf72"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEFe381muNntSkenCVNR2E9bSz74TXG9dHQZ/y3iMJiUhM5gKnITT9D+KgKBHuU4xcA=="{}},\ \textcolor{stringliteral}{"{}309cf38f-\/f927-\/4c38-\/a9b1-\/cfdbc82246e3"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00910}00910\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00911}00911\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00912}00912\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00913}00913\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00914}00914\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}7"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00915}00915\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00916}00916\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}4e80b6b9-\/5e3b-\/43d8-\/9a78-\/05c3e0c3528b"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEML/mAvTvi+pgYMz+rYJM5ZSTiLfLVVZ4P3z+L711CkMNo94SJNtnAywh1f0DweLDg=="{}},\ \textcolor{stringliteral}{"{}d4243a69-\/483a-\/4d7b-\/a7a1-\/438f09df6477"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00917}00917\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00918}00918\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00919}00919\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00920}00920\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00921}00921\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}8"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00922}00922\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00923}00923\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}3bce3609-\/abf2-\/4382-\/83b0-\/eb056e4daebd"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEPjNx3uW4kzEN/kiWF3GohGOLnvtSwWUAPb132fnfwR0UgrnzxYfRgc7R6ENNGicNg=="{}},\ \textcolor{stringliteral}{"{}968981bd-\/6489-\/44f1-\/9ed4-\/26f526dfae29"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00924}00924\ }
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00925}00925\ \ \ \ \ \ \ \ \ \ \ \ \ migrationBuilder.UpdateData(}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00926}00926\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ table:\ \textcolor{stringliteral}{"{}Users"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00927}00927\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyColumn:\ \textcolor{stringliteral}{"{}Id"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00928}00928\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ keyValue:\ \textcolor{stringliteral}{"{}9"{}},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00929}00929\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columns:\ \textcolor{keyword}{new}[]\ \{\ \textcolor{stringliteral}{"{}ConcurrencyStamp"{}},\ \textcolor{stringliteral}{"{}PasswordHash"{}},\ \textcolor{stringliteral}{"{}SecurityStamp"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00930}00930\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values:\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{object}[]\ \{\ \textcolor{stringliteral}{"{}cd187681-\/3902-\/4f9b-\/bc89-\/ea380c4e59a2"{}},\ \textcolor{stringliteral}{"{}AQAAAAIAAYagAAAAEMAGtO9+9YxCgw6OJAnC4n9CXu+yBQCroHfXpiipSyxjqN2a3CqAfj+AAphMFOhMRg=="{}},\ \textcolor{stringliteral}{"{}6374c13a-\/8a44-\/4135-\/9cfd-\/a7c6744f9404"{}}\ \});}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00931}00931\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00932}00932\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{20241229072720__SeedMoreProducts_8cs_source_l00933}00933\ \}}
+
+\end{DoxyCode}

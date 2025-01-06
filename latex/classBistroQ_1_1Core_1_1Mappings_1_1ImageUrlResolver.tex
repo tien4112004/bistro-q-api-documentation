@@ -1,0 +1,84 @@
+\doxysection{Bistro\+Q.\+Core.\+Mappings.\+Image\+Url\+Resolver Class Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver}{}\label{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver}\index{BistroQ.Core.Mappings.ImageUrlResolver@{BistroQ.Core.Mappings.ImageUrlResolver}}
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Mappings.\+Image\+Url\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Mappings.\+Image\+Url\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a63b73a18c6ceba640efdfa3741dfa38e}{Image\+Url\+Resolver}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloud\+Storage\+Service}} cloud\+Storage\+Service)
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a24346d9d0d191d80857e8e98f9f02956}{Resolve}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} source, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}} destination, string dest\+Member, Resolution\+Context context)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ImageUrlResolver_8cs_source_l00010}{10}} of file \mbox{\hyperlink{ImageUrlResolver_8cs_source}{Image\+Url\+Resolver.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a63b73a18c6ceba640efdfa3741dfa38e}\index{BistroQ.Core.Mappings.ImageUrlResolver@{BistroQ.Core.Mappings.ImageUrlResolver}!ImageUrlResolver@{ImageUrlResolver}}
+\index{ImageUrlResolver@{ImageUrlResolver}!BistroQ.Core.Mappings.ImageUrlResolver@{BistroQ.Core.Mappings.ImageUrlResolver}}
+\doxysubsubsection{\texorpdfstring{ImageUrlResolver()}{ImageUrlResolver()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a63b73a18c6ceba640efdfa3741dfa38e} 
+Bistro\+Q.\+Core.\+Mappings.\+Image\+Url\+Resolver.\+Image\+Url\+Resolver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloud\+Storage\+Service}}}]{cloud\+Storage\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ImageUrlResolver_8cs_source_l00014}{14}} of file \mbox{\hyperlink{ImageUrlResolver_8cs_source}{Image\+Url\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \_cloudStorageService\ =\ cloudStorageService;}
+\DoxyCodeLine{00017\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a24346d9d0d191d80857e8e98f9f02956}\index{BistroQ.Core.Mappings.ImageUrlResolver@{BistroQ.Core.Mappings.ImageUrlResolver}!Resolve@{Resolve}}
+\index{Resolve@{Resolve}!BistroQ.Core.Mappings.ImageUrlResolver@{BistroQ.Core.Mappings.ImageUrlResolver}}
+\doxysubsubsection{\texorpdfstring{Resolve()}{Resolve()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Mappings_1_1ImageUrlResolver_a24346d9d0d191d80857e8e98f9f02956} 
+string Bistro\+Q.\+Core.\+Mappings.\+Image\+Url\+Resolver.\+Resolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}}]{source}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{Product\+Response\+Dto}}}]{destination}{, }\item[{string}]{dest\+Member}{, }\item[{Resolution\+Context}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ImageUrlResolver_8cs_source_l00019}{19}} of file \mbox{\hyperlink{ImageUrlResolver_8cs_source}{Image\+Url\+Resolver.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ var\ key\ =\ source.ImageId\ +\ ContentTypeValue.GetExtension(source?.\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}?.ContentType\ ??\ \textcolor{stringliteral}{"{}image/jpeg"{}});}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ var\ url\ =\ \_cloudStorageService.GeneratePresignedUrlAsync(key,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ TimeSpan.FromDays(1));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ url;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Mappings/Image\+Url\+Resolver.\+cs\end{DoxyCompactItemize}

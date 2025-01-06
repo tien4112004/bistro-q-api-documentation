@@ -1,0 +1,9 @@
+<map id="BistroQ.Infrastructure.Repositories.GenericRepository&lt; T &gt;" name="BistroQ.Infrastructure.Repositories.GenericRepository&lt; T &gt;">
+<area shape="rect" id="Node000001" title=" " alt="" coords="34,204,261,247"/>
+<area shape="rect" id="Node000002" href="$interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository.html" title="Represents a generic repository interface for basic CRUD operations." alt="" coords="5,105,170,132"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,144,138,202,133,205,100,147"/>
+<area shape="rect" id="Node000003" href="$classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext.html" title=" " alt="" coords="194,97,376,140"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,152,176,206,173,201,244,148"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="217,5,352,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="288,64,288,97,282,97,282,64"/>
+</map>

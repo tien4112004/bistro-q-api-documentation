@@ -1,0 +1,118 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Test\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TestController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1TestController}\index{BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Test\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1TestController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Test\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1TestController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TestController_a608a5593734e80d1f8f7a4297a78c76e}{Test\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TestController_a37ce3829ca2b5ef0a34a6b0009d2355c}{Get}} ()
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TestController_a18e81a14c8920fd6cd8fefb395bb62f8}{Get\+Item}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00012}{12}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TestController_a608a5593734e80d1f8f7a4297a78c76e}\index{BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}!TestController@{TestController}}
+\index{TestController@{TestController}!BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}}
+\doxysubsubsection{\texorpdfstring{TestController()}{TestController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TestController_a608a5593734e80d1f8f7a4297a78c76e} 
+Bistro\+Q.\+API.\+Controllers.\+Test\+Controller.\+Test\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00016}{16}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \ \ \ \ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TestController_a37ce3829ca2b5ef0a34a6b0009d2355c}\index{BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}!Get@{Get}}
+\index{Get@{Get}!BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TestController_a37ce3829ca2b5ef0a34a6b0009d2355c} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Test\+Controller.\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00022}{22}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ var\ orders\ =\ await\ \_unitOfWork.OrderRepository.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{AddAsync}}(\textcolor{keyword}{new}\ Core.Entities.Order}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ 0,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ StartTime\ =\ DateTime.Now,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ null,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ 2,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ 1,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(orders);}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TestController_a18e81a14c8920fd6cd8fefb395bb62f8}\index{BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}!GetItem@{GetItem}}
+\index{GetItem@{GetItem}!BistroQ.API.Controllers.TestController@{BistroQ.API.Controllers.TestController}}
+\doxysubsubsection{\texorpdfstring{GetItem()}{GetItem()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TestController_a18e81a14c8920fd6cd8fefb395bb62f8} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Test\+Controller.\+Get\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TestController_8cs_source_l00037}{37}} of file \mbox{\hyperlink{TestController_8cs_source}{Test\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ await\ \_unitOfWork.OrderItemRepository.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{AddAsync}}(\textcolor{keyword}{new}\ Core.Entities.OrderItem}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ \textcolor{stringliteral}{"{}1"{}},}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ 1,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ Quantity\ =\ 2,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ PriceAtPurchase\ =\ 0,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(orderItems);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/Test\+Controller.\+cs\end{DoxyCompactItemize}

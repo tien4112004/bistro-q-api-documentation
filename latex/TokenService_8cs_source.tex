@@ -1,0 +1,94 @@
+\doxysection{Token\+Service.\+cs}
+\hypertarget{TokenService_8cs_source}{}\label{TokenService_8cs_source}\index{BistroQ.Services/Services/TokenService.cs@{BistroQ.Services/Services/TokenService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.IdentityModel.Tokens.Jwt;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Security.Claims;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Security.Cryptography;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }Microsoft.IdentityModel.Tokens;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }JwtRegisteredClaimNames\ =\ Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00013}00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00015}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService}{TokenService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{ITokenService}}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{classJwtSettings}{JwtSettings}}\ \_jwtSettings;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService}{TokenService}}(UserManager<AppUser>\ userManager,\ \mbox{\hyperlink{classJwtSettings}{JwtSettings}}\ jwtSettings)}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \_jwtSettings\ =\ jwtSettings;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00026}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<string>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256}{GenerateAccessToken}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ user)}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ var\ userRoles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ var\ authClaims\ =\ \textcolor{keyword}{new}\ List<Claim>}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Claim(JwtRegisteredClaimNames.Sub,\ user.Id.ToString()),}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Claim(JwtRegisteredClaimNames.Jti,\ Guid.NewGuid().ToString()),}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ authClaims.AddRange(userRoles.Select(role\ =>\ \textcolor{keyword}{new}\ Claim(ClaimTypes.Role,\ role)));}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ var\ signingKey\ =\ \textcolor{keyword}{new}\ SymmetricSecurityKey(Encoding.UTF8.GetBytes(\_jwtSettings.SecretKey));}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ var\ creds\ =\ \textcolor{keyword}{new}\ SigningCredentials(signingKey,\ SecurityAlgorithms.HmacSha256);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ var\ jwtExpirationMinutes\ =\ \_jwtSettings.AccessTokenExpiresInMinutes;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ var\ token\ =\ \textcolor{keyword}{new}\ JwtSecurityToken(}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ issuer:\ \_jwtSettings.Issuer,}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ audience:\ \_jwtSettings.Audience,}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ claims:\ authClaims,}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ expires:\ DateTime.Now.AddMinutes(jwtExpirationMinutes),}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ signingCredentials:\ creds}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ JwtSecurityTokenHandler().WriteToken(token);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00052}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0}{00052}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<string>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0}{GenerateRefreshToken}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ user)}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00053}00053\ \ \ \ \ \{\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ rng\ =\ RandomNumberGenerator.Create();}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ sha256\ =\ SHA256.Create();}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00056}00056\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ var\ randomNumber\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[32];}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ rng.GetBytes(randomNumber);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00059}00059\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ var\ refreshToken\ =\ Convert.ToBase64String(randomNumber);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ var\ hashedToken\ =\ Convert.ToBase64String(}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ sha256.ComputeHash(Encoding.UTF8.GetBytes(refreshToken))}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ user.RefreshToken\ =\ hashedToken;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ user.RefreshTokenExpiryTime\ =\ DateTime.UtcNow}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ .AddMinutes(\_jwtSettings.RefreshTokenExpiredInMinutes);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.UpdateAsync(user);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Log\ error}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception();}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ refreshToken;}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00077}00077\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00079}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65}{00079}}\ \ \ \ \ \textcolor{keyword}{public}\ Task<bool>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65}{ValidateRefreshToken}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ user,\ \textcolor{keywordtype}{string}\ refreshToken)}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00080}00080\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ sha256\ =\ SHA256.Create();}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ var\ hashedProvidedToken\ =\ Convert.ToBase64String(}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ sha256.ComputeHash(Encoding.UTF8.GetBytes(refreshToken))}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Task.FromResult(user.RefreshToken\ ==\ hashedProvidedToken\ \&\&\ user.RefreshTokenExpiryTime\ >\ DateTime.UtcNow);}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TokenService_8cs_source_l00088}00088\ \}}
+
+\end{DoxyCode}

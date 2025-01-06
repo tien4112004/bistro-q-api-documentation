@@ -1,0 +1,90 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+File\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1FileService}{}\label{classBistroQ_1_1Services_1_1Services_1_1FileService}\index{BistroQ.Services.Services.FileService@{BistroQ.Services.Services.FileService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+File\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1FileService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+File\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1FileService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1FileService_a871332a7da455182e4c05f9dd530197e}{Get\+Bytes}} (IForm\+File file)
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1FileService_a4f321845978a9025888d1b18fa04a7d8}{Get\+Text}} (IForm\+File file)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IFileService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IFile\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{FileService_8cs_source_l00006}{6}} of file \mbox{\hyperlink{FileService_8cs_source}{File\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1FileService_a871332a7da455182e4c05f9dd530197e}\index{BistroQ.Services.Services.FileService@{BistroQ.Services.Services.FileService}!GetBytes@{GetBytes}}
+\index{GetBytes@{GetBytes}!BistroQ.Services.Services.FileService@{BistroQ.Services.Services.FileService}}
+\doxysubsubsection{\texorpdfstring{GetBytes()}{GetBytes()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1FileService_a871332a7da455182e4c05f9dd530197e} 
+async Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Bistro\+Q.\+Services.\+Services.\+File\+Service.\+Get\+Bytes (\begin{DoxyParamCaption}\item[{IForm\+File}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IFileService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IFile\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{FileService_8cs_source_l00008}{8}} of file \mbox{\hyperlink{FileService_8cs_source}{File\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \ \ \ \ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ memoryStream\ =\ \textcolor{keyword}{new}\ MemoryStream();}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ await\ file.CopyToAsync(memoryStream);}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ memoryStream.ToArray();}
+\DoxyCodeLine{00013\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1FileService_a4f321845978a9025888d1b18fa04a7d8}\index{BistroQ.Services.Services.FileService@{BistroQ.Services.Services.FileService}!GetText@{GetText}}
+\index{GetText@{GetText}!BistroQ.Services.Services.FileService@{BistroQ.Services.Services.FileService}}
+\doxysubsubsection{\texorpdfstring{GetText()}{GetText()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1FileService_a4f321845978a9025888d1b18fa04a7d8} 
+async Task$<$ string $>$ Bistro\+Q.\+Services.\+Services.\+File\+Service.\+Get\+Text (\begin{DoxyParamCaption}\item[{IForm\+File}]{file}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IFileService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IFile\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{FileService_8cs_source_l00015}{15}} of file \mbox{\hyperlink{FileService_8cs_source}{File\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ reader\ =\ \textcolor{keyword}{new}\ StreamReader(file.OpenReadStream());}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ reader.ReadToEndAsync();}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/File\+Service.\+cs\end{DoxyCompactItemize}

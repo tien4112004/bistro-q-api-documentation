@@ -1,0 +1,107 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Item\+Service Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}\index{BistroQ.Core.Interfaces.Services.IOrderItemService@{BistroQ.Core.Interfaces.Services.IOrderItemService}}
+
+
+Provides operations for managing order items in the restaurant POS system.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Item\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderItemDto}{Detail\+Order\+Item\+Dto}} $>$ Items, int Count)$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747}{Get\+Order\+Items\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{Order\+Item\+Collection\+Query\+Params}} query\+Params)
+\begin{DoxyCompactList}\small\item\em Retrieves a paginated list of order items based on the specified query parameters. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f}{Update\+Order\+Items\+Status\+Async}} (IEnumerable$<$ string $>$ order\+Item\+Ids, Order\+Item\+Status status)
+\begin{DoxyCompactList}\small\item\em Updates the status of multiple order items simultaneously. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides operations for managing order items in the restaurant POS system. 
+
+Definition at line \mbox{\hyperlink{IOrderItemService_8cs_source_l00010}{10}} of file \mbox{\hyperlink{IOrderItemService_8cs_source}{IOrder\+Item\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747}\index{BistroQ.Core.Interfaces.Services.IOrderItemService@{BistroQ.Core.Interfaces.Services.IOrderItemService}!GetOrderItemsAsync@{GetOrderItemsAsync}}
+\index{GetOrderItemsAsync@{GetOrderItemsAsync}!BistroQ.Core.Interfaces.Services.IOrderItemService@{BistroQ.Core.Interfaces.Services.IOrderItemService}}
+\doxysubsubsection{\texorpdfstring{GetOrderItemsAsync()}{GetOrderItemsAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747} 
+Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderItemDto}{Detail\+Order\+Item\+Dto}} $>$ Items, int Count)$>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Item\+Service.\+Get\+Order\+Items\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{Order\+Item\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a paginated list of order items based on the specified query parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Params} & Parameters for filtering, sorting, and pagination of order items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing\+:
+\begin{DoxyItemize}
+\item Items\+: Collection of order items matching the query parameters
+\item Count\+: Total number of items matching the query (before pagination) 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+The returned count represents the total number of items that match the filter criteria, not just the number of items in the current page. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderItemService_ae1c31700a0a99da4e7f38b576446da14}{Bistro\+Q.\+Services.\+Services.\+Order\+Item\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f}\index{BistroQ.Core.Interfaces.Services.IOrderItemService@{BistroQ.Core.Interfaces.Services.IOrderItemService}!UpdateOrderItemsStatusAsync@{UpdateOrderItemsStatusAsync}}
+\index{UpdateOrderItemsStatusAsync@{UpdateOrderItemsStatusAsync}!BistroQ.Core.Interfaces.Services.IOrderItemService@{BistroQ.Core.Interfaces.Services.IOrderItemService}}
+\doxysubsubsection{\texorpdfstring{UpdateOrderItemsStatusAsync()}{UpdateOrderItemsStatusAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Item\+Service.\+Update\+Order\+Items\+Status\+Async (\begin{DoxyParamCaption}\item[{IEnumerable$<$ string $>$}]{order\+Item\+Ids}{, }\item[{Order\+Item\+Status}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Updates the status of multiple order items simultaneously. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Item\+Ids} & Collection of order item IDs to update.\\
+\hline
+{\em status} & The new status to apply to all specified order items.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Collection of updated order items with their new status.
+\end{DoxyReturn}
+
+
+This operation\+:
+\begin{DoxyItemize}
+\item Updates all specified order items atomically
+\item Validates status transitions for each item
+\item Returns the updated items in their new state 
+\end{DoxyItemize}
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Conflict\+Exception} & Thrown when any status transition is invalid.\\
+\hline
+{\em Resource\+Not\+Found\+Exception} & Thrown when any of the specified order items cannot be found.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderItemService_a076ab60c53374068899242f7522771f3}{Bistro\+Q.\+Services.\+Services.\+Order\+Item\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Services/IOrder\+Item\+Service.\+cs\end{DoxyCompactItemize}

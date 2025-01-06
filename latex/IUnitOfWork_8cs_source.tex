@@ -1,0 +1,28 @@
+\doxysection{IUnit\+Of\+Work.\+cs}
+\hypertarget{IUnitOfWork_8cs_source}{}\label{IUnitOfWork_8cs_source}\index{BistroQ.Core/Interfaces/IUnitOfWork.cs@{BistroQ.Core/Interfaces/IUnitOfWork.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore.Metadata;}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00004}\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{00004}}\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00006}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ }
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00008}00008\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProductRepository}}\ ProductRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00009}00009\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ICategoryRepository}{ICategoryRepository}}\ CategoryRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00010}00010\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{IZoneRepository}}\ ZoneRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00011}00011\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITableRepository}}\ TableRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00012}00012\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrderRepository}}\ OrderRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImageRepository}}\ ImageRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00014}00014\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{INutritionFactRepository}}\ NutritionFactRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00015}00015\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00016}00016\ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrderItemRepository}}\ OrderItemRepository\ \{\ \textcolor{keyword}{get};\ \}}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00018}00018\ \ \ \ \ Task<int>\ SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00019}00019\ \ \ \ \ Task\ BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00020}00020\ \ \ \ \ Task\ CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00021}00021\ \ \ \ \ Task\ RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{IUnitOfWork_8cs_source_l00022}00022\ \}}
+
+\end{DoxyCode}

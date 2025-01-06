@@ -1,0 +1,348 @@
+\doxysection{Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository Class Reference}
+\hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository}{}\label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+
+
+Inheritance diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a3e8979bd00af78f92a3136bbb8bdac8d}{Product\+Repository}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context)
+\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0}{Get\+Products\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Materializes the final filtered/sorted queryable into an enumerable result. \end{DoxyCompactList}\item 
+async Task$<$ int $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e}{Get\+Products\+Count\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Executes a count operation on the final filtered queryable. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e}{Get\+Product\+By\+Id\+Async}} (int product\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a product by its unique identifier. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab}{Get\+Recommended\+Products\+Async}} (string order\+Id, int size)
+\begin{DoxyCompactList}\small\item\em Retrieves a list of recommended products based on the specified order ID and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository$<$ Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a71c2ca7751cc76b64a2e55b5b96c9946}{Generic\+Repository}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context)
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a541d835ef0d5ec5376139b5ad912be93}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a20824a98095d1c767d192d6a9f30e9f0}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a91793d9177850823b1da1bbe3221b69e}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+async Task$<$ T?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a77551df534140f8777cc239917fda41c}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_a3b3196a04bd8b3d4a1af80b15b096875}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_af29a2d0f6802fbb81a98d1c488c2c2c6}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae2dd7c57e1d7879e97365198cef38d00}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository}}}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Generic\+Repository$<$ Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+readonly \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_adc8b1b2ba6472f0717e82b7e5a8e515c}{Context}}
+\item 
+readonly Db\+Set$<$ T $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository_ae3fb5bc7bee4adadbb460445e6484492}{Db\+Set}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00012}{12}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a3e8979bd00af78f92a3136bbb8bdac8d}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}!ProductRepository@{ProductRepository}}
+\index{ProductRepository@{ProductRepository}!BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{ProductRepository()}{ProductRepository()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a3e8979bd00af78f92a3136bbb8bdac8d} 
+Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository.\+Product\+Repository (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}}}]{context}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00014}{14}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ base(context) }
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}!GetProductByIdAsync@{GetProductByIdAsync}}
+\index{GetProductByIdAsync@{GetProductByIdAsync}!BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductByIdAsync()}{GetProductByIdAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}?$>$ Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository.\+Get\+Product\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{product\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a product by its unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & The unique identifier of the product to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the product if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the product specified by the product\+Id is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository}}.
+
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00032}{32}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ var\ product\ =\ await\ DbSet}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(p\ =>\ p.Image)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(p\ =>\ p.NutritionFact)}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefaultAsync(p\ =>\ p.ProductId\ ==\ productId);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ product;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}!GetProductsAsync@{GetProductsAsync}}
+\index{GetProductsAsync@{GetProductsAsync}!BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductsAsync()}{GetProductsAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository.\+Get\+Products\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$}]{queryable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Materializes the final filtered/sorted queryable into an enumerable result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering and sorting has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The final materialized collection of products
+\end{DoxyReturn}
+
+
+This method is intended to be the final step in the query chain, executing the prepared queryable and materializing the results 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository}}.
+
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00018}{18}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ queryable.ToListAsync();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ products;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}!GetProductsCountAsync@{GetProductsCountAsync}}
+\index{GetProductsCountAsync@{GetProductsCountAsync}!BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductsCountAsync()}{GetProductsCountAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e} 
+async Task$<$ int $>$ Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository.\+Get\+Products\+Count\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$}]{queryable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Executes a count operation on the final filtered queryable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total count of products matching the filter criteria
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository}}.
+
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00025}{25}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ queryable.CountAsync();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab}\index{BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}!GetRecommendedProductsAsync@{GetRecommendedProductsAsync}}
+\index{GetRecommendedProductsAsync@{GetRecommendedProductsAsync}!BistroQ.Infrastructure.Repositories.ProductRepository@{BistroQ.Infrastructure.Repositories.ProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetRecommendedProductsAsync()}{GetRecommendedProductsAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository.\+Get\+Recommended\+Products\+Async (\begin{DoxyParamCaption}\item[{string}]{order\+Id}{, }\item[{int}]{size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a list of recommended products based on the specified order ID and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique identifier of the order to base recommendations on.\\
+\hline
+{\em size} & The number of recommended products to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains an enumerable collection of recommended product DTOs. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the order specified by the order ID is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+This method uses the order ID to generate product recommendations, which can be used to suggest additional products to the user. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository}}.
+
+
+
+Definition at line \mbox{\hyperlink{ProductRepository_8cs_source_l00066}{66}} of file \mbox{\hyperlink{ProductRepository_8cs_source}{Product\+Repository.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\ query\ =\ \textcolor{stringliteral}{"{}"{}}\textcolor{stringliteral}{"{}}}
+\DoxyCodeLine{00069\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WITH\ NormalizedNutritionFact\ AS\ (}}
+\DoxyCodeLine{00070\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ }}
+\DoxyCodeLine{00071\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.ProductId,}}
+\DoxyCodeLine{00072\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Calories\ /\ \{1\}\ AS\ NormalizedCalories,}}
+\DoxyCodeLine{00073\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Protein\ /\ \{2\}\ AS\ NormalizedProtein,}}
+\DoxyCodeLine{00074\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Carbohydrates\ /\ \{3\}\ AS\ NormalizedCarb,}}
+\DoxyCodeLine{00075\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Fat\ /\ \{4\}\ AS\ NormalizedFat,}}
+\DoxyCodeLine{00076\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ n.Fiber\ /\ \{5\}\ AS\ NormalizedFiber}}
+\DoxyCodeLine{00077\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}nutritionfact`\ n),}}
+\DoxyCodeLine{00078\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CurrentNormalized\ AS\ (}}
+\DoxyCodeLine{00079\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ }}
+\DoxyCodeLine{00080\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedCalories)\ /\ o.PeopleCount\ AS\ CurrentCalories,}}
+\DoxyCodeLine{00081\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedCarb)\ /\ o.PeopleCount\ AS\ CurrentCarb,}}
+\DoxyCodeLine{00082\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedProtein)\ /\ o.PeopleCount\ AS\ CurrentProtein,}}
+\DoxyCodeLine{00083\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedFat)\ /\ o.PeopleCount\ AS\ CurrentFat,}}
+\DoxyCodeLine{00084\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SUM(NormalizedFiber)\ /\ o.PeopleCount\ AS\ CurrentFiber}}
+\DoxyCodeLine{00085\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}orderitem`\ i}}
+\DoxyCodeLine{00086\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ NormalizedNutritionFact\ AS\ x\ ON\ x.ProductId\ =\ i.ProductId}}
+\DoxyCodeLine{00087\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ \`{}order`\ AS\ o\ ON\ o.OrderId\ =\ \{0\}\ AND\ i.OrderId\ =\ \{0\}}}
+\DoxyCodeLine{00088\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ GROUP\ BY\ o.OrderId)}}
+\DoxyCodeLine{00089\ \textcolor{stringliteral}{}}
+\DoxyCodeLine{00090\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SELECT\ p.Name,\ p.ProductId,\ p.Price,\ p.ImageId,\ p.CategoryId,\ p.DiscountPrice,\ p.Unit,}}
+\DoxyCodeLine{00091\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (CASE\ }}
+\DoxyCodeLine{00092\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)\ <\ 0\ }}
+\DoxyCodeLine{00093\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{6\}\ *\ ABS(n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)\ *\ \{11\}}}
+\DoxyCodeLine{00094\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{6\}\ *\ ABS(n.NormalizedProtein\ -\/\ CurrentNormalized.CurrentProtein)}}
+\DoxyCodeLine{00095\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{00096\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{00097\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)\ <\ 0\ }}
+\DoxyCodeLine{00098\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{7\}\ *\ ABS(n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)\ *\ \{12\}}}
+\DoxyCodeLine{00099\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{7\}\ *\ ABS(n.NormalizedFat\ -\/\ CurrentNormalized.CurrentFat)}}
+\DoxyCodeLine{00100\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{00101\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{00102\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)\ <\ 0\ }}
+\DoxyCodeLine{00103\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{8\}\ *\ ABS(n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)\ *\ \{13\}}}
+\DoxyCodeLine{00104\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{8\}\ *\ ABS(n.NormalizedCalories\ -\/\ CurrentNormalized.CurrentCalories)}}
+\DoxyCodeLine{00105\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{00106\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{00107\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ <\ 0\ }}
+\DoxyCodeLine{00108\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{9\}\ *\ ABS(n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ *\ \{14\}}}
+\DoxyCodeLine{00109\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{9\}\ *\ ABS(n.NormalizedFiber\ -\/\ CurrentNormalized.CurrentFiber)\ }}
+\DoxyCodeLine{00110\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END\ +}}
+\DoxyCodeLine{00111\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CASE\ }}
+\DoxyCodeLine{00112\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ WHEN\ (n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)\ <\ 0\ }}
+\DoxyCodeLine{00113\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ THEN\ \{10\}\ *\ ABS(n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)\ *\ \{15\}}}
+\DoxyCodeLine{00114\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ELSE\ \{10\}\ *\ ABS(n.NormalizedCarb\ -\/\ CurrentNormalized.CurrentCarb)}}
+\DoxyCodeLine{00115\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ END)\ AS\ Rating}}
+\DoxyCodeLine{00116\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FROM\ \`{}product`\ p}}
+\DoxyCodeLine{00117\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ NormalizedNutritionFact\ AS\ n\ ON\ p.ProductId\ =\ n.ProductId}}
+\DoxyCodeLine{00118\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JOIN\ CurrentNormalized}}
+\DoxyCodeLine{00119\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ORDER\ BY\ Rating\ DESC}}
+\DoxyCodeLine{00120\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LIMIT\ \{16\};}}
+\DoxyCodeLine{00121\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}}\textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ formattedQuery\ =\ \textcolor{keywordtype}{string}.Format(}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ query.Replace(\textcolor{stringliteral}{"{}\(\backslash\)r\(\backslash\)n"{}},\ \textcolor{stringliteral}{"{}\ "{}}),}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ orderId,}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_CALORIES,}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_PROTEIN,}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_CARBOHYDRATES,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_FAT,}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.DAILY\_FIBER,}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.PROTEIN\_WEIGHT,}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FAT\_WEIGHT,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CALORIES\_WEIGHT,}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FIBER\_WEIGHT,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CARB\_WEIGHT,}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.PROTEIN\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FAT\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CALORIES\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.FIBER\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ NutritionalConstants.CARB\_DEFICIENCY\_MULTIPLIER,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ size}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ DbSet.FromSqlRaw(formattedQuery).ToListAsync();}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Infrastructure/\+Repositories/Product\+Repository.\+cs\end{DoxyCompactItemize}

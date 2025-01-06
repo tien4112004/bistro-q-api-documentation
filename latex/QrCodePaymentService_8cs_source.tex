@@ -1,0 +1,68 @@
+\doxysection{Qr\+Code\+Payment\+Service.\+cs}
+\hypertarget{QrCodePaymentService_8cs_source}{}\label{QrCodePaymentService_8cs_source}\index{BistroQ.Services/Services/QrCodePaymentService.cs@{BistroQ.Services/Services/QrCodePaymentService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00010}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService}{QrCodePaymentService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{IPaymentService}}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ HttpClient\ \_client;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{PaymentSettings}}\ \_settings;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService}{QrCodePaymentService}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{PaymentSettings}}\ settings)}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \_client\ =\ \textcolor{keyword}{new}\ HttpClient();}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \_settings\ =\ settings;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<string>\ InitiatePayment(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}\ order)}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ content\ =\ \textcolor{keyword}{new}\ StringContent(}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JsonSerializer.Serialize(\textcolor{keyword}{new}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountNo\ =\ \_settings.AccountNumber,}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountName\ =\ \_settings.AccountName,}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acqId\ =\ \_settings.AcqId,}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ amount\ =\ order.TotalAmount,}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addInfo\ =\ \$\textcolor{stringliteral}{"{}Payment\ for\ table\ \{order.TableId\},\ \ order\ \{order.OrderId\}"{}},}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ =\ \textcolor{stringliteral}{"{}text"{}},}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ template\ =\ \textcolor{stringliteral}{"{}compact2"{}}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Encoding.UTF8,}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ HttpRequestMessage(HttpMethod.Post,\ \$\textcolor{stringliteral}{"{}\{\_settings.BaseUrl\}/generate"{}});}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ request.Content\ =\ content;}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ request.Headers.Add(\textcolor{stringliteral}{"{}x-\/client-\/id"{}},\ \_settings.ClientId);}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ request.Headers.Add(\textcolor{stringliteral}{"{}x-\/api-\/key"{}},\ \_settings.ApiKey);}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ await\ \_client.SendAsync(request);}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!response.IsSuccessStatusCode)}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ initiate\ payment"{}});}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ var\ responseContent\ =\ await\ response.Content.ReadAsStringAsync();}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ var\ jsonObject\ =\ JsonSerializer.Deserialize<JsonElement>(responseContent);}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ var\ data\ =\ jsonObject.GetProperty(\textcolor{stringliteral}{"{}data"{}});}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.GetProperty(\textcolor{stringliteral}{"{}qrDataURL"{}}).GetString()\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{QrCodePaymentService_8cs_source_l00062}00062\ \}}
+
+\end{DoxyCode}

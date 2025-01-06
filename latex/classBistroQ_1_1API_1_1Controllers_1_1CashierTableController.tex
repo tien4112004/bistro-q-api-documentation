@@ -1,0 +1,110 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController}\index{BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a5c445508568e0c7f2d9b85b8ff60acfc}{Cashier\+Table\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}} table\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a4caf0af80a86fbee76c17ecc29119928}{Get\+Tables}} (\mbox{[}From\+Query\mbox{]} bool is\+Occupied, \mbox{[}From\+Route\mbox{]} int zone\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a8422f5953eb690dc0b0b6a4a03c01b98}{Get\+Table}} (\mbox{[}From\+Route\mbox{]} int table\+Id, \mbox{[}From\+Route\mbox{]} int zone\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CashierTableController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{CashierTableController_8cs_source}{Cashier\+Table\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a5c445508568e0c7f2d9b85b8ff60acfc}\index{BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}!CashierTableController@{CashierTableController}}
+\index{CashierTableController@{CashierTableController}!BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}}
+\doxysubsubsection{\texorpdfstring{CashierTableController()}{CashierTableController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a5c445508568e0c7f2d9b85b8ff60acfc} 
+Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller.\+Cashier\+Table\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}}}]{table\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierTableController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{CashierTableController_8cs_source}{Cashier\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a8422f5953eb690dc0b0b6a4a03c01b98}\index{BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}!GetTable@{GetTable}}
+\index{GetTable@{GetTable}!BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}}
+\doxysubsubsection{\texorpdfstring{GetTable()}{GetTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a8422f5953eb690dc0b0b6a4a03c01b98} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller.\+Get\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{, }\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierTableController_8cs_source_l00040}{40}} of file \mbox{\hyperlink{CashierTableController_8cs_source}{Cashier\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{GetByIdAsync}}(tableId);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a4caf0af80a86fbee76c17ecc29119928}\index{BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}!GetTables@{GetTables}}
+\index{GetTables@{GetTables}!BistroQ.API.Controllers.CashierTableController@{BistroQ.API.Controllers.CashierTableController}}
+\doxysubsubsection{\texorpdfstring{GetTables()}{GetTables()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController_a4caf0af80a86fbee76c17ecc29119928} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Cashier\+Table\+Controller.\+Get\+Tables (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} bool}]{is\+Occupied}{, }\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierTableController_8cs_source_l00024}{24}} of file \mbox{\hyperlink{CashierTableController_8cs_source}{Cashier\+Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOccupied)}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_a7febf46d2f15f5e3aff0c38b63431137}{GetOccupiedTablesAsync}}(zoneId);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<TableDetailDto>>(tables));}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{GetAllAsync}}(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ \{\ ZoneId\ =\ zoneId\ \});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<TableDetailDto>>(tables));}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Table/Cashier\+Table\+Controller.\+cs\end{DoxyCompactItemize}

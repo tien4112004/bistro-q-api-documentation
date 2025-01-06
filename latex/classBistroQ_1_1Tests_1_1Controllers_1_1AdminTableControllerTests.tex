@@ -1,0 +1,382 @@
+\doxysection{Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests Class Reference}
+\hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests}{}\label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a4eb638b58fc128fdded8078e048008c2}{Setup}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5cf14838784c90195685121e79daafc9}{Get\+Tables\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a375a83897180f8755cfee17cc0d47ed0}{Get\+Tables\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8599cdf6b1815909515a58536884cf94}{Get\+Table\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5f082a3a51855875f76026a8afee7d87}{Get\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a539857e54648946d573056c5f34bfccd}{Add\+Table\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a56c12399f10096796deb763d08110e5f}{Add\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Creation\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_ab6df83a158e09004f8c0062d9b90b614}{Add\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Negative\+Seats\+Count}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_acb6ec5c9daf325c04f3868509a793a4b}{Update\+Table\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a9db1538afb973387e2ecccd0f715768c}{Update\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Update\+Fails}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a68c5926015426aff84de25f4c4b262d8}{Update\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Negative\+Seats\+Count}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_aba5bbf9af288c93036ded04301b47a5c}{Delete\+Table\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8a7674b0d2fd29c01df6e507b206696f}{Delete\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Deletion\+Fails}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00011}{11}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a539857e54648946d573056c5f34bfccd}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!AddTable\_Success@{AddTable\_Success}}
+\index{AddTable\_Success@{AddTable\_Success}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{AddTable\_Success()}{AddTable\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a539857e54648946d573056c5f34bfccd} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Add\+Table\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00089}{89}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}\ \{\ TableId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.AddAsync(request)).ReturnsAsync(table);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminTableController.AddTable(request)\ as\ OkObjectResult;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<TableDto>;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.TableId);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a56c12399f10096796deb763d08110e5f}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!AddTable\_ThrowsException\_WhenCreationFails@{AddTable\_ThrowsException\_WhenCreationFails}}
+\index{AddTable\_ThrowsException\_WhenCreationFails@{AddTable\_ThrowsException\_WhenCreationFails}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{AddTable\_ThrowsException\_WhenCreationFails()}{AddTable\_ThrowsException\_WhenCreationFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a56c12399f10096796deb763d08110e5f} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Add\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Creation\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00107}{107}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.AddAsync(request)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ table"{}}));}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.AddTable(request);}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_ab6df83a158e09004f8c0062d9b90b614}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!AddTable\_ThrowsException\_WhenNegativeSeatsCount@{AddTable\_ThrowsException\_WhenNegativeSeatsCount}}
+\index{AddTable\_ThrowsException\_WhenNegativeSeatsCount@{AddTable\_ThrowsException\_WhenNegativeSeatsCount}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{AddTable\_ThrowsException\_WhenNegativeSeatsCount()}{AddTable\_ThrowsException\_WhenNegativeSeatsCount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_ab6df83a158e09004f8c0062d9b90b614} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Add\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Negative\+Seats\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00121}{121}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{CreateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ -\/1\ \};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.AddAsync(request)).ThrowsAsync(\textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Invalid\ argument"{}}));}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<ArgumentException>(async\ ()\ =>}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.AddTable(request);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_aba5bbf9af288c93036ded04301b47a5c}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!DeleteTable\_Success@{DeleteTable\_Success}}
+\index{DeleteTable\_Success@{DeleteTable\_Success}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{DeleteTable\_Success()}{DeleteTable\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_aba5bbf9af288c93036ded04301b47a5c} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Delete\+Table\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00181}{181}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.DeleteAsync(1)).Returns(Task.CompletedTask);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminTableController.DeleteTable(1)\ as\ OkObjectResult;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<string>;}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}Table\ deleted\ successfully"{}},\ response.Data);}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8a7674b0d2fd29c01df6e507b206696f}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!DeleteTable\_ThrowsException\_WhenDeletionFails@{DeleteTable\_ThrowsException\_WhenDeletionFails}}
+\index{DeleteTable\_ThrowsException\_WhenDeletionFails@{DeleteTable\_ThrowsException\_WhenDeletionFails}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{DeleteTable\_ThrowsException\_WhenDeletionFails()}{DeleteTable\_ThrowsException\_WhenDeletionFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8a7674b0d2fd29c01df6e507b206696f} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Delete\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Deletion\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00197}{197}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.DeleteAsync(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ delete\ table"{}}));}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.DeleteTable(1);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8599cdf6b1815909515a58536884cf94}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!GetTable\_Success@{GetTable\_Success}}
+\index{GetTable\_Success@{GetTable\_Success}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetTable\_Success()}{GetTable\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a8599cdf6b1815909515a58536884cf94} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Get\+Table\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00059}{59}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}\ \{\ TableId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.GetByIdAsync(1)).ReturnsAsync(table);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminTableController.GetTable(1)\ as\ OkObjectResult;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<TableDetailDto>;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.TableId);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5f082a3a51855875f76026a8afee7d87}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!GetTable\_ThrowsException\_WhenRetrievalFails@{GetTable\_ThrowsException\_WhenRetrievalFails}}
+\index{GetTable\_ThrowsException\_WhenRetrievalFails@{GetTable\_ThrowsException\_WhenRetrievalFails}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetTable\_ThrowsException\_WhenRetrievalFails()}{GetTable\_ThrowsException\_WhenRetrievalFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5f082a3a51855875f76026a8afee7d87} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Get\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00076}{76}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.GetByIdAsync(1)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ get\ table"{}}));}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.GetTable(1);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5cf14838784c90195685121e79daafc9}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!GetTables\_Success@{GetTables\_Success}}
+\index{GetTables\_Success@{GetTables\_Success}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetTables\_Success()}{GetTables\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a5cf14838784c90195685121e79daafc9} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Get\+Tables\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00024}{24}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ var\ tables\ =\ \textcolor{keyword}{new}\ List<TableDetailDto>\ \{\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}\ \{\ TableId\ =\ 1,\ SeatsCount\ =\ 4\ \}\ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ var\ queryParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ \{\ Page\ =\ 1,\ Size\ =\ 10\ \};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.GetAllAsync(queryParams)).ReturnsAsync((tables,\ tables.Count));}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminTableController.GetTables(queryParams)\ as\ OkObjectResult;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto<IEnumerable<TableDetailDto>}}>;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{keyword}{true},\ response.Success);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ var\ data\ =\ response.Data\ as\ IEnumerable<TableDetailDto>;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ data.Count());}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().TableId);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a375a83897180f8755cfee17cc0d47ed0}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!GetTables\_ThrowsException\_WhenRetrievalFails@{GetTables\_ThrowsException\_WhenRetrievalFails}}
+\index{GetTables\_ThrowsException\_WhenRetrievalFails@{GetTables\_ThrowsException\_WhenRetrievalFails}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetTables\_ThrowsException\_WhenRetrievalFails()}{GetTables\_ThrowsException\_WhenRetrievalFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a375a83897180f8755cfee17cc0d47ed0} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Get\+Tables\+\_\+\+Throws\+Exception\+\_\+\+When\+Retrieval\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00045}{45}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ var\ queryParams\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ \{\ Page\ =\ 1,\ Size\ =\ 10\ \};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.GetAllAsync(queryParams)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ get\ tables"{}}));}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.GetTables(queryParams);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a4eb638b58fc128fdded8078e048008c2}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!Setup@{Setup}}
+\index{Setup@{Setup}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a4eb638b58fc128fdded8078e048008c2} 
+void Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00017}{17}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService\ =\ \textcolor{keyword}{new}\ Mock<ITableService>();}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \_adminTableController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminTableController}{AdminTableController}}(\_mockTableService.Object);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_acb6ec5c9daf325c04f3868509a793a4b}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!UpdateTable\_Success@{UpdateTable\_Success}}
+\index{UpdateTable\_Success@{UpdateTable\_Success}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{UpdateTable\_Success()}{UpdateTable\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_acb6ec5c9daf325c04f3868509a793a4b} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Update\+Table\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00135}{135}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{UpdateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ var\ table\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}\ \{\ TableId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.UpdateAsync(1,\ request)).ReturnsAsync(table);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_adminTableController.UpdateTable(1,\ request)\ as\ OkObjectResult;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<TableDto>;}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.TableId);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a68c5926015426aff84de25f4c4b262d8}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!UpdateTable\_ThrowsException\_WhenNegativeSeatsCount@{UpdateTable\_ThrowsException\_WhenNegativeSeatsCount}}
+\index{UpdateTable\_ThrowsException\_WhenNegativeSeatsCount@{UpdateTable\_ThrowsException\_WhenNegativeSeatsCount}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{UpdateTable\_ThrowsException\_WhenNegativeSeatsCount()}{UpdateTable\_ThrowsException\_WhenNegativeSeatsCount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a68c5926015426aff84de25f4c4b262d8} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Update\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Negative\+Seats\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00167}{167}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{UpdateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ -\/1\ \};}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.UpdateAsync(1,\ request)).ThrowsAsync(\textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Invalid\ argument"{}}));}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<ArgumentException>(async\ ()\ =>}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.UpdateTable(1,\ request);}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a9db1538afb973387e2ecccd0f715768c}\index{BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}!UpdateTable\_ThrowsException\_WhenUpdateFails@{UpdateTable\_ThrowsException\_WhenUpdateFails}}
+\index{UpdateTable\_ThrowsException\_WhenUpdateFails@{UpdateTable\_ThrowsException\_WhenUpdateFails}!BistroQ.Tests.Controllers.AdminTableControllerTests@{BistroQ.Tests.Controllers.AdminTableControllerTests}}
+\doxysubsubsection{\texorpdfstring{UpdateTable\_ThrowsException\_WhenUpdateFails()}{UpdateTable\_ThrowsException\_WhenUpdateFails()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AdminTableControllerTests_a9db1538afb973387e2ecccd0f715768c} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Admin\+Table\+Controller\+Tests.\+Update\+Table\+\_\+\+Throws\+Exception\+\_\+\+When\+Update\+Fails (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminTableControllerTest_8cs_source_l00153}{153}} of file \mbox{\hyperlink{AdminTableControllerTest_8cs_source}{Admin\+Table\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{UpdateTableRequestDto}}\ \{\ ZoneId\ =\ 1,\ SeatsCount\ =\ 4\ \};}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTableService.Setup(x\ =>\ x.UpdateAsync(1,\ request)).ThrowsAsync(\textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ update\ table"{}}));}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<Exception>(async\ ()\ =>}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_adminTableController.UpdateTable(1,\ request);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Tests/Admin\+Table\+Controller\+Test.\+cs\end{DoxyCompactItemize}

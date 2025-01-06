@@ -1,0 +1,37 @@
+\doxysection{Cashier\+Zone\+Controller.\+cs}
+\hypertarget{CashierZoneController_8cs_source}{}\label{CashierZoneController_8cs_source}\index{BistroQ.API/Controllers/Zone/CashierZoneController.cs@{BistroQ.API/Controllers/Zone/CashierZoneController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Zones}{BistroQ.Core.Dtos.Zones}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{BistroQ.API.Controllers}};}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00012}00012\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/Cashier/Zones"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00014}00014\ [Tags(\textcolor{stringliteral}{"{}Cashier\ Table"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00015}00015\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier)]}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00016}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController}{CashierZoneController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}\ \_zoneService;}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController}{CashierZoneController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZoneService}}\ zoneService)}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \_zoneService\ =\ zoneService;}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00023}00023\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00025}00025\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00026}00026\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetZones([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{ZoneCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00027}00027\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ var\ (zones,\ count)\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ac0caaffe6b3d2671b0b33f0e31c45abb}{GetAllByCashierAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ZoneCashierDto>>(zones,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierZoneController_8cs_source_l00031}00031\ \}}
+
+\end{DoxyCode}

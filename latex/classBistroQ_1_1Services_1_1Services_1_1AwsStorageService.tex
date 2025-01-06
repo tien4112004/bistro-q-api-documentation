@@ -1,0 +1,214 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}{}\label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a420a2098e891beab3e276ccfb809b14f}{Aws\+Storage\+Service}} (IAmazon\+S3 s3\+Client, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{Aws\+Settings}} aws\+Settings)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a971ae12ed94e5af12777d8f921a2f758}{Upload\+File\+Async}} (Stream file\+Stream, string key, string content\+Type)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a35286519b01c9c978c50e6461b523793}{Delete\+File\+Async}} (string key)
+\item 
+Task$<$ Stream $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a8a8a32521a8eed618de84e97475c5dc0}{Download\+File\+Async}} (string key)
+\item 
+Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a7e9e8d9d3ee7fdfa5ef7c64e40625841}{Download\+File\+As\+Bytes\+Async}} (string key)
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a81b92bf5e5036e77af0de1eb24c7f13d}{Generate\+Presigned\+Url\+Async}} (string? key, Time\+Span expiration)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00009}{9}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a420a2098e891beab3e276ccfb809b14f}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!AwsStorageService@{AwsStorageService}}
+\index{AwsStorageService@{AwsStorageService}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{AwsStorageService()}{AwsStorageService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a420a2098e891beab3e276ccfb809b14f} 
+Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Aws\+Storage\+Service (\begin{DoxyParamCaption}\item[{IAmazon\+S3}]{s3\+Client}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{Aws\+Settings}}}]{aws\+Settings}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00014}{14}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \_awsSettings\ =\ awsSettings;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_s3Client\ =\ s3Client;}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a35286519b01c9c978c50e6461b523793}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!DeleteFileAsync@{DeleteFileAsync}}
+\index{DeleteFileAsync@{DeleteFileAsync}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{DeleteFileAsync()}{DeleteFileAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a35286519b01c9c978c50e6461b523793} 
+async Task Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Delete\+File\+Async (\begin{DoxyParamCaption}\item[{string}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00040}{40}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ deleteRequest\ =\ \textcolor{keyword}{new}\ DeleteObjectRequest}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BucketName\ =\ \_awsSettings.BucketName,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ key,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Uncomment\ this\ line\ to\ enable\ deletion}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ await\ \_s3Client.DeleteObjectAsync(deleteRequest);}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (AmazonS3Exception\ ex)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ApplicationException(\$\textcolor{stringliteral}{"{}Error\ deleting\ from\ S3:\ \{ex.Message\}"{}},\ ex);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a7e9e8d9d3ee7fdfa5ef7c64e40625841}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!DownloadFileAsBytesAsync@{DownloadFileAsBytesAsync}}
+\index{DownloadFileAsBytesAsync@{DownloadFileAsBytesAsync}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{DownloadFileAsBytesAsync()}{DownloadFileAsBytesAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a7e9e8d9d3ee7fdfa5ef7c64e40625841} 
+Task$<$ byte\mbox{[}$\,$\mbox{]}$>$ Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Download\+File\+As\+Bytes\+Async (\begin{DoxyParamCaption}\item[{string}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00064}{64}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a8a8a32521a8eed618de84e97475c5dc0}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!DownloadFileAsync@{DownloadFileAsync}}
+\index{DownloadFileAsync@{DownloadFileAsync}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{DownloadFileAsync()}{DownloadFileAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a8a8a32521a8eed618de84e97475c5dc0} 
+Task$<$ Stream $>$ Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Download\+File\+Async (\begin{DoxyParamCaption}\item[{string}]{key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00059}{59}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a81b92bf5e5036e77af0de1eb24c7f13d}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!GeneratePresignedUrlAsync@{GeneratePresignedUrlAsync}}
+\index{GeneratePresignedUrlAsync@{GeneratePresignedUrlAsync}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{GeneratePresignedUrlAsync()}{GeneratePresignedUrlAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a81b92bf5e5036e77af0de1eb24c7f13d} 
+string Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Generate\+Presigned\+Url\+Async (\begin{DoxyParamCaption}\item[{string?}]{key}{, }\item[{Time\+Span}]{expiration}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00069}{69}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AmazonCloudFrontUrlSigner.GetCannedSignedURL(}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ AmazonCloudFrontUrlSigner.Protocol.https,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_awsSettings.CloudFrontDomain,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ StringReader(\_awsSettings.PrivateKey),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ key,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \_awsSettings.KeyPairId,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.UtcNow.Add(expiration));}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a971ae12ed94e5af12777d8f921a2f758}\index{BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}!UploadFileAsync@{UploadFileAsync}}
+\index{UploadFileAsync@{UploadFileAsync}!BistroQ.Services.Services.AwsStorageService@{BistroQ.Services.Services.AwsStorageService}}
+\doxysubsubsection{\texorpdfstring{UploadFileAsync()}{UploadFileAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService_a971ae12ed94e5af12777d8f921a2f758} 
+async Task Bistro\+Q.\+Services.\+Services.\+Aws\+Storage\+Service.\+Upload\+File\+Async (\begin{DoxyParamCaption}\item[{Stream}]{file\+Stream}{, }\item[{string}]{key}{, }\item[{string}]{content\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICloud\+Storage\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{AwsStorageService_8cs_source_l00020}{20}} of file \mbox{\hyperlink{AwsStorageService_8cs_source}{Aws\+Storage\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ var\ putRequest\ =\ \textcolor{keyword}{new}\ PutObjectRequest}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BucketName\ =\ \_awsSettings.BucketName,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ key,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InputStream\ =\ fileStream,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ContentType\ =\ contentType,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ var\ a\ =\ await\ \_s3Client.PutObjectAsync(putRequest);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (AmazonS3Exception\ ex)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ApplicationException(\$\textcolor{stringliteral}{"{}Error\ uploading\ to\ S3:\ \{ex.Message\}"{}},\ ex);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Aws\+Storage\+Service.\+cs\end{DoxyCompactItemize}

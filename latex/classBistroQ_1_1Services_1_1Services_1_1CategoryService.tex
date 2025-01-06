@@ -1,0 +1,250 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Category\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService}{}\label{classBistroQ_1_1Services_1_1Services_1_1CategoryService}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Category\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1CategoryService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Category\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1CategoryService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a5d8f1f5bf3da34bed71e049616573047}{Category\+Service}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work, IMapper mapper)
+\item 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ Categories, int Count)$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2c071c74689edade4c78578868781e2a}{Get\+Categories\+Async}} ()
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{Category\+Detail\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a6f08fb1972ac9b8837b98f8515e1304b}{Get\+Category\+By\+Id\+Async}} (int id)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2471ec2b03c4719c6b312f824522ecb9}{Create\+Category\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CreateCategoryRequestDto}{Create\+Category\+Request\+Dto}} category\+Dto)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_abd686fb13a06b52a837618a604169c15}{Update\+Category\+Async}} (int id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1UpdateCategoryRequestDto}{Update\+Category\+Request\+Dto}} category\+Dto)
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_aaf442c2e1aea3bfb0c34b3d2b3c2758f}{Delete\+Category\+Async}} (int id)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{Category\+Detail\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a480f97f6c8a09302886a99666809784c}{Add\+Products\+To\+Category\+Async}} (int category\+Id, List$<$ int $>$ product\+Ids)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00010}{10}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a5d8f1f5bf3da34bed71e049616573047}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!CategoryService@{CategoryService}}
+\index{CategoryService@{CategoryService}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{CategoryService()}{CategoryService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a5d8f1f5bf3da34bed71e049616573047} 
+Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Category\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00015}{15}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a480f97f6c8a09302886a99666809784c}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!AddProductsToCategoryAsync@{AddProductsToCategoryAsync}}
+\index{AddProductsToCategoryAsync@{AddProductsToCategoryAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{AddProductsToCategoryAsync()}{AddProductsToCategoryAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a480f97f6c8a09302886a99666809784c} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{Category\+Detail\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Add\+Products\+To\+Category\+Async (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{, }\item[{List$<$ int $>$}]{product\+Ids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00079}{79}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_unitOfWork.CategoryRepository.GetDetailCategoryByIdAsync(categoryId);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (category\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ \_unitOfWork.ProductRepository.GetProductsAsync(}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \_unitOfWork.ProductRepository.GetQueryable()}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Where(p\ =>\ productIds.Contains(p.ProductId))}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Where(p\ =>\ p.CategoryId\ ==\ \textcolor{keyword}{null}));}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CategoryRepository.AddProductsToCategoryAsync(category,\ products.ToList());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{CategoryDetailDto}}>(category);}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2471ec2b03c4719c6b312f824522ecb9}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!CreateCategoryAsync@{CreateCategoryAsync}}
+\index{CreateCategoryAsync@{CreateCategoryAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{CreateCategoryAsync()}{CreateCategoryAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2471ec2b03c4719c6b312f824522ecb9} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Create\+Category\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CreateCategoryRequestDto}{Create\+Category\+Request\+Dto}}}]{category\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00040}{40}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ category\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}>(categoryDto);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CategoryRepository.AddAsync(category);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{CategoryDto}}>(category);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_aaf442c2e1aea3bfb0c34b3d2b3c2758f}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!DeleteCategoryAsync@{DeleteCategoryAsync}}
+\index{DeleteCategoryAsync@{DeleteCategoryAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{DeleteCategoryAsync()}{DeleteCategoryAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_aaf442c2e1aea3bfb0c34b3d2b3c2758f} 
+async Task Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Delete\+Category\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00067}{67}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_unitOfWork.CategoryRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (category\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CategoryRepository.DeleteAsync(category);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2c071c74689edade4c78578868781e2a}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!GetCategoriesAsync@{GetCategoriesAsync}}
+\index{GetCategoriesAsync@{GetCategoriesAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{GetCategoriesAsync()}{GetCategoriesAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a2c071c74689edade4c78578868781e2a} 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ Categories, int Count)$>$ Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Get\+Categories\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00021}{21}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ var\ categories\ =\ await\ \_unitOfWork.CategoryRepository.GetAllAsync();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ var\ categoryDtos\ =\ \_mapper.Map<IEnumerable<CategoryDto>>(categories);}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (categoryDtos,\ categories.Count());}
+\DoxyCodeLine{00026\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a6f08fb1972ac9b8837b98f8515e1304b}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!GetCategoryByIdAsync@{GetCategoryByIdAsync}}
+\index{GetCategoryByIdAsync@{GetCategoryByIdAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{GetCategoryByIdAsync()}{GetCategoryByIdAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_a6f08fb1972ac9b8837b98f8515e1304b} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{Category\+Detail\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Get\+Category\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00028}{28}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_unitOfWork.CategoryRepository.GetDetailCategoryByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (category\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDetailDto}{CategoryDetailDto}}>(category);}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1CategoryService_abd686fb13a06b52a837618a604169c15}\index{BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}!UpdateCategoryAsync@{UpdateCategoryAsync}}
+\index{UpdateCategoryAsync@{UpdateCategoryAsync}!BistroQ.Services.Services.CategoryService@{BistroQ.Services.Services.CategoryService}}
+\doxysubsubsection{\texorpdfstring{UpdateCategoryAsync()}{UpdateCategoryAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1CategoryService_abd686fb13a06b52a837618a604169c15} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{Category\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Category\+Service.\+Update\+Category\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1UpdateCategoryRequestDto}{Update\+Category\+Request\+Dto}}}]{category\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ICategory\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{CategoryService_8cs_source_l00050}{50}} of file \mbox{\hyperlink{CategoryService_8cs_source}{Category\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ var\ existingCategory\ =\ await\ \_unitOfWork.CategoryRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingCategory\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ var\ category\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}>(categoryDto);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ category.CategoryId\ =\ id;}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CategoryRepository.UpdateAsync(existingCategory,\ category);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CategoryDto}{CategoryDto}}>(category);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00065\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Category\+Service.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,226 @@
+\doxysection{Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests Class Reference}
+\hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests}{}\label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1c7a502716b28f4237a5e666d3137771}{Setup}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a35a3377627cfa8125fc34a0f7d666ffc}{Get\+Recommendations\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a52220d187b9dce384ee834e5b0ae693c}{Get\+Recommendations\+\_\+\+Order\+Not\+Found\+\_\+\+Throws\+Exception}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1bf819300e672f742ea3ebbdb3ba5420}{Get\+Recommendations\+\_\+\+Empty\+Results\+\_\+\+Returns\+Empty\+List}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a0241dc5d61963883aee289ef8d41fb1d}{Get\+Recommendations\+\_\+\+With\+Nutrition\+Facts\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_aa9a0e66fdc5b1c7354c7d83c5929198a}{Get\+Recommendations\+\_\+\+Invalid\+Size\+\_\+\+Throws\+Exception}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00013}{13}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1bf819300e672f742ea3ebbdb3ba5420}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!GetRecommendations\_EmptyResults\_ReturnsEmptyList@{GetRecommendations\_EmptyResults\_ReturnsEmptyList}}
+\index{GetRecommendations\_EmptyResults\_ReturnsEmptyList@{GetRecommendations\_EmptyResults\_ReturnsEmptyList}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations\_EmptyResults\_ReturnsEmptyList()}{GetRecommendations\_EmptyResults\_ReturnsEmptyList()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1bf819300e672f742ea3ebbdb3ba5420} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Get\+Recommendations\+\_\+\+Empty\+Results\+\_\+\+Returns\+Empty\+List (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00071}{71}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ var\ emptyList\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(emptyList);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ Assert.IsFalse(response.Data.Any());}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_aa9a0e66fdc5b1c7354c7d83c5929198a}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!GetRecommendations\_InvalidSize\_ThrowsException@{GetRecommendations\_InvalidSize\_ThrowsException}}
+\index{GetRecommendations\_InvalidSize\_ThrowsException@{GetRecommendations\_InvalidSize\_ThrowsException}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations\_InvalidSize\_ThrowsException()}{GetRecommendations\_InvalidSize\_ThrowsException()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_aa9a0e66fdc5b1c7354c7d83c5929198a} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Get\+Recommendations\+\_\+\+Invalid\+Size\+\_\+\+Throws\+Exception (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00129}{129}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ var\ invalidSize\ =\ -\/1;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ invalidSize))}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ .ThrowsAsync(\textcolor{keyword}{new}\ ArgumentException(\textcolor{stringliteral}{"{}Size\ must\ be\ positive"{}}));}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<ArgumentException>(async\ ()\ =>}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_productController.GetRecommendations(invalidSize,\ orderId);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00144\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a52220d187b9dce384ee834e5b0ae693c}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!GetRecommendations\_OrderNotFound\_ThrowsException@{GetRecommendations\_OrderNotFound\_ThrowsException}}
+\index{GetRecommendations\_OrderNotFound\_ThrowsException@{GetRecommendations\_OrderNotFound\_ThrowsException}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations\_OrderNotFound\_ThrowsException()}{GetRecommendations\_OrderNotFound\_ThrowsException()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a52220d187b9dce384ee834e5b0ae693c} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Get\+Recommendations\+\_\+\+Order\+Not\+Found\+\_\+\+Throws\+Exception (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00053}{53}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}nonexistent\_order"{}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ .ThrowsAsync(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}}));}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act\ \&\ Assert}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ await\ Assert.ThrowsExceptionAsync<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}>(async\ ()\ =>}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_productController.GetRecommendations(size,\ orderId);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a35a3377627cfa8125fc34a0f7d666ffc}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!GetRecommendations\_Success@{GetRecommendations\_Success}}
+\index{GetRecommendations\_Success@{GetRecommendations\_Success}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations\_Success()}{GetRecommendations\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a35a3377627cfa8125fc34a0f7d666ffc} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Get\+Recommendations\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00026}{26}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ var\ expectedProducts\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ \{\ ProductId\ =\ 1,\ Name\ =\ \textcolor{stringliteral}{"{}Product\ 1"{}}\ \},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ \{\ ProductId\ =\ 2,\ Name\ =\ \textcolor{stringliteral}{"{}Product\ 2"{}}\ \}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(expectedProducts);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ Assert.AreEqual(2,\ response.Data.Count());}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ Assert.AreEqual(1,\ response.Data.First().ProductId);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a0241dc5d61963883aee289ef8d41fb1d}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!GetRecommendations\_WithNutritionFacts\_Success@{GetRecommendations\_WithNutritionFacts\_Success}}
+\index{GetRecommendations\_WithNutritionFacts\_Success@{GetRecommendations\_WithNutritionFacts\_Success}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{GetRecommendations\_WithNutritionFacts\_Success()}{GetRecommendations\_WithNutritionFacts\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a0241dc5d61963883aee289ef8d41fb1d} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Get\+Recommendations\+\_\+\+With\+Nutrition\+Facts\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00093}{93}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange\ }}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ var\ orderId\ =\ \textcolor{stringliteral}{"{}order123"{}};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ var\ size\ =\ 5;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ var\ expectedProducts\ =\ \textcolor{keyword}{new}\ List<ProductResponseDto>}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ 1,\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Name\ =\ \textcolor{stringliteral}{"{}Product\ 1"{}},}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ NutritionFact\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1NutritionFact_1_1NutritionFactDto}{NutritionFactDto}}\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Calories\ =\ 100,}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Protein\ =\ 10}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \_mockProductService}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ .Setup(x\ =>\ x.GetRecommendedProductsAsync(orderId,\ size))}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(expectedProducts);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_productController.GetRecommendations(size,\ orderId)\ as\ OkObjectResult;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<IEnumerable<ProductResponseDto>>;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ var\ product\ =\ response.Data.First();}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ Assert.IsNotNull(product.NutritionFact);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ Assert.AreEqual(100,\ product.NutritionFact.Calories);}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1c7a502716b28f4237a5e666d3137771}\index{BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}!Setup@{Setup}}
+\index{Setup@{Setup}!BistroQ.Tests.Controllers.ProductControllerTests@{BistroQ.Tests.Controllers.ProductControllerTests}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1ProductControllerTests_a1c7a502716b28f4237a5e666d3137771} 
+void Bistro\+Q.\+Tests.\+Controllers.\+Product\+Controller\+Tests.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ProductControllerTest_8cs_source_l00019}{19}} of file \mbox{\hyperlink{ProductControllerTest_8cs_source}{Product\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_mockProductService\ =\ \textcolor{keyword}{new}\ Mock<IProductService>();}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_productController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController}{ProductController}}(\_mockProductService.Object);}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Tests/Product\+Controller\+Test.\+cs\end{DoxyCompactItemize}

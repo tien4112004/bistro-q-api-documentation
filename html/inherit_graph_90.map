@@ -1,0 +1,37 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,547,113,573"/>
+<area shape="rect" id="Node000001" href="$classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController.html" title=" " alt="" coords="184,5,361,48"/>
+<area shape="poly" id="edge47_Node000000_Node000001" title=" " alt="" coords="60,531,69,427,87,286,101,214,117,149,136,95,159,58,182,41,185,45,163,62,141,98,122,151,106,215,93,287,74,427,65,531"/>
+<area shape="rect" id="Node000002" href="$classBistroQ_1_1API_1_1Controllers_1_1AdminTableController.html" title=" " alt="" coords="191,72,354,115"/>
+<area shape="poly" id="edge48_Node000000_Node000002" title=" " alt="" coords="61,531,72,439,92,318,121,202,138,156,159,125,173,113,190,104,192,109,176,117,163,128,143,159,126,204,97,319,77,440,66,531"/>
+<area shape="rect" id="Node000003" href="$classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController.html" title=" " alt="" coords="191,139,354,181"/>
+<area shape="poly" id="edge49_Node000000_Node000003" title=" " alt="" coords="57,531,59,463,72,372,85,323,103,276,127,231,159,191,189,171,192,176,162,195,132,234,108,278,90,325,78,373,65,463,62,531"/>
+<area shape="rect" id="Node000004" href="$classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController.html" title=" " alt="" coords="191,205,354,248"/>
+<area shape="poly" id="edge50_Node000000_Node000004" title=" " alt="" coords="59,530,65,473,81,400,94,362,111,324,132,289,159,258,189,239,192,243,162,262,137,292,116,327,99,364,86,402,71,474,64,531"/>
+<area shape="rect" id="Node000005" href="$classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1TestAuthController.html" title=" " alt="" coords="191,272,354,315"/>
+<area shape="poly" id="edge51_Node000000_Node000005" title=" " alt="" coords="62,531,72,486,90,431,118,374,137,348,159,325,189,306,192,311,162,329,141,351,123,377,95,433,77,487,67,532"/>
+<area shape="rect" id="Node000006" href="$classBistroQ_1_1API_1_1Controllers_1_1CashierTableController.html" title=" " alt="" coords="191,339,354,381"/>
+<area shape="poly" id="edge52_Node000000_Node000006" title=" " alt="" coords="67,531,81,499,100,461,126,424,159,391,190,374,192,379,162,395,131,427,105,464,86,501,72,534"/>
+<area shape="rect" id="Node000007" href="$classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController.html" title=" " alt="" coords="191,405,354,448"/>
+<area shape="poly" id="edge53_Node000000_Node000007" title=" " alt="" coords="78,533,113,494,159,458,190,443,192,448,162,462,117,498,81,537"/>
+<area shape="rect" id="Node000008" href="$classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController.html" title=" " alt="" coords="161,472,384,515"/>
+<area shape="poly" id="edge54_Node000000_Node000008" title=" " alt="" coords="115,539,160,524,197,513,198,518,161,529,116,544"/>
+<area shape="rect" id="Node000009" href="$classBistroQ_1_1API_1_1Controllers_1_1Category_1_1CategoryController.html" title=" " alt="" coords="179,539,366,581"/>
+<area shape="poly" id="edge55_Node000000_Node000009" title=" " alt="" coords="128,557,179,557,179,563,128,563"/>
+<area shape="rect" id="Node000010" href="$classBistroQ_1_1API_1_1Controllers_1_1Order_1_1CashierOrderController.html" title=" " alt="" coords="177,605,368,648"/>
+<area shape="poly" id="edge56_Node000000_Node000010" title=" " alt="" coords="116,576,161,591,198,602,197,607,160,596,115,581"/>
+<area shape="rect" id="Node000011" href="$classBistroQ_1_1API_1_1Controllers_1_1Order_1_1ClientOrderController.html" title=" " alt="" coords="183,672,362,715"/>
+<area shape="poly" id="edge57_Node000000_Node000011" title=" " alt="" coords="81,583,117,622,162,658,185,669,183,674,159,662,113,626,78,587"/>
+<area shape="rect" id="Node000012" href="$classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController.html" title=" " alt="" coords="178,739,367,781"/>
+<area shape="poly" id="edge58_Node000000_Node000012" title=" " alt="" coords="72,586,86,619,105,656,131,693,162,725,181,736,178,741,159,729,126,696,100,659,81,621,67,589"/>
+<area shape="rect" id="Node000013" href="$classBistroQ_1_1API_1_1Controllers_1_1Product_1_1AdminProductController.html" title=" " alt="" coords="168,805,376,848"/>
+<area shape="poly" id="edge59_Node000000_Node000013" title=" " alt="" coords="67,588,77,633,95,687,123,743,141,769,162,791,178,803,175,807,159,795,137,772,118,746,90,689,72,634,62,589"/>
+<area shape="rect" id="Node000014" href="$classBistroQ_1_1API_1_1Controllers_1_1Product_1_1ProductController.html" title=" " alt="" coords="187,872,358,915"/>
+<area shape="poly" id="edge60_Node000000_Node000014" title=" " alt="" coords="64,589,71,646,86,718,99,756,116,793,137,828,162,858,188,875,185,879,159,862,132,831,111,796,94,758,81,720,65,647,59,590"/>
+<area shape="rect" id="Node000015" href="$classBistroQ_1_1API_1_1Controllers_1_1TableController.html" title=" " alt="" coords="191,939,354,981"/>
+<area shape="poly" id="edge61_Node000000_Node000015" title=" " alt="" coords="62,589,65,657,78,747,90,795,108,842,132,886,162,925,192,944,189,949,159,929,127,889,103,844,85,797,72,748,59,657,57,589"/>
+<area shape="rect" id="Node000016" href="$classBistroQ_1_1API_1_1Controllers_1_1TestController.html" title=" " alt="" coords="191,1005,354,1048"/>
+<area shape="poly" id="edge62_Node000000_Node000016" title=" " alt="" coords="66,589,77,680,97,801,126,916,143,961,163,992,176,1003,192,1011,190,1016,173,1007,159,995,138,964,121,918,92,802,72,681,61,589"/>
+<area shape="rect" id="Node000017" href="$classBistroQ_1_1API_1_1Controllers_1_1ZoneController.html" title=" " alt="" coords="191,1072,354,1115"/>
+<area shape="poly" id="edge63_Node000000_Node000017" title=" " alt="" coords="65,589,74,693,93,833,106,905,122,969,141,1022,163,1058,176,1070,192,1078,190,1083,173,1074,159,1062,136,1025,117,971,101,906,87,834,69,693,60,589"/>
+</map>

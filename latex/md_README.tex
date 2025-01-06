@@ -1,0 +1,25 @@
+\chapter{bistro-\/q-\/api}
+\hypertarget{md_README}{}\label{md_README}\index{bistro-\/q-\/api@{bistro-\/q-\/api}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Add migrations}{Add migrations}}\label{md_README_autotoc_md1}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dotnet\ ef\ migrations\ add\ -\/-\/project\ BistroQ.Infrastructure\ -\/-\/startup-\/project\ BistroQ.API\ -\/-\/context\ BistroQ.Infrastructure.Data.BistroQContext\ -\/-\/configuration\ Debug\ -\/-\/verbose\ AutoCreateOrderIdAndOrderItemId\ -\/-\/output-\/dir\ Migrations}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{Apply migrations}{Apply migrations}}\label{md_README_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dotnet\ ef\ database\ update\ -\/-\/project\ BistroQ.Infrastructure\ -\/-\/startup-\/project\ BistroQ.API\ -\/-\/context\ BistroQ.Infrastructure.Data.BistroQContext\ -\/-\/verbose\ }
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Run the test}{Run the test}}\label{md_README_autotoc_md3}
+\hypertarget{md_README_autotoc_md4}{}\doxysubsection{\texorpdfstring{Using {\ttfamily dotnet} CLI}{Using {\ttfamily dotnet} CLI}}\label{md_README_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{dotnet\ test}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md5}{}\doxysubsection{\texorpdfstring{Using Visual Studio/\+Jetbrains Rider}{Using Visual Studio/\+Jetbrains Rider}}\label{md_README_autotoc_md5}
+Run the test using the Test Explorer/\+Test Runner in the IDE. 

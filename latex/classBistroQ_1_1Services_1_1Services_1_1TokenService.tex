@@ -1,0 +1,219 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Token\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1TokenService}{}\label{classBistroQ_1_1Services_1_1Services_1_1TokenService}\index{BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Token\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1TokenService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Token\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1TokenService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_a29136d705b0353cc2775ae22622820cc}{Token\+Service}} (User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager, \mbox{\hyperlink{classJwtSettings}{Jwt\+Settings}} jwt\+Settings)
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256}{Generate\+Access\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user)
+\begin{DoxyCompactList}\small\item\em Generates an access token for the specified user. \end{DoxyCompactList}\item 
+async Task$<$ string $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0}{Generate\+Refresh\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user)
+\begin{DoxyCompactList}\small\item\em Generates a refresh token for the specified user. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65}{Validate\+Refresh\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user, string refresh\+Token)
+\begin{DoxyCompactList}\small\item\em Validates the specified refresh token for the given user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TokenService_8cs_source_l00015}{15}} of file \mbox{\hyperlink{TokenService_8cs_source}{Token\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TokenService_a29136d705b0353cc2775ae22622820cc}\index{BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}!TokenService@{TokenService}}
+\index{TokenService@{TokenService}!BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}}
+\doxysubsubsection{\texorpdfstring{TokenService()}{TokenService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TokenService_a29136d705b0353cc2775ae22622820cc} 
+Bistro\+Q.\+Services.\+Services.\+Token\+Service.\+Token\+Service (\begin{DoxyParamCaption}\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{, }\item[{\mbox{\hyperlink{classJwtSettings}{Jwt\+Settings}}}]{jwt\+Settings}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TokenService_8cs_source_l00020}{20}} of file \mbox{\hyperlink{TokenService_8cs_source}{Token\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_jwtSettings\ =\ jwtSettings;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256}\index{BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}!GenerateAccessToken@{GenerateAccessToken}}
+\index{GenerateAccessToken@{GenerateAccessToken}!BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}}
+\doxysubsubsection{\texorpdfstring{GenerateAccessToken()}{GenerateAccessToken()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256} 
+async Task$<$ string $>$ Bistro\+Q.\+Services.\+Services.\+Token\+Service.\+Generate\+Access\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates an access token for the specified user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user for whom the access token is generated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the generated access token as a string.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TokenService_8cs_source_l00026}{26}} of file \mbox{\hyperlink{TokenService_8cs_source}{Token\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ userRoles\ =\ await\ \_userManager.GetRolesAsync(user);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ authClaims\ =\ \textcolor{keyword}{new}\ List<Claim>}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Claim(JwtRegisteredClaimNames.Sub,\ user.Id.ToString()),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Claim(JwtRegisteredClaimNames.Jti,\ Guid.NewGuid().ToString()),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ authClaims.AddRange(userRoles.Select(role\ =>\ \textcolor{keyword}{new}\ Claim(ClaimTypes.Role,\ role)));}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ signingKey\ =\ \textcolor{keyword}{new}\ SymmetricSecurityKey(Encoding.UTF8.GetBytes(\_jwtSettings.SecretKey));}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ var\ creds\ =\ \textcolor{keyword}{new}\ SigningCredentials(signingKey,\ SecurityAlgorithms.HmacSha256);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ var\ jwtExpirationMinutes\ =\ \_jwtSettings.AccessTokenExpiresInMinutes;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ var\ token\ =\ \textcolor{keyword}{new}\ JwtSecurityToken(}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ issuer:\ \_jwtSettings.Issuer,}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ audience:\ \_jwtSettings.Audience,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ claims:\ authClaims,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ expires:\ DateTime.Now.AddMinutes(jwtExpirationMinutes),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ signingCredentials:\ creds}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{new}\ JwtSecurityTokenHandler().WriteToken(token);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0}\index{BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}!GenerateRefreshToken@{GenerateRefreshToken}}
+\index{GenerateRefreshToken@{GenerateRefreshToken}!BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}}
+\doxysubsubsection{\texorpdfstring{GenerateRefreshToken()}{GenerateRefreshToken()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0} 
+async Task$<$ string $>$ Bistro\+Q.\+Services.\+Services.\+Token\+Service.\+Generate\+Refresh\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates a refresh token for the specified user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user for whom the refresh token is generated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the generated refresh token as a string.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a78aa3ee8dd5d8b04b43bb354c8eb0635}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TokenService_8cs_source_l00052}{52}} of file \mbox{\hyperlink{TokenService_8cs_source}{Token\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \ \ \ \ \{\ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ rng\ =\ RandomNumberGenerator.Create();}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ sha256\ =\ SHA256.Create();}
+\DoxyCodeLine{00056\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ var\ randomNumber\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{byte}[32];}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ rng.GetBytes(randomNumber);}
+\DoxyCodeLine{00059\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ var\ refreshToken\ =\ Convert.ToBase64String(randomNumber);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ hashedToken\ =\ Convert.ToBase64String(}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ sha256.ComputeHash(Encoding.UTF8.GetBytes(refreshToken))}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ user.RefreshToken\ =\ hashedToken;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ user.RefreshTokenExpiryTime\ =\ DateTime.UtcNow}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ .AddMinutes(\_jwtSettings.RefreshTokenExpiredInMinutes);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_userManager.UpdateAsync(user);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!result.Succeeded)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Log\ error}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception();}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ refreshToken;}
+\DoxyCodeLine{00077\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65}\index{BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}!ValidateRefreshToken@{ValidateRefreshToken}}
+\index{ValidateRefreshToken@{ValidateRefreshToken}!BistroQ.Services.Services.TokenService@{BistroQ.Services.Services.TokenService}}
+\doxysubsubsection{\texorpdfstring{ValidateRefreshToken()}{ValidateRefreshToken()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65} 
+Task$<$ bool $>$ Bistro\+Q.\+Services.\+Services.\+Token\+Service.\+Validate\+Refresh\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{, }\item[{string}]{refresh\+Token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Validates the specified refresh token for the given user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to whom the refresh token belongs.\\
+\hline
+{\em refresh\+Token} & The refresh token to validate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains a boolean value indicating whether the refresh token is valid.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_ab4445c397ebc86f588de87b8e0384f79}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TokenService_8cs_source_l00079}{79}} of file \mbox{\hyperlink{TokenService_8cs_source}{Token\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00080\ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }var\ sha256\ =\ SHA256.Create();}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\ hashedProvidedToken\ =\ Convert.ToBase64String(}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ sha256.ComputeHash(Encoding.UTF8.GetBytes(refreshToken))}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Task.FromResult(user.RefreshToken\ ==\ hashedProvidedToken\ \&\&\ user.RefreshTokenExpiryTime\ >\ DateTime.UtcNow);}
+\DoxyCodeLine{00087\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Token\+Service.\+cs\end{DoxyCompactItemize}

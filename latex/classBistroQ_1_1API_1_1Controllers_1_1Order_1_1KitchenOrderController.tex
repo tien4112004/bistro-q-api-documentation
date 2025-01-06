@@ -1,0 +1,109 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController}\index{BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a577073ac9b8716d76961870b5538325c}{Kitchen\+Order\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{IOrder\+Item\+Service}} order\+Item\+Service, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}} order\+Service, User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$ user\+Manager)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a6397d7d66ecc3691126b72737ccf2667}{Get\+Order\+Items}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{Order\+Item\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a37ed0c462033165df55ab7a54d389f0f}{Update\+Order\+Items\+Status}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderItemsStatusRequestDto}{Update\+Order\+Items\+Status\+Request\+Dto}} update\+Order\+Items\+Status\+Dto)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{KitchenOrderController_8cs_source_l00016}{16}} of file \mbox{\hyperlink{KitchenOrderController_8cs_source}{Kitchen\+Order\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a577073ac9b8716d76961870b5538325c}\index{BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}!KitchenOrderController@{KitchenOrderController}}
+\index{KitchenOrderController@{KitchenOrderController}!BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}}
+\doxysubsubsection{\texorpdfstring{KitchenOrderController()}{KitchenOrderController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a577073ac9b8716d76961870b5538325c} 
+Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller.\+Kitchen\+Order\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{IOrder\+Item\+Service}}}]{order\+Item\+Service}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrder\+Service}}}]{order\+Service}{, }\item[{User\+Manager$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} $>$}]{user\+Manager}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{KitchenOrderController_8cs_source_l00022}{22}} of file \mbox{\hyperlink{KitchenOrderController_8cs_source}{Kitchen\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \_orderItemService\ =\ orderItemService;}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a6397d7d66ecc3691126b72737ccf2667}\index{BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}!GetOrderItems@{GetOrderItems}}
+\index{GetOrderItems@{GetOrderItems}!BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}}
+\doxysubsubsection{\texorpdfstring{GetOrderItems()}{GetOrderItems()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a6397d7d66ecc3691126b72737ccf2667} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller.\+Get\+Order\+Items (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{Order\+Item\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{KitchenOrderController_8cs_source_l00033}{33}} of file \mbox{\hyperlink{KitchenOrderController_8cs_source}{Kitchen\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ var\ (items,\ count)\ =\ await\ \_orderItemService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747}{GetOrderItemsAsync}}(queryParams);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<DetailOrderItemDto>>(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ items,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a37ed0c462033165df55ab7a54d389f0f}\index{BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}!UpdateOrderItemsStatus@{UpdateOrderItemsStatus}}
+\index{UpdateOrderItemsStatus@{UpdateOrderItemsStatus}!BistroQ.API.Controllers.Order.KitchenOrderController@{BistroQ.API.Controllers.Order.KitchenOrderController}}
+\doxysubsubsection{\texorpdfstring{UpdateOrderItemsStatus()}{UpdateOrderItemsStatus()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController_a37ed0c462033165df55ab7a54d389f0f} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Order.\+Kitchen\+Order\+Controller.\+Update\+Order\+Items\+Status (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderItemsStatusRequestDto}{Update\+Order\+Items\+Status\+Request\+Dto}}}]{update\+Order\+Items\+Status\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{KitchenOrderController_8cs_source_l00041}{41}} of file \mbox{\hyperlink{KitchenOrderController_8cs_source}{Kitchen\+Order\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderItemService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f}{UpdateOrderItemsStatusAsync}}(updateOrderItemsStatusDto.OrderItemIds,\ updateOrderItemsStatusDto.Status);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ totalCancelAmount\ =\ orderItems.Sum(oi\ =>\ oi.PriceAtPurchase\ *\ oi.Quantity);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderItemDto>>(orderItems));}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Order/Kitchen\+Order\+Controller.\+cs\end{DoxyCompactItemize}

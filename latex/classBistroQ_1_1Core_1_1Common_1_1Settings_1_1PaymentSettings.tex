@@ -1,0 +1,154 @@
+\doxysection{Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings Class Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{}\label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{Payment\+Settings}} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_ad5d58a409f10b9b8060b0aa5252980a7}{Read\+From\+Environment}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a605aaaa3d95aa35186d1f10f14624d22}{Api\+Key}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_afb6f6bcc4f3d1ad58d2a6a6249b3efe0}{Client\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_af1635bf4f082f21b054349e29d8939c0}{Base\+Url}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a9dcd4db42808a239d4a7a0db7d131625}{Acq\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_aca26022a7f0bd0d73a2c3d76b969f878}{Account\+Number}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a354227c937ee0781cd27b4ab40807cd1}{Account\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00003}{3}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_ad5d58a409f10b9b8060b0aa5252980a7}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!ReadFromEnvironment@{ReadFromEnvironment}}
+\index{ReadFromEnvironment@{ReadFromEnvironment}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{ReadFromEnvironment()}{ReadFromEnvironment()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_ad5d58a409f10b9b8060b0aa5252980a7} 
+\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{Payment\+Settings}} Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Read\+From\+Environment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00017}{17}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ ApiKey\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_API\_KEY"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ClientId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_CLIENT\_ID"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ BaseUrl\ =\ \textcolor{stringliteral}{"{}https://api.vietqr.io/v2"{}};}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ AcqId\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACQ\_ID"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ AccountNumber\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACCOUNT\_NUMBER"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ AccountName\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}VIETQR\_ACCOUNT\_NAME"{}})\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a354227c937ee0781cd27b4ab40807cd1}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!AccountName@{AccountName}}
+\index{AccountName@{AccountName}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{AccountName}{AccountName}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a354227c937ee0781cd27b4ab40807cd1} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Account\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00015}{15}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_aca26022a7f0bd0d73a2c3d76b969f878}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!AccountNumber@{AccountNumber}}
+\index{AccountNumber@{AccountNumber}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{AccountNumber}{AccountNumber}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_aca26022a7f0bd0d73a2c3d76b969f878} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Account\+Number\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00013}{13}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a9dcd4db42808a239d4a7a0db7d131625}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!AcqId@{AcqId}}
+\index{AcqId@{AcqId}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{AcqId}{AcqId}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a9dcd4db42808a239d4a7a0db7d131625} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Acq\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00011}{11}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a605aaaa3d95aa35186d1f10f14624d22}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!ApiKey@{ApiKey}}
+\index{ApiKey@{ApiKey}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{ApiKey}{ApiKey}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_a605aaaa3d95aa35186d1f10f14624d22} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Api\+Key\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00005}{5}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_af1635bf4f082f21b054349e29d8939c0}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!BaseUrl@{BaseUrl}}
+\index{BaseUrl@{BaseUrl}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{BaseUrl}{BaseUrl}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_af1635bf4f082f21b054349e29d8939c0} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Base\+Url\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00009}{9}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_afb6f6bcc4f3d1ad58d2a6a6249b3efe0}\index{BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}!ClientId@{ClientId}}
+\index{ClientId@{ClientId}!BistroQ.Core.Common.Settings.PaymentSettings@{BistroQ.Core.Common.Settings.PaymentSettings}}
+\doxysubsubsection{\texorpdfstring{ClientId}{ClientId}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings_afb6f6bcc4f3d1ad58d2a6a6249b3efe0} 
+string Bistro\+Q.\+Core.\+Common.\+Settings.\+Payment\+Settings.\+Client\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{PaymentSettings_8cs_source_l00007}{7}} of file \mbox{\hyperlink{PaymentSettings_8cs_source}{Payment\+Settings.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Common/\+Settings/Payment\+Settings.\+cs\end{DoxyCompactItemize}

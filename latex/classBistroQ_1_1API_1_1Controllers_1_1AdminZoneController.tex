@@ -1,0 +1,182 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_ad591b11386d3f8fdd0c2c8b5d83bb8e8}{Admin\+Zone\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZone\+Service}} zone\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a66543e102cddfadda4b1085ffecffffc}{Get\+Zones}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a92864d3a052ea5bc3a3bd9be855409e3}{Get\+Zone}} (\mbox{[}From\+Route\mbox{]} int zone\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a9b7dfa8ba62ab3e0c9e452475a8a7451}{Add\+Zone}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{Create\+Zone\+Request\+Dto}} request)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a90eba87c28beb47b9459e22a666eace3}{Add\+Tables}} (\mbox{[}From\+Route\mbox{]} int zone\+Id, \mbox{[}From\+Body\mbox{]} List$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} $>$ requests)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a33651f78ea95ef9da886829c5c2be53b}{Update\+Zone}} (\mbox{[}From\+Route\mbox{]} int zone\+Id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{Update\+Zone\+Request\+Dto}} zone\+Dto)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a1f76ed03e34b29915038c6698e6856a6}{Delete\+Zone}} (\mbox{[}From\+Route\mbox{]} int zone\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_ad591b11386d3f8fdd0c2c8b5d83bb8e8}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!AdminZoneController@{AdminZoneController}}
+\index{AdminZoneController@{AdminZoneController}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{AdminZoneController()}{AdminZoneController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_ad591b11386d3f8fdd0c2c8b5d83bb8e8} 
+Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Admin\+Zone\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZone\+Service}}}]{zone\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00022}{22}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \ \ \ \ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_zoneService\ =\ zoneService;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a90eba87c28beb47b9459e22a666eace3}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!AddTables@{AddTables}}
+\index{AddTables@{AddTables}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{AddTables()}{AddTables()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a90eba87c28beb47b9459e22a666eace3} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Add\+Tables (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} List$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} $>$}]{requests}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00050}{50}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a0186d08b243cfabfcd02df56344081ec}{AddTablesToZoneAsync}}(zoneId,\ requests);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDetailDto>(zone));}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a9b7dfa8ba62ab3e0c9e452475a8a7451}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!AddZone@{AddZone}}
+\index{AddZone@{AddZone}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{AddZone()}{AddZone()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a9b7dfa8ba62ab3e0c9e452475a8a7451} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Add\+Zone (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{Create\+Zone\+Request\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00043}{43}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \ \ \ \ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a7a00f39c4402c5430adb7c1499ca9a09}{AddAsync}}(request);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(zone));}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a1f76ed03e34b29915038c6698e6856a6}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!DeleteZone@{DeleteZone}}
+\index{DeleteZone@{DeleteZone}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{DeleteZone()}{DeleteZone()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a1f76ed03e34b29915038c6698e6856a6} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Delete\+Zone (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00066}{66}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067\ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a43111c8cc460639414ea7122ef56a995}{DeleteAsync}}(zoneId);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Zone\ deleted\ successfully"{}}));}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a92864d3a052ea5bc3a3bd9be855409e3}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!GetZone@{GetZone}}
+\index{GetZone@{GetZone}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{GetZone()}{GetZone()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a92864d3a052ea5bc3a3bd9be855409e3} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Get\+Zone (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00036}{36}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a831136073674ffb47ad17ec409532866}{GetByIdAsync}}(zoneId);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(zone));}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a66543e102cddfadda4b1085ffecffffc}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!GetZones@{GetZones}}
+\index{GetZones@{GetZones}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{GetZones()}{GetZones()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a66543e102cddfadda4b1085ffecffffc} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Get\+Zones (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00028}{28}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ var\ (zones,\ count)\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ab0ec907f8bbdc5edd58b65c76add26f4}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ZoneDto>>(zones,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a33651f78ea95ef9da886829c5c2be53b}\index{BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}!UpdateZone@{UpdateZone}}
+\index{UpdateZone@{UpdateZone}!BistroQ.API.Controllers.AdminZoneController@{BistroQ.API.Controllers.AdminZoneController}}
+\doxysubsubsection{\texorpdfstring{UpdateZone()}{UpdateZone()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1AdminZoneController_a33651f78ea95ef9da886829c5c2be53b} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Admin\+Zone\+Controller.\+Update\+Zone (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{zone\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{Update\+Zone\+Request\+Dto}}}]{zone\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminZoneController_8cs_source_l00058}{58}} of file \mbox{\hyperlink{AdminZoneController_8cs_source}{Admin\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00059\ \ \ \ \ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ var\ updatedZone\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a572f40117f374b1139b1e33181a081d1}{UpdateAsync}}(zoneId,\ zoneDto);}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<ZoneDto>(updatedZone));}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Zone/Admin\+Zone\+Controller.\+cs\end{DoxyCompactItemize}

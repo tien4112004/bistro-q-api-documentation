@@ -1,0 +1,254 @@
+\doxysection{Product\+Service.\+cs}
+\hypertarget{ProductService_8cs_source}{}\label{ProductService_8cs_source}\index{BistroQ.Services/Services/ProductService.cs@{BistroQ.Services/Services/ProductService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.IO.Compression;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }System.Runtime.Serialization;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Amazon.CloudFront.Model;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }AutoMapper;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Builder}{BistroQ.Core.Common.Builder}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Image}{BistroQ.Core.Dtos.Image}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Products}{BistroQ.Core.Dtos.Products}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces}{BistroQ.Core.Interfaces}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Helpers}{BistroQ.Services.Helpers}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00014}00014\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Http;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00015}00015\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore.Metadata.Conventions;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00017}00017\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00019}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService}{00019}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService}{ProductService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IProductService}{IProductService}}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00020}00020\ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ \_unitOfWork;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IMapper\ \_mapper;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00023}00023\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloudStorageService}}\ \_cloudStorageService;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00024}00024\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService}{ProductService}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnitOfWork}}\ unitOfWork,\ IMapper\ mapper,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloudStorageService}}\ cloudStorageService)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \_cloudStorageService\ =\ cloudStorageService;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00032}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aa2019e1af63a66e5583d4b014ecff313}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ProductResponseDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aa2019e1af63a66e5583d4b014ecff313}{GetByIdAsync}}(\textcolor{keywordtype}{int}\ productId)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ var\ product\ =\ await\ \_unitOfWork.ProductRepository.GetByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(product\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Product\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}>(product);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00043}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aabef45841d96e13aaaf36c619f16650e}{00043}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<(IEnumerable<ProductResponseDto>\ Products,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_aabef45841d96e13aaaf36c619f16650e}{GetAllAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductCollectionQueryParams}{ProductCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ var\ builder\ =\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ProductQueryableBuilder}{ProductQueryableBuilder}}(\_unitOfWork.ProductRepository.GetQueryable())}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ .WithCategoryId(queryParams.CategoryId)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ .WithName(queryParams.Name)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ .WithPrice(queryParams.Price);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.ProductRepository.GetProductsCountAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ .IncludeCategory()}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ .IncludeImage()}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ .IncludeNutritionFact()}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ \_unitOfWork.ProductRepository.GetProductsAsync(builder.Build());}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<ProductResponseDto>>(products),\ count);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00065}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a717642f9d41795d69ac3c1e5ce037582}{00065}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<ProductResponseDto>>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a717642f9d41795d69ac3c1e5ce037582}{GetRecommendedProductsAsync}}(\textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00066}00066\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ var\ orderId\ =\ order.OrderId;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ var\ size\ =\ order.PeopleCount;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ var\ products\ =\ await\ \_unitOfWork.ProductRepository.GetRecommendedProductsAsync(orderId,\ size);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ var\ productIds\ =\ products.Select(p\ =>\ p.ProductId).ToList();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ var\ nutritionFacts\ =\ await\ \_unitOfWork.NutritionFactRepository.GetByIdsAsync(productIds);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ products.Select(p\ =>}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nutritionFacts.TryGetValue(p.ProductId,\ out\ var\ nutritionFact))}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ p.NutritionFact\ =\ nutritionFact;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00085}00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}>(p);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00090}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a9accf3b094090ae6120d069a6a0fc094}{00090}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ProductResponseDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a9accf3b094090ae6120d069a6a0fc094}{AddAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1CreateProductRequestDto}{CreateProductRequestDto}}\ productDto,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Image_1_1ImageRequestDto}{ImageRequestDto}}?\ image)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ var\ product\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}>(productDto);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (productDto.CategoryId\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_unitOfWork.CategoryRepository.GetByIdAsync(productDto.CategoryId.Value);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (category\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ var\ createdProduct\ =\ await\ \_unitOfWork.ProductRepository.AddAsync(product);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (createdProduct\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ product"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (image\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ newImage\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}>(image);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ createdImage\ =\ await\ \_unitOfWork.ImageRepository.AddAsync(newImage);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (createdImage\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ create\ image"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00120}00120\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_cloudStorageService.UploadFileAsync(}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.Data,\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdImage.ImageId\ +\ ContentTypeValue.GetExtension(createdImage.ContentType),\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdImage.ContentType);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ createdProduct.ImageId\ =\ createdImage.ImageId;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}>(createdProduct);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00139}00139\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00141}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a587338068d42f38e9ceee3b906e1c7ce}{00141}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ProductDto>\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a587338068d42f38e9ceee3b906e1c7ce}{UpdateAsync}}(\textcolor{keywordtype}{int}\ productId,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1UpdateProductRequestDto}{UpdateProductRequestDto}}\ productDto)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00142}00142\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ var\ existingProduct\ =\ await\ \_unitOfWork.ProductRepository.GetProductByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingProduct\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Product\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00147}00147\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00148}00148\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingProduct.NutritionFact\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ existingProduct.NutritionFact\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ productId,}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00156}00156\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ existingProduct.NutritionFact.Calories\ =\ productDto.Calories;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00158}00158\ \ \ \ \ \ \ \ \ existingProduct.NutritionFact.Fat\ =\ productDto.Fat;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ existingProduct.NutritionFact.Fiber\ =\ productDto.Fiber;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ existingProduct.NutritionFact.Protein\ =\ productDto.Protein;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ existingProduct.NutritionFact.Carbohydrates\ =\ productDto.Carbohydrates;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (productDto.CategoryId\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_unitOfWork.CategoryRepository.GetByIdAsync(productDto.CategoryId.Value);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (category\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Category\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ existingProduct.CategoryId\ =\ productDto.CategoryId.Value;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00172}00172\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ await\ \_unitOfWork.ProductRepository.UpdateAsync(existingProduct,\ existingProduct);}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00175}00175\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ var\ updatedProduct\ =\ await\ \_unitOfWork.ProductRepository.GetByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00177}00177\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductDto}{ProductDto}}>(updatedProduct);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00179}00179\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00181}00181\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<ProductResponseDto>\ UpdateImageAsync(\textcolor{keywordtype}{int}\ productId,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Image_1_1ImageRequestDto}{ImageRequestDto}}\ image)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ var\ existingProduct\ =\ await\ \_unitOfWork.ProductRepository.GetProductByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingProduct\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Product\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ var\ existingImage\ =\ await\ \_unitOfWork.ImageRepository.GetByProductIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingImage\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Image\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ existingImage.Name\ =\ image.Name;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ existingImage.ContentType\ =\ image.ContentType;}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_cloudStorageService.UploadFileAsync(}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.Data,\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ existingImage.ImageId\ +\ ContentTypeValue.GetExtension(image.ContentType),\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ image.ContentType);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00206}00206\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ var\ updatedProduct\ =\ await\ \_unitOfWork.ProductRepository.GetProductByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Products_1_1ProductResponseDto}{ProductResponseDto}}>(updatedProduct);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00220}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a2113a3ae0bf8add0bc35402ae4d3a15c}{00220}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ProductService_a2113a3ae0bf8add0bc35402ae4d3a15c}{DeleteAsync}}(\textcolor{keywordtype}{int}\ productId)}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00221}00221\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ var\ existingProduct\ =\ await\ \_unitOfWork.ProductRepository.GetByIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingProduct\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Product\ not\ found"{}});}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.BeginTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ var\ existingImage\ =\ await\ \_unitOfWork.ImageRepository.GetByProductIdAsync(productId);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingImage\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_cloudStorageService.DeleteFileAsync(existingImage.ImageId\ +\ ContentTypeValue.GetExtension(existingImage.ContentType));}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ImageRepository.DeleteAsync(existingImage);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00237}00237\ }
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ProductRepository.DeleteAsync(existingProduct);}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.CommitTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00243}00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.RollbackTransactionAsync();}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00247}00247\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{ProductService_8cs_source_l00248}00248\ \}}
+
+\end{DoxyCode}

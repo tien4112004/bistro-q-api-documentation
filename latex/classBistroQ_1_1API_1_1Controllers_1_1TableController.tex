@@ -1,0 +1,102 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Table\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TableController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1TableController}\index{BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1TableController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Table\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1TableController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController_afa765d6ca1a7c2a3edb0c7d2f56b4491}{Table\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}} table\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController_ac150cb5f3561ea9313a88e7fd2e43e8f}{Get\+Tables}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController_a544b6c317070fdd75cad584d56ecb2a5}{Get\+Table}} (\mbox{[}From\+Route\mbox{]} int table\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TableController_8cs_source_l00015}{15}} of file \mbox{\hyperlink{TableController_8cs_source}{Table\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TableController_afa765d6ca1a7c2a3edb0c7d2f56b4491}\index{BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}!TableController@{TableController}}
+\index{TableController@{TableController}!BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}}
+\doxysubsubsection{\texorpdfstring{TableController()}{TableController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TableController_afa765d6ca1a7c2a3edb0c7d2f56b4491} 
+Bistro\+Q.\+API.\+Controllers.\+Table\+Controller.\+Table\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITable\+Service}}}]{table\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TableController_8cs_source_l00019}{19}} of file \mbox{\hyperlink{TableController_8cs_source}{Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TableController_a544b6c317070fdd75cad584d56ecb2a5}\index{BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}!GetTable@{GetTable}}
+\index{GetTable@{GetTable}!BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}}
+\doxysubsubsection{\texorpdfstring{GetTable()}{GetTable()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TableController_a544b6c317070fdd75cad584d56ecb2a5} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Table\+Controller.\+Get\+Table (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TableController_8cs_source_l00033}{33}} of file \mbox{\hyperlink{TableController_8cs_source}{Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{GetByIdAsync}}(tableId);}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1TableController_ac150cb5f3561ea9313a88e7fd2e43e8f}\index{BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}!GetTables@{GetTables}}
+\index{GetTables@{GetTables}!BistroQ.API.Controllers.TableController@{BistroQ.API.Controllers.TableController}}
+\doxysubsubsection{\texorpdfstring{GetTables()}{GetTables()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1TableController_ac150cb5f3561ea9313a88e7fd2e43e8f} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Table\+Controller.\+Get\+Tables (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TableController_8cs_source_l00025}{25}} of file \mbox{\hyperlink{TableController_8cs_source}{Table\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<TableDetailDto>>(tables,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Table/Table\+Controller.\+cs\end{DoxyCompactItemize}

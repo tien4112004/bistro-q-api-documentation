@@ -1,0 +1,5 @@
+<map id="BistroQ.Core.Interfaces.Repositories.IProductRepository" name="BistroQ.Core.Interfaces.Repositories.IProductRepository">
+<area shape="rect" id="Node000001" title="Repository interface specific to Product entity operations, extending the generic repository pattern." alt="" coords="5,96,216,139"/>
+<area shape="rect" id="Node000002" href="$interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository.html" title=" " alt="" coords="44,5,177,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,64,113,96,108,96,108,64"/>
+</map>

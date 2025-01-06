@@ -1,0 +1,139 @@
+\doxysection{Jwt\+Settings Class Reference}
+\hypertarget{classJwtSettings}{}\label{classJwtSettings}\index{JwtSettings@{JwtSettings}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJwtSettings}{Jwt\+Settings}} \mbox{\hyperlink{classJwtSettings_ab5f9fa4d26d102b80102a559897d45cb}{Read\+From\+Environment}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classJwtSettings_a919fff37cb29d5f6f68ca6c712d75406}{Secret\+Key}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classJwtSettings_ac8bbb4c3a08377a5899b5503cbc719a5}{Issuer}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string \mbox{\hyperlink{classJwtSettings_a4cb88fc158aae165c9fa33f428ddda91}{Audience}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classJwtSettings_a66a817d1470728bd9912050052384284}{Access\+Token\+Expires\+In\+Minutes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classJwtSettings_ab034a308d4e793461e4d73c37bc0ce71}{Refresh\+Token\+Expired\+In\+Minutes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00003}{3}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classJwtSettings_ab5f9fa4d26d102b80102a559897d45cb}\index{JwtSettings@{JwtSettings}!ReadFromEnvironment@{ReadFromEnvironment}}
+\index{ReadFromEnvironment@{ReadFromEnvironment}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{ReadFromEnvironment()}{ReadFromEnvironment()}}
+{\footnotesize\ttfamily \label{classJwtSettings_ab5f9fa4d26d102b80102a559897d45cb} 
+\mbox{\hyperlink{classJwtSettings}{Jwt\+Settings}} Jwt\+Settings.\+Read\+From\+Environment (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00012}{12}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ SecretKey\ =\ \ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}JWT\_SECRET\_KEY"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ InvalidOperationException(\textcolor{stringliteral}{"{}JWT\ secret\ key\ is\ not\ configured."{}});}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Issuer\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}JWT\_ISSUER"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ InvalidOperationException(\textcolor{stringliteral}{"{}JWT\ issuer\ is\ not\ configured."{}});}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Audience\ =\ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}JWT\_AUDIENCE"{}})\ ??\ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ InvalidOperationException(\textcolor{stringliteral}{"{}JWT\ audience\ is\ not\ configured."{}});}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ AccessTokenExpiresInMinutes\ =\ \textcolor{keywordtype}{int}.Parse(Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}JWT\_ACCESS\_TOKEN\_EXPIRES\_IN\_MINUTES"{}})\ ??\ \textcolor{stringliteral}{"{}10"{}});}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ RefreshTokenExpiredInMinutes\ =}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \ \ \ \ Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}ENV"{}})\ ==\ \textcolor{stringliteral}{"{}development"{}}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keywordtype}{int}.Parse(Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}TEST\_JWT\_REFRESH\_TOKEN\_EXPIRES\_IN\_MINUTES"{}})\ ??\ \textcolor{stringliteral}{"{}10"{}})}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{keywordtype}{int}.Parse(Environment.GetEnvironmentVariable(\textcolor{stringliteral}{"{}JWT\_REFRESH\_TOKEN\_EXPIRES\_IN\_DAYS"{}})\ ??\ \textcolor{stringliteral}{"{}1"{}})\ *\ 24\ *\ 60;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classJwtSettings_a66a817d1470728bd9912050052384284}\index{JwtSettings@{JwtSettings}!AccessTokenExpiresInMinutes@{AccessTokenExpiresInMinutes}}
+\index{AccessTokenExpiresInMinutes@{AccessTokenExpiresInMinutes}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{AccessTokenExpiresInMinutes}{AccessTokenExpiresInMinutes}}
+{\footnotesize\ttfamily \label{classJwtSettings_a66a817d1470728bd9912050052384284} 
+int Jwt\+Settings.\+Access\+Token\+Expires\+In\+Minutes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00008}{8}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classJwtSettings_a4cb88fc158aae165c9fa33f428ddda91}\index{JwtSettings@{JwtSettings}!Audience@{Audience}}
+\index{Audience@{Audience}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{Audience}{Audience}}
+{\footnotesize\ttfamily \label{classJwtSettings_a4cb88fc158aae165c9fa33f428ddda91} 
+string Jwt\+Settings.\+Audience\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00007}{7}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classJwtSettings_ac8bbb4c3a08377a5899b5503cbc719a5}\index{JwtSettings@{JwtSettings}!Issuer@{Issuer}}
+\index{Issuer@{Issuer}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{Issuer}{Issuer}}
+{\footnotesize\ttfamily \label{classJwtSettings_ac8bbb4c3a08377a5899b5503cbc719a5} 
+string Jwt\+Settings.\+Issuer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00006}{6}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classJwtSettings_ab034a308d4e793461e4d73c37bc0ce71}\index{JwtSettings@{JwtSettings}!RefreshTokenExpiredInMinutes@{RefreshTokenExpiredInMinutes}}
+\index{RefreshTokenExpiredInMinutes@{RefreshTokenExpiredInMinutes}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{RefreshTokenExpiredInMinutes}{RefreshTokenExpiredInMinutes}}
+{\footnotesize\ttfamily \label{classJwtSettings_ab034a308d4e793461e4d73c37bc0ce71} 
+int Jwt\+Settings.\+Refresh\+Token\+Expired\+In\+Minutes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00010}{10}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classJwtSettings_a919fff37cb29d5f6f68ca6c712d75406}\index{JwtSettings@{JwtSettings}!SecretKey@{SecretKey}}
+\index{SecretKey@{SecretKey}!JwtSettings@{JwtSettings}}
+\doxysubsubsection{\texorpdfstring{SecretKey}{SecretKey}}
+{\footnotesize\ttfamily \label{classJwtSettings_a919fff37cb29d5f6f68ca6c712d75406} 
+string Jwt\+Settings.\+Secret\+Key\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{JwtSetting_8cs_source_l00005}{5}} of file \mbox{\hyperlink{JwtSetting_8cs_source}{Jwt\+Setting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ }
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Common/\+Settings/Jwt\+Setting.\+cs\end{DoxyCompactItemize}

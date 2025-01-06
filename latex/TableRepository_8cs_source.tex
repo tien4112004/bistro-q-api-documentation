@@ -1,0 +1,67 @@
+\doxysection{Table\+Repository.\+cs}
+\hypertarget{TableRepository_8cs_source}{}\label{TableRepository_8cs_source}\index{BistroQ.Infrastructure/Repositories/TableRepository.cs@{BistroQ.Infrastructure/Repositories/TableRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Repositories}{BistroQ.Infrastructure.Repositories}};}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00007}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository}{TableRepository}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{GenericRepository}}<Table>,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITableRepository}}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository}{TableRepository}}(\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ context)\ :\ base(context)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00010}00010\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00011}00011\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Table?>\ GetByIdAsync(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00014}00014\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00015}00015\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ DbSet}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(t\ =>\ t.Zone)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefaultAsync(t\ =>\ t.TableId\ ==\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ table;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00022}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a8147cc8c513ac3801214b4c05c706c14}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<Table>>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a8147cc8c513ac3801214b4c05c706c14}{GetTablesAsync}}(IQueryable<Table>\ queryable)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00023}00023\ \ \ \ \ \{\ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ queryable.Include(x\ =>\ x.Zone)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tables;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00030}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a89698a474366bcc8dc0d992eb1cc093c}{00030}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<int>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a89698a474366bcc8dc0d992eb1cc093c}{GetTablesCountAsync}}(IQueryable<Table>\ queryable)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00031}00031\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ queryable.CountAsync();}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ count;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ TODO:\ Change\ the\ implementation\ of\ this\ method}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00038}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a0cfd5183656ceebd0c9235b48d711fe7}{00038}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<int>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a0cfd5183656ceebd0c9235b48d711fe7}{GetNextTableNumberAsync}}(\textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00039}00039\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ var\ tableNumbers\ =\ await\ DbSet}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ .Where(t\ =>\ t.ZoneId\ ==\ zoneId)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ .OrderBy(t\ =>\ t.Number)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ .Select(t\ =>\ t.Number)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tableNumbers.Count\ ==\ tableNumbers.Max())}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tableNumbers.Max().Value\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ tableNumbers.Count;\ i++)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (tableNumbers[i\ -\/\ 1]\ !=\ i)}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ i;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ tableNumbers.Count\ +\ 1;}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableRepository_8cs_source_l00061}00061\ \}}
+
+\end{DoxyCode}

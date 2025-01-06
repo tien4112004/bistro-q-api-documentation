@@ -1,0 +1,56 @@
+\doxysection{Order\+Status\+Transition.\+cs}
+\hypertarget{OrderStatusTransition_8cs_source}{}\label{OrderStatusTransition_8cs_source}\index{BistroQ.Services/Common/OrderStatusTransition.cs@{BistroQ.Services/Common/OrderStatusTransition.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Common}{BistroQ.Services.Common}};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00018}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition}{00018}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition}{OrderStatusTransition}}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ readonly\ Dictionary<OrderStatus,\ HashSet<OrderStatus>>\ AllowedTransitions\ =\ \textcolor{keyword}{new}()}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ [OrderStatus.Pending]\ =\ \textcolor{keyword}{new}\ HashSet<OrderStatus>\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ OrderStatus.Completed,\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ [OrderStatus.InProgress]\ =\ \textcolor{keyword}{new}\ HashSet<OrderStatus>\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ OrderStatus.Pending\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \},}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ [OrderStatus.Completed]\ =\ \textcolor{keyword}{new}\ HashSet<OrderStatus>()}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00031}00031\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00046}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d}{00046}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d}{UpdateStatus}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}\ order,\ OrderStatus\ newStatus)}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order.Status\ ==\ newStatus)}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!IsValidTransition(order.Status,\ newStatus))}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ConflictException}{ConflictException}}(}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \$\textcolor{stringliteral}{"{}Invalid\ status\ transition\ (from:\ \{order.Status\},\ to:\ \{newStatus\})."{}});}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ ApplyStatusUpdate(order,\ newStatus);}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00058}00058\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00060}00060\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ IsValidTransition(OrderStatus\ currentStatus,\ OrderStatus\ newStatus)}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00061}00061\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AllowedTransitions.ContainsKey(currentStatus)\ \&\&\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ AllowedTransitions[currentStatus].Contains(newStatus);}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ ApplyStatusUpdate(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}\ order,\ OrderStatus\ newStatus)}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00067}00067\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ order.Status\ =\ newStatus;}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (newStatus\ ==\ OrderStatus.Completed)}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ order.EndTime\ =\ DateTime.Now;}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderStatusTransition_8cs_source_l00074}00074\ \}}
+
+\end{DoxyCode}

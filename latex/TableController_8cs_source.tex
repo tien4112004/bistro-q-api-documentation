@@ -1,0 +1,44 @@
+\doxysection{Table\+Controller.\+cs}
+\hypertarget{TableController_8cs_source}{}\label{TableController_8cs_source}\index{BistroQ.API/Controllers/Table/TableController.cs@{BistroQ.API/Controllers/Table/TableController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Text.Json;}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{BistroQ.API.Controllers}};}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00012}00012\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/[controller]"{}})]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00014}00014\ [Authorize]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00015}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController}{00015}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController}{TableController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00016}00016\ \{}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ \_tableService;}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1TableController}{TableController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ tableService)}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00020}00020\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00023}00023\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00024}00024\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00025}00025\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTables([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<TableDetailDto>>(tables,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00031}00031\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00032}00032\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTable([FromRoute]\ \textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.GetByIdAsync(tableId);}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableController_8cs_source_l00038}00038\ \}}
+
+\end{DoxyCode}

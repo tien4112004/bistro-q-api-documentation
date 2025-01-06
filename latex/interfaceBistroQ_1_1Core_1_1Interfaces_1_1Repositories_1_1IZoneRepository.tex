@@ -1,0 +1,115 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IZone\+Repository Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}\index{BistroQ.Core.Interfaces.Repositories.IZoneRepository@{BistroQ.Core.Interfaces.Repositories.IZoneRepository}}
+
+
+Repository interface specific to Zone entity operations, extending the generic repository pattern.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IZone\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IZone\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_a4a5cab7b5cb91395663a8ddaab727a8d}{Get\+Zones\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Materializes the final filtered/sorted queryable into an enumerable result. \end{DoxyCompactList}\item 
+Task$<$ int $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_aaf03f60e7314c4d49f644fe2f576b5b5}{Get\+Zones\+Count\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Executes a count operation on the final filtered queryable. \end{DoxyCompactList}\item 
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_afc9f7e7fda08e9f96f446326399c2aee}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_afc9f7e7fda08e9f96f446326399c2aee} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}?$>$ {\bfseries Get\+Zone\+With\+Table\+Async} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Zone $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Repository interface specific to Zone entity operations, extending the generic repository pattern. 
+
+Definition at line \mbox{\hyperlink{IZoneRepository_8cs_source_l00009}{9}} of file \mbox{\hyperlink{IZoneRepository_8cs_source}{IZone\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_a4a5cab7b5cb91395663a8ddaab727a8d}\index{BistroQ.Core.Interfaces.Repositories.IZoneRepository@{BistroQ.Core.Interfaces.Repositories.IZoneRepository}!GetZonesAsync@{GetZonesAsync}}
+\index{GetZonesAsync@{GetZonesAsync}!BistroQ.Core.Interfaces.Repositories.IZoneRepository@{BistroQ.Core.Interfaces.Repositories.IZoneRepository}}
+\doxysubsubsection{\texorpdfstring{GetZonesAsync()}{GetZonesAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_a4a5cab7b5cb91395663a8ddaab727a8d} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IZone\+Repository.\+Get\+Zones\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Materializes the final filtered/sorted queryable into an enumerable result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering and sorting has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The final materialized collection of zones
+\end{DoxyReturn}
+
+
+This method is intended to be the final step in the query chain, executing the prepared queryable and materializing the results 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ZoneRepository_a554e9180a50d1ab14e7944372c5da1a5}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Zone\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_aaf03f60e7314c4d49f644fe2f576b5b5}\index{BistroQ.Core.Interfaces.Repositories.IZoneRepository@{BistroQ.Core.Interfaces.Repositories.IZoneRepository}!GetZonesCountAsync@{GetZonesCountAsync}}
+\index{GetZonesCountAsync@{GetZonesCountAsync}!BistroQ.Core.Interfaces.Repositories.IZoneRepository@{BistroQ.Core.Interfaces.Repositories.IZoneRepository}}
+\doxysubsubsection{\texorpdfstring{GetZonesCountAsync()}{GetZonesCountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository_aaf03f60e7314c4d49f644fe2f576b5b5} 
+Task$<$ int $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IZone\+Repository.\+Get\+Zones\+Count\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Executes a count operation on the final filtered queryable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total count of zones matching the filter criteria
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ZoneRepository_ac00e5ce618982584a4ee0d2c26f439c5}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Zone\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Repositories/IZone\+Repository.\+cs\end{DoxyCompactItemize}

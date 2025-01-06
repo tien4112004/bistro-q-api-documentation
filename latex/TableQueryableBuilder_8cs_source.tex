@@ -1,0 +1,70 @@
+\doxysection{Table\+Queryable\+Builder.\+cs}
+\hypertarget{TableQueryableBuilder_8cs_source}{}\label{TableQueryableBuilder_8cs_source}\index{BistroQ.Core/Common/Builder/TableQueryableBuilder.cs@{BistroQ.Core/Common/Builder/TableQueryableBuilder.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }System.Numerics;}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }AutoMapper.Configuration.Conventions;}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Builder}{BistroQ.Core.Common.Builder}};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00008}\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{00008}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1BaseQueryableBuilder}{BaseQueryableBuilder}}<Table>}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00009}00009\ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}(IQueryable<Table>\ queryable)\ :\ base(queryable)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00011}00011\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00012}00012\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ WithZoneId(\textcolor{keywordtype}{int}?\ zoneId)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zoneId\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(z\ =>\ z.ZoneId\ ==\ zoneId);}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00019}00019\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00020}00020\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ WithSeatsCount(\textcolor{keywordtype}{int}?\ seatsCount)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00022}00022\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (seatsCount\ ==\ \textcolor{keyword}{null})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(z\ =>\ z.SeatsCount\ >\ seatsCount);}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00026}00026\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00028}00028\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ WithZoneName(\textcolor{keywordtype}{string}?\ zoneName)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00029}00029\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(zoneName))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Where(z\ =>\ z.Zone\ !=\ \textcolor{keyword}{null}\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\&\ z.Zone.Name.ToUpper().Contains(zoneName.ToUpper()));\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00036}00036\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00037}00037\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ JoinOrders()}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00038}00038\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00039}00039\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Include(t\ =>\ t.Order);}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00043}00043\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ ApplyPaging(\textcolor{keywordtype}{int}\ page,\ \textcolor{keywordtype}{int}\ size)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00044}00044\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Queryable\ =\ Queryable.Skip((page\ -\/\ 1)\ *\ size).Take(size);}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00049}00049\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}\ ApplySorting(\textcolor{keywordtype}{string}?\ orderBy,\ \textcolor{keywordtype}{string}?\ orderDirection)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00050}00050\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ var\ isDescending\ =\ orderDirection\ !=\ \textcolor{stringliteral}{"{}asc"{}};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ Queryable\ =\ orderBy\ \textcolor{keywordflow}{switch}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}.ZoneId)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(t\ =>\ t.ZoneId)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(t\ =>\ t.ZoneId),}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ nameof(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}.Zone.Name)\ =>\ isDescending}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ Queryable.OrderByDescending(t\ =>\ t.Zone\ !=\ \textcolor{keyword}{null}\ ?\ t.Zone.Name\ :\ \textcolor{keywordtype}{string}.Empty)}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ Queryable.OrderBy(t\ =>\ t.Zone\ !=\ \textcolor{keyword}{null}\ ?\ t.Zone.Name\ :\ \textcolor{keywordtype}{string}.Empty),}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \_\ =>\ Queryable}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{TableQueryableBuilder_8cs_source_l00064}00064\ \}}
+
+\end{DoxyCode}

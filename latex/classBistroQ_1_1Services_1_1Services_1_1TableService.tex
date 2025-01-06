@@ -1,0 +1,355 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Table\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService}{}\label{classBistroQ_1_1Services_1_1Services_1_1TableService}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Table\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1TableService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Table\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1TableService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_ab2d232ce31dce3292eba55a6c487d108}{Table\+Service}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work, IMapper mapper)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a559aa2d28a004727fb6cc9d14002ebdf}{Get\+By\+Id\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a table by its identifier. \end{DoxyCompactList}\item 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ Tables, int Count)$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aacdee53577d110f2f6017afc1fa54008}{Get\+All\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}} query\+Params)
+\begin{DoxyCompactList}\small\item\em Retrieves a filtered, sorted, and paginated collection of tables. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aade2383f0c689d87be8a63999662ae1e}{Get\+Occupied\+Tables\+Async}} (int zone\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves all currently occupied tables in a specific zone. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{Table\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aa6e63a834b4aa1456dbad8efc691218c}{Add\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} table\+Dto)
+\begin{DoxyCompactList}\small\item\em Creates a new table. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{Table\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_aaaa5eaa0490772b4e7ae8b647f4a8289}{Update\+Async}} (int table\+Id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{Update\+Table\+Request\+Dto}} table\+Dto)
+\begin{DoxyCompactList}\small\item\em Updates an existing table. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TableService_a097c0eea983dca2bfe9bad76d35194a2}{Delete\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Removes a table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00013}{13}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_ab2d232ce31dce3292eba55a6c487d108}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!TableService@{TableService}}
+\index{TableService@{TableService}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{TableService()}{TableService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_ab2d232ce31dce3292eba55a6c487d108} 
+Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Table\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00018}{18}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_aa6e63a834b4aa1456dbad8efc691218c}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!AddAsync@{AddAsync}}
+\index{AddAsync@{AddAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{AddAsync()}{AddAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_aa6e63a834b4aa1456dbad8efc691218c} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{Table\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Add\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}}}]{table\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Dto} & The data for creating table\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created table DTO
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_a28b38748a5eb5b26fa9b898154ab5169}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00069}{69}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ var\ table\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(tableDto);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ var\ tableNumber\ =\ await\ \_unitOfWork.TableRepository.GetNextTableNumberAsync(table.ZoneId.Value);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ table.Number\ =\ tableNumber;}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ var\ createdTable\ =\ await\ \_unitOfWork.TableRepository.AddAsync(table);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}>(createdTable);}
+\DoxyCodeLine{00080\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_a097c0eea983dca2bfe9bad76d35194a2}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_a097c0eea983dca2bfe9bad76d35194a2} 
+async Task Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of the table to delete\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When table with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ab113939d8e17de15a90bd2eddf228bb1}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00104}{104}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00105\ \ \ \ \ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ var\ existingTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingTable\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.DeleteAsync(existingTable);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00114\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_aacdee53577d110f2f6017afc1fa54008}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_aacdee53577d110f2f6017afc1fa54008} 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ Tables, int Count)$>$ Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{Table\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a filtered, sorted, and paginated collection of tables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Params} & Parameters for filtering, sorting, and pagination\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the collection of tables and total count
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ae13cdc989becbe9ed7b4dffc8720126a}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00035}{35}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}(\_unitOfWork.TableRepository.GetQueryable())}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .JoinOrders()}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneName(queryParams.ZoneName)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneId(queryParams.ZoneId)}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithSeatsCount(queryParams.SeatsCount);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.TableRepository.GetTablesCountAsync(builder.Build());}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_unitOfWork.TableRepository.GetTablesAsync(builder.Build());}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<TableDetailDto>>(tables),\ count);}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_a559aa2d28a004727fb6cc9d14002ebdf}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_a559aa2d28a004727fb6cc9d14002ebdf} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a table by its identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The table identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The table DTO if found
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When table with given id does not exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00024}{24}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{TableDetailDto}}>(table);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_aade2383f0c689d87be8a63999662ae1e}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!GetOccupiedTablesAsync@{GetOccupiedTablesAsync}}
+\index{GetOccupiedTablesAsync@{GetOccupiedTablesAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{GetOccupiedTablesAsync()}{GetOccupiedTablesAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_aade2383f0c689d87be8a63999662ae1e} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDetailDto}{Table\+Detail\+Dto}} $>$ $>$ Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Get\+Occupied\+Tables\+Async (\begin{DoxyParamCaption}\item[{int}]{zone\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves all currently occupied tables in a specific zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone\+Id} & The ID of the zone to check for occupied tables.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A collection of detailed information about occupied tables in the specified zone.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the specified zone cannot be found.\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_a7febf46d2f15f5e3aff0c38b63431137}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00054}{54}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1TableQueryableBuilder}{TableQueryableBuilder}}(\_unitOfWork.TableRepository.GetQueryable())}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .JoinOrders()}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithZoneId(zoneId);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_unitOfWork.TableRepository.GetTablesAsync(builder.Build());}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ var\ result\ =\ \_mapper.Map<IEnumerable<TableDetailDto>>(tables)}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ .Where(t\ =>\ t.IsOccupied\ ==\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1TableService_aaaa5eaa0490772b4e7ae8b647f4a8289}\index{BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!BistroQ.Services.Services.TableService@{BistroQ.Services.Services.TableService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1TableService_aaaa5eaa0490772b4e7ae8b647f4a8289} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{Table\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Table\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1UpdateTableRequestDto}{Update\+Table\+Request\+Dto}}}]{table\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates an existing table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The identifier of the table to update\\
+\hline
+{\em table\+Dto} & The updated table data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated table DTO
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When table with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_addc686c156959005f8d9142f1220e029}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+ITable\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{TableService_8cs_source_l00082}{82}} of file \mbox{\hyperlink{TableService_8cs_source}{Table\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ var\ existingTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(tableId);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingTable\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ var\ newTable\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}>(tableDto);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ newTable.TableId\ =\ tableId;}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ newTable.Number\ =\ existingTable.Number;}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ newTable.ZoneId\ =\ newTable.ZoneId\ ??\ existingTable.ZoneId;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ newTable.SeatsCount\ =\ newTable.SeatsCount\ ??\ existingTable.SeatsCount;\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.UpdateAsync(existingTable,\ newTable);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ var\ updatedTable\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(tableId);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableDto}{TableDto}}>(updatedTable);}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Table\+Service.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,190 @@
+\doxysection{Bistro\+Q.\+Core.\+Entities.\+Order Class Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order}{}\label{classBistroQ_1_1Core_1_1Entities_1_1Order}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a79ee6e4ae0e1e7f4539fbe6faa14cd5f}{Order\+Id}} = Guid.\+New\+Guid().To\+String()!\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+decimal? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_ab4b19bf199c1a6ebd78db659e2f6e683}{Total\+Amount}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Date\+Time? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a1587f6ac1bd7770a0ee98b3a3ff2871a}{Start\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Date\+Time? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a9d39987b0780ee7783574ed7aaf17fbf}{End\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Order\+Status \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a002147e6526d32ec281640a91b6d331a}{Status}} = Order\+Status.\+In\+Progress\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+string? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a2d293e06bf0bc73368527c2cdab7e92c}{Note}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a9974006d3f36530bb8919b9afad7da60}{People\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+int? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_adf836dafa470e8a7bfb055db6831cca8}{Table\+Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+virtual ICollection$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{Order\+Item}} $>$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_ab116420f26f62ef4a58cd65aaa25db79}{Order\+Items}} = new List$<$\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{Order\+Item}}$>$()\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+virtual ? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order_a0c2a502499da3f6a668fb460e3da3b4f}{Table}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00007}{7}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a9d39987b0780ee7783574ed7aaf17fbf}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!EndTime@{EndTime}}
+\index{EndTime@{EndTime}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{EndTime}{EndTime}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a9d39987b0780ee7783574ed7aaf17fbf} 
+Date\+Time? Bistro\+Q.\+Core.\+Entities.\+Order.\+End\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00015}{15}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a2d293e06bf0bc73368527c2cdab7e92c}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!Note@{Note}}
+\index{Note@{Note}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{Note}{Note}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a2d293e06bf0bc73368527c2cdab7e92c} 
+string? Bistro\+Q.\+Core.\+Entities.\+Order.\+Note\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00019}{19}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a79ee6e4ae0e1e7f4539fbe6faa14cd5f}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!OrderId@{OrderId}}
+\index{OrderId@{OrderId}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{OrderId}{OrderId}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a79ee6e4ae0e1e7f4539fbe6faa14cd5f} 
+string Bistro\+Q.\+Core.\+Entities.\+Order.\+Order\+Id = Guid.\+New\+Guid().To\+String()!\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00009}{9}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ Guid.NewGuid().ToString()!;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_ab116420f26f62ef4a58cd65aaa25db79}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!OrderItems@{OrderItems}}
+\index{OrderItems@{OrderItems}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{OrderItems}{OrderItems}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_ab116420f26f62ef4a58cd65aaa25db79} 
+virtual ICollection$<$\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{Order\+Item}}$>$ Bistro\+Q.\+Core.\+Entities.\+Order.\+Order\+Items = new List$<$\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{Order\+Item}}$>$()\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00025}{25}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ List<OrderItem>();}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a9974006d3f36530bb8919b9afad7da60}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!PeopleCount@{PeopleCount}}
+\index{PeopleCount@{PeopleCount}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{PeopleCount}{PeopleCount}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a9974006d3f36530bb8919b9afad7da60} 
+int Bistro\+Q.\+Core.\+Entities.\+Order.\+People\+Count\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00021}{21}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a1587f6ac1bd7770a0ee98b3a3ff2871a}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!StartTime@{StartTime}}
+\index{StartTime@{StartTime}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{StartTime}{StartTime}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a1587f6ac1bd7770a0ee98b3a3ff2871a} 
+Date\+Time? Bistro\+Q.\+Core.\+Entities.\+Order.\+Start\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00013}{13}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a002147e6526d32ec281640a91b6d331a}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!Status@{Status}}
+\index{Status@{Status}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a002147e6526d32ec281640a91b6d331a} 
+Order\+Status Bistro\+Q.\+Core.\+Entities.\+Order.\+Status = Order\+Status.\+In\+Progress\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00017}{17}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ OrderStatus.InProgress;}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_a0c2a502499da3f6a668fb460e3da3b4f}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!Table@{Table}}
+\index{Table@{Table}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{Table}{Table}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_a0c2a502499da3f6a668fb460e3da3b4f} 
+virtual ? \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} Bistro\+Q.\+Core.\+Entities.\+Order.\+Table\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00027}{27}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_adf836dafa470e8a7bfb055db6831cca8}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!TableId@{TableId}}
+\index{TableId@{TableId}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{TableId}{TableId}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_adf836dafa470e8a7bfb055db6831cca8} 
+int? Bistro\+Q.\+Core.\+Entities.\+Order.\+Table\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00023}{23}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Core_1_1Entities_1_1Order_ab4b19bf199c1a6ebd78db659e2f6e683}\index{BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}!TotalAmount@{TotalAmount}}
+\index{TotalAmount@{TotalAmount}!BistroQ.Core.Entities.Order@{BistroQ.Core.Entities.Order}}
+\doxysubsubsection{\texorpdfstring{TotalAmount}{TotalAmount}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Entities_1_1Order_ab4b19bf199c1a6ebd78db659e2f6e683} 
+decimal? Bistro\+Q.\+Core.\+Entities.\+Order.\+Total\+Amount\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Definition at line \mbox{\hyperlink{Order_8cs_source_l00011}{11}} of file \mbox{\hyperlink{Order_8cs_source}{Order.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Entities/Order.\+cs\end{DoxyCompactItemize}

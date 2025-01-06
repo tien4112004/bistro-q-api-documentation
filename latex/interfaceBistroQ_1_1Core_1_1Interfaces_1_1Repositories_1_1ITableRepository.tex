@@ -1,0 +1,139 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}\index{BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}}
+
+
+Repository interface specific to Table entity operations, extending the generic repository pattern.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a5aa832da90d5caac56ed1cfc888ee295}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a5aa832da90d5caac56ed1cfc888ee295} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}?$>$ {\bfseries Get\+By\+Id\+Async} (int id)
+\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_af1a8f0b55708a7403405b7b9815cd24d}{Get\+Tables\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Materializes the final filtered/sorted queryable into an enumerable result. \end{DoxyCompactList}\item 
+Task$<$ int $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a4daa2be9794c190b3f2d346735c7d9e3}{Get\+Tables\+Count\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Executes a count operation on the final filtered queryable. \end{DoxyCompactList}\item 
+Task$<$ int $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_aebabdb2bd6efa40a15b41e4261252f2f}{Get\+Next\+Table\+Number\+Async}} (int zone\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves the next available table number for a given zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Table $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Repository interface specific to Table entity operations, extending the generic repository pattern. 
+
+Definition at line \mbox{\hyperlink{ITableRepository_8cs_source_l00009}{9}} of file \mbox{\hyperlink{ITableRepository_8cs_source}{ITable\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_aebabdb2bd6efa40a15b41e4261252f2f}\index{BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}!GetNextTableNumberAsync@{GetNextTableNumberAsync}}
+\index{GetNextTableNumberAsync@{GetNextTableNumberAsync}!BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}}
+\doxysubsubsection{\texorpdfstring{GetNextTableNumberAsync()}{GetNextTableNumberAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_aebabdb2bd6efa40a15b41e4261252f2f} 
+Task$<$ int $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository.\+Get\+Next\+Table\+Number\+Async (\begin{DoxyParamCaption}\item[{int}]{zone\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves the next available table number for a given zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone\+Id} & The identifier of zone to add table\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The table number that available
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a0cfd5183656ceebd0c9235b48d711fe7}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Table\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_af1a8f0b55708a7403405b7b9815cd24d}\index{BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}!GetTablesAsync@{GetTablesAsync}}
+\index{GetTablesAsync@{GetTablesAsync}!BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}}
+\doxysubsubsection{\texorpdfstring{GetTablesAsync()}{GetTablesAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_af1a8f0b55708a7403405b7b9815cd24d} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository.\+Get\+Tables\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Materializes the final filtered/sorted queryable into an enumerable result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering and sorting has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The final materialized collection of tables
+\end{DoxyReturn}
+
+
+This method is intended to be the final step in the query chain, executing the prepared queryable and materializing the results 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a8147cc8c513ac3801214b4c05c706c14}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Table\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a4daa2be9794c190b3f2d346735c7d9e3}\index{BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}!GetTablesCountAsync@{GetTablesCountAsync}}
+\index{GetTablesCountAsync@{GetTablesCountAsync}!BistroQ.Core.Interfaces.Repositories.ITableRepository@{BistroQ.Core.Interfaces.Repositories.ITableRepository}}
+\doxysubsubsection{\texorpdfstring{GetTablesCountAsync()}{GetTablesCountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a4daa2be9794c190b3f2d346735c7d9e3} 
+Task$<$ int $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+ITable\+Repository.\+Get\+Tables\+Count\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Executes a count operation on the final filtered queryable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering and sorting has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The count of tables matching the filter criteria
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1TableRepository_a89698a474366bcc8dc0d992eb1cc093c}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Table\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Repositories/ITable\+Repository.\+cs\end{DoxyCompactItemize}

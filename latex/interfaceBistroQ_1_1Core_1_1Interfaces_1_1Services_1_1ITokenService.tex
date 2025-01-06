@@ -1,0 +1,109 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService}\index{BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}}
+
+
+Interface for Token\+Service.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ string $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}{Generate\+Access\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user)
+\begin{DoxyCompactList}\small\item\em Generates an access token for the specified user. \end{DoxyCompactList}\item 
+Task$<$ string $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a78aa3ee8dd5d8b04b43bb354c8eb0635}{Generate\+Refresh\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user)
+\begin{DoxyCompactList}\small\item\em Generates a refresh token for the specified user. \end{DoxyCompactList}\item 
+Task$<$ bool $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_ab4445c397ebc86f588de87b8e0384f79}{Validate\+Refresh\+Token}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}} user, string refresh\+Token)
+\begin{DoxyCompactList}\small\item\em Validates the specified refresh token for the given user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for Token\+Service. 
+
+Definition at line \mbox{\hyperlink{ITokenService_8cs_source_l00008}{8}} of file \mbox{\hyperlink{ITokenService_8cs_source}{IToken\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520}\index{BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}!GenerateAccessToken@{GenerateAccessToken}}
+\index{GenerateAccessToken@{GenerateAccessToken}!BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}}
+\doxysubsubsection{\texorpdfstring{GenerateAccessToken()}{GenerateAccessToken()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a71ada47899cf5ee223188543c94de520} 
+Task$<$ string $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service.\+Generate\+Access\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Generates an access token for the specified user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user for whom the access token is generated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the generated access token as a string.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_a69695b8fd706c39994c0d153b2c20256}{Bistro\+Q.\+Services.\+Services.\+Token\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a78aa3ee8dd5d8b04b43bb354c8eb0635}\index{BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}!GenerateRefreshToken@{GenerateRefreshToken}}
+\index{GenerateRefreshToken@{GenerateRefreshToken}!BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}}
+\doxysubsubsection{\texorpdfstring{GenerateRefreshToken()}{GenerateRefreshToken()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_a78aa3ee8dd5d8b04b43bb354c8eb0635} 
+Task$<$ string $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service.\+Generate\+Refresh\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{}\end{DoxyParamCaption})}
+
+
+
+Generates a refresh token for the specified user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user for whom the refresh token is generated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the generated refresh token as a string.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_ae482bc8463ad51508cfd96e63fed6bc0}{Bistro\+Q.\+Services.\+Services.\+Token\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_ab4445c397ebc86f588de87b8e0384f79}\index{BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}!ValidateRefreshToken@{ValidateRefreshToken}}
+\index{ValidateRefreshToken@{ValidateRefreshToken}!BistroQ.Core.Interfaces.Services.ITokenService@{BistroQ.Core.Interfaces.Services.ITokenService}}
+\doxysubsubsection{\texorpdfstring{ValidateRefreshToken()}{ValidateRefreshToken()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITokenService_ab4445c397ebc86f588de87b8e0384f79} 
+Task$<$ bool $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IToken\+Service.\+Validate\+Refresh\+Token (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{App\+User}}}]{user}{, }\item[{string}]{refresh\+Token}{}\end{DoxyParamCaption})}
+
+
+
+Validates the specified refresh token for the given user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & The user to whom the refresh token belongs.\\
+\hline
+{\em refresh\+Token} & The refresh token to validate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains a boolean value indicating whether the refresh token is valid.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1TokenService_aff22a57b8cad5b2450363f7ca4a58e65}{Bistro\+Q.\+Services.\+Services.\+Token\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Services/IToken\+Service.\+cs\end{DoxyCompactItemize}

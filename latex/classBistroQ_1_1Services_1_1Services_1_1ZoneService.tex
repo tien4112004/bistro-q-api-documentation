@@ -1,0 +1,450 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Zone\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService}{}\label{classBistroQ_1_1Services_1_1Services_1_1ZoneService}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Zone\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1ZoneService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Zone\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1ZoneService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa461302890ba65e2239bfca554f3efff}{Zone\+Service}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work, IMapper mapper)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a6cbc601d9b8540b45996752948ce73c6}{Get\+By\+Id\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a zone by its identifier. \end{DoxyCompactList}\item 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ Zones, int Count)$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a3c07cc332d084e67c2f753b5b03b3ebf}{Get\+All\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}} query\+Params)
+\begin{DoxyCompactList}\small\item\em Retrieves a filtered, sorted, and paginated collection of zones. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{Zone\+Cashier\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_ac85357357bd08c100a5388d482b53a67}{Get\+By\+Cashier\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a zone by its cashier identifier. \end{DoxyCompactList}\item 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{Zone\+Cashier\+Dto}} $>$ Zones, int Count)$>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a0d0ab8590d0b6632a59d5c928716087c}{Get\+All\+By\+Cashier\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}} query\+Params)
+\begin{DoxyCompactList}\small\item\em Retrieves a filtered, sorted, and paginated collection of zones by cashier. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a4fc4dbc6a34a319a332b1d88e3a7d09f}{Add\+Async}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{Create\+Zone\+Request\+Dto}} zone\+Dto)
+\begin{DoxyCompactList}\small\item\em Creates a new zone. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a397209377f7cf5ed6183aa6da40a1ab1}{Update\+Async}} (int zone\+Id, \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{Update\+Zone\+Request\+Dto}} zone\+Dto)
+\begin{DoxyCompactList}\small\item\em Updates an existing zone. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa838df05a07ebe548fc6606698f7e6f6}{Delete\+Async}} (int id)
+\begin{DoxyCompactList}\small\item\em Removes a zone. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDetailDto}{Zone\+Detail\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1ZoneService_abb7ff5c0d7419c225a4b764c084c17cd}{Add\+Tables\+To\+Zone\+Async}} (int zone\+Id, List$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} $>$ table\+Dtos)
+\begin{DoxyCompactList}\small\item\em Adds tables to a zone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00012}{12}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa461302890ba65e2239bfca554f3efff}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!ZoneService@{ZoneService}}
+\index{ZoneService@{ZoneService}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{ZoneService()}{ZoneService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa461302890ba65e2239bfca554f3efff} 
+Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Zone\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00017}{17}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a4fc4dbc6a34a319a332b1d88e3a7d09f}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!AddAsync@{AddAsync}}
+\index{AddAsync@{AddAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{AddAsync()}{AddAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a4fc4dbc6a34a319a332b1d88e3a7d09f} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Add\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1CreateZoneRequestDto}{Create\+Zone\+Request\+Dto}}}]{zone\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone\+Dto} & The data for creating zone\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The created zone DTO
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a7a00f39c4402c5430adb7c1499ca9a09}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00078}{78}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ var\ zone\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(zoneDto);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ var\ createdZone\ =\ await\ \_unitOfWork.ZoneRepository.AddAsync(zone);}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(createdZone);}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_abb7ff5c0d7419c225a4b764c084c17cd}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!AddTablesToZoneAsync@{AddTablesToZoneAsync}}
+\index{AddTablesToZoneAsync@{AddTablesToZoneAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{AddTablesToZoneAsync()}{AddTablesToZoneAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_abb7ff5c0d7419c225a4b764c084c17cd} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDetailDto}{Zone\+Detail\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Add\+Tables\+To\+Zone\+Async (\begin{DoxyParamCaption}\item[{int}]{zone\+Id}{, }\item[{List$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1CreateTableRequestDto}{Create\+Table\+Request\+Dto}} $>$}]{table\+Dtos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds tables to a zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone\+Id} & The identifier of the zone to add tables to\\
+\hline
+{\em table\+Dtos} & The collection of tables to add to the zone\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task representing the asynchronous operation
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a0186d08b243cfabfcd02df56344081ec}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00120}{120}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ var\ tables\ =\ \_mapper.Map<List<Table>>(tableDtos);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ var\ usedNumbers\ =\ \textcolor{keyword}{new}\ HashSet<int>();}
+\DoxyCodeLine{00130\ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ table\ \textcolor{keywordflow}{in}\ tables)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ table.ZoneId\ =\ zoneId;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ tableNumber\ =\ await\ \_unitOfWork.TableRepository.GetNextTableNumberAsync(zoneId);}
+\DoxyCodeLine{00135\ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ usedNumbers.Add(tableNumber);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ table.Number\ =\ tableNumber;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00139\ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.TableRepository.AddRangeAsync(tables);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00142\ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ var\ zoneDetailDto\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDetailDto}{ZoneDetailDto}}>(zone);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ zoneDetailDto.Tables\ =\ \_mapper.Map<List<TableDto>>(tables);}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ zoneDetailDto;}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa838df05a07ebe548fc6606698f7e6f6}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!DeleteAsync@{DeleteAsync}}
+\index{DeleteAsync@{DeleteAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{DeleteAsync()}{DeleteAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_aa838df05a07ebe548fc6606698f7e6f6} 
+async Task Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Delete\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The identifier of zone to remove\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When zone with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a43111c8cc460639414ea7122ef56a995}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00107}{107}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ var\ existingZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingZone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ZoneRepository.DeleteAsync(existingZone);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a3c07cc332d084e67c2f753b5b03b3ebf}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!GetAllAsync@{GetAllAsync}}
+\index{GetAllAsync@{GetAllAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{GetAllAsync()}{GetAllAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a3c07cc332d084e67c2f753b5b03b3ebf} 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ Zones, int Count)$>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Get\+All\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a filtered, sorted, and paginated collection of zones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Params} & Parameters for filtering, sorting, and pagination\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A tuple containing the collection of zones and total count
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ab0ec907f8bbdc5edd58b65c76add26f4}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00034}{34}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ZoneQueryableBuilder}{ZoneQueryableBuilder}}(\_unitOfWork.ZoneRepository.GetQueryable())}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithName(queryParams.Name);}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesCountAsync(builder.Build());}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ zones\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesAsync(builder.Build());}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<ZoneDto>>(zones),\ count);}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a0d0ab8590d0b6632a59d5c928716087c}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!GetAllByCashierAsync@{GetAllByCashierAsync}}
+\index{GetAllByCashierAsync@{GetAllByCashierAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{GetAllByCashierAsync()}{GetAllByCashierAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a0d0ab8590d0b6632a59d5c928716087c} 
+async Task$<$(IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{Zone\+Cashier\+Dto}} $>$ Zones, int Count)$>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Get\+All\+By\+Cashier\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a filtered, sorted, and paginated collection of zones by cashier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Params} & Parameters for filtering, sorting, and pagination.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains a tuple with the collection of zones and the total count. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ac0caaffe6b3d2671b0b33f0e31c45abb}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00061}{61}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ var\ builder\ =}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Builder_1_1ZoneQueryableBuilder}{ZoneQueryableBuilder}}(\_unitOfWork.ZoneRepository.GetQueryable())}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .IncludeTablesWithOrder()}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .WithName(queryParams.Name);}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ count\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesCountAsync(builder.Build());}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ builder}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplySorting(queryParams.OrderBy,\ queryParams.OrderDirection)}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ .ApplyPaging(queryParams.Page,\ queryParams.Size);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ var\ zones\ =\ await\ \_unitOfWork.ZoneRepository.GetZonesAsync(builder.Build());}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\_mapper.Map<IEnumerable<ZoneCashierDto>>(zones),\ count);}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_ac85357357bd08c100a5388d482b53a67}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!GetByCashierAsync@{GetByCashierAsync}}
+\index{GetByCashierAsync@{GetByCashierAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{GetByCashierAsync()}{GetByCashierAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_ac85357357bd08c100a5388d482b53a67} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{Zone\+Cashier\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Get\+By\+Cashier\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a zone by its cashier identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The cashier identifier.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the zone DTO if found. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the zone with the given cashier id does not exist. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_aca2e011371fe1f133248c47f8d82bb74}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00050}{50}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetZoneWithTableAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCashierDto}{ZoneCashierDto}}>(zone);}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a6cbc601d9b8540b45996752948ce73c6}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!GetByIdAsync@{GetByIdAsync}}
+\index{GetByIdAsync@{GetByIdAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{GetByIdAsync()}{GetByIdAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a6cbc601d9b8540b45996752948ce73c6} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Get\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a zone by its identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The zone identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The zone DTO if found
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When zone with given id does not exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a831136073674ffb47ad17ec409532866}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00023}{23}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ var\ zone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (zone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(zone);}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a397209377f7cf5ed6183aa6da40a1ab1}\index{BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}!UpdateAsync@{UpdateAsync}}
+\index{UpdateAsync@{UpdateAsync}!BistroQ.Services.Services.ZoneService@{BistroQ.Services.Services.ZoneService}}
+\doxysubsubsection{\texorpdfstring{UpdateAsync()}{UpdateAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1ZoneService_a397209377f7cf5ed6183aa6da40a1ab1} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{Zone\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Zone\+Service.\+Update\+Async (\begin{DoxyParamCaption}\item[{int}]{zone\+Id}{, }\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1UpdateZoneRequestDto}{Update\+Zone\+Request\+Dto}}}]{zone\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates an existing zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zone\+Id} & The identifier of the zone to update\\
+\hline
+{\em zone\+Dto} & The updated zone data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The updated zone DTO
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & When zone with given id doesn\textquotesingle{}t exist\\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_a572f40117f374b1139b1e33181a081d1}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IZone\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{ZoneService_8cs_source_l00088}{88}} of file \mbox{\hyperlink{ZoneService_8cs_source}{Zone\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00089\ \ \ \ \ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ var\ existingZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingZone\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Zone\ not\ found"{}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ var\ newZone\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}>(zoneDto);}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ newZone.ZoneId\ =\ zoneId;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.ZoneRepository.UpdateAsync(existingZone,\ newZone);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ var\ updatedZone\ =\ await\ \_unitOfWork.ZoneRepository.GetByIdAsync(zoneId);}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneDto}{ZoneDto}}>(updatedZone);}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Zone\+Service.\+cs\end{DoxyCompactItemize}

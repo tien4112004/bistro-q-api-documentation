@@ -1,0 +1,23 @@
+\doxysection{IProduct\+Repository.\+cs}
+\hypertarget{IProductRepository_8cs_source}{}\label{IProductRepository_8cs_source}\index{BistroQ.Core/Interfaces/Repositories/IProductRepository.cs@{BistroQ.Core/Interfaces/Repositories/IProductRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Products}{BistroQ.Core.Dtos.Products}};}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Specifications}{BistroQ.Core.Specifications}};}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00006}00006\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00012}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{00012}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProductRepository}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{IGenericRepository}}<Product>}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00013}00013\ \{}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00023}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd}{00023}}\ \ \ \ \ Task<IEnumerable<Product>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd}{GetProductsAsync}}(IQueryable<Product>\ queryable);}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00030}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760}{00030}}\ \ \ \ \ Task<int>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760}{GetProductsCountAsync}}(IQueryable<Product>\ queryable);}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00042}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd}{00042}}\ \ \ \ \ Task<Product?>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd}{GetProductByIdAsync}}(\textcolor{keywordtype}{int}\ productId);}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00058}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472}{00058}}\ \ \ \ \ Task<IEnumerable<Product>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472}{GetRecommendedProductsAsync}}(\textcolor{keywordtype}{string}\ orderId,\ \textcolor{keywordtype}{int}\ size);}
+\DoxyCodeLine{\Hypertarget{IProductRepository_8cs_source_l00059}00059\ \}}
+
+\end{DoxyCode}

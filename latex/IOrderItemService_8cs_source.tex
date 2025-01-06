@@ -1,0 +1,18 @@
+\doxysection{IOrder\+Item\+Service.\+cs}
+\hypertarget{IOrderItemService_8cs_source}{}\label{IOrderItemService_8cs_source}\index{BistroQ.Core/Interfaces/Services/IOrderItemService.cs@{BistroQ.Core/Interfaces/Services/IOrderItemService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00005}00005\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00010}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{IOrderItemService}}}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00025}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ Task<(IEnumerable<DetailOrderItemDto>\ Items,\ \textcolor{keywordtype}{int}\ Count)>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_a36e8130eefe4e73ccf384cea7774b747}{GetOrderItemsAsync}}(\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{OrderItemCollectionQueryParams}}\ queryParams);}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00026}00026\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00041}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f}{00041}}\ \ \ \ \ \textcolor{keyword}{public}\ Task<IEnumerable<OrderItemDto>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService_ac15815ec186f6ea9a3d2484d1eaa7b0f}{UpdateOrderItemsStatusAsync}}(IEnumerable<string>\ orderItemIds,\ OrderItemStatus\ status);}
+\DoxyCodeLine{\Hypertarget{IOrderItemService_8cs_source_l00042}00042\ \}}
+
+\end{DoxyCode}

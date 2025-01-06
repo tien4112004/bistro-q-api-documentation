@@ -1,0 +1,377 @@
+\doxysection{Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work Class Reference}
+\hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork}{}\label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+
+
+Inheritance diagram for Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a23f339e2462cf5180c9a53a8bd6c9202}{Unit\+Of\+Work}} (\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} context, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProduct\+Repository}} product\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ICategoryRepository}{ICategory\+Repository}} category\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{IZone\+Repository}} zone\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITable\+Repository}} table\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImage\+Repository}} image\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrder\+Item\+Repository}} order\+Item\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrder\+Repository}} order\+Repository, \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{INutrition\+Fact\+Repository}} nutrition\+Fact\+Repository)
+\item 
+async Task$<$ int $>$ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a102073cf6c1199e19029e76867e9ebee}{Save\+Changes\+Async}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac95a1db20c88656d50ec1c3b460a28ec}{Begin\+Transaction\+Async}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_aee8b3db85040607fdb04be4ede915c46}{Commit\+Transaction\+Async}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95fbe548fad1a62ed5b4a41db279f7db}{Rollback\+Transaction\+Async}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProduct\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a2607bca238f0c76baf2ee3c283139252}{Product\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ICategoryRepository}{ICategory\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac181c0504dfe27b26eaa8836fe38fe10}{Category\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{IZone\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95d6ae8d848d41a34bed49a58517dd28}{Zone\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITable\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_adbf9e714f69320e59ad513a5fc65f63d}{Table\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImage\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a870a830bea391171616b898c6e5df745}{Image\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrder\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a77fa4de904ab76fbd265da50259b1011}{Order\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrder\+Item\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac6493813a7bd54f8effd95fb194b8435}{Order\+Item\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{INutrition\+Fact\+Repository}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a382209e5513ebf9a2fb39f5ddecb919f}{Nutrition\+Fact\+Repository}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a9d704fa2be94ef7417291eec57a52888}{Context}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00009}{9}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a23f339e2462cf5180c9a53a8bd6c9202}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!UnitOfWork@{UnitOfWork}}
+\index{UnitOfWork@{UnitOfWork}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{UnitOfWork()}{UnitOfWork()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a23f339e2462cf5180c9a53a8bd6c9202} 
+Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Unit\+Of\+Work (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}}}]{context}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProduct\+Repository}}}]{product\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ICategoryRepository}{ICategory\+Repository}}}]{category\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{IZone\+Repository}}}]{zone\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITable\+Repository}}}]{table\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImage\+Repository}}}]{image\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrder\+Item\+Repository}}}]{order\+Item\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrder\+Repository}}}]{order\+Repository}{, }\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{INutrition\+Fact\+Repository}}}]{nutrition\+Fact\+Repository}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00028}{28}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ Context\ =\ context;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ ProductRepository\ =\ productRepository;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ CategoryRepository\ =\ categoryRepository;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ ZoneRepository\ =\ zoneRepository;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ TableRepository\ =\ tableRepository;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ OrderRepository\ =\ orderRepository;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ OrderItemRepository\ =\ orderItemRepository;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ ImageRepository\ =\ imageRepository;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ NutritionFactRepository\ =\ nutritionFactRepository;}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac95a1db20c88656d50ec1c3b460a28ec}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!BeginTransactionAsync@{BeginTransactionAsync}}
+\index{BeginTransactionAsync@{BeginTransactionAsync}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{BeginTransactionAsync()}{BeginTransactionAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac95a1db20c88656d50ec1c3b460a28ec} 
+async Task Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Begin\+Transaction\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00055}{55}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056\ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \_transaction\ =\ await\ Context.Database.BeginTransactionAsync();}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_aee8b3db85040607fdb04be4ede915c46}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!CommitTransactionAsync@{CommitTransactionAsync}}
+\index{CommitTransactionAsync@{CommitTransactionAsync}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{CommitTransactionAsync()}{CommitTransactionAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_aee8b3db85040607fdb04be4ede915c46} 
+async Task Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Commit\+Transaction\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00060}{60}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_transaction?.CommitAsync();}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_transaction\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_transaction.DisposeAsync();}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_transaction\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95fbe548fad1a62ed5b4a41db279f7db}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!RollbackTransactionAsync@{RollbackTransactionAsync}}
+\index{RollbackTransactionAsync@{RollbackTransactionAsync}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{RollbackTransactionAsync()}{RollbackTransactionAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95fbe548fad1a62ed5b4a41db279f7db} 
+async Task Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Rollback\+Transaction\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00076}{76}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_transaction?.RollbackAsync();}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{finally}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\_transaction\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_transaction.DisposeAsync();}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_transaction\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a102073cf6c1199e19029e76867e9ebee}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!SaveChangesAsync@{SaveChangesAsync}}
+\index{SaveChangesAsync@{SaveChangesAsync}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{SaveChangesAsync()}{SaveChangesAsync()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a102073cf6c1199e19029e76867e9ebee} 
+async Task$<$ int $>$ Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Save\+Changes\+Async (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00050}{50}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ Context.SaveChangesAsync();}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac181c0504dfe27b26eaa8836fe38fe10}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!CategoryRepository@{CategoryRepository}}
+\index{CategoryRepository@{CategoryRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{CategoryRepository}{CategoryRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac181c0504dfe27b26eaa8836fe38fe10} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ICategoryRepository}{ICategory\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Category\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00012}{12}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a9d704fa2be94ef7417291eec57a52888}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!Context@{Context}}
+\index{Context@{Context}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{Context}{Context}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a9d704fa2be94ef7417291eec57a52888} 
+\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{Bistro\+QContext}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Context\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00024}{24}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a870a830bea391171616b898c6e5df745}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!ImageRepository@{ImageRepository}}
+\index{ImageRepository@{ImageRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{ImageRepository}{ImageRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a870a830bea391171616b898c6e5df745} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IImageRepository}{IImage\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Image\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00016}{16}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a382209e5513ebf9a2fb39f5ddecb919f}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!NutritionFactRepository@{NutritionFactRepository}}
+\index{NutritionFactRepository@{NutritionFactRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{NutritionFactRepository}{NutritionFactRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a382209e5513ebf9a2fb39f5ddecb919f} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1INutritionFactRepository}{INutrition\+Fact\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Nutrition\+Fact\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00022}{22}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac6493813a7bd54f8effd95fb194b8435}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!OrderItemRepository@{OrderItemRepository}}
+\index{OrderItemRepository@{OrderItemRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{OrderItemRepository}{OrderItemRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_ac6493813a7bd54f8effd95fb194b8435} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrder\+Item\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Order\+Item\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00020}{20}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a77fa4de904ab76fbd265da50259b1011}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!OrderRepository@{OrderRepository}}
+\index{OrderRepository@{OrderRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{OrderRepository}{OrderRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a77fa4de904ab76fbd265da50259b1011} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrder\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Order\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00018}{18}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a2607bca238f0c76baf2ee3c283139252}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!ProductRepository@{ProductRepository}}
+\index{ProductRepository@{ProductRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{ProductRepository}{ProductRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a2607bca238f0c76baf2ee3c283139252} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{IProduct\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Product\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00011}{11}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_adbf9e714f69320e59ad513a5fc65f63d}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!TableRepository@{TableRepository}}
+\index{TableRepository@{TableRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{TableRepository}{TableRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_adbf9e714f69320e59ad513a5fc65f63d} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITable\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Table\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00014}{14}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00014\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95d6ae8d848d41a34bed49a58517dd28}\index{BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}!ZoneRepository@{ZoneRepository}}
+\index{ZoneRepository@{ZoneRepository}!BistroQ.Infrastructure.UnitOfWork.UnitOfWork@{BistroQ.Infrastructure.UnitOfWork.UnitOfWork}}
+\doxysubsubsection{\texorpdfstring{ZoneRepository}{ZoneRepository}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Infrastructure_1_1UnitOfWork_1_1UnitOfWork_a95d6ae8d848d41a34bed49a58517dd28} 
+\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IZoneRepository}{IZone\+Repository}} Bistro\+Q.\+Infrastructure.\+Unit\+Of\+Work.\+Unit\+Of\+Work.\+Zone\+Repository\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{Bistro\+Q.\+Core.\+Interfaces.\+IUnit\+Of\+Work}}.
+
+
+
+Definition at line \mbox{\hyperlink{UnitOfWork_8cs_source_l00013}{13}} of file \mbox{\hyperlink{UnitOfWork_8cs_source}{Unit\+Of\+Work.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \{\ \textcolor{keyword}{get};\ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Infrastructure/\+Unit\+Of\+Work/Unit\+Of\+Work.\+cs\end{DoxyCompactItemize}

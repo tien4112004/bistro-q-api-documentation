@@ -1,0 +1,9 @@
+<map id="BistroQ.Infrastructure.Repositories.OrderItemRepository" name="BistroQ.Infrastructure.Repositories.OrderItemRepository">
+<area shape="rect" id="Node000001" title=" " alt="" coords="43,187,270,229"/>
+<area shape="rect" id="Node000002" href="$classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository.html" title=" " alt="" coords="5,96,143,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,148,140,185,136,188,102,152"/>
+<area shape="rect" id="Node000003" href="$interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository.html" title=" " alt="" coords="166,104,312,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,144,178,188,174,184,215,140"/>
+<area shape="rect" id="Node000004" href="$interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository.html" title=" " alt="" coords="173,5,306,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="242,64,242,104,237,104,237,64"/>
+</map>

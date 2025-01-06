@@ -1,0 +1,53 @@
+\doxysection{Order\+Repository.\+cs}
+\hypertarget{OrderRepository_8cs_source}{}\label{OrderRepository_8cs_source}\index{BistroQ.Infrastructure/Repositories/OrderRepository.cs@{BistroQ.Infrastructure/Repositories/OrderRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Exceptions}{BistroQ.Core.Exceptions}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Data}{BistroQ.Infrastructure.Data}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.EntityFrameworkCore;}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00009}00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Infrastructure_1_1Repositories}{BistroQ.Infrastructure.Repositories}};}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00011}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository}{00011}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository}{OrderRepository}}\ :\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1GenericRepository}{GenericRepository}}<Order>,\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderRepository}{IOrderRepository}}}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00013}00013\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ \_context;}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00014}00014\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository}{OrderRepository}}(\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Data_1_1BistroQContext}{BistroQContext}}\ context)\ :\ base(context)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00016}00016\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \_context\ =\ context;}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00020}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_a8a35a0cf1621ec3c28f287ecde732153}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<Order?>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_a8a35a0cf1621ec3c28f287ecde732153}{GetByTableIdAsync}}(\textcolor{keywordtype}{int}\ tableId)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ \_context.Orders}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(o\ =>\ o.OrderItems)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ThenInclude(od\ =>\ od.Product)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ThenInclude(p\ =>\ p.Image)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ .Select(o\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ o.OrderId,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ o.TableId,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderItems\ =\ o.OrderItems.OrderByDescending(oi\ =>\ oi.CreatedAt).ToList(),}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ o.TotalAmount,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StartTime\ =\ o.StartTime,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ o.EndTime,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ o.PeopleCount,}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Status\ =\ o.Status}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \})}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ .FirstOrDefaultAsync(o\ =>\ o.TableId\ ==\ tableId);}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00040}\mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_abb87da6649ccbc20b08a2593e0e91de4}{00040}}\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IEnumerable<Order>>\ \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1OrderRepository_abb87da6649ccbc20b08a2593e0e91de4}{GetAllCurrentOrdersAsync}}()}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ await\ \_context.Orders}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ .Include(o\ =>\ o.Table)}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ .Where(o\ =>\ o.EndTime\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ .ToListAsync();}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{OrderRepository_8cs_source_l00047}00047\ \}}
+
+\end{DoxyCode}

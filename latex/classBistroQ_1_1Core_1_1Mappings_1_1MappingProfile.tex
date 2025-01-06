@@ -1,0 +1,130 @@
+\doxysection{Bistro\+Q.\+Core.\+Mappings.\+Mapping\+Profile Class Reference}
+\hypertarget{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile}{}\label{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile}\index{BistroQ.Core.Mappings.MappingProfile@{BistroQ.Core.Mappings.MappingProfile}}
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Mappings.\+Mapping\+Profile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Mappings.\+Mapping\+Profile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{MappingProfile_8cs_source_l00018}{18}} of file \mbox{\hyperlink{MappingProfile_8cs_source}{Mapping\+Profile.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile_aa7bc31869400ac38fc441ba1966a4250}\index{BistroQ.Core.Mappings.MappingProfile@{BistroQ.Core.Mappings.MappingProfile}!MappingProfile@{MappingProfile}}
+\index{MappingProfile@{MappingProfile}!BistroQ.Core.Mappings.MappingProfile@{BistroQ.Core.Mappings.MappingProfile}}
+\doxysubsubsection{\texorpdfstring{MappingProfile()}{MappingProfile()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Core_1_1Mappings_1_1MappingProfile_aa7bc31869400ac38fc441ba1966a4250} 
+Bistro\+Q.\+Core.\+Mappings.\+Mapping\+Profile.\+Mapping\+Profile (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{MappingProfile_8cs_source_l00020}{20}} of file \mbox{\hyperlink{MappingProfile_8cs_source}{Mapping\+Profile.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ CreateMap<Product,\ ProductDto>().ReverseMap();}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ CreateMap<CreateProductRequestDto,\ Product>()}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ .ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}())}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ .AfterMap((src,\ dest,\ context)\ =>\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dest.NutritionFact\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Calories\ =\ src.Calories;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Fat\ =\ src.Fat;}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Fiber\ =\ src.Fiber;}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Protein\ =\ src.Protein;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Carbohydrates\ =\ src.Carbohydrates;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ CreateMap<UpdateProductRequestDto,\ Product>()}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ .ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}())}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ .AfterMap((src,\ dest,\ context)\ =>\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dest.NutritionFact\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1NutritionFact}{NutritionFact}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Calories\ =\ src.Calories;}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Fat\ =\ src.Fat;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Fiber\ =\ src.Fiber;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Protein\ =\ src.Protein;\ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dest.NutritionFact.Carbohydrates\ =\ src.Carbohydrates;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ CreateMap<Product,\ ProductResponseDto>()}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.CategoryName,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Category!.Name))}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.ImageUrl,\ opt\ =>\ opt.MapFrom<ImageUrlResolver>());}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ CreateMap<NutritionFact,\ NutritionFactDto>().ReverseMap();}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ CreateMap<ImageDto,\ Image>();}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ CreateMap<ImageRequestDto,\ Image>()}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ .ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Image}{Image}}());}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ CreateMap<ImageRequestDto,\ ImageDto>();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ CreateMap<Category,\ CategoryDto>().ReverseMap();}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ CreateMap<Category,\ CategoryDetailDto>()}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.Products,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Products));}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ CreateMap<CreateCategoryRequestDto,\ Category>()}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ .ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}());}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ CreateMap<UpdateCategoryRequestDto,\ Category>()}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ .ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Category}{Category}}());}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ CreateMap<Zone,\ ZoneDto>().ReverseMap();}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ CreateMap<Zone,\ ZoneDetailDto>().ReverseMap();}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ CreateMap<Zone,\ ZoneCashierDto>()}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.HasCheckingOutTables,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Tables.Any(t\ =>\ t.Order\ !=\ \textcolor{keyword}{null}\ \&\&\ t.Order.Status\ ==\ OrderStatus.Pending)));}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ CreateMap<CreateZoneRequestDto,\ Zone>().ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}());}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ CreateMap<UpdateZoneRequestDto,\ Zone>().ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Zone}{Zone}}());}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ CreateMap<Table,\ TableDto>().ReverseMap();}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ CreateMap<CreateTableRequestDto,\ Table>().ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}());}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ CreateMap<UpdateTableRequestDto,\ Table>().ConstructUsing((src,\ context)\ =>\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Table}{Table}}());}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ CreateMap<Table,\ TableDetailDto>().ForMember(dest\ =>\ dest.ZoneName,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ opt\ =>\ opt.MapFrom(src\ =>\ src.Zone\ ==\ \textcolor{keyword}{null}\ ?\ \textcolor{keyword}{null}\ :\ src.Zone.Name))}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.IsOccupied,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Order\ !=\ \textcolor{keyword}{null}))}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.IsCheckingOut,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ opt\ =>\ opt.MapFrom(src\ =>\ src.Order\ !=\ \textcolor{keyword}{null}\ \&\&\ src.Order.Status\ ==\ OrderStatus.Pending));}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ CreateMap<Order,\ OrderDto>().ReverseMap();}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ CreateMap<Order,\ DetailOrderDto>().ForMember(v\ =>\ v.OrderItems,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ opt\ =>\ opt.MapFrom(src\ =>\ src.OrderItems));}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ CreateMap<DetailOrderDto,\ OrderDto>();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ CreateMap<Order,\ OrderWithTableDto>();}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ CreateMap<OrderItem,\ OrderItemDto>().ReverseMap();}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ CreateMap<OrderItem,\ OrderItemWithProductDto>();}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ CreateMap<OrderItem,\ DetailOrderItemDto>()}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.Table,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Order.Table));}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ CreateMap<AccountDto,\ AccountResponseDto>()}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ .ForMember(dest\ =>\ dest.Table,\ opt\ =>\ opt.MapFrom(src\ =>\ src.Table));}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Mappings/Mapping\+Profile.\+cs\end{DoxyCompactItemize}

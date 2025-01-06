@@ -1,0 +1,24 @@
+\doxysection{IGeneric\+Respository.\+cs}
+\hypertarget{IGenericRespository_8cs_source}{}\label{IGenericRespository_8cs_source}\index{BistroQ.Core/Interfaces/Repositories/IGenericRespository.cs@{BistroQ.Core/Interfaces/Repositories/IGenericRespository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00001}00001\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00007}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{00007}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{IGenericRepository}}<T>\ where\ T\ :\ class}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00008}00008\ \{}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00013}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{00013}}\ \ \ \ \ IQueryable<T>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{GetQueryable}}();}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00014}00014\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00024}00024\ \ \ \ \ Task<T?>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{GetByIdAsync<TId>}}(TId\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00033}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{00033}}\ \ \ \ \ Task<IEnumerable<T>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{GetAllAsync}}();}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00034}00034\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00040}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{00040}}\ \ \ \ \ Task<T?>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{AddAsync}}(T\ entity);}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00047}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{00047}}\ \ \ \ \ Task<IEnumerable<T>?>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{AddRangeAsync}}(IEnumerable<T>\ entities);}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00048}00048\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00058}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{00058}}\ \ \ \ \ Task\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{UpdateAsync}}(T\ oldEntity,\ T\ newEntity);}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00064}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{00064}}\ \ \ \ \ Task\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{DeleteAsync}}(T\ entity);}
+\DoxyCodeLine{\Hypertarget{IGenericRespository_8cs_source_l00065}00065\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,174 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository}\index{BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}}
+
+
+Repository interface specific to Product entity operations, extending the generic repository pattern.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd}{Get\+Products\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Materializes the final filtered/sorted queryable into an enumerable result. \end{DoxyCompactList}\item 
+Task$<$ int $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760}{Get\+Products\+Count\+Async}} (IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ queryable)
+\begin{DoxyCompactList}\small\item\em Executes a count operation on the final filtered queryable. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd}{Get\+Product\+By\+Id\+Async}} (int product\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves a product by its unique identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472}{Get\+Recommended\+Products\+Async}} (string order\+Id, int size)
+\begin{DoxyCompactList}\small\item\em Retrieves a list of recommended products based on the specified order ID and size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IGeneric\+Repository$<$ Product $>$}}}
+\begin{DoxyCompactItemize}
+\item 
+IQueryable$<$ T $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a1e3aceb1781ff4c7671027006b0c51a8}{Get\+Queryable}} ()
+\begin{DoxyCompactList}\small\item\em Gets a queryable instance of the entity set. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a8160e73a27fb6343472fad40fdb51235}{Get\+By\+Id\+Async$<$ TId $>$}} (TId id)
+\begin{DoxyCompactList}\small\item\em Retrieves an entity by its identifier. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a76357c41e2515065091c380a62e07e92}{Get\+All\+Async}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities in the repository. \end{DoxyCompactList}\item 
+Task$<$ T?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a30b3fbd8088eafa379363683d587ff41}{Add\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Adds a new entity to the repository. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ T $>$?$>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a80fd14ef884dc73a6597bbf82ab37993}{Add\+Range\+Async}} (IEnumerable$<$ T $>$ entities)
+\begin{DoxyCompactList}\small\item\em Adds a collection of entities to the repository. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_afe75070443e19938d4ed2b66a4df8180}{Update\+Async}} (T old\+Entity, T new\+Entity)
+\begin{DoxyCompactList}\small\item\em Replaces an existing entity with a new version. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository_a2a516e508e9f464356eb6dffdaa16c03}{Delete\+Async}} (T entity)
+\begin{DoxyCompactList}\small\item\em Removes an entity from the repository. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Repository interface specific to Product entity operations, extending the generic repository pattern. 
+
+Definition at line \mbox{\hyperlink{IProductRepository_8cs_source_l00012}{12}} of file \mbox{\hyperlink{IProductRepository_8cs_source}{IProduct\+Repository.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd}\index{BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}!GetProductByIdAsync@{GetProductByIdAsync}}
+\index{GetProductByIdAsync@{GetProductByIdAsync}!BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductByIdAsync()}{GetProductByIdAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a8b481712598626a8a3550e06892163cd} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}}?$>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository.\+Get\+Product\+By\+Id\+Async (\begin{DoxyParamCaption}\item[{int}]{product\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a product by its unique identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Id} & The unique identifier of the product to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains the product if found, otherwise null. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the product specified by the product\+Id is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a04684d30324dbd62fade2f7feb2c090e}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd}\index{BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}!GetProductsAsync@{GetProductsAsync}}
+\index{GetProductsAsync@{GetProductsAsync}!BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductsAsync()}{GetProductsAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ae81380077efdcb713c3e1272618497dd} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository.\+Get\+Products\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Materializes the final filtered/sorted queryable into an enumerable result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering and sorting has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The final materialized collection of products
+\end{DoxyReturn}
+
+
+This method is intended to be the final step in the query chain, executing the prepared queryable and materializing the results 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_ab3ee76a2643320eee5014df8148b0bf0}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760}\index{BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}!GetProductsCountAsync@{GetProductsCountAsync}}
+\index{GetProductsCountAsync@{GetProductsCountAsync}!BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetProductsCountAsync()}{GetProductsCountAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_ad2eb0801a5168ff953a3413ec8a0c760} 
+Task$<$ int $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository.\+Get\+Products\+Count\+Async (\begin{DoxyParamCaption}\item[{IQueryable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$}]{queryable}{}\end{DoxyParamCaption})}
+
+
+
+Executes a count operation on the final filtered queryable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em queryable} & The prepared queryable after all filtering has been applied\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The total count of products matching the filter criteria
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a9024a7824957a08cee9304c31f22224e}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472}\index{BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}!GetRecommendedProductsAsync@{GetRecommendedProductsAsync}}
+\index{GetRecommendedProductsAsync@{GetRecommendedProductsAsync}!BistroQ.Core.Interfaces.Repositories.IProductRepository@{BistroQ.Core.Interfaces.Repositories.IProductRepository}}
+\doxysubsubsection{\texorpdfstring{GetRecommendedProductsAsync()}{GetRecommendedProductsAsync()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IProductRepository_a23b877a1c93f29d1fd9498792b875472} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Product}{Product}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Repositories.\+IProduct\+Repository.\+Get\+Recommended\+Products\+Async (\begin{DoxyParamCaption}\item[{string}]{order\+Id}{, }\item[{int}]{size}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of recommended products based on the specified order ID and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & The unique identifier of the order to base recommendations on.\\
+\hline
+{\em size} & The number of recommended products to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A task that represents the asynchronous operation. The task result contains an enumerable collection of recommended product DTOs. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Resource\+Not\+Found\+Exception} & Thrown when the order specified by the order ID is not found. \\
+\hline
+\end{DoxyExceptions}
+
+
+This method uses the order ID to generate product recommendations, which can be used to suggest additional products to the user. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Infrastructure_1_1Repositories_1_1ProductRepository_a735d37a004a9df025c10a5c2d0b7a0ab}{Bistro\+Q.\+Infrastructure.\+Repositories.\+Product\+Repository}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Repositories/IProduct\+Repository.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,51 @@
+\doxysection{Cashier\+Table\+Controller.\+cs}
+\hypertarget{CashierTableController_8cs_source}{}\label{CashierTableController_8cs_source}\index{BistroQ.API/Controllers/Table/CashierTableController.cs@{BistroQ.API/Controllers/Table/CashierTableController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Tables}{BistroQ.Core.Dtos.Tables}};}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00008}00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers}{BistroQ.API.Controllers}};}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00010}00010\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00011}00011\ [Route(\textcolor{stringliteral}{"{}api/Cashier/Zones/\{zoneId:int\}/Table"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00012}00012\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Cashier)]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00013}00013\ [Tags(\textcolor{stringliteral}{"{}Cashier\ Table"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00014}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController}{00014}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController}{CashierTableController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ \_tableService;}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00017}00017\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierTableController}{CashierTableController}}(\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService}{ITableService}}\ tableService)}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00019}00019\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ \_tableService\ =\ tableService;}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00021}00021\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00022}00022\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00023}00023\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00024}00024\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTables([FromQuery]\ \textcolor{keywordtype}{bool}\ isOccupied,\ [FromRoute]\ \textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00025}00025\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isOccupied)}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ var\ tables\ =\ await\ \_tableService.GetOccupiedTablesAsync(zoneId);}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<TableDetailDto>>(tables));}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ var\ (tables,\ count)\ =\ await\ \_tableService.GetAllAsync(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Tables_1_1TableCollectionQueryParams}{TableCollectionQueryParams}}\ \{\ ZoneId\ =\ zoneId\ \});}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<TableDetailDto>>(tables));}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00038}00038\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00039}00039\ \ \ \ \ [Route(\textcolor{stringliteral}{"{}\{tableId:int\}"{}})]}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetTable([FromRoute]\ \textcolor{keywordtype}{int}\ tableId,\ [FromRoute]\ \textcolor{keywordtype}{int}\ zoneId)}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_tableService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ITableService_ad48fbf804a91910ccaf0aadb796476c3}{GetByIdAsync}}(tableId);}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<TableDetailDto>(table));}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{CashierTableController_8cs_source_l00045}00045\ \}}
+
+\end{DoxyCode}

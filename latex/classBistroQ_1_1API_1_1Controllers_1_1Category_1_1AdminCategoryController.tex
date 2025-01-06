@@ -1,0 +1,182 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=248pt]{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a0f714078631d40813e1d02e0a6d48dc8}{Admin\+Category\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{ICategory\+Service}} category\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a177a1b137fc4ae041df110316af7777c}{Get\+Categories}} ()
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a5f7b8fb53d78e50ef0baa1ee5d08f49f}{Get\+Category}} (int category\+Id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a381d1a6e30f1703fcfcb15b6e239418c}{Add\+Products\+To\+Category}} (\mbox{[}From\+Route\mbox{]} int category\+Id, \mbox{[}From\+Body\mbox{]} List$<$ int $>$ product\+Ids)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fa9d16638ac393c058e32aeeff0c13e}{Add\+Category}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CreateCategoryRequestDto}{Create\+Category\+Request\+Dto}} request)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a7c3fdadc601ce95fcac6a540c18d69de}{Update\+Category}} (int category\+Id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1UpdateCategoryRequestDto}{Update\+Category\+Request\+Dto}} request)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fbb073536deda729c0273dd8a4d2ee4}{Delete\+Category}} (int category\+Id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a0f714078631d40813e1d02e0a6d48dc8}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!AdminCategoryController@{AdminCategoryController}}
+\index{AdminCategoryController@{AdminCategoryController}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{AdminCategoryController()}{AdminCategoryController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a0f714078631d40813e1d02e0a6d48dc8} 
+Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Admin\+Category\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICategoryService}{ICategory\+Service}}}]{category\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00018}{18}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \_categoryService\ =\ categoryService;}
+\DoxyCodeLine{00021\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fa9d16638ac393c058e32aeeff0c13e}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!AddCategory@{AddCategory}}
+\index{AddCategory@{AddCategory}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{AddCategory()}{AddCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fa9d16638ac393c058e32aeeff0c13e} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Add\+Category (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1CreateCategoryRequestDto}{Create\+Category\+Request\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00046}{46}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_categoryService.CreateCategoryAsync(request);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<CategoryDto>(category));}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a381d1a6e30f1703fcfcb15b6e239418c}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!AddProductsToCategory@{AddProductsToCategory}}
+\index{AddProductsToCategory@{AddProductsToCategory}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{AddProductsToCategory()}{AddProductsToCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a381d1a6e30f1703fcfcb15b6e239418c} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Add\+Products\+To\+Category (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} int}]{category\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} List$<$ int $>$}]{product\+Ids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00039}{39}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_categoryService.AddProductsToCategoryAsync(categoryId,\ productIds);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<CategoryDetailDto>(category));}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fbb073536deda729c0273dd8a4d2ee4}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!DeleteCategory@{DeleteCategory}}
+\index{DeleteCategory@{DeleteCategory}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{DeleteCategory()}{DeleteCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a8fbb073536deda729c0273dd8a4d2ee4} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Delete\+Category (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00060}{60}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ await\ \_categoryService.DeleteCategoryAsync(categoryId);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Category\ deleted\ successfully"{}}));}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a177a1b137fc4ae041df110316af7777c}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!GetCategories@{GetCategories}}
+\index{GetCategories@{GetCategories}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{GetCategories()}{GetCategories()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a177a1b137fc4ae041df110316af7777c} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Get\+Categories (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00024}{24}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ var\ (categories,\ count)\ =\ await\ \_categoryService.GetCategoriesAsync();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<CategoryDto>>(categories,\ count,\ 1,\ count));}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a5f7b8fb53d78e50ef0baa1ee5d08f49f}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!GetCategory@{GetCategory}}
+\index{GetCategory@{GetCategory}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{GetCategory()}{GetCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a5f7b8fb53d78e50ef0baa1ee5d08f49f} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Get\+Category (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00031}{31}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ var\ category\ =\ await\ \_categoryService.GetCategoryByIdAsync(categoryId);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<CategoryDetailDto>(category));}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a7c3fdadc601ce95fcac6a540c18d69de}\index{BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}!UpdateCategory@{UpdateCategory}}
+\index{UpdateCategory@{UpdateCategory}!BistroQ.API.Controllers.Category.AdminCategoryController@{BistroQ.API.Controllers.Category.AdminCategoryController}}
+\doxysubsubsection{\texorpdfstring{UpdateCategory()}{UpdateCategory()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Category_1_1AdminCategoryController_a7c3fdadc601ce95fcac6a540c18d69de} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Category.\+Admin\+Category\+Controller.\+Update\+Category (\begin{DoxyParamCaption}\item[{int}]{category\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Category_1_1UpdateCategoryRequestDto}{Update\+Category\+Request\+Dto}}}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AdminCategoryController_8cs_source_l00053}{53}} of file \mbox{\hyperlink{AdminCategoryController_8cs_source}{Admin\+Category\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ var\ updatedCategory\ =\ await\ \_categoryService.UpdateCategoryAsync(categoryId,\ request);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<CategoryDto>(updatedCategory));}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Category/Admin\+Category\+Controller.\+cs\end{DoxyCompactItemize}

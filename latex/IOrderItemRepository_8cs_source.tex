@@ -1,0 +1,17 @@
+\doxysection{IOrder\+Item\+Repository.\+cs}
+\hypertarget{IOrderItemRepository_8cs_source}{}\label{IOrderItemRepository_8cs_source}\index{BistroQ.Core/Interfaces/Repositories/IOrderItemRepository.cs@{BistroQ.Core/Interfaces/Repositories/IOrderItemRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00004}00004\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00006}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{00006}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IOrderItemRepository}{IOrderItemRepository}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{IGenericRepository}}<OrderItem>}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00007}00007\ \{}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00008}00008\ \ \ \ \ \textcolor{keyword}{public}\ Task<IEnumerable<OrderItem>>\ GetOrderItemsAsync(IQueryable<OrderItem>\ queryable);}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00009}00009\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00010}00010\ \ \ \ \ \textcolor{keyword}{public}\ Task<int>\ GetOrderItemsCountAsync(IQueryable<OrderItem>\ queryable);}
+\DoxyCodeLine{\Hypertarget{IOrderItemRepository_8cs_source_l00011}00011\ \}}
+
+\end{DoxyCode}

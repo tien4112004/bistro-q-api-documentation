@@ -1,0 +1,82 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Cashier\+Zone\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController}\index{BistroQ.API.Controllers.CashierZoneController@{BistroQ.API.Controllers.CashierZoneController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Cashier\+Zone\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Cashier\+Zone\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a240a80157d912bc52b62bdf59160cdac}{Cashier\+Zone\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZone\+Service}} zone\+Service)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a129beb845cc46c2a257c40656a14d1c6}{Get\+Zones}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}} query\+Params)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{CashierZoneController_8cs_source_l00016}{16}} of file \mbox{\hyperlink{CashierZoneController_8cs_source}{Cashier\+Zone\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a240a80157d912bc52b62bdf59160cdac}\index{BistroQ.API.Controllers.CashierZoneController@{BistroQ.API.Controllers.CashierZoneController}!CashierZoneController@{CashierZoneController}}
+\index{CashierZoneController@{CashierZoneController}!BistroQ.API.Controllers.CashierZoneController@{BistroQ.API.Controllers.CashierZoneController}}
+\doxysubsubsection{\texorpdfstring{CashierZoneController()}{CashierZoneController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a240a80157d912bc52b62bdf59160cdac} 
+Bistro\+Q.\+API.\+Controllers.\+Cashier\+Zone\+Controller.\+Cashier\+Zone\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService}{IZone\+Service}}}]{zone\+Service}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierZoneController_8cs_source_l00020}{20}} of file \mbox{\hyperlink{CashierZoneController_8cs_source}{Cashier\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_zoneService\ =\ zoneService;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a129beb845cc46c2a257c40656a14d1c6}\index{BistroQ.API.Controllers.CashierZoneController@{BistroQ.API.Controllers.CashierZoneController}!GetZones@{GetZones}}
+\index{GetZones@{GetZones}!BistroQ.API.Controllers.CashierZoneController@{BistroQ.API.Controllers.CashierZoneController}}
+\doxysubsubsection{\texorpdfstring{GetZones()}{GetZones()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1CashierZoneController_a129beb845cc46c2a257c40656a14d1c6} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Cashier\+Zone\+Controller.\+Get\+Zones (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Zones_1_1ZoneCollectionQueryParams}{Zone\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{CashierZoneController_8cs_source_l00026}{26}} of file \mbox{\hyperlink{CashierZoneController_8cs_source}{Cashier\+Zone\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ (zones,\ count)\ =\ await\ \_zoneService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IZoneService_ac0caaffe6b3d2671b0b33f0e31c45abb}{GetAllByCashierAsync}}(queryParams);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<ZoneCashierDto>>(zones,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Zone/Cashier\+Zone\+Controller.\+cs\end{DoxyCompactItemize}

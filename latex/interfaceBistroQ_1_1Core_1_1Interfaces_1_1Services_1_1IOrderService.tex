@@ -1,0 +1,239 @@
+\doxysection{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service Interface Reference}
+\hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{}\label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+
+
+Service interface for managing restaurant orders and their operations. Provides high-\/level business logic for order management.  
+
+
+
+
+Inheritance diagram for Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23}{Create\+Order}} (int table\+Id, int people\+Count)
+\begin{DoxyCompactList}\small\item\em Creates a new order for a specific table. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{Detail\+Order\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{Get\+Order\+By\+Table\+Id}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves detailed information about the current order for a specific table. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4}{Delete\+Order}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Deletes an order associated with a specific table. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderWithTableDto}{Order\+With\+Table\+Dto}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{Get\+All\+Current\+Orders}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all current orders in the system along with their table information. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1}{Add\+Products\+To\+Order}} (int table\+Id, \mbox{[}From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{Create\+Order\+Item\+Request\+Dto}} $>$ order\+Items)
+\begin{DoxyCompactList}\small\item\em Adds a product to an existing order. \end{DoxyCompactList}\item 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59}{Cancel\+Order\+Items}} (int table\+Id, \mbox{[}From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{Remove\+Order\+Item\+Request\+Dto}} $>$ order\+Items)
+\begin{DoxyCompactList}\small\item\em Update the order status to "{}\+Cancelled"{} for a list of order items. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0}{Update\+People\+Count}} (int table\+Id, int people\+Count)
+\begin{DoxyCompactList}\small\item\em Updates the quantity of a product in an existing order. \end{DoxyCompactList}\item 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{Update\+Status}} (int table\+Id, Order\+Status status)
+\begin{DoxyCompactList}\small\item\em Update the status of the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Service interface for managing restaurant orders and their operations. Provides high-\/level business logic for order management. 
+
+Definition at line \mbox{\hyperlink{IOrderService_8cs_source_l00012}{12}} of file \mbox{\hyperlink{IOrderService_8cs_source}{IOrder\+Service.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!AddProductsToOrder@{AddProductsToOrder}}
+\index{AddProductsToOrder@{AddProductsToOrder}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{AddProductsToOrder()}{AddProductsToOrder()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Add\+Products\+To\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{Create\+Order\+Item\+Request\+Dto}} $>$}]{order\+Items}{}\end{DoxyParamCaption})}
+
+
+
+Adds a product to an existing order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+{\em order\+Items} & The list of products that needs to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order details including the new product.
+\end{DoxyReturn}
+
+
+Consider adding quantity parameter. Should validate product availability and pricing. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a14e79dc81589403824d325b6b543e1c7}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!CancelOrderItems@{CancelOrderItems}}
+\index{CancelOrderItems@{CancelOrderItems}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{CancelOrderItems()}{CancelOrderItems()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Cancel\+Order\+Items (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{Remove\+Order\+Item\+Request\+Dto}} $>$}]{order\+Items}{}\end{DoxyParamCaption})}
+
+
+
+Update the order status to "{}\+Cancelled"{} for a list of order items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & \\
+\hline
+{\em order\+Items} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of order items with new status
+\end{DoxyReturn}
+
+
+Soft-\/delete
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7ad1894c6b563b8fe16f2973f89adb21}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!CreateOrder@{CreateOrder}}
+\index{CreateOrder@{CreateOrder}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{CreateOrder()}{CreateOrder()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Create\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{int}]{people\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Creates a new order for a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A DTO containing the basic order information.
+\end{DoxyReturn}
+
+
+Consider whether multiple active orders per table should be allowed. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a88314dbba958d70c833b11d35981e270}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!DeleteOrder@{DeleteOrder}}
+\index{DeleteOrder@{DeleteOrder}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{DeleteOrder()}{DeleteOrder()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4} 
+Task Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Delete\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Deletes an order associated with a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+
+
+Consider adding a soft delete option or archiving for historical tracking. Should validate if the order can be deleted (e.\+g., not already paid). 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a38613dca18d0fdd11608fa66b6e44daa}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!GetAllCurrentOrders@{GetAllCurrentOrders}}
+\index{GetAllCurrentOrders@{GetAllCurrentOrders}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{GetAllCurrentOrders()}{GetAllCurrentOrders()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e} 
+Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderWithTableDto}{Order\+With\+Table\+Dto}} $>$ $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Get\+All\+Current\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves all current orders in the system along with their table information. 
+
+\begin{DoxyReturn}{Returns}
+A collection of orders with their associated table details.
+\end{DoxyReturn}
+
+
+The definition of "{}current"{} orders should be clearly specified. Consider adding filtering options (by status, server, time range, etc.). 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a9307d43f6f146c9a02f31d91311c29d0}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!GetOrderByTableId@{GetOrderByTableId}}
+\index{GetOrderByTableId@{GetOrderByTableId}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{GetOrderByTableId()}{GetOrderByTableId()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{Detail\+Order\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Get\+Order\+By\+Table\+Id (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Retrieves detailed information about the current order for a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A detailed DTO containing the order and its items.
+\end{DoxyReturn}
+
+
+Assumes only one active order per table exists. Consider using order\+Id instead of table\+Id for more flexibility. 
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_aa4183aa16ab05b241f1bc8968b3262a5}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!UpdatePeopleCount@{UpdatePeopleCount}}
+\index{UpdatePeopleCount@{UpdatePeopleCount}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{UpdatePeopleCount()}{UpdatePeopleCount()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Update\+People\+Count (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{int}]{people\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Updates the quantity of a product in an existing order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+{\em people\+Count} & The new people count need to be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order with new number of people.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a68905712483acb405bd4c8ad0727a31f}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+\Hypertarget{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}\index{BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}!UpdateStatus@{UpdateStatus}}
+\index{UpdateStatus@{UpdateStatus}!BistroQ.Core.Interfaces.Services.IOrderService@{BistroQ.Core.Interfaces.Services.IOrderService}}
+\doxysubsubsection{\texorpdfstring{UpdateStatus()}{UpdateStatus()}}
+{\footnotesize\ttfamily \label{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7} 
+Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service.\+Update\+Status (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{Order\+Status}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Update the status of the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table\\
+\hline
+{\em status} & The new status need to be updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a2f3a7608017f175a156a3ec544fb5234}{Bistro\+Q.\+Services.\+Services.\+Order\+Service}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Core/\+Interfaces/\+Services/IOrder\+Service.\+cs\end{DoxyCompactItemize}

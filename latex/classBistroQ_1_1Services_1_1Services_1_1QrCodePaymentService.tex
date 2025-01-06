@@ -1,0 +1,124 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Qr\+Code\+Payment\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService}{}\label{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService}\index{BistroQ.Services.Services.QrCodePaymentService@{BistroQ.Services.Services.QrCodePaymentService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Qr\+Code\+Payment\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Qr\+Code\+Payment\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a27e1958b5f04e34f94c1205a4c26e8ef}{Qr\+Code\+Payment\+Service}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{Payment\+Settings}} settings)
+\item 
+async Task$<$ string $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a422cc4081c35842ce0eb009253587cd7}{Initiate\+Payment}} (\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} order)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IPayment\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{QrCodePaymentService_8cs_source_l00010}{10}} of file \mbox{\hyperlink{QrCodePaymentService_8cs_source}{Qr\+Code\+Payment\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a27e1958b5f04e34f94c1205a4c26e8ef}\index{BistroQ.Services.Services.QrCodePaymentService@{BistroQ.Services.Services.QrCodePaymentService}!QrCodePaymentService@{QrCodePaymentService}}
+\index{QrCodePaymentService@{QrCodePaymentService}!BistroQ.Services.Services.QrCodePaymentService@{BistroQ.Services.Services.QrCodePaymentService}}
+\doxysubsubsection{\texorpdfstring{QrCodePaymentService()}{QrCodePaymentService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a27e1958b5f04e34f94c1205a4c26e8ef} 
+Bistro\+Q.\+Services.\+Services.\+Qr\+Code\+Payment\+Service.\+Qr\+Code\+Payment\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1PaymentSettings}{Payment\+Settings}}}]{settings}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{QrCodePaymentService_8cs_source_l00015}{15}} of file \mbox{\hyperlink{QrCodePaymentService_8cs_source}{Qr\+Code\+Payment\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \_client\ =\ \textcolor{keyword}{new}\ HttpClient();}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \_settings\ =\ settings;}
+\DoxyCodeLine{00019\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a422cc4081c35842ce0eb009253587cd7}\index{BistroQ.Services.Services.QrCodePaymentService@{BistroQ.Services.Services.QrCodePaymentService}!InitiatePayment@{InitiatePayment}}
+\index{InitiatePayment@{InitiatePayment}!BistroQ.Services.Services.QrCodePaymentService@{BistroQ.Services.Services.QrCodePaymentService}}
+\doxysubsubsection{\texorpdfstring{InitiatePayment()}{InitiatePayment()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1QrCodePaymentService_a422cc4081c35842ce0eb009253587cd7} 
+async Task$<$ string $>$ Bistro\+Q.\+Services.\+Services.\+Qr\+Code\+Payment\+Service.\+Initiate\+Payment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}}}]{order}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IPaymentService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IPayment\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{QrCodePaymentService_8cs_source_l00021}{21}} of file \mbox{\hyperlink{QrCodePaymentService_8cs_source}{Qr\+Code\+Payment\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ var\ content\ =\ \textcolor{keyword}{new}\ StringContent(}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ JsonSerializer.Serialize(\textcolor{keyword}{new}}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountNo\ =\ \_settings.AccountNumber,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accountName\ =\ \_settings.AccountName,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ acqId\ =\ \_settings.AcqId,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ amount\ =\ order.TotalAmount,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ addInfo\ =\ \$\textcolor{stringliteral}{"{}Payment\ for\ table\ \{order.TableId\},\ \ order\ \{order.OrderId\}"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ format\ =\ \textcolor{stringliteral}{"{}text"{}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ template\ =\ \textcolor{stringliteral}{"{}compact2"{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Encoding.UTF8,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}application/json"{}});}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ HttpRequestMessage(HttpMethod.Post,\ \$\textcolor{stringliteral}{"{}\{\_settings.BaseUrl\}/generate"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ request.Content\ =\ content;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ request.Headers.Add(\textcolor{stringliteral}{"{}x-\/client-\/id"{}},\ \_settings.ClientId);}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ request.Headers.Add(\textcolor{stringliteral}{"{}x-\/api-\/key"{}},\ \_settings.ApiKey);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ response\ =\ await\ \_client.SendAsync(request);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!response.IsSuccessStatusCode)}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ Exception(\textcolor{stringliteral}{"{}Failed\ to\ initiate\ payment"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ var\ responseContent\ =\ await\ response.Content.ReadAsStringAsync();}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ var\ jsonObject\ =\ JsonSerializer.Deserialize<JsonElement>(responseContent);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ var\ data\ =\ jsonObject.GetProperty(\textcolor{stringliteral}{"{}data"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data.GetProperty(\textcolor{stringliteral}{"{}qrDataURL"{}}).GetString()\ ??\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ e)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(e.StackTrace);}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Qr\+Code\+Payment\+Service.\+cs\end{DoxyCompactItemize}

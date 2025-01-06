@@ -1,0 +1,56 @@
+\doxysection{Kitchen\+Order\+Controller.\+cs}
+\hypertarget{KitchenOrderController_8cs_source}{}\label{KitchenOrderController_8cs_source}\index{BistroQ.API/Controllers/Order/KitchenOrderController.cs@{BistroQ.API/Controllers/Order/KitchenOrderController.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos}{BistroQ.Core.Dtos}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Dtos_1_1Orders}{BistroQ.Core.Dtos.Orders}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Enums}{BistroQ.Core.Enums}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Authorization;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Identity;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }Microsoft.AspNetCore.Mvc;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00010}00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1API_1_1Controllers_1_1Order}{BistroQ.API.Controllers.Order}};}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00012}00012\ [ApiController]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00013}00013\ [Route(\textcolor{stringliteral}{"{}api/Kitchen/Order"{}})]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00014}00014\ [Authorize(Roles\ =\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Enums_1_1BistroRoles}{BistroRoles}}.Kitchen)]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00015}00015\ [Tags(\textcolor{stringliteral}{"{}Kitchen\ Order"{}})]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00016}\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController}{KitchenOrderController}}\ :\ ControllerBase}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{IOrderItemService}}\ \_orderItemService;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ \_orderService;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ UserManager<AppUser>\ \_userManager;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Order_1_1KitchenOrderController}{KitchenOrderController}}(}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderItemService}{IOrderItemService}}\ orderItemService,\ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{IOrderService}}\ orderService,}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ UserManager<AppUser>\ userManager)}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00026}00026\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \_orderItemService\ =\ orderItemService;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \_orderService\ =\ orderService;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \_userManager\ =\ userManager;}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00030}00030\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00031}00031\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00032}00032\ \ \ \ \ [HttpGet]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00033}00033\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ GetOrderItems([FromQuery]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemCollectionQueryParams}{OrderItemCollectionQueryParams}}\ queryParams)}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00034}00034\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ var\ (items,\ count)\ =\ await\ \_orderItemService.GetOrderItemsAsync(queryParams);}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<DetailOrderItemDto>>(}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ items,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00039}00039\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00040}00040\ \ \ \ \ [HttpPatch(\textcolor{stringliteral}{"{}Status"{}})]}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00041}00041\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task<IActionResult>\ UpdateOrderItemsStatus([FromBody]\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1UpdateOrderItemsStatusRequestDto}{UpdateOrderItemsStatusRequestDto}}\ updateOrderItemsStatusDto)}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ var\ orderItems\ =\ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_orderItemService.UpdateOrderItemsStatusAsync(updateOrderItemsStatusDto.OrderItemIds,\ updateOrderItemsStatusDto.Status);}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ var\ totalCancelAmount\ =\ orderItems.Sum(oi\ =>\ oi.PriceAtPurchase\ *\ oi.Quantity);}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<IEnumerable<OrderItemDto>>(orderItems));}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{KitchenOrderController_8cs_source_l00050}00050\ \}}
+
+\end{DoxyCode}

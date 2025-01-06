@@ -1,0 +1,20 @@
+\doxysection{ITable\+Repository.\+cs}
+\hypertarget{ITableRepository_8cs_source}{}\label{ITableRepository_8cs_source}\index{BistroQ.Core/Interfaces/Repositories/ITableRepository.cs@{BistroQ.Core/Interfaces/Repositories/ITableRepository.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Entities}{BistroQ.Core.Entities}};}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00002}00002\ }
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00003}00003\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories}{BistroQ.Core.Interfaces.Repositories}};}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00009}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{interface\ }\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository}{ITableRepository}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1IGenericRepository}{IGenericRepository}}<Table>}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00011}00011\ \ \ \ \ Task<Table?>\ GetByIdAsync(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00012}00012\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00022}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_af1a8f0b55708a7403405b7b9815cd24d}{00022}}\ \ \ \ \ Task<IEnumerable<Table>>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_af1a8f0b55708a7403405b7b9815cd24d}{GetTablesAsync}}(IQueryable<Table>\ queryable);}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00029}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a4daa2be9794c190b3f2d346735c7d9e3}{00029}}\ \ \ \ \ Task<int>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_a4daa2be9794c190b3f2d346735c7d9e3}{GetTablesCountAsync}}(IQueryable<Table>\ queryable);}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00030}00030\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00036}\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_aebabdb2bd6efa40a15b41e4261252f2f}{00036}}\ \ \ \ \ Task<int>\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Repositories_1_1ITableRepository_aebabdb2bd6efa40a15b41e4261252f2f}{GetNextTableNumberAsync}}(\textcolor{keywordtype}{int}\ zoneId);}
+\DoxyCodeLine{\Hypertarget{ITableRepository_8cs_source_l00037}00037\ \}}
+
+\end{DoxyCode}

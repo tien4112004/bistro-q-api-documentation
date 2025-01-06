@@ -1,0 +1,168 @@
+\doxysection{Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller Class Reference}
+\hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController}{}\label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+
+
+Inheritance diagram for Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afc997f8322635461807ce212d762e130}{Account\+Controller}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccount\+Service}} account\+Service, IMapper mapper)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4a80aeb41de8f8d4511ca1277e70c394}{Get\+Accounts}} (\mbox{[}From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}} query\+Params)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a78410ed6c25985a0b12ad163d98048e5}{Get\+Account}} (\mbox{[}From\+Route\mbox{]} string id)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4440f3a93ae2f0577e3abf69d1ee91e2}{Create\+Account}} (\mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}} create\+Account\+Dto)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afe0c9ad3050230cce851dd85c76dbb33}{Update\+Account}} (\mbox{[}From\+Route\mbox{]} string id, \mbox{[}From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}} update\+Account\+Dto)
+\item 
+async Task$<$ IAction\+Result $>$ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_aaa0bba2d22ea86928b58a0bc1159256c}{Delete\+Account}} (\mbox{[}From\+Route\mbox{]} string id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00014}{14}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afc997f8322635461807ce212d762e130}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!AccountController@{AccountController}}
+\index{AccountController@{AccountController}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{AccountController()}{AccountController()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afc997f8322635461807ce212d762e130} 
+Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService}{IAccount\+Service}}}]{account\+Service}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00019}{19}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \_accountService\ =\ accountService;}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00023\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4440f3a93ae2f0577e3abf69d1ee91e2}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!CreateAccount@{CreateAccount}}
+\index{CreateAccount@{CreateAccount}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{CreateAccount()}{CreateAccount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4440f3a93ae2f0577e3abf69d1ee91e2} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Create\+Account (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1CreateAccountDto}{Create\+Account\+Dto}}}]{create\+Account\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00044}{44}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_af2019c5d78d861b333562a72bd6cebda}{CreateAccountAsync}}(createAccountDto);}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_aaa0bba2d22ea86928b58a0bc1159256c}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!DeleteAccount@{DeleteAccount}}
+\index{DeleteAccount@{DeleteAccount}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{DeleteAccount()}{DeleteAccount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_aaa0bba2d22ea86928b58a0bc1159256c} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Delete\+Account (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00062}{62}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_afbcbfadd414f89f9b3fe714a0c57cd1d}{DeleteAccountAsync}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<string>(\textcolor{stringliteral}{"{}Account\ deleted\ successfully"{}}));}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a78410ed6c25985a0b12ad163d98048e5}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!GetAccount@{GetAccount}}
+\index{GetAccount@{GetAccount}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{GetAccount()}{GetAccount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a78410ed6c25985a0b12ad163d98048e5} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Get\+Account (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} string}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00035}{35}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ac86ee9d548a8e472debeecbea15bb03c}{GetByIdAsync}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4a80aeb41de8f8d4511ca1277e70c394}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!GetAccounts@{GetAccounts}}
+\index{GetAccounts@{GetAccounts}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{GetAccounts()}{GetAccounts()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_a4a80aeb41de8f8d4511ca1277e70c394} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Get\+Accounts (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Query\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountCollectionQueryParams}{Account\+Collection\+Query\+Params}}}]{query\+Params}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00026}{26}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ var\ (accounts,\ count)\ =\ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_aabdf9c8226915e9da6b0b49547721be2}{GetAllAsync}}(queryParams);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<IEnumerable<AccountResponseDto>>(accounts);}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1PaginationResponseDto}{PaginationResponseDto}}<IEnumerable<AccountResponseDto>>(res,\ count,\ queryParams.Page,\ queryParams.Size));}
+\DoxyCodeLine{00031\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afe0c9ad3050230cce851dd85c76dbb33}\index{BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}!UpdateAccount@{UpdateAccount}}
+\index{UpdateAccount@{UpdateAccount}!BistroQ.API.Controllers.Account.AccountController@{BistroQ.API.Controllers.Account.AccountController}}
+\doxysubsubsection{\texorpdfstring{UpdateAccount()}{UpdateAccount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1API_1_1Controllers_1_1Account_1_1AccountController_afe0c9ad3050230cce851dd85c76dbb33} 
+async Task$<$ IAction\+Result $>$ Bistro\+Q.\+API.\+Controllers.\+Account.\+Account\+Controller.\+Update\+Account (\begin{DoxyParamCaption}\item[{\mbox{[}\+From\+Route\mbox{]} string}]{id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1UpdateAccountDto}{Update\+Account\+Dto}}}]{update\+Account\+Dto}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AccountController_8cs_source_l00053}{53}} of file \mbox{\hyperlink{AccountController_8cs_source}{Account\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ var\ account\ =\ await\ \_accountService.\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IAccountService_ad671cc45e996173a36e9100d2a5ad227}{UpdateAccountAsync}}(\textcolor{keywordtype}{id},\ updateAccountDto);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ var\ res\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1AccountResponseDto}{AccountResponseDto}}>(account);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Ok(\textcolor{keyword}{new}\ ResponseDto<AccountResponseDto>(res));}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+API/\+Controllers/\+Account/Account\+Controller.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,85 @@
+\doxysection{Aws\+Storage\+Service.\+cs}
+\hypertarget{AwsStorageService_8cs_source}{}\label{AwsStorageService_8cs_source}\index{BistroQ.Services/Services/AwsStorageService.cs@{BistroQ.Services/Services/AwsStorageService.cs}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }Amazon.CloudFront;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }Amazon.S3;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Amazon.S3.Model;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Common_1_1Settings}{BistroQ.Core.Common.Settings}};}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceBistroQ_1_1Core_1_1Interfaces_1_1Services}{BistroQ.Core.Interfaces.Services}};}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00007}00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceBistroQ_1_1Services_1_1Services}{BistroQ.Services.Services}};}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00009}\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}{00009}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}{AwsStorageService}}\ :\ \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1ICloudStorageService}{ICloudStorageService}}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00010}00010\ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00011}00011\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ IAmazonS3\ \_s3Client;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}\ readonly\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{AwsSettings}}\ \_awsSettings;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00013}00013\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00014}00014\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1AwsStorageService}{AwsStorageService}}(IAmazonS3\ s3Client,\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Common_1_1Settings_1_1AwsSettings}{AwsSettings}}\ awsSettings)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00015}00015\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00016}00016\ \ \ \ \ \ \ \ \ \_awsSettings\ =\ awsSettings;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00017}00017\ \ \ \ \ \ \ \ \ \_s3Client\ =\ s3Client;}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00019}00019\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ UploadFileAsync(Stream\ fileStream,\ \textcolor{keywordtype}{string}\ key,\ \textcolor{keywordtype}{string}\ contentType)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00021}00021\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00023}00023\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ var\ putRequest\ =\ \textcolor{keyword}{new}\ PutObjectRequest}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BucketName\ =\ \_awsSettings.BucketName,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ key,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ InputStream\ =\ fileStream,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ContentType\ =\ contentType,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ var\ a\ =\ await\ \_s3Client.PutObjectAsync(putRequest);}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (AmazonS3Exception\ ex)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ApplicationException(\$\textcolor{stringliteral}{"{}Error\ uploading\ to\ S3:\ \{ex.Message\}"{}},\ ex);}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{public}\ async\ Task\ DeleteFileAsync(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00043}00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ var\ deleteRequest\ =\ \textcolor{keyword}{new}\ DeleteObjectRequest}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ BucketName\ =\ \_awsSettings.BucketName,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Key\ =\ key,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Uncomment\ this\ line\ to\ enable\ deletion}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ await\ \_s3Client.DeleteObjectAsync(deleteRequest);}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (AmazonS3Exception\ ex)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ ApplicationException(\$\textcolor{stringliteral}{"{}Error\ deleting\ from\ S3:\ \{ex.Message\}"{}},\ ex);}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00057}00057\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00059}00059\ \ \ \ \ \textcolor{keyword}{public}\ Task<Stream>\ DownloadFileAsync(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00064}00064\ \ \ \ \ \textcolor{keyword}{public}\ Task<byte[]>\ DownloadFileAsBytesAsync(\textcolor{keywordtype}{string}\ key)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ NotImplementedException();}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00067}00067\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00069}00069\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ GeneratePresignedUrlAsync(\textcolor{keywordtype}{string}?\ key,\ TimeSpan\ expiration)}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00070}00070\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ AmazonCloudFrontUrlSigner.GetCannedSignedURL(}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ AmazonCloudFrontUrlSigner.Protocol.https,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_awsSettings.CloudFrontDomain,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ StringReader(\_awsSettings.PrivateKey),}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ key,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \_awsSettings.KeyPairId,}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ DateTime.UtcNow.Add(expiration));}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00078}00078\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{AwsStorageService_8cs_source_l00079}00079\ \}}
+
+\end{DoxyCode}

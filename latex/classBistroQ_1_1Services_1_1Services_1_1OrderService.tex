@@ -1,0 +1,516 @@
+\doxysection{Bistro\+Q.\+Services.\+Services.\+Order\+Service Class Reference}
+\hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService}{}\label{classBistroQ_1_1Services_1_1Services_1_1OrderService}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+
+
+Inheritance diagram for Bistro\+Q.\+Services.\+Services.\+Order\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1OrderService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bistro\+Q.\+Services.\+Services.\+Order\+Service\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{classBistroQ_1_1Services_1_1Services_1_1OrderService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7bc55f2c60db977e2318a3f2beaba14a}{Order\+Service}} (\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}} unit\+Of\+Work, IMapper mapper)
+\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a88314dbba958d70c833b11d35981e270}{Create\+Order}} (int table\+Id, int people\+Count)
+\begin{DoxyCompactList}\small\item\em Creates a new order for a specific table. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{Detail\+Order\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_aa4183aa16ab05b241f1bc8968b3262a5}{Get\+Order\+By\+Table\+Id}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Retrieves detailed information about the current order for a specific table. \end{DoxyCompactList}\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a38613dca18d0fdd11608fa66b6e44daa}{Delete\+Order}} (int table\+Id)
+\begin{DoxyCompactList}\small\item\em Deletes an order associated with a specific table. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderWithTableDto}{Order\+With\+Table\+Dto}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a9307d43f6f146c9a02f31d91311c29d0}{Get\+All\+Current\+Orders}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all current orders in the system along with their table information. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a14e79dc81589403824d325b6b543e1c7}{Add\+Products\+To\+Order}} (int table\+Id, IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{Create\+Order\+Item\+Request\+Dto}} $>$ order\+Items)
+\begin{DoxyCompactList}\small\item\em Adds a product to an existing order. \end{DoxyCompactList}\item 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7ad1894c6b563b8fe16f2973f89adb21}{Cancel\+Order\+Items}} (int table\+Id, \mbox{[}From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{Remove\+Order\+Item\+Request\+Dto}} $>$ order\+Items)
+\begin{DoxyCompactList}\small\item\em Update the order status to "{}\+Cancelled"{} for a list of order items. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a68905712483acb405bd4c8ad0727a31f}{Update\+People\+Count}} (int table\+Id, int people\+Count)
+\begin{DoxyCompactList}\small\item\em Updates the quantity of a product in an existing order. \end{DoxyCompactList}\item 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Services_1_1OrderService_a2f3a7608017f175a156a3ec544fb5234}{Update\+Status}} (int table\+Id, Order\+Status status)
+\begin{DoxyCompactList}\small\item\em Update the status of the order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00016}{16}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7bc55f2c60db977e2318a3f2beaba14a}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!OrderService@{OrderService}}
+\index{OrderService@{OrderService}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{OrderService()}{OrderService()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7bc55f2c60db977e2318a3f2beaba14a} 
+Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Order\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1IUnitOfWork}{IUnit\+Of\+Work}}}]{unit\+Of\+Work}{, }\item[{IMapper}]{mapper}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00021}{21}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \_unitOfWork\ =\ unitOfWork;}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \_mapper\ =\ mapper;}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a14e79dc81589403824d325b6b543e1c7}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!AddProductsToOrder@{AddProductsToOrder}}
+\index{AddProductsToOrder@{AddProductsToOrder}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{AddProductsToOrder()}{AddProductsToOrder()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a14e79dc81589403824d325b6b543e1c7} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Add\+Products\+To\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1CreateOrderItemRequestDto}{Create\+Order\+Item\+Request\+Dto}} $>$}]{order\+Items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a product to an existing order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+{\em order\+Items} & The list of products that needs to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order details including the new product.
+\end{DoxyReturn}
+
+
+Consider adding quantity parameter. Should validate product availability and pricing. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a3effae22df7484c1d665ed390c390ee1}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00114}{114}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00117\ \ \ \ \ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ var\ updatedOrder\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}>(order);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ List<OrderItem>\ addedItems\ =\ \textcolor{keyword}{new}\ List<OrderItem>();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ item\ \textcolor{keywordflow}{in}\ orderItems)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ var\ product\ =\ await\ \_unitOfWork.ProductRepository.GetByIdAsync(item.ProductId);}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (product\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Product\ not\ found"{}});}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ var\ receivedOrderTime\ =\ DateTime.Now;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ var\ orderItem\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1OrderItem}{OrderItem}}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ order.OrderId,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ProductId\ =\ item.ProductId,}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Quantity\ =\ item.Quantity,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CreatedAt\ =\ receivedOrderTime,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UpdatedAt\ =\ receivedOrderTime,}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PriceAtPurchase\ =\ (product.DiscountPrice\ !=\ 0\ ?\ product.DiscountPrice\ :\ product.Price),\ \textcolor{comment}{//\ TODO:\ OR\ DiscountPrice}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ var\ addedItem\ =\ await\ \_unitOfWork.OrderItemRepository.AddAsync(orderItem);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ addedItems.Add(addedItem);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ updatedOrder.TotalAmount\ +=\ (item.PriceAtPurchase\ *\ item.Quantity);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderRepository.UpdateAsync(order,\ updatedOrder);}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ var\ addedItemsDto\ =\ \_mapper.Map<IEnumerable<OrderItemDto>>(addedItems);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ addedItemsDto;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7ad1894c6b563b8fe16f2973f89adb21}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!CancelOrderItems@{CancelOrderItems}}
+\index{CancelOrderItems@{CancelOrderItems}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{CancelOrderItems()}{CancelOrderItems()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a7ad1894c6b563b8fe16f2973f89adb21} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderItemDto}{Order\+Item\+Dto}} $>$ $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Cancel\+Order\+Items (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{\mbox{[}\+From\+Body\mbox{]} IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1RemoveOrderItemRequestDto}{Remove\+Order\+Item\+Request\+Dto}} $>$}]{order\+Items}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the order status to "{}\+Cancelled"{} for a list of order items. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & \\
+\hline
+{\em order\+Items} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The list of order items with new status
+\end{DoxyReturn}
+
+
+Soft-\/delete
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ac9c7bf15bea5ba48f108c92bcf6c4c59}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00160}{160}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ var\ updatedOrder\ =\ order;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ List<OrderItem>\ removedItems\ =\ \textcolor{keyword}{new}\ List<OrderItem>();}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ item\ \textcolor{keywordflow}{in}\ orderItems)}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ var\ orderItem\ =\ order.OrderItems.FirstOrDefault(oi\ =>\ oi.OrderItemId\ ==\ item.OrderItemId);}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (orderItem\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}OrderItem\ not\ found"{}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderItemRepository.DeleteAsync(orderItem);}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ removedItems.Add(orderItem);}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \ \ \ \ updatedOrder.TotalAmount\ -\/=\ orderItem.Quantity\ *\ orderItem.PriceAtPurchase;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderRepository.UpdateAsync(order,\ updatedOrder);}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<IEnumerable<OrderItemDto>>(removedItems);}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a88314dbba958d70c833b11d35981e270}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!CreateOrder@{CreateOrder}}
+\index{CreateOrder@{CreateOrder}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{CreateOrder()}{CreateOrder()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a88314dbba958d70c833b11d35981e270} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Create\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{int}]{people\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new order for a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A DTO containing the basic order information.
+\end{DoxyReturn}
+
+
+Consider whether multiple active orders per table should be allowed. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aba8f8abb83dfec225cc9f5a57d71ae23}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00027}{27}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00028\ \ \ \ \ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ var\ order\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1Order}{Order}}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ OrderId\ =\ Guid.NewGuid().ToString(),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ TableId\ =\ tableId,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ TotalAmount\ =\ 0,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ StartTime\ =\ DateTime.Now,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ EndTime\ =\ \textcolor{keyword}{null},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ PeopleCount\ =\ peopleCount,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ var\ table\ =\ await\ \_unitOfWork.TableRepository.GetByIdAsync(tableId);}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (table\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Table\ not\ found"{}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ existingOrder\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (existingOrder\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ConflictException}{ConflictException}}(\textcolor{stringliteral}{"{}Order\ already\ exists"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ var\ createdOrder\ =\ await\ \_unitOfWork.OrderRepository.AddAsync(order);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}>(createdOrder);}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a38613dca18d0fdd11608fa66b6e44daa}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!DeleteOrder@{DeleteOrder}}
+\index{DeleteOrder@{DeleteOrder}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{DeleteOrder()}{DeleteOrder()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a38613dca18d0fdd11608fa66b6e44daa} 
+async Task Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Delete\+Order (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deletes an order associated with a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+
+
+Consider adding a soft delete option or archiving for historical tracking. Should validate if the order can be deleted (e.\+g., not already paid). 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aedf4905b62220f4afc54a8d95b175bc4}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00096}{96}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00097\ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderRepository.DeleteAsync(order);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a9307d43f6f146c9a02f31d91311c29d0}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!GetAllCurrentOrders@{GetAllCurrentOrders}}
+\index{GetAllCurrentOrders@{GetAllCurrentOrders}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{GetAllCurrentOrders()}{GetAllCurrentOrders()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a9307d43f6f146c9a02f31d91311c29d0} 
+async Task$<$ IEnumerable$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderWithTableDto}{Order\+With\+Table\+Dto}} $>$ $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Get\+All\+Current\+Orders (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves all current orders in the system along with their table information. 
+
+\begin{DoxyReturn}{Returns}
+A collection of orders with their associated table details.
+\end{DoxyReturn}
+
+
+The definition of "{}current"{} orders should be clearly specified. Consider adding filtering options (by status, server, time range, etc.). 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_aed2d2bab361f46e43e71414fec1b259e}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00108}{108}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ var\ orders\ =\ await\ \_unitOfWork.OrderRepository.GetAllCurrentOrdersAsync();}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<IEnumerable<OrderWithTableDto>>(orders);}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_aa4183aa16ab05b241f1bc8968b3262a5}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!GetOrderByTableId@{GetOrderByTableId}}
+\index{GetOrderByTableId@{GetOrderByTableId}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{GetOrderByTableId()}{GetOrderByTableId()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_aa4183aa16ab05b241f1bc8968b3262a5} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{Detail\+Order\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Get\+Order\+By\+Table\+Id (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves detailed information about the current order for a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A detailed DTO containing the order and its items.
+\end{DoxyReturn}
+
+
+Assumes only one active order per table exists. Consider using order\+Id instead of table\+Id for more flexibility. 
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a229bcfcd8f7c4f998c2256d0f316fc8b}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00057}{57}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ order.OrderItems\ =\ \_mapper.Map<List<OrderItem>>(order.OrderItems);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ var\ result\ =\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1DetailOrderDto}{DetailOrderDto}}>(order);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#region\ braindead-\/code }}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ result.TotalCalories\ =\ 0;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ result.TotalProtein\ =\ 0;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ result.TotalFat\ =\ 0;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ result.TotalFiber\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ result.TotalCarbohydrates\ =\ 0;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ var\ productIds\ =\ order.OrderItems.Select(oi\ =>\ (\textcolor{keywordtype}{int})\ oi.ProductId);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ var\ nutritionFacts\ =\ await\ \_unitOfWork.NutritionFactRepository.GetByIdsAsync(productIds);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ item\ \textcolor{keywordflow}{in}\ order.OrderItems)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ var\ nf\ =\ nutritionFacts[item.ProductId.GetValueOrDefault()];}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (nf\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.TotalCalories\ +=\ nf.Calories\ *\ item.Quantity;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.TotalProtein\ +=\ nf.Protein\ *\ item.Quantity;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.TotalFat\ +=\ nf.Fat\ *\ item.Quantity;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.TotalFiber\ +=\ nf.Fiber\ *\ item.Quantity;}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result.TotalCarbohydrates\ +=\ nf.Carbohydrates\ *\ item.Quantity;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endregion }}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a68905712483acb405bd4c8ad0727a31f}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!UpdatePeopleCount@{UpdatePeopleCount}}
+\index{UpdatePeopleCount@{UpdatePeopleCount}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{UpdatePeopleCount()}{UpdatePeopleCount()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a68905712483acb405bd4c8ad0727a31f} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Update\+People\+Count (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{int}]{people\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the quantity of a product in an existing order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table.\\
+\hline
+{\em people\+Count} & The new people count need to be updated.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order with new number of people.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_a62e4b4a8faf9b4d56e79252f1afe5ec0}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00189}{189}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ var\ updatedOrder\ =\ order;}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ updatedOrder.PeopleCount\ =\ peopleCount;}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderRepository.UpdateAsync(order,\ updatedOrder);}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}>(updatedOrder);}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Services_1_1Services_1_1OrderService_a2f3a7608017f175a156a3ec544fb5234}\index{BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}!UpdateStatus@{UpdateStatus}}
+\index{UpdateStatus@{UpdateStatus}!BistroQ.Services.Services.OrderService@{BistroQ.Services.Services.OrderService}}
+\doxysubsubsection{\texorpdfstring{UpdateStatus()}{UpdateStatus()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Services_1_1Services_1_1OrderService_a2f3a7608017f175a156a3ec544fb5234} 
+async Task$<$ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{Order\+Dto}} $>$ Bistro\+Q.\+Services.\+Services.\+Order\+Service.\+Update\+Status (\begin{DoxyParamCaption}\item[{int}]{table\+Id}{, }\item[{Order\+Status}]{status}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Update the status of the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Id} & The unique identifier of the table\\
+\hline
+{\em status} & The new status need to be updated\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Updated order
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interfaceBistroQ_1_1Core_1_1Interfaces_1_1Services_1_1IOrderService_ae1d37db49d2d35d4172a2b893bfb70f7}{Bistro\+Q.\+Core.\+Interfaces.\+Services.\+IOrder\+Service}}.
+
+
+
+Definition at line \mbox{\hyperlink{OrderService_8cs_source_l00206}{206}} of file \mbox{\hyperlink{OrderService_8cs_source}{Order\+Service.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00207\ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ DateTime?\ endTime\ =\ status\ ==\ OrderStatus.Completed\ ?\ DateTime.Now\ :\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ var\ order\ =\ await\ \_unitOfWork.OrderRepository.GetByTableIdAsync(tableId);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (order\ ==\ \textcolor{keyword}{null})}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Exceptions_1_1ResourceNotFoundException}{ResourceNotFoundException}}(\textcolor{stringliteral}{"{}Order\ not\ found"{}});}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ var\ updatedOrder\ =\ order;}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition}{OrderStatusTransition}}.\mbox{\hyperlink{classBistroQ_1_1Services_1_1Common_1_1OrderStatusTransition_abeb7ea7f8337f83c63ec7e51601e2c0d}{UpdateStatus}}(updatedOrder,\ status);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (updatedOrder.Status\ ==\ OrderStatus.Completed)}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ updatedOrder.TableId\ =\ \textcolor{keyword}{null};}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.OrderRepository.UpdateAsync(order,\ updatedOrder);}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ await\ \_unitOfWork.SaveChangesAsync();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_mapper.Map<\mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Orders_1_1OrderDto}{OrderDto}}>(updatedOrder);}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Services/\+Services/Order\+Service.\+cs\end{DoxyCompactItemize}

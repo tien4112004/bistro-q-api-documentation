@@ -1,0 +1,225 @@
+\doxysection{Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests Class Reference}
+\hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests}{}\label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_af061ad8f1915e2d531635e76d192aeaf}{Setup}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_ac8269ef7ef78f67c0325568ea2dd8f04}{Login\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a0eb34e94c8cf5d491d06d3c8b98181c9}{Login\+\_\+\+User\+Not\+Found}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a4f5ee7c1d635706a893492f6df558036}{Login\+\_\+\+Invalid\+Password}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a9236e849a2c2e033c7f200ea58005ee8}{Refresh\+\_\+\+Success}} ()
+\item 
+async Task \mbox{\hyperlink{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a53c7d4a41f1491ab04502fa90fc37784}{Refresh\+\_\+\+Invalid\+Refresh\+Token}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00020}{20}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a4f5ee7c1d635706a893492f6df558036}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Login\_InvalidPassword@{Login\_InvalidPassword}}
+\index{Login\_InvalidPassword@{Login\_InvalidPassword}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Login\_InvalidPassword()}{Login\_InvalidPassword()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a4f5ee7c1d635706a893492f6df558036} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Login\+\_\+\+Invalid\+Password (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00106}{106}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ var\ loginDto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{LoginDto}}\ \{\ Username\ =\ \textcolor{stringliteral}{"{}testuser"{}},\ Password\ =\ \textcolor{stringliteral}{"{}wrongpassword"{}}\ \};}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ UserName\ =\ \textcolor{stringliteral}{"{}testuser"{}}\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.FindByNameAsync(loginDto.Username)).ReturnsAsync(user);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \_mockSignInManager.Setup(x\ =>\ x.PasswordSignInAsync(user,\ loginDto.Password,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}))}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(SignInResult.Failed);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ await\ \_authController.Login(loginDto);}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_ac8269ef7ef78f67c0325568ea2dd8f04}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Login\_Success@{Login\_Success}}
+\index{Login\_Success@{Login\_Success}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Login\_Success()}{Login\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_ac8269ef7ef78f67c0325568ea2dd8f04} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Login\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00065}{65}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ var\ loginDto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{LoginDto}}\ \{\ Username\ =\ \textcolor{stringliteral}{"{}testuser"{}},\ Password\ =\ \textcolor{stringliteral}{"{}password"{}}\ \};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ UserName\ =\ \textcolor{stringliteral}{"{}testuser"{}}\ \};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ var\ roles\ =\ \textcolor{keyword}{new}\ List<string>\ \{\ \textcolor{stringliteral}{"{}User"{}}\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.FindByNameAsync(loginDto.Username)).ReturnsAsync(user);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \_mockSignInManager.Setup(x\ =>\ x.PasswordSignInAsync(user,\ loginDto.Password,\ \textcolor{keyword}{false},\ \textcolor{keyword}{false}))}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ .ReturnsAsync(SignInResult.Success);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \_mockTokenService.Setup(x\ =>\ x.GenerateAccessToken(user)).ReturnsAsync(\textcolor{stringliteral}{"{}access\_token"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \_mockTokenService.Setup(x\ =>\ x.GenerateRefreshToken(user)).ReturnsAsync(\textcolor{stringliteral}{"{}refresh\_token"{}});}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.GetRolesAsync(user)).ReturnsAsync(roles);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_authController.Login(loginDto)\ as\ OkObjectResult;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<LoginResponseDto>;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}access\_token"{}},\ response.Data.AccessToken);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}refresh\_token"{}},\ response.Data.RefreshToken);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}User"{}},\ response.Data.Role);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a0eb34e94c8cf5d491d06d3c8b98181c9}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Login\_UserNotFound@{Login\_UserNotFound}}
+\index{Login\_UserNotFound@{Login\_UserNotFound}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Login\_UserNotFound()}{Login\_UserNotFound()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a0eb34e94c8cf5d491d06d3c8b98181c9} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Login\+\_\+\+User\+Not\+Found (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00093}{93}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00094\ \ \ \ \ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ var\ loginDto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1LoginDto}{LoginDto}}\ \{\ Username\ =\ \textcolor{stringliteral}{"{}nonexistentuser"{}},\ Password\ =\ \textcolor{stringliteral}{"{}password"{}}\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.FindByNameAsync(loginDto.Username)).ReturnsAsync((\mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}})\textcolor{keyword}{null});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ await\ \_authController.Login(loginDto);}
+\DoxyCodeLine{00102\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a53c7d4a41f1491ab04502fa90fc37784}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Refresh\_InvalidRefreshToken@{Refresh\_InvalidRefreshToken}}
+\index{Refresh\_InvalidRefreshToken@{Refresh\_InvalidRefreshToken}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Refresh\_InvalidRefreshToken()}{Refresh\_InvalidRefreshToken()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a53c7d4a41f1491ab04502fa90fc37784} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Refresh\+\_\+\+Invalid\+Refresh\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00144}{144}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ var\ refreshTokenDto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1RefreshTokenDto}{RefreshTokenDto}}\ \{\ UserId\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ RefreshToken\ =\ \textcolor{stringliteral}{"{}invalid\_refresh\_token"{}}\ \};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}}\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.FindByIdAsync(refreshTokenDto.UserId)).ReturnsAsync(user);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \_mockTokenService.Setup(x\ =>\ x.ValidateRefreshToken(user,\ refreshTokenDto.RefreshToken)).ReturnsAsync(\textcolor{keyword}{false});}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ await\ \_authController.Refresh(refreshTokenDto);}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a9236e849a2c2e033c7f200ea58005ee8}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Refresh\_Success@{Refresh\_Success}}
+\index{Refresh\_Success@{Refresh\_Success}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Refresh\_Success()}{Refresh\_Success()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_a9236e849a2c2e033c7f200ea58005ee8} 
+async Task Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Refresh\+\_\+\+Success (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00121}{121}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Arrange}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ var\ refreshTokenDto\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Dtos_1_1Auth_1_1RefreshTokenDto}{RefreshTokenDto}}\ \{\ UserId\ =\ \textcolor{stringliteral}{"{}user\_id"{}},\ RefreshToken\ =\ \textcolor{stringliteral}{"{}valid\_refresh\_token"{}}\ \};}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ var\ user\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1Core_1_1Entities_1_1AppUser}{AppUser}}\ \{\ Id\ =\ \textcolor{stringliteral}{"{}user\_id"{}}\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \_mockUserManager.Setup(x\ =>\ x.FindByIdAsync(refreshTokenDto.UserId)).ReturnsAsync(user);}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \_mockTokenService.Setup(x\ =>\ x.ValidateRefreshToken(user,\ refreshTokenDto.RefreshToken)).ReturnsAsync(\textcolor{keyword}{true});}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \_mockTokenService.Setup(x\ =>\ x.GenerateAccessToken(user)).ReturnsAsync(\textcolor{stringliteral}{"{}new\_access\_token"{}});}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Act}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ var\ result\ =\ await\ \_authController.Refresh(refreshTokenDto)\ as\ OkObjectResult;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Assert}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ Assert.IsNotNull(result);}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ var\ response\ =\ result.Value\ as\ ResponseDto<object>;}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ Assert.IsNotNull(response);}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ var\ accessToken\ =\ response.Data?.GetType().GetProperty(\textcolor{stringliteral}{"{}AccessToken"{}})?.GetValue(response.Data,\ \textcolor{keyword}{null});}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ Assert.AreEqual(\textcolor{stringliteral}{"{}new\_access\_token"{}},\ accessToken);}
+\DoxyCodeLine{00140\ \ \ \ \ \}}
+
+\end{DoxyCode}
+\Hypertarget{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_af061ad8f1915e2d531635e76d192aeaf}\index{BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}!Setup@{Setup}}
+\index{Setup@{Setup}!BistroQ.Tests.Controllers.AuthControllerTests@{BistroQ.Tests.Controllers.AuthControllerTests}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{classBistroQ_1_1Tests_1_1Controllers_1_1AuthControllerTests_af061ad8f1915e2d531635e76d192aeaf} 
+void Bistro\+Q.\+Tests.\+Controllers.\+Auth\+Controller\+Tests.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{AuthControllerTest_8cs_source_l00028}{28}} of file \mbox{\hyperlink{AuthControllerTest_8cs_source}{Auth\+Controller\+Test.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \_mockTokenService\ =\ \textcolor{keyword}{new}\ Mock<ITokenService>();}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_mockUserManager\ =\ \textcolor{keyword}{new}\ Mock<UserManager<AppUser>>(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<IUserStore<AppUser>>().Object,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{null},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<IPasswordHasher<AppUser>>().Object,}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IUserValidator<AppUser>[0],}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IPasswordValidator<AppUser>[0],}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ UpperInvariantLookupNormalizer(),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ IdentityErrorDescriber(),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{null},}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{new}\ Mock<ILogger<UserManager<AppUser>>>().Object);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ var\ mockHttpContextAccessor\ =\ \textcolor{keyword}{new}\ Mock<IHttpContextAccessor>();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ var\ mockClaimsPrincipalFactory\ =\ \textcolor{keyword}{new}\ Mock<IUserClaimsPrincipalFactory<AppUser>>();}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ var\ mockOptions\ =\ \textcolor{keyword}{new}\ Mock<IOptions<IdentityOptions>>();}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ var\ mockLogger\ =\ \textcolor{keyword}{new}\ Mock<ILogger<SignInManager<AppUser>>>();}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ var\ mockSchemeProvider\ =\ \textcolor{keyword}{new}\ Mock<IAuthenticationSchemeProvider>();}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ var\ mockUserConfirmation\ =\ \textcolor{keyword}{new}\ Mock<IUserConfirmation<AppUser>>();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \_mockSignInManager\ =\ \textcolor{keyword}{new}\ Mock<SignInManager<AppUser>>(}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockUserManager.Object,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ mockHttpContextAccessor.Object,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ mockClaimsPrincipalFactory.Object,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ mockOptions.Object,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ mockLogger.Object,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ mockSchemeProvider.Object,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ mockUserConfirmation.Object);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \_authController\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classBistroQ_1_1API_1_1Controllers_1_1Auth_1_1AuthController}{AuthController}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockTokenService.Object,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockUserManager.Object,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \_mockSignInManager.Object);}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Bistro\+Q.\+Tests/Auth\+Controller\+Test.\+cs\end{DoxyCompactItemize}
